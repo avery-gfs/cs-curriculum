@@ -103,9 +103,9 @@ Recursive functions: functions which call themselves
 
 > To understand recursion, you must first understand recursion.
 
-<img width="550" src="/assets/nesting-dolls.jpg" />
+<img width="600" src="/assets/nesting-dolls.jpg" />
 
-<img width="550" src="/assets/nesting-doll-cutaway.jpg" />
+<img width="600" src="/assets/nesting-doll-cutaway.jpg" />
 
 ## Factorial Definition
 
