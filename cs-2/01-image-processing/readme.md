@@ -164,5 +164,5 @@ symbols = "   ``'-~:+<ceOEB"
 
 ---
 
-<img src="ascii-dark.png" />
-<img src="ascii-light.png" />
+<img width="550" src="ascii-dark.png" />
+<img width="550" src="ascii-light.png" />
