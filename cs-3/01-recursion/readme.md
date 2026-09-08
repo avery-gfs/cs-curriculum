@@ -18,6 +18,20 @@ What does this code do?
 
 ```py
 def hello():
+    print("Hello")
+    return
+    print("world!")
+
+
+hello()
+```
+
+---
+
+What does this code do?
+
+```py
+def hello():
     print("Hello world!")
     hello()
 
