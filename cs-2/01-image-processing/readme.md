@@ -27,11 +27,11 @@
 
 ## Impossible Colors
 
-<img height="550" src="/assets/eclipse-shrink.svg" />
+<img height="600" src="/assets/eclipse-shrink.svg" />
 
 ## Colors Worksheet
 
-<img height="550" src="/assets/checker_shadow_illusion.png" />
+<img height="600" src="/assets/checker_shadow_illusion.png" />
 
 ## PIL / Pillow
 
@@ -112,8 +112,8 @@ r = 255
 
 ## Simple Grayscale
 
-<img width="550" src="bird.png" />
-<img width="550" src="grayscale.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="grayscale.png" />
 
 - https://en.wikipedia.org/wiki/Grayscale
 - `r`, `g`, and `b` are all equal
@@ -133,8 +133,8 @@ TypeError: 'float' object cannot be interpreted as an integer
 
 ## Black and White
 
-<img width="550" src="bird.png" />
-<img width="550" src="black-white.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="black-white.png" />
 
 - Black `(0, 0, 0)`
 - White `(255, 255, 255)`
@@ -154,15 +154,15 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ## Inverted
 
-<img width="550" src="bird.png" />
-<img width="550" src="inverted.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="inverted.png" />
 
 ![](/assets/rgb-color.png)
 
 ## Greenish
 
-<img width="550" src="bird.png" />
-<img width="550" src="greenish.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="greenish.png" />
 
 ## Scaled
 
@@ -173,8 +173,8 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ## Rotated
 
-<img width="550" src="bird.png" />
-<img width="550" src="rotated.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="rotated.png" />
 
 ## ASCII
 
