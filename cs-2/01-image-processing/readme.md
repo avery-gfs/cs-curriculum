@@ -129,8 +129,9 @@ r = 255
 
 ## Better Grayscale
 
-<img width="550" src="grayscale.png" />
-<img width="550" src="better-grayscale.png" />
+<img width="400" src="bird.png" />
+<img width="400" src="grayscale.png" />
+<img width="400" src="better-grayscale.png" />
 
 - Relative / perceptual luminance
 - https://brandonrohrer.com/convert_rgb_to_grayscale.html
