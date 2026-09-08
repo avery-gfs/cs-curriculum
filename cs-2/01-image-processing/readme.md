@@ -156,7 +156,7 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 ## ASCII
 
 <img src="dali.png" />
-<img src="ascii-dark.png" />
+<img width="550" src="ascii-dark.png" />
 
 ```py
 symbols = "   ``'-~:+<ceOEB"
