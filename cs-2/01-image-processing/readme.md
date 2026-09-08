@@ -119,7 +119,20 @@ r = 255
 - `r`, `g`, and `b` are all equal
 - $$l = \frac{r + g + b}{3}$$
 
+## Black and White
+
+<img width="550" src="bird.png" />
+<img width="550" src="black-white.png" />
+
+- Black `(0, 0, 0)`
+- White `(255, 255, 255)`
+
 ## Better Grayscale
+
+<img width="550" src="bird.png" />
+<img width="550" src="grayscale.png" />
+
+---
 
 <img width="550" src="bird.png" />
 <img width="550" src="better-grayscale.png" />
@@ -130,14 +143,6 @@ r = 255
 Linear approximation for gamma-compressed channel values:
 
 $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
-
-## Black and White
-
-<img width="550" src="bird.png" />
-<img width="550" src="black-white.png" />
-
-- Black `(0, 0, 0)`
-- White `(255, 255, 255)`
 
 ## Inverted
 
