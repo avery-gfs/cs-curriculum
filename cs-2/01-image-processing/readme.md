@@ -153,62 +153,16 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ![](/assets/rgb-color.png)
 
-## Inverted
+## ASCII
 
 <img src="dali.png" />
+<img src="ascii-dark.png" />
 
-      ``````````````````````````````````````````````````````````````````````````````                    
-    ``````````````````````````````````````:OEOEEEEEEEOOOEEEEEEEE<-``````````````    ``````              
-    ````````````````````````````````-+eEEEEEEEEEEEEEEEEEEEEEEEEEEEEEO~```````````  ````````             
-    `````````````````````````````-+OEEEEEEEEOOEEOEeOOOOOOOOOOEEEEEEEEEEe'`````````````````              
-    ``````````````````````````'<OO<OEEEEEEEEEEOeOOOOOOOOOeOOOOOOOEEEEEEEEE+```````````````````````      
-    ````````````````````````'+c<eEEEEEEOOOOOOOOOOOEOOEOOOeeeEEOOOOOEEEEEEEEE<`````````````````````      
-    ``````````````````````':cceEEEEEEEEEEOeeOOOec+:+++::~:++<<eOeOOOOOOOOEEEEO'```````````  `````       
-    ````````````````````'-eEOEEEEEEEEEEEOOOOOc+~~----''''''''-~++<eOOOeOeOOOOOO'`````                   
-    ``````````````````'`+EEEEEEEEEEEEEEOOOOO<~---'''''''''''''''''--:<eOOOOeOOe~``````                  
-    `````````````````''eEEEEEEEEEEEEEEEEOec+~-----'''''''``'''''`'''''-~+cOOEEE<```````                 
-    ````````````````''OEEEEEEEEEEEEEEEOOe<+::~~~~~--'''''''````````'''''--~~+OE<-```````                
-    ````````````````'OEEEEEEEEEEEEEEEOOec+++::~~~~--''`'''''``````'''''''--~-~+eO'````````  `           
-    ```````````````-OEEEEEEEEEEEEEEEEOOec<++++::~~---''''`````````'''''''-----~+E:````````````          
-    ``````````````+EEEEEEEEEEEEEEEEEEEOeec+++::~~~~~---'``````````''''--------~~<c'```````````          
-    ````````````'cEEEEEEEEEEEEEEEEEEEOe<+::::~:~~~~~--'-''```'''``''-------~~-~~++'````````````         
-    ```````````-OEEEEEEEEEEEEEEEEEEEO<+++::~~:~~~~~~-----''``'```'---------~~~~:+e+-``````````          
-    ``````````:EEEEEEEOOEEEEEEOEOEOcc<++:::~~~~~~~:~~~:<<++~''`'''''''----~-~~~+<cce-````````           
-    `````````~EEEEEc+cce+-':Oeeeecc<<+++::~~~:~+<ccceeeeec<cOOc+~------------~:++<:````````             
-    ````````-EEEEe~+<<<cOEe:-:eecccc<+::::~:::++<<+++:~~~~~~:eeOeec+~~--~-~-~~~:+c-'````                
-    `````''`+EEEE:-~:::~~cE<~<+eecc<<+::~~~::+c++<<<<cccc<:~-~:ceccc<:~~~-~~~-~~:-```                   
-    ```````-cEEEE+'-:+~-''cc++cOOec<++:~~-~~~:<++<ceecec~``+Oe:~+ccc+~~:~:::+<<c<:'``                   
-    ```````-OEEEEO-'+~~~~<Oe<+<eOe<++<:~~--''-:~~~~<+:OOe~``+cOc<<:~-~:+<ceOEEOOOO~`                    
-    ``````'-cEEEEE<-+'~:++O<''~<ecc++<+:~~--'--``''~c<+:-''--++<::~'`':eOeec<<<+<<'                     
-    ``````''~<EEEEE~+`'`'-++`'~+cccc<c<+::~--'~````'`'~:::::~~'-----`':cOe+-:Oe<:`                      
-    '````````'+EEEEc~c~~-:eO~~+<<<<cccc<+::~--+'````'----~~:~''''--~-'-:eOOe`'O~                        
-    ``'''````''~OOOE+-ce<:-~:<<<++<<<ccc<++:~~:~-'''''''``````'''-~-'`-:::<+~~                          
-    ``'`````':OEOc<eEc~--'-'`:<<<<+<<<cc<<+::~~+~--''````````'-''---``-+:+ce+`                          
-    ``'``-<OOOOEEe<+eEEe<++cc+<<<<++<+<cc<++::::<~~~''`````'-~~-~~-''`-:c<:+`                           
-    -+eOOOOOOOOOOEc+:+eEEEEEecc<<<<++<+<<<+::~~~:+---''''-~~:~--:~-'``-~:++:`                           
-    OOOOOOOOOOOOOOEc+:~--':Oeccc<<<+++++<<+::~~~~~c----~~~:+:~--:~-``'-~:::~              `             
-    OOOOOOOOOOOOOOOOc+~--'~OOeecc<++:+:++++++:::~~~c~~~~'`~eeOOOec+~-~~::::            '`               
-    OOOOOOOOOOOOOO<-O<:~---OOeeec<<++:::::+++++<+:~-+<-''''-+eOEEEOeccc<<+           ~`                 
-    OOEOOOOOOOOOOOO`'e<~---eOOOeecc<+:::::::~~~~:<c<:eO<~----~:eEEEOe<<<~         `-                    
-    OOOOOOOOOOOOOOOc 'e+~--<OOOEOeec<+::::~~~---'-~:<OEOOOec<<:cOEEOc<c'        -`                      
-    OOOOOOOOOOOOOOOO~ 'c:~-:OOEEEOOec<+::::~~~---~:+cceOOOee<+<+eOOe<c`    ':~`                         
-    OOOOOOOOOOOOOOOOO` -c+~~eeOEEEEOec<+++:::::~:~--~--~:<eEOe<<<EEOeccee-`                             
-    OOOOEOOOOOOOOOOOO<  ~c+:<eeOEEEEEOe<<<<+++::~~~~~::~~~~~~+ceEEEe`                                   
-    OOOOEOOOOOOOOOOOOO-  ~c++eeOEEEEEEOOecc<+::+:::+:++ceOOec<<<cOO~                                    
-    OOOOOOOOOOOOOOOOOOO`  :c<eeOEEEEEEEEEOecc+:~~----'''-~:<ceOe<<<`                                    
-    OOOOOEOOOOOOOOOOOOO:   :ceOOEEEEEEEEEEEEOec<+:---'''---~~+<<c<`                                     
-    OOOOOEOOOOOOOOOOOOOO`   ~eOOOEEEEEEEEEEEEEEOec<+::~~~::::::c'                                       
-    OOOOOOOOOOOOOOOOOOOO:````~OOOEEEEEEEEEEEEEEEEEEOOeccc<<<<<-                                         
-    OOOOOOEOOOOOOOOOOOOOO`````:OOEEEEEEEEEEEEEEEEEEEEOOOEOOe~`                                          
-    OOOOOOEOOOOOOOOOOOOOO-```'-cOEEEEEEEEEEEEEEc-``````````                                             
-    OOOOOOEOOOOOOOOOOOOOO:``'-~+OEEEEEEEEEEO+```````````                                                
-    OOOOOOEOOOOOOOOOOOOOOe'''-~+eEEEEEEEO:``````````````                                                
-    OOOOOOEEOOOOOOOOOOOOOO:--~~+cOEEOe````````````````````                                              
-    OOOOOOOEOOOOOOOOOOOOOO+'-~:+<eOEOO-```:'```````````````                                             
-    OOOOOOOEOOOOOOOOOOOOOOO```'~:<OEEE:`-OE'```````````````````                                         
-    OOOOOOOEOOOOOOOOOOOOOOO'```'-cEOOE<<EE<`````````````````````                                        
-    OOOOOOOEOOOOOOOOOOOOOOO-```:OOOEEEEEEE-````````````````````````                                     
-    OOOOOOOEOOOOOOOOOOOOOOO:`<eeOOEEEEEEEc``````````````````````````                                    
-    OOOOOOOEOOOOOOOOOOOOOOOOOeeeOEEEEEEEE~````````````````````````````                                  
-    OOOOOOOEOOOOOOOOOOOOOOOOOeeOOEEEEEEEO``````````````````````````````                                 
-    'OOOOOOEEOOOOOOOOOOOOOOOeeeeEEEEEEEE:`````````````````````````````````
+```py
+symbols = "   ``'-~:+<ceOEB"
+```
+
+---
+
+<img src="ascii-dark.png" />
+<img src="ascii-light.png" />
