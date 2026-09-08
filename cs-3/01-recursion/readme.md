@@ -18,20 +18,6 @@ What does this code do?
 
 ```py
 def hello():
-    print("Hello")
-    return
-    print("world!")
-
-
-hello()
-```
-
----
-
-What does this code do?
-
-```py
-def hello():
     print("Hello world!")
     hello()
 
@@ -190,6 +176,39 @@ factorial(5)
 5 * 4 * 3 * 2 * factorial(1)
 5 * 4 * 3 * 2 * 1 * factorial(0)
 5 * 4 * 3 * 2 * 1 * 1
+```
+
+---
+
+What does this code do?
+
+```py
+def hello():
+    print("Hello")
+    return
+    print("world!")
+
+
+hello()
+```
+
+---
+
+```py
+def factorial(n):
+    if n == 0:
+        return 1
+        
+    else:
+        return n * factorial(n - 1)
+```
+
+```py
+def factorial(n):
+    if n == 0:
+        return 1
+
+    return n * factorial(n - 1)
 ```
 
 ## Base Case
