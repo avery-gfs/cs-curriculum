@@ -115,6 +115,8 @@ $0! = 1$
 factorial(n)
 ```
 
+<img src="/assets/nesting-dolls.jpg" />
+
 ## Iterative Factorial
 
 ```py
