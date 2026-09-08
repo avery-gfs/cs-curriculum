@@ -103,6 +103,8 @@ Recursive functions: functions which call themselves
 
 > To understand recursion, you must first understand recursion.
 
+<img height="400" src="/assets/nesting-dolls.jpg" />
+
 ## Factorial Definition
 
 $n! = n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot 1$
@@ -114,8 +116,6 @@ $0! = 1$
 ```txt
 factorial(n)
 ```
-
-<img src="/assets/nesting-dolls.jpg" />
 
 ## Iterative Factorial
 
