@@ -151,6 +151,23 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ![](/assets/rgb-color.png)
 
+## Greenish
+
+<img width="550" src="bird.png" />
+<img width="550" src="greenish.png" />
+
+## Scaled
+
+<img width="400" src="bird.png" />
+<img width="800" src="scaled.png" />
+
+`700 x 500 -> 1400 x 1000`
+
+## Rotated
+
+<img width="550" src="bird.png" />
+<img width="550" src="rotated.png" />
+
 ## ASCII
 
 <img width="550" src="dali.png" />
@@ -164,18 +181,6 @@ symbols = "   ``'-~:+<ceOEB"
 
 <img width="550" src="ascii-dark.png" />
 <img width="550" src="ascii-light.png" />
-
-## Scaled
-
-<img width="400" src="bird.png" />
-<img width="800" src="scaled.png" />
-
-`700 x 500 -> 1400 x 1000`
-
-## Rotated
-
-<img width="550" src="bird.png" />
-<img width="550" src="rotated.png" />
 
 <!-- rotated
 kernel
