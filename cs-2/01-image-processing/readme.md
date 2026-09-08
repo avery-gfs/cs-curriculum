@@ -139,8 +139,6 @@ TypeError: 'float' object cannot be interpreted as an integer
 - Black `(0, 0, 0)`
 - White `(255, 255, 255)`
 
-<img src="/assets/grayscale-gradient.png" />
-
 ## Better Grayscale
 
 <img width="400" src="bird.png" />
