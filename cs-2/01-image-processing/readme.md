@@ -168,15 +168,11 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 <img width="550" src="dali.png" />
 <img width="550" src="ascii-dark.png" />
+<img width="550" src="ascii-light.png" />
 
 ```py
 symbols = "   ``'-~:+<ceOEB"
 ```
-
----
-
-<img width="550" src="ascii-dark.png" />
-<img width="550" src="ascii-light.png" />
 
 <!-- rotated
 kernel
