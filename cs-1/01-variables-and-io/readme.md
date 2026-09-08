@@ -19,7 +19,7 @@ print("Bonjour!")
 ```
 
 You can toggle commends on/off for a block of code by selecting it and pressing
-<kbd>ctrl + /</kbd> or <kbd>command + /</kbd>.
+<kbd>Ctrl + /</kbd> or <kbd>Command + /</kbd>.
 
 ## Calling Print
 
