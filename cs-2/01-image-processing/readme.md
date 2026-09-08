@@ -119,6 +119,16 @@ r = 255
 - `r`, `g`, and `b` are all equal
 - $$l = \frac{r + g + b}{3}$$
 
+---
+
+```py
+l = (r + g + b) / 3
+```
+
+```
+TypeError: 'float' object cannot be interpreted as an integer
+```
+
 ## Black and White
 
 <img width="550" src="bird.png" />

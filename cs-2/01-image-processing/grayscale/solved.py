@@ -12,11 +12,10 @@ for y in range(im.height):
     for x in range(im.width):
         (r, g, b) = im.getpixel((x, y))
 
-        average = round((r + g + b) / 3)
-
-        r = average
-        g = average
-        b = average
+        l = round((r + g + b) / 3)
+        r = l
+        g = l
+        b = l
 
         output.putpixel((x, y), (r, g, b))
 
