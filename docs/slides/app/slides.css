@@ -70,6 +70,13 @@ pre code {
   text-align: left !important;
 }
 
+/* Markdown puts consecutive images inline. Align their inline boxes at the
+   top so images with different heights share a top edge. */
+
+.reveal img {
+  vertical-align: top;
+}
+
 /* Tables as GitHub renders them: left aligned rather than centred, a full grid
    of borders instead of reveal's underlines, and shaded every other body row.
    The header row is the first `tr` on the page, so `2n` starts the shading on
