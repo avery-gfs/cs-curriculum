@@ -129,11 +129,6 @@ r = 255
 
 ## Better Grayscale
 
-<img width="550" src="bird.png" />
-<img width="550" src="better-grayscale.png" />
-
----
-
 <img width="550" src="grayscale.png" />
 <img width="550" src="better-grayscale.png" />
 
