@@ -20,6 +20,7 @@ To add:
 - Easier task selection
 - Priority
 - Task counts
+- Exit command
 
 ## Goals
 
