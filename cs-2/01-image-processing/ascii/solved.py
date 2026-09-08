@@ -29,7 +29,7 @@
 
 from PIL import Image
 
-im = Image.open("dali.jpg")
+im = Image.open("bird.png")
 
 invert = False  # Set to True for dark-on-light color scheme
 symbols = "   ``'-~:+<ceOEB"
