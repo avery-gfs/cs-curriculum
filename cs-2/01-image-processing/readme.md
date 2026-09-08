@@ -146,12 +146,10 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 
 ![](/assets/rgb-color.png)
 
-## Inverted
+## Scaled
 
-<img width="550" src="bird.png" />
-<img width="550" src="inverted.png" />
-
-![](/assets/rgb-color.png)
+<img width="200" src="bird.png" />
+<img width="400" src="scaled.png" />
 
 ## ASCII
 
