@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 shopt -s globstar
 
-rm -f **/.~lock* **/__pycache__ **/.ipynb_checkpoints
+rm -rf **/.~lock* **/__pycache__ **/.ipynb_checkpoints
 npm run fmt
 git checkout solutions
 git add --all .
