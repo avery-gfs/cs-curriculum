@@ -11,6 +11,21 @@ def product(numbers):
 print(product([9, 4, 5, 6, 8, 10]))  # Should print 86400
 
 
+def totalEven(numbers):
+    # Calculate if the sum of the numbers in a list is even, recursively
+    # Return `True` if the list is empty
+
+    if numbers == []:
+        return True
+
+    isEven = numbers[0] % 2 == 0
+    return isEven == totalEven(numbers[1:])
+
+
+print(totalEven([9, 4, 5, 6, 8, 10]))  # Should print True
+print(totalEven([9, 4, 5, 6, 8, 10, 1]))  # Should print False
+
+
 def contains(items, value):
     # Check if a list of items contains a value recursively
 

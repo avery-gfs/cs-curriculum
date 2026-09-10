@@ -18,7 +18,7 @@ Tail:
 numbers[1:]  # [6, 7, 8, 9]
 ```
 
-## Recursion with Lists
+## Printing Values
 
 ```py
 def printEach(numbers):
@@ -63,7 +63,7 @@ printEach([10])                 # Prints 10
 printEach([])                   # Does nothing
 ```
 
----
+## Summing Values
 
 ```py
 def total(numbers):
@@ -87,3 +87,29 @@ total([9, 4, 5, 6, 8, 10])
 | `6`  | `[8, 10]`          |    `18`    |  `24`  |
 | `8`  | `[10]`             |    `10`    |  `18`  |
 | `10` | `[]`               |    `0`     |  `10`  |
+
+## Checking Values
+
+```py
+def countEven(numbers):
+    # Count how many numbers in a list are even, recursively
+
+    if items == []:
+        return 0
+
+    isEven = items[0] % 2 == 0
+    return isEven + countEven(items[1:])
+```
+
+```py
+isEven([9, 4, 5, 6, 8, 10])
+```
+
+| Head | Tail               | Sub-result | Result |
+| :--: | ------------------ | :--------: | :----: |
+| `9`  | `[4, 5, 6, 8, 10]` |    `4`     |  `4`   |
+| `4`  | `[5, 6, 8, 10]`    |    `3`     |  `4`   |
+| `5`  | `[6, 8, 10]`       |    `3`     |  `3`   |
+| `6`  | `[8, 10]`          |    `2`     |  `3`   |
+| `8`  | `[10]`             |    `1`     |  `2`   |
+| `10` | `[]`               |    `0`     |  `1`   |
