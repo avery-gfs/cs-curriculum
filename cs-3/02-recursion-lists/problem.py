@@ -1,22 +1,3 @@
-def power2(n):
-    # Calculate the `2 ** n` recursively, without using the
-    # built-in exponentiation functionality
-
-    pass
-
-
-print(power2(10))  # Should print 1024
-
-
-def fibonacci(n):
-    # Calculate the nth fibonacci number recursively
-
-    pass
-
-
-print(fibonacci(10))  # Should print 55
-
-
 def product(numbers):
     # Calculate the product of the numbers in a list recursively
     # Return `1` if the list is empty
