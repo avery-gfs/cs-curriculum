@@ -168,26 +168,16 @@ def factorial(n):
 print(factorial(5))  # Prints 120
 ```
 
-|    Problem     | Sub-problem    | Sub-result | Result |
-| :------------: | -------------- | :--------: | :----: |
-| `factorial(5)` | `factorial(4)` |    `24`    | `120`  |
-| `factorial(4)` | `factorial(3)` |    `6`     |  `24`  |
-| `factorial(3)` | `factorial(2)` |    `2`     |  `6`   |
-| `factorial(2)` | `factorial(1)` |    `1`     |  `2`   |
-| `factorial(1)` | `factorial(0)` |            |  `1`   |
+...
 
----
-
-What does this code do?
-
-```py
-def hello():
-    print("Hello")
-    return
-    print("world!")
-
-
-hello()
+```txt
+factorial(5)
+5 * factorial(4)
+5 * 4 * factorial(3)
+5 * 4 * 3 * factorial(2)
+5 * 4 * 3 * 2 * factorial(1)
+5 * 4 * 3 * 2 * 1 * factorial(0)
+5 * 4 * 3 * 2 * 1 * 1
 ```
 
 ---
@@ -219,7 +209,7 @@ def factorial(n):
     return n * factorial(n - 1)
 
 
-print(factorial(10))  # Prints 3628800
+print(factorial(5))  # Prints 120
 ```
 
 Case in which the function doesn't call itself recursively
@@ -243,7 +233,7 @@ def factorial(n):
     return n * factorial(n - 1)
 
 
-print(factorial(10))  # Prints 3628800
+print(factorial(5))  # Prints 120
 ```
 
 Case in which the function calls itself recursively
@@ -256,6 +246,28 @@ n! = n * (n - 1)!
 return n * factorial(n - 1)
 ```
 
+## Tracing Recursion
+
+```py
+def factorial(n):
+    if n == 0:
+        return 1
+
+    return n * factorial(n - 1)
+
+
+print(factorial(5))  # Prints 120
+```
+
+|    Problem     | Sub-problem    | Sub-result | Result |
+| :------------: | -------------- | :--------: | :----: |
+| `factorial(5)` | `factorial(4)` |    `24`    | `120`  |
+| `factorial(4)` | `factorial(3)` |    `6`     |  `24`  |
+| `factorial(3)` | `factorial(2)` |    `2`     |  `6`   |
+| `factorial(2)` | `factorial(1)` |    `1`     |  `2`   |
+| `factorial(1)` | `factorial(0)` |    `1`     |  `1`   |
+| `factorial(0)` |                |            |  `1`   |
+
 ## Recursive Summation
 
 ```py
@@ -266,23 +278,17 @@ def summation(n):
     return n + summation(n - 1)
 
 
-print(summation(10))  # Prints 55
+print(summation(5))  # Prints 15
 ```
 
-```txt
-summation(10)
-10 + summation(9)
-10 + 9 + summation(8)
-10 + 9 + 8 + summation(7)
-10 + 9 + 8 + 7 + summation(6)
-10 + 9 + 8 + 7 + 6 + summation(5)
-10 + 9 + 8 + 7 + 6 + 5 + summation(4)
-10 + 9 + 8 + 7 + 6 + 5 + 4 + summation(3)
-10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + summation(2)
-10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + summation(1)
-10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + summation(0)
-10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 + 0
-```
+|    Problem     | Sub-problem    | Sub-result | Result |
+| :------------: | -------------- | :--------: | :----: |
+| `summation(5)` | `summation(4)` |    `10`    |  `15`  |
+| `summation(4)` | `summation(3)` |    `6`     |  `10`  |
+| `summation(3)` | `summation(2)` |    `3`     |  `6`   |
+| `summation(2)` | `summation(1)` |    `1`     |  `3`   |
+| `summation(1)` | `summation(0)` |    `0`     |  `1`   |
+| `summation(0)` |                |            |  `0`   |
 
 ## Fibonacci is Recursive
 
