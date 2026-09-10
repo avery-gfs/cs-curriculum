@@ -94,15 +94,15 @@ total([9, 4, 5, 6, 8, 10])
 def countEven(numbers):
     # Count how many numbers in a list are even, recursively
 
-    if items == []:
+    if numbers == []:
         return 0
 
-    isEven = items[0] % 2 == 0
-    return isEven + countEven(items[1:])
+    isEven = numbers[0] % 2 == 0
+    return isEven + countEven(numbers[1:])
 ```
 
 ```py
-isEven([9, 4, 5, 6, 8, 10])
+countEven([9, 4, 5, 6, 8, 10])
 ```
 
 | Head | Tail               | Sub-result | Result |
