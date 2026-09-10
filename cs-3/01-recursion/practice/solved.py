@@ -1,15 +1,3 @@
-def factorial(n):
-    # Calculate the factorial of `n` recursively
-
-    if n == 0:
-        return 1
-
-    return n * factorial(n - 1)
-
-
-print(factorial(10))  # Should print 3628800
-
-
 def power2(n):
     # Calculate the `2 ** n` recursively, without using the
     # built-in exponentiation functionality
@@ -38,60 +26,48 @@ def fibonacci(n):
 print(fibonacci(10))  # Should print 55
 
 
-def total(numbers, index):
-    # Calculate the sum of the numbers in a list recursively
-
-    if index == len(numbers):
-        return 0
-
-    return numbers[index] + total(numbers, index + 1)
-
-
-print(total([5, 6, 7, 8, 9], 0))  # Should print 35
-
-
-def product(numbers, index):
+def product(numbers):
     # Calculate the product of the numbers in a list recursively
     # Return `1` if the list is empty
 
-    if index == len(numbers):
+    if numbers == []:
         return 1
 
-    return numbers[index] * product(numbers, index + 1)
+    return numbers[0] * product(numbers[1:])
 
 
-print(product([1, 2, 3, 4, 5], 0))  # Should print 120
+print(product([9, 4, 5, 6, 8, 10]))  # Should print 86400
 
 
-def contains(items, value, index):
+def contains(items, value):
     # Check if a list of items contains a value recursively
 
-    if index == len(items):
+    if items == []:
         return False
 
-    if items[index] == value:
+    if items[0] == value:
         return True
 
-    return contains(items, value, index + 1)
+    return contains(items[1:], value)
 
 
-print(contains(["a", "s", "d", "f"], "d", 0))  # Should print True
-print(contains(["a", "s", "d", "f"], "g", 0))  # Should print False
+print(contains([9, 4, 5, 6, 8, 10], 8))  # Should print True
+print(contains([9, 4, 5, 6, 8, 10], 7))  # Should print False
 
 
-def minimum(numbers, index):
+def minimum(numbers):
     # Find the minimum among the numbers in a list recursively
     # Return `None` if the list is empty
 
-    if index == len(numbers):
+    if numbers == []:
         return None
 
-    minTail = minimum(numbers, index + 1)
+    minTail = minimum(numbers[1:])
 
-    if minTail == None or minTail > numbers[index]:
-        return numbers[index]
+    if minTail == None or minTail > numbers[0]:
+        return numbers[0]
 
     return minTail
 
 
-print(minimum([68, 10, 13, 2, 13, 10, 57, 12, 80, 82], 0))  # Should print 2
+print(minimum([9, 4, 5, 6, 8, 10]))  # Should print 4
