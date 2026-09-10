@@ -117,7 +117,7 @@ def factorial(n):
     return result
 
 
-print(factorial(10))  # Prints 3628800
+print(factorial(5))  # Prints 120
 ```
 
 ```py
@@ -131,7 +131,7 @@ def factorial(n):
     return result
 
 
-print(factorial(10))  # Prints 3628800
+print(factorial(5))  # Prints 120
 ```
 
 ## Recursive Factorial
@@ -165,18 +165,16 @@ def factorial(n):
     return n * factorial(n - 1)
 
 
-print(factorial(10))  # Prints 3628800
+print(factorial(5))  # Prints 120
 ```
 
-```txt
-factorial(5)
-5 * factorial(4)
-5 * 4 * factorial(3)
-5 * 4 * 3 * factorial(2)
-5 * 4 * 3 * 2 * factorial(1)
-5 * 4 * 3 * 2 * 1 * factorial(0)
-5 * 4 * 3 * 2 * 1 * 1
-```
+|    Problem     | Sub-problem    | Sub-result | Result |
+| :------------: | -------------- | :--------: | :----: |
+| `factorial(5)` | `factorial(4)` |    `24`    | `120`  |
+| `factorial(4)` | `factorial(3)` |    `6`     |  `24`  |
+| `factorial(3)` | `factorial(2)` |    `2`     |  `6`   |
+| `factorial(2)` | `factorial(1)` |    `1`     |  `2`   |
+| `factorial(1)` | `factorial(0)` |            |  `1`   |
 
 ---
 
