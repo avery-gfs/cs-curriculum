@@ -275,6 +275,23 @@ print(color)
 green
 ```
 
+---
+
+What will this code print out?
+
+```py
+print(color)
+color = "green"
+```
+
+...
+
+```
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'color' is not defined
+```
+
 ## Format Strings
 
 What will this code print out?
