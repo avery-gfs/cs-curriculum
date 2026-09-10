@@ -306,28 +306,92 @@ $$
 
 ![](/assets/fibonacci-tree.png)
 
+## Head and Tail
+
+```py
+numbers = [5, 6, 7, 8, 9]
+```
+
+Head:
+
+```py
+numbers[0]  # 5
+```
+
+Tail:
+
+```py
+numbers[1:]  # [6, 7, 8, 9]
+```
+
 ## Recursion with Lists
 
 ```py
-def total(numbers, index):
-    # Calculate the sum of the numbers in a list recursively
+def printEach(numbers):
+    # Print each of the number in the list `numbers`, one at a time
+    # on separate lines
 
-    if index == len(numbers):
-        return 0
-
-    return numbers[index] + total(numbers, index + 1)
+    # ???
 ```
 
 ```py
-total([5, 6, 7, 8, 9], 0)
+printEach([9, 4, 5, 6, 8, 10])
 ```
 
 ```
-total([5, 6, 7, 8, 9], 0)
-5 + total([5, 6, 7, 8, 9], 1)
-5 + 6 + total([5, 6, 7, 8, 9], 2)
-5 + 6 + 7 + total([5, 6, 7, 8, 9], 3)
-5 + 6 + 7 + 8 + total([5, 6, 7, 8, 9], 4)
-5 + 6 + 7 + 8 + 9 + total([5, 6, 7, 8, 9], 5)
-5 + 6 + 7 + 8 + 9 + 0
+9
+4
+5
+6
+8
+10
+```
+
+---
+
+```py
+def printEach(numbers):
+    # Print each of the number in the list `numbers`, one at a time
+    # on separate lines
+
+    if numbers != []:
+        print(numbers[0])
+        printEach(numbers[1:])
+```
+
+```
+printEach([9, 4, 5, 6, 8, 10])  # Prints 9
+printEach([4, 5, 6, 8, 10])     # Prints 4
+printEach([5, 6, 8, 10])        # Prints 5
+printEach([6, 8, 10])           # Prints 6
+printEach([8, 10])              # Prints 8
+printEach([10])                 # Prints 10
+printEach([])                   # Does nothing
+```
+
+---
+
+```py
+def total(numbers):
+    # Calculate the sum of the numbers in a list recursively
+
+    if numbers == []:
+        return 0
+
+    return numbers[0] + total(numbers[1:])
+```
+
+```py
+total([9, 4, 5, 6, 8, 10])
+```
+
+```
+total([9, 4, 5, 6, 8, 10])
+9 + total([4, 5, 6, 8, 10])
+9 + 4 + total([5, 6, 8, 10])
+9 + 4 + 5 + total([6, 8, 10])
+9 + 4 + 5 + 6 + total([8, 10])
+9 + 4 + 5 + 6 + 8 + total([10])
+9 + 4 + 5 + 6 + 8 + 10 + total([])
+9 + 4 + 5 + 6 + 8 + 10 + 0
 ```
