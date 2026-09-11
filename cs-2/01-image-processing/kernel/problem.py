@@ -6,6 +6,9 @@ im = Image.open("bird.png")
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)
 
+# https://en.wikipedia.org/wiki/Kernel_(image_processing)
+# https://setosa.io/ev/image-kernels/
+
 
 def processKernel(im, kernel, outputName):
     for y in range(1, im.height - 1):

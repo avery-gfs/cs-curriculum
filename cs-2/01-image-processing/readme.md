@@ -186,9 +186,17 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 symbols = "   ``'-~:+<ceOEB"
 ```
 
-<!-- rotated
-kernel
-dither
-palette
-clustering
- -->
+## Kernel
+
+<img width="400" src="bird.png" />
+<img width="400" src="kernel-blur.png" />
+
+---
+
+<img width="400" src="bird.png" />
+<img width="400" src="kernel-sharpen.png" />
+
+---
+
+<img width="400" src="bird.png" />
+<img width="400" src="kernel-edge.png" />

@@ -6,6 +6,9 @@ im = Image.open("bird.png")
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)
 
+# https://en.wikipedia.org/wiki/Kernel_(image_processing)
+# https://setosa.io/ev/image-kernels/
+
 
 def processKernel(im, kernel, outputName):
     for y in range(1, im.height - 1):
@@ -34,7 +37,7 @@ sharpen = [
     [0, -1, 0],
 ]
 
-processKernel(im, sharpen, "sharpen.png")
+processKernel(im, sharpen, "kernel-sharpen.png")
 
 edge = [
     [0, -1, 0],
@@ -42,7 +45,7 @@ edge = [
     [0, -1, 0],
 ]
 
-processKernel(im, edge, "edge.png")
+processKernel(im, edge, "kernel-edge.png")
 
 blur = [
     [1 / 9, 1 / 9, 1 / 9],
@@ -50,4 +53,4 @@ blur = [
     [1 / 9, 1 / 9, 1 / 9],
 ]
 
-processKernel(im, blur, "blur.png")
+processKernel(im, blur, "kernel-blur.png")
