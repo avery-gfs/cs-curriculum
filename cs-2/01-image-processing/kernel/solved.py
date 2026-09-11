@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Load input image
-im = Image.open("bird.png")
+im = Image.open("dali.png")
 
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)

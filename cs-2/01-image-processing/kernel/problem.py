@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Load input image
-im = Image.open("bird.png")
+im = Image.open("dali.png")
 
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)
@@ -30,7 +30,7 @@ sharpen = [
     [0, -1, 0],
 ]
 
-processKernel(im, sharpen, "sharpen.png")
+processKernel(im, sharpen, "kernel-sharpen.png")
 
 edge = [
     [0, -1, 0],
@@ -38,7 +38,7 @@ edge = [
     [0, -1, 0],
 ]
 
-processKernel(im, edge, "edge.png")
+processKernel(im, edge, "kernel-edge.png")
 
 blur = [
     [1 / 9, 1 / 9, 1 / 9],
@@ -46,4 +46,4 @@ blur = [
     [1 / 9, 1 / 9, 1 / 9],
 ]
 
-processKernel(im, blur, "blur.png")
+processKernel(im, blur, "kernel-blur.png")
