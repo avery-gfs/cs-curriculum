@@ -87,6 +87,7 @@ pre code {
 
 .reveal img {
   vertical-align: top;
+  image-rendering: pixelated;
 }
 
 /* Tables as GitHub renders them: left aligned rather than centred, a full grid
