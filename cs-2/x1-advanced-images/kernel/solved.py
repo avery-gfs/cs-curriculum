@@ -17,8 +17,8 @@ def processKernel(im, kernel, outputName):
             newG = 0
             newB = 0
 
-            for ky in range(2):
-                for kx in range(2):
+            for ky in range(3):
+                for kx in range(3):
                     factor = kernel[ky][kx]
                     (r, g, b) = im.getpixel((x + kx - 1, y + ky - 1))
 
