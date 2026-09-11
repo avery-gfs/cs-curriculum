@@ -188,15 +188,15 @@ symbols = "   ``'-~:+<ceOEB"
 
 ## Kernel
 
-<img width="400" src="bird.png" />
-<img width="400" src="kernel-blur.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="kernel-blur.png" />
 
 ---
 
-<img width="400" src="bird.png" />
-<img width="400" src="kernel-sharpen.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="kernel-sharpen.png" />
 
 ---
 
-<img width="400" src="bird.png" />
-<img width="400" src="kernel-edge.png" />
+<img width="600" src="bird.png" />
+<img width="600" src="kernel-edge.png" />
