@@ -521,6 +521,10 @@ Your dog's age (dog-years): 70
 Write code that asks the user for the coordinates of two points and prints the
 equation of the line that passes through them.
 
+![](/assets/line-equation.png)
+
+---
+
 The slope $m$ and y-intercept $b$ of the line are:
 
 $$
@@ -543,7 +547,3 @@ y2: 7
 ```
 y = 2.0x + 1.0
 ```
-
----
-
-![](/assets/line-equation.png)
