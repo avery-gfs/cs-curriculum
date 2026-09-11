@@ -185,18 +185,3 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 ```py
 symbols = "   ``'-~:+<ceOEB"
 ```
-
-## Kernel Blur
-
-<img width="600" src="dali.png" />
-<img width="600" src="kernel-blur.png" />
-
-## Kernel Sharpen
-
-<img width="600" src="dali.png" />
-<img width="600" src="kernel-sharpen.png" />
-
-## Kernel Edge
-
-<img width="600" src="dali.png" />
-<img width="600" src="kernel-edge.png" />
