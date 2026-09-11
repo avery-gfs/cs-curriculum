@@ -123,10 +123,6 @@ r = 255
 
 Channel values must be integers
 
-```py
-l = (r + g + b) / 3
-```
-
 ```
 TypeError: 'float' object cannot be interpreted as an integer
 ```
