@@ -543,3 +543,7 @@ y2: 7
 ```
 y = 2.0x + 1.0
 ```
+
+---
+
+![](/assets/line-equation.png)
