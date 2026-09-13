@@ -258,3 +258,22 @@
 ```
 ....................................................................[]
 ```
+
+## Helper Functions
+
+```py
+def getMiddle(lst):
+    return len(lst) // 2
+```
+
+```py
+def sliceLeft(lst):
+    ind = getMiddle(lst) - 1
+    return lst[:ind]
+```
+
+```py
+def sliceRight(lst):
+    ind = getMiddle(lst) + 1
+    return lst[ind:]
+```
