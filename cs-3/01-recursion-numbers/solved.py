@@ -27,13 +27,11 @@ print(fibonacci(10))  # Should print 55
 
 
 def countdown(n):
-    # Print each number n through 1 on a single line, separated by spaces
+    # Print each number n through 1 on separate lines
 
     if n > 0:
-        print(n, end=" ")
+        print(n)
         countdown(n - 1)
-    else:
-        print()
 
 
 countdown(10)  # Should print 10 9 8 7 6 5 4 3 2 1

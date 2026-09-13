@@ -31,7 +31,7 @@ from PIL import Image
 
 im = Image.open("dali.png")
 
-invert = True  # Set to True for dark-on-light color scheme
+invert = False  # Set to True for dark-on-light color scheme
 symbols = "   ``'-~:+<ceOEB"
 
 if invert:
