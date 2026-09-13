@@ -18,7 +18,7 @@ print(fibonacci(10))  # Should print 55
 
 
 def countdown(n):
-    # Print each number n through 1 on a single line, separated by spaces
+    # Print each number n through 1 on separate lines
 
     pass
 
