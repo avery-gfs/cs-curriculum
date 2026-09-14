@@ -70,6 +70,8 @@ How many guesses do we need to win?
 
 ---
 
+$log_{2}(n)$
+
 <img src="/assets/log2.png" />
 
 ## Binary Search
