@@ -172,14 +172,17 @@ countEven([9, 4, 5, 6, 8, 10])
 
 ```py
 if numbers == []:
+    # ...
 ```
 
 ```py
 if len(numbers) == 0:
+    # ...
 ```
 
 ```py
 if not numbers:
+    # ...
 ```
 
 ## Key Concepts
@@ -200,4 +203,5 @@ Base case
 
 ```py
 if numbers == []:
+    # ...
 ```
