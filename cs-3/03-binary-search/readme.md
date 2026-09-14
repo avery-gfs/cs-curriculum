@@ -72,7 +72,7 @@ How many guesses do we need to win?
 
 $log_2(n)$
 
-<img src="/assets/log2.png" />
+<img height="750" src="/assets/log2.png" />
 
 If we increase the range of numbers by a factor of `1000`, how many more guesses
 will we need?
@@ -288,7 +288,7 @@ $log_2(1000) = 9.965784284662087 \approx 10$
 
 How can we do better?
 
-<img src="/assets/linear.png" />
+<img height="750" src="/assets/linear.png" />
 
 ## Binary Search
 
