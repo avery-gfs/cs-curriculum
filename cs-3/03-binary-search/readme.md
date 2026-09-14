@@ -1,6 +1,6 @@
 # Binary Search
 
-## Number Guessing Game
+## Warm Up
 
 What does this code do?
 
@@ -27,14 +27,46 @@ while True:
 ...
 
 > It implements a number guessing game. The game generates a random number
-> between `1` and `100`, inclusive. The user then guesses a number and is told
-> whether their guess is too high, too low, or correct. The user keeps guessing
+> between `1` and `100`, inclusive. The user then guesses numbers and is told
+> whether each guess is too high, too low, or correct. The user keeps guessing
 > until they choose the correct number. The program keeps track of the number of
 > guesses and displays this at the end.
 
 ---
 
 How many guesses do we need to win?
+
+...
+
+`100`
+
+...
+
+`50`
+
+...
+
+`25`
+
+...
+
+`13`
+
+...
+
+`7`
+
+...
+
+`4`
+
+...
+
+`2`
+
+...
+
+`1`
 
 ...
 

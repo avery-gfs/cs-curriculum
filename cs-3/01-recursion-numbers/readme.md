@@ -107,6 +107,8 @@ $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
 
 ## Iterative Factorial
 
+Using `for`
+
 ```py
 def factorial(n):
     result = 1
@@ -119,6 +121,10 @@ def factorial(n):
 
 print(factorial(5))  # Prints 120
 ```
+
+---
+
+Using `while`
 
 ```py
 def factorial(n):
@@ -196,6 +202,8 @@ factorial(5)
 ```
 
 ---
+
+These forms are equivalent
 
 ```py
 def factorial(n):
