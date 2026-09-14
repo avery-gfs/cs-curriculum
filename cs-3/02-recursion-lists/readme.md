@@ -53,6 +53,8 @@ def printEach(numbers):
         printEach(numbers[1:])
 ```
 
+...
+
 ```
 printEach([9, 4, 5, 6, 8, 10])  # Prints 9
 printEach([4, 5, 6, 8, 10])     # Prints 4
