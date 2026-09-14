@@ -170,6 +170,8 @@ countEven([9, 4, 5, 6, 8, 10])
 
 ## Base Case conditions
 
+All equivalent
+
 ```py
 if numbers == []:
     # ...
