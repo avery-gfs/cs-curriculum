@@ -89,6 +89,13 @@ pre code {
   vertical-align: top;
 }
 
+/* The reveal theme reserves 5% of the slide width around every image. Let an
+   image whose author has not given a width use the whole content column;
+   explicit widths continue to determine an image's size. */
+.reveal img:not([width]) {
+  max-width: 100%;
+}
+
 /* Tables as GitHub renders them: left aligned rather than centred, a full grid
    of borders instead of reveal's underlines, and shaded every other body row.
    The header row is the first `tr` on the page, so `2n` starts the shading on
