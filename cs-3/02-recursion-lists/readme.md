@@ -81,6 +81,8 @@ def total(numbers):
 total([9, 4, 5, 6, 8, 10])
 ```
 
+...
+
 | Head | Tail               | Sub-result | Result |
 | :--: | ------------------ | :--------: | :----: |
 | `9`  | `[4, 5, 6, 8, 10]` |    `33`    |  `42`  |
@@ -106,6 +108,8 @@ def countEven(numbers):
 ```py
 countEven([9, 4, 5, 6, 8, 10])
 ```
+
+...
 
 | Head | Tail               | Sub-result | Result |
 | :--: | ------------------ | :--------: | :----: |
