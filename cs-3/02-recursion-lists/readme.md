@@ -6,13 +6,17 @@
 numbers = [5, 6, 7, 8, 9]
 ```
 
-Head:
+Head: the first value in a list
+
+...
 
 ```py
 numbers[0]  # 5
 ```
 
-Tail:
+...
+
+Tail: everything after the first value in a list
 
 ```py
 numbers[1:]  # [6, 7, 8, 9]
