@@ -30,7 +30,7 @@ while True:
 > between `1` and `100`, inclusive. The user then guesses a number and is told
 > whether their guess is too high, too low, or correct. The user keeps guessing
 > until they choose the correct number. The program keeps track of the number of
-> guessts and displays this at the end.
+> guesses and displays this at the end.
 
 ---
 
