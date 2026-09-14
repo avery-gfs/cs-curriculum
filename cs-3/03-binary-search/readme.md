@@ -313,16 +313,32 @@ How many guesses do we need to win?
 
 ## Helper Functions
 
+Get the midpoint index of a list
+
+...
+
 ```py
 def getMiddle(lst):
     return len(lst) // 2
 ```
+
+...
+
+Get the left half of a list
+
+...
 
 ```py
 def sliceLeft(lst):
     ind = getMiddle(lst) - 1
     return lst[:ind]
 ```
+
+...
+
+Get the right half of a list
+
+...
 
 ```py
 def sliceRight(lst):
