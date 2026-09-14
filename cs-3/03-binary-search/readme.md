@@ -40,7 +40,19 @@ How many guesses do we need to win?
 
 <img src="/assets/log2.png" />
 
-## Search for 49
+## Binary Search
+
+> In computer science, binary search, also known as half-interval search,
+> logarithmic search, or binary chop, is a search algorithm that finds the
+> position of a target value within a sorted array. Binary search compares the
+> target value to the middle element of the array. If they are not equal, the
+> half in which the target cannot lie is eliminated and the search continues on
+> the remaining half, again taking the middle element to compare to the target
+> value, and repeating this until the target value is found. If the search ends
+> with the remaining half being empty, the target is not in the array. --
+> https://en.wikipedia.org/wiki/Binary_search
+
+## Binary Search for 49
 
 ```
 [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
@@ -105,7 +117,7 @@ How many guesses do we need to win?
                                         ^
 ```
 
-## Search for 70
+## Binary Search for 70
 
 ```
 [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
@@ -163,7 +175,7 @@ How many guesses do we need to win?
 ............................................[]........................
 ```
 
-## Search for 5
+## Binary Search for 5
 
 ```
 [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
@@ -215,7 +227,7 @@ How many guesses do we need to win?
     ^
 ```
 
-## Search for 33
+## Binary Search for 33
 
 ```
 [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
@@ -241,7 +253,7 @@ How many guesses do we need to win?
                 ^
 ```
 
-## Search for 100
+## Binary Search for 100
 
 ```
 [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
