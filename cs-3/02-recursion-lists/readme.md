@@ -34,9 +34,8 @@ def printEach(numbers):
     # on separate lines
 
     # ???
-```
 
-```py
+
 printEach([9, 4, 5, 6, 8, 10])
 ```
 
@@ -59,9 +58,8 @@ def printEach(numbers):
     if numbers != []:
         print(numbers[0])
         printEach(numbers[1:])
-```
 
-```py
+
 printEach([9, 4, 5, 6, 8, 10])
 ```
 
@@ -87,9 +85,8 @@ def total(numbers):
         return 0
 
     return numbers[0] + total(numbers[1:])
-```
 
-```py
+
 total([9, 4, 5, 6, 8, 10])
 ```
 
@@ -115,9 +112,8 @@ def countEven(numbers):
 
     isEven = numbers[0] % 2 == 0
     return isEven + countEven(numbers[1:])
-```
 
-```py
+
 countEven([9, 4, 5, 6, 8, 10])
 ```
 
