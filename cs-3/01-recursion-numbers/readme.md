@@ -99,7 +99,7 @@ $n! = n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot 1$
 
 $0! = 1$
 
-What is $5!$?
+What is $5!$ ?
 
 ...
 
