@@ -97,13 +97,11 @@ Recursive functions: functions which call themselves
 
 $n! = n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot 1$
 
-$5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
-
 $0! = 1$
 
-```txt
-factorial(n)
-```
+...
+
+$5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
 
 ## Iterative Factorial
 
@@ -136,24 +134,37 @@ print(factorial(5))  # Prints 120
 
 ## Recursive Factorial
 
-```txt
-factorial(0) = 1
-factorial(n) = n * factorial(n - 1)
-```
+$n! = n \cdot (n - 1)!$
 
-```txt
-factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
-```
+$0! = 1$
 
-```txt
-factorial(5)
-5 * factorial(4)
-5 * 4 * factorial(3)
-5 * 4 * 3 * factorial(2)
-5 * 4 * 3 * 2 * factorial(1)
-5 * 4 * 3 * 2 * 1 * factorial(0)
-5 * 4 * 3 * 2 * 1 * 1
-```
+...
+
+$5!$
+
+...
+
+$5 * 4!$
+
+...
+
+$5 * 4 * 3!$
+
+...
+
+$5 * 4 * 3 * 2!$
+
+...
+
+$5 * 4 * 3 * 2 * 1!$
+
+...
+
+$5 * 4 * 3 * 2 * 1 * 0!$
+
+...
+
+$5 * 4 * 3 * 2 * 1 * 1$
 
 ---
 
@@ -170,7 +181,7 @@ print(factorial(5))  # Prints 120
 
 ...
 
-```txt
+```
 factorial(5)
 5 * factorial(4)
 5 * 4 * factorial(3)
@@ -214,7 +225,7 @@ print(factorial(5))  # Prints 120
 
 Case in which the function doesn't call itself recursively
 
-```txt
+```
 0! = 1
 ```
 
@@ -238,7 +249,7 @@ print(factorial(5))  # Prints 120
 
 Case in which the function calls itself recursively
 
-```txt
+```
 n! = n * (n - 1)!
 ```
 
@@ -292,7 +303,7 @@ print(summation(5))  # Prints 15
 
 ## Fibonacci is Recursive
 
-```txt
+```
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, ...
 ```
 
