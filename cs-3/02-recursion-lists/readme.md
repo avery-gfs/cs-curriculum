@@ -98,7 +98,7 @@ printEach([9, 4, 5, 6, 8, 10])
 numbers == []
 ```
 
-...
+---
 
 ```py
 def printEach(numbers):
