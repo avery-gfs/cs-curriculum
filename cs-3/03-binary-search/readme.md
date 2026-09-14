@@ -34,6 +34,10 @@ while True:
 
 ---
 
+How many guesses do we need to win?
+
+...
+
 <img src="/assets/log2.png" />
 
 ## Search for 49
