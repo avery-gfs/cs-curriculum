@@ -34,7 +34,7 @@ while True:
 
 ---
 
-<img height="300" src="log2.png" />
+<img height="300" src="/assets/log2.png" />
 
 ## Search for 49
 
