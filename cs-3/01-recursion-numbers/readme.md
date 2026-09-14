@@ -99,6 +99,8 @@ $n! = n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot 1$
 
 $0! = 1$
 
+What is $5!$?
+
 ...
 
 $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
@@ -137,6 +139,8 @@ print(factorial(5))  # Prints 120
 $n! = n \cdot (n - 1)!$
 
 $0! = 1$
+
+What is $5!$?
 
 ...
 
