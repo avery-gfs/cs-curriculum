@@ -315,13 +315,6 @@ How many guesses do we need to win?
 
 Get the midpoint index of a list
 
-...
-
-```py
-def getMiddle(lst):
-    return len(lst) // 2
-```
-
 ```py
 getMiddle([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
 ```
@@ -330,17 +323,16 @@ getMiddle([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
 9
 ```
 
----
-
-Get the left half of a list
-
 ...
 
 ```py
-def sliceLeft(lst):
-    ind = getMiddle(lst) - 1
-    return lst[:ind]
+def getMiddle(lst):
+    return len(lst) // 2
 ```
+
+---
+
+Get the left half of a list
 
 ```py
 sliceLeft([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
@@ -350,17 +342,17 @@ sliceLeft([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
 [2, 5, 24, 32, 33, 34, 35, 38, 38]
 ```
 
----
-
-Get the right half of a list
-
 ...
 
 ```py
-def sliceRight(lst):
-    ind = getMiddle(lst) + 1
-    return lst[ind:]
+def sliceLeft(lst):
+    ind = getMiddle(lst) - 1
+    return lst[:ind]
 ```
+
+---
+
+Get the right half of a list
 
 ```py
 sliceRight([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
@@ -368,4 +360,12 @@ sliceRight([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99
 
 ```
 [49, 74, 79, 87, 91, 98, 98, 99]
+```
+
+...
+
+```py
+def sliceRight(lst):
+    ind = getMiddle(lst) + 1
+    return lst[ind:]
 ```
