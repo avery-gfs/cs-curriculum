@@ -68,7 +68,7 @@ How many guesses do we need to win?
 
 8: `1`
 
-...
+---
 
 <img src="/assets/log2.png" />
 
