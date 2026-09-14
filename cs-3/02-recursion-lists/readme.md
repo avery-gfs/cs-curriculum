@@ -61,6 +61,10 @@ def printEach(numbers):
         printEach(numbers[1:])
 ```
 
+```py
+printEach([9, 4, 5, 6, 8, 10])
+```
+
 ...
 
 ```
