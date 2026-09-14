@@ -32,6 +32,10 @@ while True:
 > until they choose the correct number. The program keeps track of the number of
 > guessts and displays this at the end.
 
+---
+
+<img height="300" src="log2.png" />
+
 ## Search for 49
 
 ```
