@@ -1,5 +1,33 @@
 # Binary Search
 
+## Number Guessing Game
+
+What does this code do?
+
+```py
+import random
+
+n = random.randrange(0, 101)
+
+while True:
+    guess = int(input("Enter a guess: "))
+
+    if guess < n:
+        print("Too low")
+    elif guess > n:
+        print("Too high")
+    else:
+        print("Correct!")
+        break
+```
+
+...
+
+> It implements a number guessing game. The game generates a random number
+> between `0` and `100`, inclusive. The user then guesses a number and is told
+> whether their guess is too high, too low, or correct. The user keeps guessing
+> until they choose the correct number.
+
 ## Search for 49
 
 ```
