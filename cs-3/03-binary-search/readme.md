@@ -70,9 +70,16 @@ How many guesses do we need to win?
 
 ---
 
-$log_{2}(n)$
+$log_2(n)$
 
 <img src="/assets/log2.png" />
+
+If we increase the range of numbers by a factor of `1000`, how many more guesses
+will we need?
+
+...
+
+$log_2(1000) \approx 10$
 
 ## Binary Search
 
