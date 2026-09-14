@@ -75,6 +75,46 @@ printEach([10])                 # Prints 10
 printEach([])                   # Does nothing
 ```
 
+## Base Case
+
+What's the base case?
+
+```py
+def printEach(numbers):
+    # Print each of the number in the list `numbers`, one at a time
+    # on separate lines
+
+    if numbers != []:
+        print(numbers[0])
+        printEach(numbers[1:])
+
+
+printEach([9, 4, 5, 6, 8, 10])
+```
+
+...
+
+```
+numbers == []
+```
+
+...
+
+```py
+def printEach(numbers):
+    # Print each of the number in the list `numbers`, one at a time
+    # on separate lines
+
+    if numbers == []:
+        return 
+
+    print(numbers[0])
+    printEach(numbers[1:])
+
+
+printEach([9, 4, 5, 6, 8, 10])
+```
+
 ## Summing Values
 
 ```py
@@ -127,3 +167,37 @@ countEven([9, 4, 5, 6, 8, 10])
 | `6`  | `[8, 10]`          |    `2`     |  `3`   |
 | `8`  | `[10]`             |    `1`     |  `2`   |
 | `10` | `[]`               |    `0`     |  `1`   |
+
+## Base Case conditions
+
+```py
+if numbers == []:
+```
+
+```py
+if len(numbers) == 0:
+```
+
+```py
+if not numbers:
+```
+
+## Key Concepts
+
+Head
+
+```py
+numbers[0]
+```
+
+Tail
+
+```py
+numbers[1:]
+```
+
+Base case
+
+```py
+if numbers == []:
+```
