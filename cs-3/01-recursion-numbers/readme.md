@@ -229,9 +229,7 @@ print(factorial(5))  # Prints 120
 
 Case in which the function doesn't call itself recursively
 
-```
-0! = 1
-```
+$0! = 1$
 
 ```py
 if n == 0:
@@ -253,9 +251,7 @@ print(factorial(5))  # Prints 120
 
 Case in which the function calls itself recursively
 
-```
-n! = n * (n - 1)!
-```
+$n! = n \cdot (n - 1)!$
 
 ```py
 return n * factorial(n - 1)
