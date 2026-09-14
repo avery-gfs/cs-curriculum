@@ -1,5 +1,5 @@
 # Write a program to calculate and print the prime factors of the numbers
-# 2 through 50 using recursion. You may not use for or while loops. Your
+# 2 through 50 using recursion. You may not use `for` or `while` loops. Your
 # program output should have the following format:
 #
 # 2 [2]
