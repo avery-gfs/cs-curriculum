@@ -322,7 +322,15 @@ def getMiddle(lst):
     return len(lst) // 2
 ```
 
-...
+```py
+getMiddle([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
+```
+
+```
+9
+```
+
+---
 
 Get the left half of a list
 
@@ -334,7 +342,15 @@ def sliceLeft(lst):
     return lst[:ind]
 ```
 
-...
+```py
+sliceLeft([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
+```
+
+```
+[2, 5, 24, 32, 33, 34, 35, 38, 38]
+```
+
+---
 
 Get the right half of a list
 
@@ -344,4 +360,12 @@ Get the right half of a list
 def sliceRight(lst):
     ind = getMiddle(lst) + 1
     return lst[ind:]
+```
+
+```py
+sliceRight([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
+```
+
+```
+[49, 74, 79, 87, 91, 98, 98, 99]
 ```
