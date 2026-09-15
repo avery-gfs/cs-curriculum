@@ -12,7 +12,16 @@ scaledHeight = round(im.height * scale)
 # Make blank output image with the scaled width and height
 output = Image.new(im.mode, (scaledWidth, scaledHeight))
 
-# Your code goes here
+# ------------------------------------------------------------
+# This code copies over the pixels in their original positions
+# You will need to modify it
+
+for y in range(im.height):
+    for x in range(im.width):
+        (r, g, b) = im.getpixel((x, y))
+        output.putpixel((x, y), (r, g, b))
+
+# ------------------------------------------------------------
 
 # Save output image
 output.save("scaled.png")
