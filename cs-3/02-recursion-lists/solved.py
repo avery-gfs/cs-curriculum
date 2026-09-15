@@ -11,20 +11,20 @@ def product(numbers):
 print(product([9, 4, 5, 6, 8, 10]))  # Should print 86400
 
 
-def contains(items, value):
-    # Check if a list of items contains a value recursively
+def hasSeven(numbers):
+    # Check if a list of numbers contains the number 7
 
-    if items == []:
+    if numbers == []:
         return False
 
-    if items[0] == value:
+    if numbers[0] == 7:
         return True
 
-    return contains(items[1:], value)
+    return hasSeven(numbers[1:])
 
 
-print(contains([9, 4, 5, 6, 8, 10], 8))  # Should print True
-print(contains([9, 4, 5, 6, 8, 10], 7))  # Should print False
+print(hasSeven([9, 4, 5, 6, 8, 10, 7]))  # Should print True
+print(hasSeven([9, 4, 5, 6, 8, 10]))  # Should print False
 
 
 def minimum(numbers):
