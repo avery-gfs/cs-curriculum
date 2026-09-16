@@ -27,11 +27,14 @@ def search(lst, low, high, target):
     return search(lst, low, mid - 1, target)
 
 
-with open("words-sorted.txt") as file:
-    words = file.read().splitlines()
+count = 100_000
+maxNum = 200_000
+
+numbers = sorted([random.randrange(1, maxNum + 1) for _ in range(count)])
+target = 67_000
 
 with timer("linear search"):
-    "asdf" in words
+    target in numbers
 
 with timer("binary search"):
-    search(words, 0, len(words) - 1, "asdf")
+    search(numbers, 0, len(numbers) - 1, target)
