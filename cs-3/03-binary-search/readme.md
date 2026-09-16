@@ -573,18 +573,17 @@ How can we do better?
 Get the midpoint index of a list
 
 ```py
-getMiddle([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
-```
-
-```
-9
+lst = [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
 ```
 
 ...
 
 ```py
-def getMiddle(lst):
-    return len(lst) // 2
+len(lst) // 2
+```
+
+```
+9
 ```
 
 ---
@@ -592,19 +591,17 @@ def getMiddle(lst):
 Get the left half of a list
 
 ```py
-sliceLeft([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
-```
-
-```
-[2, 5, 24, 32, 33, 34, 35, 38, 38]
+lst = [2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
 ```
 
 ...
 
 ```py
-def sliceLeft(lst):
-    ind = getMiddle(lst) - 1
-    return lst[:ind]
+lst[:len(lst) // 2 - 1]
+```
+
+```
+lst = [2, 5, 24, 32, 33, 34, 35, 38, 38]
 ```
 
 ---
@@ -612,17 +609,15 @@ def sliceLeft(lst):
 Get the right half of a list
 
 ```py
-sliceRight([2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99])
-```
-
-```
-[49, 74, 79, 87, 91, 98, 98, 99]
+[2, 5, 24, 32, 33, 34, 35, 38, 38, 41, 49, 74, 79, 87, 91, 98, 98, 99]
 ```
 
 ...
 
 ```py
-def sliceRight(lst):
-    ind = getMiddle(lst) + 1
-    return lst[ind:]
+lst[len(lst) // 2 + 1:]
+```
+
+```
+[49, 74, 79, 87, 91, 98, 98, 99]
 ```
