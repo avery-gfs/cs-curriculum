@@ -593,7 +593,7 @@ Get the left half of a list
 ...
 
 ```py
-lst[:len(lst) // 2 - 1]
+lst[:len(lst) // 2]
 ```
 
 ```
