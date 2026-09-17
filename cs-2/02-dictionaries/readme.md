@@ -90,11 +90,22 @@ votes["chocolate"] += 1
 
 ## Check membership
 
+```py
+{"strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1}
+```
+
 ...
 
 ```py
-"mint" in votes  # True
-"pineapple" in votes  # False
+"mint" in votes
+"pineapple" in votes
+```
+
+...
+
+```py
+True
+False
 ```
 
 ## Iterate over keys
@@ -117,10 +128,18 @@ mint 1
 
 ## Ice cream flavor voting
 
+```
+strawberry: 1
+```
+
+## Ice cream flavor voting
+
 ```py
 votes = {"strawberry": 1}
 
-while True:  # Loop forever
+# Loop forever
+
+while True:
     flavor = input("Enter for your favorite flavor: ")
 
     if flavor in votes:
