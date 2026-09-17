@@ -32,6 +32,26 @@ votes["strawberry"]
 1
 ```
 
+## Missing Key
+
+```py
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+```
+
+```py
+votes["garlic"]
+```
+
+...
+
+```
+Traceback (most recent call last):
+  File "<python-input-23>", line 1, in <module>
+    votes["garlic"]
+    ~~~~~^^^^^^^^^^
+KeyError: 'garlic'
+```
+
 ## Add a value
 
 ```py
@@ -88,10 +108,22 @@ votes["chocolate"] += 1
 {"strawberry": 1, "chocolate": 2, "vanilla": 1}
 ```
 
+## Key Error
+
+```py
+votes = {}
+```
+
+## Empty Dictionary
+
+```py
+votes = {}
+```
+
 ## Check membership
 
 ```py
-{"strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1}
+votes = {"strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1}
 ```
 
 ...
@@ -128,12 +160,6 @@ mint 1
 
 ## Ice cream flavor voting
 
-```
-strawberry: 1
-```
-
-## Ice cream flavor voting
-
 ```py
 votes = {"strawberry": 1}
 
@@ -151,6 +177,8 @@ while True:
 ```
 
 ## Scrabble Points
+
+![](/assets/scrabble.jpg)
 
 ```txt
 a:  1, b:  3, c:  3, d:  2, e:  1, f:  4, g:  2, h:  4,
