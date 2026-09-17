@@ -30,10 +30,13 @@ votes["strawberry"]  # 1
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
-votes["mint"] = 1
 ```
 
 ...
+
+```py
+votes["mint"] = 1
+```
 
 ```py
 {"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1}
