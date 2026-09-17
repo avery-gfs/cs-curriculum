@@ -1,5 +1,15 @@
 # Dictionaries
 
+## Data Structures
+
+Primitives: represent a single piece of information
+
+numbers, booleans, strings
+
+Data structures: contain multiple pieces of information
+
+lists, tuples, sets, **dictionaries**
+
 ## What are Dictionaries
 
 A dictionary is a collection of key/value pairs that allows us to look up the
@@ -108,10 +118,22 @@ votes["chocolate"] += 1
 {"strawberry": 1, "chocolate": 2, "vanilla": 1}
 ```
 
-## Key Error
+## Remove a Value
 
 ```py
-votes = {}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+```
+
+...
+
+```py
+del votes["chocolate"]
+```
+
+...
+
+```py
+{"strawberry": 1, "vanilla": 1}
 ```
 
 ## Empty Dictionary
@@ -161,7 +183,7 @@ mint 1
 ## Ice cream flavor voting
 
 ```py
-votes = {"strawberry": 1}
+votes = {}
 
 # Loop forever
 
@@ -177,8 +199,6 @@ while True:
 ```
 
 ## Scrabble Points
-
-![](/assets/scrabble.jpg)
 
 ```txt
 a:  1, b:  3, c:  3, d:  2, e:  1, f:  4, g:  2, h:  4,
