@@ -23,7 +23,13 @@ votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ...
 
 ```py
-votes["strawberry"]  # 1
+votes["strawberry"]
+```
+
+...
+
+```
+1
 ```
 
 ## Add a value
@@ -37,6 +43,8 @@ votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ```py
 votes["mint"] = 1
 ```
+
+...
 
 ```py
 {"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1}
@@ -53,6 +61,8 @@ votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ```py
 votes["strawberry"] = 2
 ```
+
+...
 
 ```py
 {"strawberry": 2, "chocolate": 1, "vanilla": 1}
@@ -71,6 +81,8 @@ votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
 ```py
 votes["chocolate"] += 1
 ```
+
+...
 
 ```py
 {"strawberry": 1, "chocolate": 2, "vanilla": 1}
