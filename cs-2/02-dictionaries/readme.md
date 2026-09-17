@@ -116,10 +116,6 @@ while True:  # Loop forever
     print(votes)  # Print out vote data after each new vote
 ```
 
-## Scrabble
-
-![](scrabble.webp)
-
 ## Scrabble Points
 
 ```txt
@@ -129,7 +125,84 @@ q: 10, r:  1, s:  1, t:  1, u:  1, v:  4, w:  4, x:  8,
 y:  4, z: 10
 ```
 
-## Alice in Wonderland
+What is the score for "apple"?
+
+...
+
+```
+9
+```
+
+...
+
+What is the score for "quaker"?
+
+...
+
+```
+19
+```
+
+## Looping Over Characters
+
+```py
+word = "hello"
+
+for c in word:
+    print(c)
+```
+
+...
+
+Note that you can use a `for` loop to loop over the characters in a string.
+
+```
+h
+e
+l
+l
+o
+```
+
+## Problem: Scrabble Score
+
+```
+Enter a word: germantown
+16
+```
+
+## Fining a Maximizing Value
+
+```py
+words = [
+    "chapter", "i", "down", "the", "rabbit", "hole", "alice",
+    "was", "beginning", "to", "get", "very", "tired",
+]
+```
+
+How do we find the longest word in a list?
+
+...
+
+```py
+maxLen = 0
+maxWord = None
+
+for word in words:
+    if len(word) > maxLen:
+        maxLen = len(word)
+        maxWord = word
+
+print(maxWord)
+print(maxLen)
+```
+
+```
+beginning
+9
+```
+
+## Problem: Alice in Wonderland Best Word Score
 
 ```txt
 chapter i down the rabbit hole alice was beginning to get very tired
@@ -146,23 +219,4 @@ so very much out of the way to hear the rabbit say to itself oh dear
 oh dear i shall be late when she thought it over afterwards it...
 ```
 
-## Scrabble Best Word
-
-You can use a `for` loop to loop over the characters in a string.
-
-```py
-word = "chapter"
-
-for c in word:
-    print(c)
-
-# Prints:
-#
-# c
-# h
-# a
-# p
-# t
-# e
-# r
-```
+Find the word with the highest Scrabble score.
