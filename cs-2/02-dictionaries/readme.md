@@ -233,7 +233,7 @@ Enter a word: germantown
 16
 ```
 
-## Fining a Maximizing Value
+## Finding a Maximizing Value
 
 ```py
 words = [
@@ -263,6 +263,8 @@ print(maxLen)
 beginning
 9
 ```
+
+What happens if we have multiple words with the same length?
 
 ## Problem: Alice in Wonderland Best Word Score
 
