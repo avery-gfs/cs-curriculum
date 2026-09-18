@@ -20,9 +20,9 @@ votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 _Note that the correct name for this data structure is a "map" (or more
-specifically a "hashmap"). The name "object" is also acceptable. Python's
-decision to name these data structures "dictionaries" is idiosyncratic, and a
-silly and confusing choice imo._
+specifically a "hashmap"). The name "record" or "object" is potentially
+acceptable. Python's decision to name these data structures "dictionaries" is
+idiosyncratic, and a silly and confusing choice imo._
 
 ## Look up a value
 
@@ -190,7 +190,7 @@ votes = {}
 # Loop forever
 
 while True:
-    flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter your favorite flavor: ")
 
     if flavor in votes:
         votes[flavor] += 1  # Increase vote count by one
@@ -380,7 +380,7 @@ votes.get("mint", 0)
 votes = {}
 
 while True:
-    flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter your favorite flavor: ")
 
     if flavor in votes:
         votes[flavor] += 1
@@ -396,7 +396,7 @@ while True:
 votes = {}
 
 while True:
-    flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter your favorite flavor: ")
     votes[flavor] = votes.get(flavor, 0) + 1
     print(votes)
 ```
@@ -421,7 +421,7 @@ votes.setdefault("mint", 0)
 votes = {}
 
 while True:
-    flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter your favorite flavor: ")
 
     if flavor in votes:
         votes[flavor] += 1
@@ -437,7 +437,7 @@ while True:
 votes = {}
 
 while True:
-    flavor = input("Enter for your favorite flavor: ")
+    flavor = input("Enter your favorite flavor: ")
     votes.setdefault(flavor, 0)
     votes[flavor] += 1
     print(votes)
