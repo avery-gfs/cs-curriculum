@@ -16,7 +16,7 @@ A dictionary is a collection of key/value pairs that allows us to look up the
 value associated with each key.
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 _Note that the correct name for this data structure is a "map" (or more
@@ -27,7 +27,7 @@ silly and confusing choice imo._
 ## Look up a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 ...
@@ -45,7 +45,7 @@ votes["strawberry"]
 ## Missing Key
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 ```py
@@ -65,7 +65,7 @@ KeyError: 'garlic'
 ## Add a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 ...
@@ -77,25 +77,25 @@ votes["mint"] = 1
 ...
 
 ```py
-{"strawberry": 1, "chocolate": 1, "vanilla": 1, "mint": 1}
+{"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 1}
 ```
 
 ## Update a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 2, "vanilla": 2}
 ```
 
 ...
 
 ```py
-votes["strawberry"] = 2
+votes["strawberry"] = 3
 ```
 
 ...
 
 ```py
-{"strawberry": 2, "chocolate": 1, "vanilla": 1}
+{"strawberry": 3, "chocolate": 4, "vanilla": 2}
 ```
 
 **A dictionary can only contain a single entry for a given key.**
@@ -103,25 +103,25 @@ votes["strawberry"] = 2
 ## Increment a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 ...
 
 ```py
-votes["chocolate"] += 1
+votes["strawberry"] += 1
 ```
 
 ...
 
 ```py
-{"strawberry": 1, "chocolate": 2, "vanilla": 1}
+{"strawberry": 2, "chocolate": 4, "vanilla": 2}
 ```
 
 ## Remove a Value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 1, "vanilla": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
 ```
 
 ...
@@ -133,7 +133,7 @@ del votes["chocolate"]
 ...
 
 ```py
-{"strawberry": 1, "vanilla": 1}
+{"strawberry": 1, "vanilla": 2}
 ```
 
 ## Empty Dictionary
@@ -145,7 +145,7 @@ votes = {}
 ## Check membership
 
 ```py
-votes = {"strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 3}
 ```
 
 ...
@@ -165,7 +165,7 @@ False
 ## Iterate over keys
 
 ```py
-{"strawberry": 2, "chocolate": 1, "vanilla": 1, "mint": 1}
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 3}
 
 for flavor in votes:
     print(flavor, votes[flavor])
@@ -174,10 +174,10 @@ for flavor in votes:
 ...
 
 ```
-strawberry 2
-chocolate 2
-vanilla 1
-mint 1
+strawberry 1
+chocolate 4
+vanilla 2
+mint 3
 ```
 
 ## Ice cream flavor voting
@@ -304,3 +304,202 @@ oh dear i shall be late when she thought it over afterwards it...
 ```
 
 Find the word with the highest Scrabble score.
+
+## `dict.keys()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+
+for k in votes.keys():
+    print(k)
+```
+
+...
+
+```
+strawberry
+chocolate
+vanilla
+```
+
+## `dict.values()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+
+for v in votes.values():
+    print(v)
+```
+
+...
+
+```
+1
+4
+2
+```
+
+## `dict.items()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+
+for (k, v) in votes.items():
+    print(k, v)
+```
+
+...
+
+```
+strawberry 1
+chocolate 4
+vanilla 2
+```
+
+## `dict.get()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+
+votes.get("chocolate", 0)
+votes.get("mint", 0)
+```
+
+...
+
+```
+4
+0
+```
+
+## Using `dict.get()`
+
+```py
+votes = {}
+
+while True:
+    flavor = input("Enter for your favorite flavor: ")
+
+    if flavor in votes:
+        votes[flavor] += 1
+    else:
+        votes[flavor] = 1
+
+    print(votes)
+```
+
+...
+
+```py
+votes = {}
+
+while True:
+    flavor = input("Enter for your favorite flavor: ")
+    votes[flavor] = votes.get(flavor, 0) + 1
+    print(votes)
+```
+
+## `dict.setdefault()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes.setdefault("chocolate", 0)
+votes.setdefault("mint", 0)
+```
+
+...
+
+```py
+{"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 0}
+```
+
+## Using `dict.setdefault()`
+
+```py
+votes = {}
+
+while True:
+    flavor = input("Enter for your favorite flavor: ")
+
+    if flavor in votes:
+        votes[flavor] += 1
+    else:
+        votes[flavor] = 1
+
+    print(votes)
+```
+
+```py
+votes = {}
+
+while True:
+    flavor = input("Enter for your favorite flavor: ")
+    votes.setdefault(flavor, 0)
+    votes[flavor] += 1
+    print(votes)
+```
+
+## Scrabble Best Alphabet
+
+```
+affectionately 25
+beautifully 19
+contemptuously 23
+difficulty 22
+extraordinary 24
+frontispiece 19
+geography 19
+hjckrrh 26
+inquisitively 28
+jumping 19
+knocking 19
+lazily 18
+multiplication 20
+neighbouring 19
+occasionally 19
+puzzling 29
+quickly 25
+refreshments 20
+squeezed 27
+thoughtfully 25
+uncomfortably 25
+vanishing 16
+whiskers 18
+xii 10
+yesterday 16
+zigzag 26
+```
+
+---
+
+Use more dictionaries!
+
+`bestWords`
+
+```ptls
+{
+  'c': 'contemptuously',
+  'i': 'inquisitively',
+  'd': 'difficulty',
+  't': 'thoughtfully',
+  'r': 'refreshments',
+  ...
+}
+```
+
+`bestScores`
+
+```ptls
+{
+  'c': 23,
+  'i': 28,
+  'd': 22,
+  't': 25,
+  'r': 20,
+  ...
+}
+```
+
+...
+
+Use `dict.setdefault()` and `dict.keys()`!

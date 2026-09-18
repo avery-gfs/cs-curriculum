@@ -32,8 +32,7 @@ letterPoints = {
 
 # For each letter of the alphabet, find the highest scoring word
 # that starts with that letter. Don't loop through the list of
-# words more than once! Display the highest scoring word for each letter
-# along with its score in alphabetic order
+# words more than once!
 
 bestWords = {}  # Keep track of the highest scoring word for each letter
 bestScores = {}  # Keep track of the scores for bestWords
@@ -41,10 +40,13 @@ bestScores = {}  # Keep track of the scores for bestWords
 # Find the word with the highest Scrabble score
 
 for word in words:
+    # Score variable for the current word
     score = 0
 
-    for letter in word:
-        score += letterPoints[letter]
+    # Loop through each letter in the current word
+    # Look up the points for the letter and add it to the word score
+
+    pass
 
     # After summing the points for each letter, get the first letter
     # of the word.
@@ -58,13 +60,9 @@ for word in words:
     #     score for the old best word. If it is then update bestWord
     #     and bestScore to contain this new word and its score
 
-    firstLetter = word[0]
+    pass
 
-    bestScores.setdefault(firstLetter, 0)
+# Display the highest scoring word for each letter along with its score
+# in alphabetic order
 
-    if bestScores[firstLetter] < score:
-        bestWords[firstLetter] = word
-        bestScores[firstLetter] = score
-
-for letter in letterPoints.keys():
-    print(bestWords[letter], bestScores[letter])
+pass
