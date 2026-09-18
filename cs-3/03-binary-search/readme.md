@@ -74,12 +74,12 @@ $log_2(n)$
 
 <img height="600" src="/assets/log2.png" />
 
-If we increase the range of numbers to `1-1,000,000` how many guesses would we
-need?
+If we increase the range of numbers to go up to one million, how many guesses
+would we need?
 
 ...
 
-$log_2(1,000,000) = 19.931568569324174 \approx 20$
+$log_2(1000000) = 19.931568569324174 \approx 20$
 
 ## Linear Search for 49
 
