@@ -74,12 +74,12 @@ $log_2(n)$
 
 <img height="600" src="/assets/log2.png" />
 
-If we increase the range of numbers by a factor of `1000`, how many more guesses
-will we need?
+If we increase the range of numbers to `1-1,000,000` how many guesses would we
+need?
 
 ...
 
-$log_2(1000) = 9.965784284662087 \approx 10$
+$log_2(1,000,000) = 19.931568569324174 \approx 20$
 
 ## Linear Search for 49
 
@@ -286,11 +286,13 @@ $log_2(1000) = 9.965784284662087 \approx 10$
 
 ## Linear Search
 
-How can we do better?
-
 <img height="800" src="/assets/linear.png" />
 
 ## Binary Search
+
+How can we do better?
+
+...
 
 > In computer science, binary search, also known as half-interval search,
 > logarithmic search, or binary chop, is a search algorithm that finds the
