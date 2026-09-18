@@ -431,6 +431,8 @@ while True:
     print(votes)
 ```
 
+...
+
 ```py
 votes = {}
 
