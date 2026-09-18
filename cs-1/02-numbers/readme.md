@@ -187,7 +187,7 @@ a % b
 Means:
 
 > Subtract (or add) zero or more copies of `b` from `a` in order to get the
-> smallest number possible that `>= 0`
+> smallest number possible that is `>= 0`
 
 ---
 
