@@ -184,8 +184,10 @@ The modulo operator in Python computes the remainder using
 a % b
 ```
 
-Means: "subtract (or add) zero or more copies of `b` from `a` in order to get
-the smallest number possible that `>= 0`".
+Means:
+
+> Subtract (or add) zero or more copies of `b` from `a` in order to get the
+> smallest number possible that `>= 0`
 
 ---
 
