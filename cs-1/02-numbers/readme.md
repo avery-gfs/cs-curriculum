@@ -177,6 +177,18 @@ What value does this expression produce?
 
 ## Modulo
 
+The modulo operator in Python computes the remainder using
+[floored division](https://en.wikipedia.org/wiki/Modulo#Variants_of_the_definition).
+
+```py
+a % b
+```
+
+Means: "subtract (or add) zero or more copies of `b` from `a` in order to get
+the smallest number possible that `>= 0`".
+
+---
+
 What value does this expression produce?
 
 ```py
@@ -185,8 +197,11 @@ What value does this expression produce?
 
 ...
 
-The modulo operator in Python computes the remainder using
-[floored division](https://en.wikipedia.org/wiki/Modulo#Variants_of_the_definition).
+```
+11 -> 9 -> 7 -> 5 -> 3 -> 1
+```
+
+...
 
 ```
 1
@@ -217,7 +232,7 @@ What value does this expression produce?
 ...
 
 ```
-0
+14 -> 12 -> 10 -> 8 -> 6 -> 4 -> 2 -> 0
 ```
 
 ---
@@ -231,7 +246,7 @@ What value does this expression produce?
 ...
 
 ```
-4
+14 -> 9 -> 4
 ```
 
 ---
@@ -245,7 +260,7 @@ What value does this expression produce?
 ...
 
 ```
-1
+-14 -> -9 -> -4 -> 1
 ```
 
 ---
@@ -259,7 +274,7 @@ What value does this expression produce?
 ...
 
 ```
-0
+14 -> 0
 ```
 
 ---
