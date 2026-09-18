@@ -288,7 +288,7 @@ $log_2(1000) = 9.965784284662087 \approx 10$
 
 How can we do better?
 
-<img height="600" src="/assets/linear.png" />
+<img height="800" src="/assets/linear.png" />
 
 ## Binary Search
 
