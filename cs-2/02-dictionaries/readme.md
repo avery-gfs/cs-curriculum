@@ -16,7 +16,7 @@ A dictionary is a collection of key/value pairs that allows us to look up the
 value associated with each key.
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 _Note that the correct name for this data structure is a "map" (or more
@@ -27,7 +27,7 @@ silly and confusing choice imo._
 ## Look up a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ...
@@ -45,7 +45,7 @@ votes["strawberry"]
 ## Missing Key
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ```py
@@ -65,7 +65,7 @@ KeyError: 'garlic'
 ## Add a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ...
@@ -77,13 +77,13 @@ votes["mint"] = 1
 ...
 
 ```py
-{"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 1}
+{"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 1}
 ```
 
 ## Update a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 2, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ...
@@ -95,7 +95,7 @@ votes["strawberry"] = 3
 ...
 
 ```py
-{"strawberry": 3, "chocolate": 4, "vanilla": 2}
+{"strawberry": 3, "chocolate": 1, "vanilla": 2}
 ```
 
 **A dictionary can only contain a single entry for a given key.**
@@ -103,7 +103,7 @@ votes["strawberry"] = 3
 ## Increment a value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ...
@@ -115,13 +115,13 @@ votes["strawberry"] += 1
 ...
 
 ```py
-{"strawberry": 2, "chocolate": 4, "vanilla": 2}
+{"strawberry": 2, "chocolate": 1, "vanilla": 2}
 ```
 
 ## Remove a Value
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 ```
 
 ...
@@ -138,6 +138,8 @@ del votes["chocolate"]
 
 ## Empty Dictionary
 
+...
+
 ```py
 votes = {}
 ```
@@ -145,7 +147,7 @@ votes = {}
 ## Check membership
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 3}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 3}
 ```
 
 ...
@@ -165,7 +167,7 @@ False
 ## Iterate over keys
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 3}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 3}
 
 for flavor in votes:
     print(flavor, votes[flavor])
@@ -175,7 +177,7 @@ for flavor in votes:
 
 ```
 strawberry 1
-chocolate 4
+chocolate 1
 vanilla 2
 mint 3
 ```
@@ -308,7 +310,7 @@ Find the word with the highest Scrabble score.
 ## `dict.keys()`
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 
 for k in votes.keys():
     print(k)
@@ -325,7 +327,7 @@ vanilla
 ## `dict.values()`
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 
 for v in votes.values():
     print(v)
@@ -335,14 +337,14 @@ for v in votes.values():
 
 ```
 1
-4
+1
 2
 ```
 
 ## `dict.items()`
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 
 for (k, v) in votes.items():
     print(k, v)
@@ -352,14 +354,14 @@ for (k, v) in votes.items():
 
 ```
 strawberry 1
-chocolate 4
+chocolate 1
 vanilla 2
 ```
 
 ## `dict.get()`
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 
 votes.get("chocolate", 0)
 votes.get("mint", 0)
@@ -368,7 +370,7 @@ votes.get("mint", 0)
 ...
 
 ```
-4
+1
 0
 ```
 
@@ -402,7 +404,7 @@ while True:
 ## `dict.setdefault()`
 
 ```py
-votes = {"strawberry": 1, "chocolate": 4, "vanilla": 2}
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
 votes.setdefault("chocolate", 0)
 votes.setdefault("mint", 0)
 ```
@@ -410,7 +412,7 @@ votes.setdefault("mint", 0)
 ...
 
 ```py
-{"strawberry": 1, "chocolate": 4, "vanilla": 2, "mint": 0}
+{"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 0}
 ```
 
 ## Using `dict.setdefault()`
