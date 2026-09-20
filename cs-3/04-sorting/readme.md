@@ -310,3 +310,5 @@ For a list with $n$ values, how many comparisons do we need?
 $$
 (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
 $$
+
+$\frac{n^2 + n}{2}$ is $O(n)$
