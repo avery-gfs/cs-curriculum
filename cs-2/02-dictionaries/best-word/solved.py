@@ -1,3 +1,6 @@
+# Find the word with the highest scrabble score starting with each letter
+# of the alphabet in the text of Alice in Wonderland
+
 with open("alice.txt") as file:
     words = file.read().split()  # Get words from file
 
@@ -32,8 +35,6 @@ letterPoints = {
 
 bestWord = None  # Keep track of the highest scoring word
 bestScore = 0  # Keep track of the score of bestWord
-
-# Find the word with the highest Scrabble score
 
 for word in words:
     # Score variable for the current word
