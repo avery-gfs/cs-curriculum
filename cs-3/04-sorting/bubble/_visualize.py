@@ -12,7 +12,7 @@ def render(index):
     if right:
         right += "   "
 
-    middle = f" ( {items[index]}  {items[index + 1]} ) "
+    middle = f" ( {items[index]}   {items[index + 1]} ) "
     print("[" + left + middle + right + "]")
 
 
