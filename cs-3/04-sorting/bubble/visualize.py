@@ -1,9 +1,11 @@
-nums = [3, 2, 5, 1, 4, 1]
+nums = [1, 3, 2, 5, 1, 4, 1]
 
 
 def render(index):
+    print("---\n\n```")
     print(" ".join(str(n) for n in nums))
     print(" " * (2 * index) + "^ ^")
+    print("```\n")
 
 
 for end in range(len(nums) - 1, 0, -1):
