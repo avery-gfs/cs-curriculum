@@ -7,7 +7,7 @@
 export const CLASS_REPO = {
   owner: "avery-gfs",
   repo: "classes-26",
-  ref: "solutions",
+  ref: "public",
 };
 
 const RAW_HOST = "https://raw.githubusercontent.com";
