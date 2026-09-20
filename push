@@ -12,6 +12,7 @@ cd ../public
 git checkout master
 trash *
 cp -r ../solutions/* .
+trash **/_*
 rm -r node_modules
 trash **/solved* package.json package-lock.json push fmt docs 
 git add --all .

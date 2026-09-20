@@ -484,37 +484,3 @@ difficulty 22
 extraordinary 24
 ...
 ```
-
----
-
-Use more dictionaries!
-
-`bestWords`
-
-```ptls
-{
-  'c': 'contemptuously',
-  'i': 'inquisitively',
-  'd': 'difficulty',
-  't': 'thoughtfully',
-  'r': 'refreshments',
-  ...
-}
-```
-
-`bestScores`
-
-```ptls
-{
-  'c': 23,
-  'i': 28,
-  'd': 22,
-  't': 25,
-  'r': 20,
-  ...
-}
-```
-
-...
-
-Use `dict.setdefault()` and `dict.keys()`!
