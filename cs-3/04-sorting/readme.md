@@ -311,6 +311,16 @@ $$
 (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
 $$
 
+![](/assets/quadratic.png)
+
+## Complexity
+
 $$
-\frac{n^2 + n}{2} \text{is} O(n^2)
+\frac{n^2 + n}{2}
+$$
+
+Is
+
+$$
+O(n^2)
 $$
