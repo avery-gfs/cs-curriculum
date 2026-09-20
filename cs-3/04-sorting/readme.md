@@ -287,4 +287,26 @@ items[i], items[j] = items[j], items[i]
 
 ...
 
-^ Helpful language feature, or silly Python nonsense?
+(^ Helpful language feature, or silly Python nonsense?)
+
+---
+
+## Complexity
+
+For a list with $10$ values, how many comparisons do we need?
+
+...
+
+$$
+9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45
+$$
+
+...
+
+For a list with $n$ values, how many comparisons do we need?
+
+...
+
+$$
+(n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
+$$
