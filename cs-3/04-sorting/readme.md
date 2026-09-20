@@ -325,7 +325,7 @@ $$
 O(n^2)
 $$
 
-...
+---
 
 If bubble sorting a list of `10,000` items took 2 seconds, how long would we
 expect it to take to sort a list of `50,000`?
