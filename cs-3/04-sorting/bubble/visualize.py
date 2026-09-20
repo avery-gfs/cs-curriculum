@@ -1,4 +1,4 @@
-nums = [1, 3, 2, 5, 1, 4, 1]
+nums = [5, 3, 2, 5, 1, 4, 1]
 
 
 def render(index):
