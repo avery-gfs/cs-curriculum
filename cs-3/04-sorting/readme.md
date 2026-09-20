@@ -8,6 +8,16 @@ Sort these emojis
 🦀 🥦 🫖 🐼 🧲 🐼 🏀 🫖 🪭 💩 🍄 ⚽ 🥑 🥦 🦘 🫖
 ```
 
+...
+
+Why use emojis?
+
+...
+
+Sorting numbers is too intuitive! We're interested in **comparison sorting**,
+where we don't have any intuition about what values are "large" or "small", and
+we can only rely on direct comparisions between items.
+
 ## Bubble Sort
 
 - Compare values that are next to each other, and swap them if they're out of
@@ -313,7 +323,7 @@ $$
 (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
 $$
 
-## Complexity
+---
 
 $$
 \frac{n^2 + n}{2}
@@ -326,6 +336,8 @@ Big O notation (asymptotic notation)
 $$
 O(n^2)
 $$
+
+"Quadratic complexity", "quadratic algorithm"
 
 ---
 
@@ -346,4 +358,6 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
-<img height="500" src="/assets/asymptotics.png"/>
+<img height="700" src="/assets/asymptotics.png"/>
+
+Quadratic complexity is a bummer
