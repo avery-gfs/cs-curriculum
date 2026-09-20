@@ -317,7 +317,7 @@ $$
 \frac{n^2 + n}{2}
 $$
 
-![](/assets/quadratic.png)
+<img height="500" src="/assets/quadratic.png"/>
 
 Big O notation (asymptotic notation)
 
