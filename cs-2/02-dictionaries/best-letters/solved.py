@@ -66,5 +66,5 @@ for word in words:
         bestWords[firstLetter] = word
         bestScores[firstLetter] = score
 
-for letter in letterPoints.keys():
+for letter in bestWords:
     print(bestWords[letter], bestScores[letter])

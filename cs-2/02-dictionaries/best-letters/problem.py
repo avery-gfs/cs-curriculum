@@ -63,6 +63,5 @@ for word in words:
     pass
 
 # Display the highest scoring word for each letter along with its score
-# in alphabetic order
 
 pass
