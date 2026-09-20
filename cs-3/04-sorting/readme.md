@@ -293,7 +293,7 @@ items[i], items[j] = items[j], items[i]
 
 ## Complexity
 
-For a list with $10$ values, how many comparisons do we need?
+For a list with `10` values, how many comparisons do we need?
 
 ...
 
@@ -312,5 +312,5 @@ $$
 $$
 
 $$
-\frac{n^2 + n}{2} is O(n^2)
+\frac{n^2 + n}{2} \text{is} O(n^2)
 $$
