@@ -281,6 +281,8 @@ items[j] = tmp
 
 ...
 
+Or
+
 ```
 items[i], items[j] = items[j], items[i]
 ```
@@ -341,3 +343,7 @@ expect it to take to sort a list of `50,000`?
 ```
 2 seconds x 5² = 50 seconds
 ```
+
+---
+
+<img height="500" src="/assets/asymptotics.png"/>
