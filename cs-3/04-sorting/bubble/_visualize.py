@@ -2,11 +2,18 @@ items = list("🦀🥦🫖🐼🧲🐼")
 
 
 def render(index):
-    left = " ".join(items[:index])
+    left = "   ".join(items[:index])
 
-    right = " ".join(items[index + 2 :])
+    if left:
+        left = "   " + left
+
+    right = "   ".join(items[index + 2 :])
+
+    if right:
+        right += "   "
+
     middle = f" ( {items[index]}  {items[index + 1]} ) "
-    print(left + middle + right)
+    print("[" + left + middle + right + "]")
 
 
 for end in range(len(items) - 1, 0, -1):
