@@ -13,6 +13,7 @@
 #
 # Enter your birth year: 1996
 # Enter your dog's birth year: 2016
-# Your age (years): 30
-# Your dog's age (years): 10
-# Your dog's age (dog-years): 70
+#
+# Age you turn this year (years): 30
+# Age your dog turns this year (years): 10
+# Age your dog turns this year (dog-years): 70
