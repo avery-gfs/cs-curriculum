@@ -156,3 +156,23 @@ they're out of order.
 ```
 [ ( 🐼   🐼 ) 🥦   🦀   🧲   🫖   ]
 ```
+
+## Swapping List Values
+
+To swap values at indices `i` and `j`
+
+...
+
+```
+tmp = items[i]
+items[i] = items[j]
+items[j] = tmp
+```
+
+...
+
+```
+items[i], items[j] = items[j], items[i]
+```
+
+^ Helpful language feature, or silly Python nonsense?
