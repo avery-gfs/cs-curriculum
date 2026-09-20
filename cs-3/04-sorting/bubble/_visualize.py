@@ -2,12 +2,9 @@ items = list("🦀🥦🫖🐼🧲🐼")
 
 
 def render(index):
-    left = "   ".join(items[:index])
+    left = " ".join(items[:index])
 
-    if index:
-        left = "   " + left
-
-    right = "   ".join(items[index + 2 :])
+    right = " ".join(items[index + 2 :])
     middle = f" ( {items[index]}  {items[index + 1]} ) "
     print(left + middle + right)
 
