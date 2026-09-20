@@ -311,16 +311,33 @@ $$
 (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
 $$
 
-![](/assets/quadratic.png)
-
 ## Complexity
 
 $$
 \frac{n^2 + n}{2}
 $$
 
-Is
+![](/assets/quadratic.png)
+
+Big O notation (asymptotic notation)
 
 $$
 O(n^2)
 $$
+
+...
+
+If bubble sorting a list of `10,000` items took 2 seconds, how long would we
+expect it to take to sort a list of `50,000`?
+
+...
+
+```
+10,000 items x 5 = 50,000 items
+```
+
+...
+
+```
+2 seconds x 5² = 50 seconds
+```
