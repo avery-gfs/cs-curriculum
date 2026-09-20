@@ -36,12 +36,7 @@ with open("alice.txt") as file:
 longWords = {}
 wordLengths = {}
 
-for word in words:
-    firstLetter = word[0]
-
-    if len(word) > wordLengths.get(firstLetter, 0):
-        longWords[firstLetter] = word
-        wordLengths[firstLetter] = len(word)
+pass
 
 for word in sorted(longWords.values()):
     print(word)
