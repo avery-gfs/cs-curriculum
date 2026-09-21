@@ -307,11 +307,9 @@ items[i], items[j] = items[j], items[i]
 
 _(Helpful language feature, or silly Python nonsense??)_
 
----
-
 ## Correctness
 
-How do we know this works? Invariants
+How do we know this works? Invariants.
 
 ...
 
@@ -320,8 +318,8 @@ system changes.
 
 ...
 
-After the $n^{th}$ pass, the last $n$ items in the list are the largest $n$
-values, in sorted order.
+> After the $n^{th}$ pass, the last $n$ items in the list are the largest $n$
+> values, in sorted order.
 
 Therefore, for a list with length $l$ the list will be sorted after $l$ passes.
 
@@ -347,9 +345,7 @@ $$
 
 ---
 
-$$
-\frac{n^2 + n}{2}
-$$
+$\frac{n^2 + n}{2}$
 
 <img height="500" src="/assets/quadratic.png"/>
 
