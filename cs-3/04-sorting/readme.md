@@ -413,17 +413,20 @@ $$
 ...
 
 $$
-log_2(100^4) = 4 \cdot log_2(100)
+log_2(100^4) = 4 \cdot log_2(100) < 4 \cdot 7 = 28
 $$
 
 $$
-log_2(4^{100}) = 100 \cdot log_2(4)
+log_2(4^{100}) = 100 \cdot log_2(4) = 100 \cdot 2 = 200
 $$
 
 ...
 
 In general, for a small number $b$ greater than $1$ and a large number $n$:
-$b^n >> n^b$.
+
+$$
+b^n >> n^b
+$$
 
 ---
 
