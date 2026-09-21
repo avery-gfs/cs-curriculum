@@ -345,17 +345,15 @@ $$
 
 ---
 
-$\frac{n^2 + n}{2}$
-
-<img height="500" src="/assets/quadratic.png"/>
-
 Big O notation (asymptotic notation)
 
 $$
-O(n^2)
+\frac{n^2 + n}{2} = O(n^2)
 $$
 
 "Quadratic complexity", "quadratic algorithm"
+
+<img height="500" src="/assets/quadratic.png"/>
 
 ---
 
