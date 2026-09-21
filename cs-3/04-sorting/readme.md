@@ -382,12 +382,14 @@ expect it to take to sort a list of `50,000`?
 
 <img height="700" src="/assets/asymptotics.png"/>
 
+Quadratic complexity is a bummer
+
 ---
 
 Which is larger?
 
 $$
-\fract{7^100}{1000000000000}
+\frac{7^100}{1000000000000}
 $$
 
 Or
@@ -397,8 +399,6 @@ $$
 $$
 
 ---
-
-Quadratic complexity is a bummer
 
 - 😇 $O(1)$
 - 😉 $O(log(n))$
