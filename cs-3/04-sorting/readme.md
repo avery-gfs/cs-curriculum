@@ -380,6 +380,8 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
+<iframe src="https://www.desmos.com/calculator/xuhuxayi9y?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+
 <img height="700" src="/assets/asymptotics.png"/>
 
 Quadratic complexity is a bummer
@@ -404,7 +406,7 @@ $$
 4^{100} = (4^4)^{96} = 256^{96} > 100^4
 $$
 
----
+...
 
 $$
 log_2(100^4) = 4 \cdot log_2(100)
@@ -435,6 +437,8 @@ b^n >> n^b
 $$
 
 ---
+
+Examples of algorithms for these categories?
 
 - 😇 $O(1)$
 - 😉 $O(log(n))$
