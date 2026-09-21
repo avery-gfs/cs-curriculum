@@ -289,7 +289,7 @@ To swap values at indices `i` and `j`
 
 ...
 
-```
+```py
 tmp = items[i]
 items[i] = items[j]
 items[j] = tmp
@@ -299,7 +299,7 @@ items[j] = tmp
 
 Or
 
-```
+```py
 items[i], items[j] = items[j], items[i]
 ```
 
