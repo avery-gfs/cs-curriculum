@@ -8,8 +8,8 @@ def render(index):
     print("```\n")
 
 
-for end in range(len(nums) - 1, 0, -1):
-    for index in range(end):
+for limit in range(len(nums) - 1, 0, -1):
+    for index in range(limit):
         render(index)
 
         if nums[index] > nums[index + 1]:
