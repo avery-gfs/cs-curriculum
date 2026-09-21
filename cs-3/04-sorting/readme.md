@@ -385,8 +385,8 @@ expect it to take to sort a list of `50,000`?
 Quadratic complexity is a bummer
 
 - 😇 $O(1)$
-- 👍 $O(log(n))$
-- 🤷🏽‍♂️ $O(n)$
+- 😉 $O(log(n))$
+- 🙂 $O(n)$
 - 🤔 $O(n \cdot log(n))$
 - 😨 $O(n^2)$
 - 💀 $O(2^n)$
