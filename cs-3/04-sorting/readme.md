@@ -12,6 +12,10 @@ Sort these emojis
 
 Why use emojis?
 
+```
+[8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+```
+
 ...
 
 Sorting numbers is too intuitive! We're interested in **comparison sorting**,
