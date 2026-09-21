@@ -24,6 +24,16 @@ Sorting numbers is too intuitive! We're interested in **comparison sorting**,
 where we don't have any intuition about what values are "large" or "small", and
 we can only rely on direct comparisions between items.
 
+## Lexicographic Comparison
+
+```
+ !"#$%&'()*+,-./0123456789:;<=>?
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+`abcdefghijklmnopqrstuvwxyz{|}~>
+```
+
+![](/assets/unicode.png)
+
 ## Bubble Sort
 
 - Compare values that are next to each other, and swap them if they're out of
