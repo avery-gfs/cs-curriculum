@@ -291,11 +291,9 @@ we can only rely on direct comparisions between items.
 ^ ^
 ```
 
----
-
 ## Swapping List Values
 
-To swap values at indices `i` and `j`
+How to swap values at indices `i` and `j` in a list?
 
 ...
 
@@ -312,8 +310,6 @@ Or
 ```py
 items[i], items[j] = items[j], items[i]
 ```
-
-...
 
 _(Helpful language feature, or silly Python nonsense??)_
 
@@ -384,6 +380,12 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
-<img height="700" src="/assets/asymptotics.png"/>
+<img height="600" src="/assets/asymptotics.png"/>
 
 Quadratic complexity is a bummer
+
+- 😇 $O(1)$
+- 👍 $O(log(n))$
+- 🤷🏽‍♂️ $O(n)$
+- 🤔 $O(n^2)$
+- 💀 $O(2^n)$
