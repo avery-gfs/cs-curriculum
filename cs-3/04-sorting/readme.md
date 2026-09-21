@@ -389,13 +389,13 @@ Quadratic complexity is a bummer
 Which is larger?
 
 $$
-1000^4
+100^4
 $$
 
 Or
 
 $$
-1.1^{1000}
+4^{100}
 $$
 
 ---
