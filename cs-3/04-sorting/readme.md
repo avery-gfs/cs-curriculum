@@ -380,7 +380,23 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
-<img height="500" src="/assets/asymptotics.png"/>
+<img height="700" src="/assets/asymptotics.png"/>
+
+---
+
+Which is larger?
+
+$$
+\fract{7^100}{1000000000000}
+$$
+
+Or
+
+$$
+100^7
+$$
+
+---
 
 Quadratic complexity is a bummer
 
