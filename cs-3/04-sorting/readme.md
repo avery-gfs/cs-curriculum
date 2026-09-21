@@ -380,12 +380,13 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
-<img height="600" src="/assets/asymptotics.png"/>
+<img height="500" src="/assets/asymptotics.png"/>
 
 Quadratic complexity is a bummer
 
 - 😇 $O(1)$
 - 👍 $O(log(n))$
 - 🤷🏽‍♂️ $O(n)$
-- 🤔 $O(n^2)$
+- 🤔 $O(n \cdot log(n))$
+- 😨 $O(n^2)$
 - 💀 $O(2^n)$
