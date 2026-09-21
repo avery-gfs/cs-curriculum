@@ -422,11 +422,8 @@ $$
 
 ...
 
-In general, for a small number $b$ greater than $1$ and a large number $n$
-
-$$
-b^n >> n^b
-$$
+In general, for a small number $b$ greater than $1$ and a large number $n$:
+$b^n >> n^b$.
 
 ---
 
