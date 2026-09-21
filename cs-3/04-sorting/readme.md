@@ -8,6 +8,8 @@ Sort these emojis
 🦀 🥦 🫖 🐼 🧲 🐼 🏀 🫖 🪭 💩 🍄 ⚽ 🥑 🥦 🦘 🫖
 ```
 
+https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=🦀,🥦,🫖,🐼,🧲,🐼,🏀,🫖,🪭,💩,🍄,⚽,🥑,🥦,🦘,🫖
+
 ...
 
 Why use emojis?
@@ -303,9 +305,25 @@ items[i], items[j] = items[j], items[i]
 
 ...
 
-(^ Helpful language feature, or silly Python nonsense?)
+_(Helpful language feature, or silly Python nonsense??)_
 
 ---
+
+## Correctness
+
+How do we know this works? Invariants
+
+...
+
+Invariant: a property of a system that is perserved, even as the state of the
+system changes.
+
+...
+
+After the $n^{th}$ pass, the last $n$ items in the list are the largest $n$
+values, in sorted order.
+
+Therefore, for a list with length $l$ the list will be sorted after $l$ passes.
 
 ## Complexity
 
