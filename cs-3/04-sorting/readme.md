@@ -8,7 +8,7 @@ Sort these emojis
 🦀 🥦 🫖 🐼 🧲 🐼 🏀 🫖 🪭 💩 🍄 ⚽ 🥑 🥦 🦘 🫖
 ```
 
-https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=🦀,🥦,🫖,🐼,🧲,🐼,🏀,🫖,🪭,💩,🍄,⚽,🥑,🥦,🦘,🫖
+![Demo](https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=🦀,🥦,🫖,🐼,🧲,🐼,🏀,🫖,🪭,💩,🍄,⚽,🥑,🥦,🦘,🫖)
 
 ...
 
