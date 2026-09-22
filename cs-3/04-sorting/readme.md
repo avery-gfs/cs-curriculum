@@ -2,8 +2,6 @@
 
 ## Warm Up
 
-https://www.youtube.com/watch?v=Iv3vgjM8Pv4
-
 Sort these emojis
 
 ```
@@ -382,56 +380,6 @@ Quadratic complexity is a bummer
 
 ---
 
-Which is larger?
-
-$$
-100^4
-$$
-
-Or
-
-$$
-4^{100}
-$$
-
----
-
-$$
-4^{100} = (4^4)^{96} = 256^{96} > 100^4
-$$
-
-...
-
-$$
-log_2(100^4) = 4 \cdot log_2(100)
-$$
-
-$$
-log_2(4^{100}) = 100 \cdot log_2(4)
-$$
-
----
-
-$$
-100^4 = 100000000
-$$
-
-...
-
-$$
-4^{100} = 1606938044258990275541962092341162602522202993782792835301376
-$$
-
-...
-
-In general, for a small number $b$ greater than $1$ and a large number $n$:
-
-$$
-b^n >> n^b
-$$
-
----
-
 Examples of algorithms for these categories?
 
 - 😇 $O(1)$
@@ -540,3 +488,57 @@ Can you come up with a better algorithm for sorting? One that doesn't have
 $O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
 description of your procedure, and an argument for why it has better algorithmic
 complexity than bubble sort.
+
+## Bubble Sort Dance
+
+https://www.youtube.com/watch?v=Iv3vgjM8Pv4
+
+## Complexity Exercise
+
+Which is larger?
+
+$$
+100^4
+$$
+
+Or
+
+$$
+4^{100}
+$$
+
+---
+
+$$
+4^{100} = (4^4)^{96} = 256^{96} > 100^4
+$$
+
+...
+
+$$
+log_2(100^4) = 4 \cdot log_2(100)
+$$
+
+$$
+log_2(4^{100}) = 100 \cdot log_2(4)
+$$
+
+---
+
+$$
+100^4 = 100000000
+$$
+
+...
+
+$$
+4^{100} = 1606938044258990275541962092341162602522202993782792835301376
+$$
+
+...
+
+In general, for a small number $b$ greater than $1$ and a large number $n$:
+
+$$
+b^n >> n^b
+$$
