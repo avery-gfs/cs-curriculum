@@ -28,16 +28,6 @@ we can only rely on direct comparisions between items.
 
 ## Lexicographic Comparison
 
-```
- !"#$%&'()*+,-./0123456789:;<=>?
-@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
-`abcdefghijklmnopqrstuvwxyz{|}~>
-```
-
-![](/assets/unicode.png)
-
----
-
 ```py
 ord("A")
 ord("a")
@@ -488,10 +478,6 @@ Can you come up with a better algorithm for sorting? One that doesn't have
 $O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
 description of your procedure, and an argument for why it has better algorithmic
 complexity than bubble sort.
-
-## Bubble Sort Dance
-
-https://www.youtube.com/watch?v=Iv3vgjM8Pv4
 
 ## Complexity Exercise
 
