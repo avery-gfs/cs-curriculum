@@ -448,6 +448,13 @@ def bubbleSort(items):
     # ...
 ```
 
+How do we break this problem down into smaller steps?
+
+- Compare (and swap) first two values in the list
+- Do a single pass through the list
+- Do multiple passes through the list
+- Make passes ignore already-sorted end segment
+
 ---
 
 Looping through a range of numbers from high to low:
