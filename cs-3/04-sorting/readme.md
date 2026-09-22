@@ -380,8 +380,6 @@ expect it to take to sort a list of `50,000`?
 
 ---
 
-<iframe src="https://www.desmos.com/calculator/xuhuxayi9y?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
-
 <img height="700" src="/assets/asymptotics.png"/>
 
 Quadratic complexity is a bummer
