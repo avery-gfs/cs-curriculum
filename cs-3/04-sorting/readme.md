@@ -46,6 +46,8 @@ we can only rely on direct comparisions between items.
 
 - Keep doing passes until the entire list is sorted.
 
+https://www.youtube.com/watch?v=Iv3vgjM8Pv4
+
 ---
 
 ```
