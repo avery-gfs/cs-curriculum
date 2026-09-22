@@ -498,4 +498,6 @@ _(silly Python nonsense)_
 ## Challenge: Better Algorithm
 
 Can you come up with a better algorithm for sorting? One that doesn't have
-$O(n^2)$ complexity?
+$O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
+description of your procedure, and an argument for why it has better algorithmic
+complexity than bubble sort.
