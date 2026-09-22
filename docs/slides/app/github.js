@@ -409,10 +409,24 @@ export function deckPaths(paths) {
 // it, so a run of them steps through one section a screenful at a time, each
 // step replacing the last. Markers inside a fenced code block are left alone.
 export function splitSlides(markdown) {
+  return splitSlideRecords(markdown).map(({ text }) => text);
+}
+
+// The slide positions at which a fresh `##` section begins. Unlike comparing
+// rendered headings, this preserves a boundary between two sections that happen
+// to use the same heading text.
+export function labelledSlideIndexes(markdown) {
+  return splitSlideRecords(markdown)
+    .map(({ labelled }, index) => (labelled ? index : -1))
+    .filter((index) => index !== -1);
+}
+
+function splitSlideRecords(markdown) {
   const slides = [];
   let heading = ""; // the `##` line the slides in this section repeat
   let lines = [];
   let fence = "";
+  let labelled = false;
   // Whether the next line starts a block. A `---` that doesn't is a setext
   // heading underline, which is what markdown makes of it too.
   let open = true;
@@ -420,8 +434,9 @@ export function splitSlides(markdown) {
   const flush = () => {
     const body = lines.join("\n").replace(/^\n+/, "").replace(/\s+$/, "");
     const text = heading && body ? `${heading}\n\n${body}` : heading || body;
-    if (text) slides.push(text);
+    if (text) slides.push({ text, labelled });
     lines = [];
+    labelled = false;
   };
 
   for (const line of String(markdown || "").split("\n")) {
@@ -436,6 +451,7 @@ export function splitSlides(markdown) {
     } else if (/^##/.test(line)) {
       flush();
       heading = line;
+      labelled = true;
       open = true;
       continue;
     } else if (open && /^ {0,3}-{3,}\s*$/.test(line)) {

@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import {
   deckPaths,
+  labelledSlideIndexes,
   parseSource,
   prepareMarkdown,
   splitSlides,
@@ -178,6 +179,15 @@ test("`---` starts a slide that repeats the heading", () => {
       "## One\n\nc",
       "## Two\n\nd",
     ],
+  );
+});
+
+test("section indexes skip repeated slides and retain repeated heading labels", () => {
+  assert.deepEqual(
+    labelledSlideIndexes(
+      "intro\n\n## One\n\na\n\n---\n\nb\n\n## One\n\nc\n\n...\n\nd",
+    ),
+    [1, 3],
   );
 });
 

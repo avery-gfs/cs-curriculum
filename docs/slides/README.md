@@ -76,8 +76,10 @@ Slide changes are instant: no slide transition, no background cross-fade, and no
 fragment fade. Reveal's own keys still work — space to advance, `o` for the
 slide overview, `s` for speaker notes, `f` for fullscreen, `?` for the rest.
 `alt`+`←` and `alt`+`→` are deliberately left to the browser, so they still move
-through history rather than through the deck. Appending `&print-pdf` to a deck
-URL gives the printable layout.
+through history rather than through the deck. `ctrl`+`←` and `ctrl`+`→` jump to
+the previous and next `##` section, skipping all of that section's `---` slides
+and `...` fragments. Appending `&print-pdf` to a deck URL gives the printable
+layout.
 
 Edits to a readme show up on the next load. Two caches sit in the way, and both
 have to be dealt with:

@@ -6,6 +6,7 @@ import RevealNotes from "../vendor/reveal/plugin/notes/notes.esm.js";
 
 import {
   fetchMarkdown,
+  labelledSlideIndexes,
   parseSource,
   pinToHead,
   prepareMarkdown,
@@ -24,8 +25,10 @@ window.Reveal = Reveal;
 
 const slidesEl = document.getElementById("slides");
 const messageEl = document.getElementById("deck-message");
+let labelledSlides = [];
 
 keepBrowserHistoryKeys();
+addSectionNavigation();
 
 // Reveal reads the URL during initialize, before the fragments below exist, and
 // rewrites it without the fragment index — so keep a copy of what was asked for.
@@ -56,6 +59,7 @@ async function show(src) {
   document.title = title || loc.path || "Slides";
 
   const slides = splitSlides(body);
+  labelledSlides = labelledSlideIndexes(body);
   for (const slide of slides.length ? slides : [body]) {
     slidesEl.append(deckSection(slide));
   }
@@ -202,6 +206,33 @@ function keepBrowserHistoryKeys() {
       if (event.altKey && ["ArrowLeft", "ArrowRight"].includes(event.key)) {
         event.stopImmediatePropagation();
       }
+    },
+    true,
+  );
+}
+
+// Ctrl+arrow moves between the `##` sections in the source. A section can span
+// several slides (`---`) and fragment steps (`...`), so use the source-derived
+// starts instead of Reveal's next/previous navigation.
+function addSectionNavigation() {
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (!event.ctrlKey || !["ArrowLeft", "ArrowRight"].includes(event.key)) {
+        return;
+      }
+
+      const { h } = Reveal.getIndices();
+      const current = labelledSlides.findLast((index) => index <= h);
+      const target = event.key === "ArrowRight"
+        ? labelledSlides.find((index) => index > (current ?? -1))
+        : labelledSlides.findLast((index) => index < (current ?? Infinity));
+
+      if (target === undefined) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      Reveal.slide(target, 0, -1);
     },
     true,
   );
