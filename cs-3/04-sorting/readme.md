@@ -10,7 +10,9 @@ Sort these emojis
 🦀 🥦 🫖 🐼 🧲 🐼 🏀 🫖 🪭 💩 🍄 ⚽ 🥑 🥦 🦘 🫖
 ```
 
-[Demo link](https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=🦀,🥦,🫖,🐼,🧲,🐼,🏀,🫖,🪭,💩,🍄,⚽,🥑,🥦,🦘,🫖)
+[Comparitor](https://avery-gfs.github.io/cs-curriculum/apps/emoji-comparison.html)
+
+[Virtual cards](https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=🦀,🥦,🫖,🐼,🧲,🐼,🏀,🫖,🪭,💩,🍄,⚽,🥑,🥦,🦘,🫖)
 
 ...
 
