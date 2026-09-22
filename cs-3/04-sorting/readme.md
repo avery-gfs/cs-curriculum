@@ -36,7 +36,7 @@ we can only rely on direct comparisions between items.
 
 ![](/assets/unicode.png)
 
-...
+---
 
 ```py
 ord("A")
