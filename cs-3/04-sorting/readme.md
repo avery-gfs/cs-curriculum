@@ -311,9 +311,7 @@ ord("🥑")
 
 ## Correctness
 
-How do we know this works? Invariants.
-
-...
+How do we know this works?
 
 Invariant: a property of a system that is perserved, even as the state of the
 system changes.
@@ -327,7 +325,7 @@ Therefore, for a list with length $l$ the list will be sorted after $l$ passes.
 
 ## Complexity
 
-For a list with `10` values, how many comparisons do we need?
+For a list with `10` distinct values, how many comparisons do we need?
 
 ...
 
@@ -337,7 +335,7 @@ $$
 
 ...
 
-For a list with $n$ values, how many comparisons do we need?
+For a list with $n$ distinct values, how many comparisons do we need?
 
 ...
 
@@ -353,7 +351,9 @@ $$
 \frac{n^2 + n}{2} = O(n^2)
 $$
 
-"Quadratic complexity", "quadratic algorithm"
+- "Quadratic growth"
+- "Quadratic complexity"
+- "Quadratic algorithm"
 
 <img height="500" src="/assets/quadratic.png"/>
 
@@ -450,9 +450,7 @@ def bubbleSort(items):
 
 ---
 
-How do loop through a range of numbers from high to low?
-
-...
+Looping through a range of numbers from high to low:
 
 ```py
 for i in range(5, 0, -1):
@@ -489,7 +487,39 @@ items[j] = tmp
 
 ...
 
-Or
+```
+[5, 3, 2, 5, 1, 4, 1]
+```
+
+...
+
+```
+[5, 3, 2, 5, 1, 4, 1]
+
+tmp: 5
+```
+
+...
+
+```
+[3, 3, 2, 5, 1, 4, 1]
+
+tmp: 5
+```
+
+...
+
+```
+[3, 5, 2, 5, 1, 4, 1]
+
+tmp: 5
+```
+
+...
+
+---
+
+Alternatively
 
 ```py
 items[i], items[j] = items[j], items[i]
