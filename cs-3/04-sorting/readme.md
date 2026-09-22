@@ -328,7 +328,7 @@ For a list with $n$ distinct values, how many comparisons do we need?
 ...
 
 $$
-(n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 + n}{2}
+(n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 - n}{2}
 $$
 
 ---
@@ -336,7 +336,7 @@ $$
 Big O notation (asymptotic notation)
 
 $$
-\frac{n^2 + n}{2} = O(n^2)
+\frac{n^2 - n}{2} = O(n^2)
 $$
 
 - "Quadratic growth"
