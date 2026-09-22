@@ -305,28 +305,6 @@ ord("🥑")
 ^ ^
 ```
 
-## Swapping List Values
-
-How to swap values at indices `i` and `j` in a list?
-
-...
-
-```py
-tmp = items[i]
-items[i] = items[j]
-items[j] = tmp
-```
-
-...
-
-Or
-
-```py
-items[i], items[j] = items[j], items[i]
-```
-
-_(Helpful language feature, or silly Python nonsense??)_
-
 ## Correctness
 
 How do we know this works? Invariants.
@@ -458,3 +436,64 @@ Examples of algorithms for these categories?
 - 🤔 $O(n \cdot log(n))$
 - 😨 $O(n^2)$
 - 💀 $O(2^n)$
+
+## Problem: Implement Bubble Sort
+
+```py
+def bubbleSort(items):
+    # ...
+```
+
+---
+
+How do loop through a range of numbers from high to low?
+
+...
+
+```py
+for i in range(5, 0, -1):
+    print(i)
+```
+
+...
+
+```
+5
+4
+3
+2
+1
+```
+
+...
+
+_(silly Python nonsense)_
+
+---
+
+How to swap values at indices `i` and `j` in a list?
+
+...
+
+```py
+tmp = items[i]
+items[i] = items[j]
+items[j] = tmp
+```
+
+...
+
+Or
+
+```py
+items[i], items[j] = items[j], items[i]
+```
+
+...
+
+_(silly Python nonsense)_
+
+## Challenge: Better Algorithm
+
+Can you come up with a better algorithm for sorting? One that doesn't have
+$O(n^2)$ complexity?
