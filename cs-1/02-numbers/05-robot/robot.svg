@@ -4,27 +4,27 @@
   width="100mm"
   height="100mm"
 >
-  <g stroke-width="1.0" stroke="gray">
+  <g stroke-width="1.0" stroke="black">
     <rect
       width="80"
       height="60"
       x="-40"
       y="-30"
-      fill="lightblue"
+      fill="none"
     />
 
     <line
       x1="-25"
       y1="-20"
       x2="-15"
-      y2="-20.0"
+      y2="-22.0"
     />
 
     <line
       x1="25"
       y1="-20"
       x2="15"
-      y2="-20.0"
+      y2="-22.0"
     />
 
     <circle
@@ -43,14 +43,14 @@
 
     <path
       d="M 0 0 l 5.0 10.0 h -10.0 z"
-      fill="lightpurple"
+      fill="none"
     />
 
     <ellipse
       cx="0"
       cy="22"
       rx="10.0"
-      ry="5.0"
+      ry="2.0"
       fill="none"
     />
   </g>
