@@ -6,4 +6,4 @@
 # Example output:
 #
 # area: 42.0m²
-# perimiter: 26.0m
+# perimeter: 26.0m

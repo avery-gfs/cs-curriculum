@@ -6,13 +6,13 @@
 # Example output:
 #
 # area: 42.0m²
-# perimiter: 26.0m
+# perimeter: 26.0m
 
 width = float(input("width (meters): "))
 height = float(input("height (meters): "))
 
 area = width * height
-perimiter = 2 * (width + height)
+perimeter = 2 * (width + height)
 
 print(f"area: {area}m²")
-print(f"perimiter: {perimiter}m")
+print(f"perimeter: {perimeter}m")
