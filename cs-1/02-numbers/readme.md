@@ -577,22 +577,3 @@ Example output:
 area: 42.0m²
 perimiter: 26.0m
 ```
-
-## Problem: Motion Equation
-
-Write code to determine the distance that an object with a given starting
-velocity and constant acceleration travels in a given amount of time.
-
-Example input:
-
-```
-velocity (m/s): 10
-acceleration (m/s²): 2
-time (s): 8
-```
-
-Example output:
-
-```
-distance at time 8.0s: 144.0m
-```

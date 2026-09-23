@@ -212,6 +212,78 @@ print("Good", time, name)
 Good morning Avery
 ```
 
+## Format Strings
+
+What will this code print out?
+
+```py
+time = "morning"
+name = "Avery"
+print("Good", time, ",", name, "!")
+```
+
+...
+
+```
+Good morning , Avery !
+```
+
+...
+
+We can use **format strings** (f-strings) to be more precise about how we
+display variables.
+
+```py
+time = "morning"
+name = "Avery"
+print(f"Good {time}, {name}!")
+```
+
+```
+Good morning, Avery!
+```
+
+Format strings start with an `f` and can contain variable names wrapped in curly
+brackets `{}`. These bracketed variable names get replaced with the values of
+the variables.
+
+---
+
+What does this code print out?
+
+```py
+time = "morning"
+name = "Avery"
+print(f"Good {time}, name!")
+```
+
+...
+
+Second variable isn't in brackets, so it doesn't get filled in.
+
+```
+Good morning, name!
+```
+
+---
+
+What does this code print out?
+
+```py
+time = "morning"
+name = "Avery"
+print("Good {time}, {name}!")
+```
+
+...
+
+The string is missing the `f` prefix, so it's treated as a normal string, not a
+format string, and no variables get filled in.
+
+```
+Good {time}, {name}!
+```
+
 ## Variable Names
 
 Variable names may contain letters, digits, and underscores (`_`), but must not
@@ -290,78 +362,6 @@ color = "green"
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'color' is not defined
-```
-
-## Format Strings
-
-What will this code print out?
-
-```py
-time = "morning"
-name = "Avery"
-print("Good", time, ",", name, "!")
-```
-
-...
-
-```
-Good morning , Avery !
-```
-
-...
-
-We can use **format strings** (f-strings) to be more precise about how we
-display variables.
-
-```py
-time = "morning"
-name = "Avery"
-print(f"Good {time}, {name}!")
-```
-
-```
-Good morning, Avery!
-```
-
-Format strings start with an `f` and can contain variable names wrapped in curly
-brackets `{}`. These bracketed variable names get replaced with the values of
-the variables.
-
----
-
-What does this code print out?
-
-```py
-time = "morning"
-name = "Avery"
-print(f"Good {time}, name!")
-```
-
-...
-
-Second variable isn't in brackets, so it doesn't get filled in.
-
-```
-Good morning, name!
-```
-
----
-
-What does this code print out?
-
-```py
-time = "morning"
-name = "Avery"
-print("Good {time}, {name}!")
-```
-
-...
-
-The string is missing the `f` prefix, so it's treated as a normal string, not a
-format string, and no variables get filled in.
-
-```
-Good {time}, {name}!
 ```
 
 ## String Input
