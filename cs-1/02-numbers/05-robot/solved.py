@@ -71,5 +71,5 @@ svg = f"""
 </svg>
 """
 
-with open("face.svg", "w") as file:
+with open("robot.svg", "w") as file:
     file.write(svg)
