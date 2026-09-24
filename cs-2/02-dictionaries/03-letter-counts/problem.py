@@ -39,7 +39,7 @@ with open("alice.txt") as file:
 
 counts = {}
 
-pass
+pass  # Your code goes here
 
 total = len(text)
 

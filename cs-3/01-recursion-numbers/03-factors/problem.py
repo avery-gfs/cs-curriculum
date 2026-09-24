@@ -10,11 +10,11 @@
 
 
 def getFactors(n, d):
-    pass
+    pass  # Your code goes here
 
 
 def loopNums(n):
-    pass
+    pass  # Your code goes here
 
 
 loopNums(2)

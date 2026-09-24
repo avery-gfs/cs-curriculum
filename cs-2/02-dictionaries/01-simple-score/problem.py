@@ -1,3 +1,5 @@
+# Calculate and print the scrabble score of word entered by the user
+
 letterPoints = {
     "a": 1,
     "b": 3,
@@ -29,4 +31,4 @@ letterPoints = {
 
 word = input("Enter a word: ")
 
-# Add code to calculate and print the scrabble score of the given word
+# Your code goes here

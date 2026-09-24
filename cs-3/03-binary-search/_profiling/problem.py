@@ -13,7 +13,7 @@ def timer(title):
 
 
 def search(lst, low, high, target):
-    pass
+    pass  # Your code goes here
 
 
 count = 100_000

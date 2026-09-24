@@ -36,7 +36,7 @@ with open("alice.txt") as file:
 longWords = {}
 wordLengths = {}
 
-pass
+pass  # Your code goes here
 
 for word in sorted(longWords.values()):
     print(word)
