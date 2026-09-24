@@ -33,23 +33,13 @@ letterPoints = {
     "z": 10,
 }
 
-bestWord = None  # Keep track of the highest scoring word
-bestScore = 0  # Keep track of the score of bestWord
+bestWord = None
+bestScore = 0
 
 for word in words:
-    # Score variable for the current word
     score = 0
 
-    # Loop through each letter in the current word
-    # Look up the points for the letter and add it to the word score
-
-    # Your code goes here
-
-    # After summing the points for each letter, check if the word score
-    # is greater than the current best word score, and if so update
-    # the best score and best word accordingly
-
-    # Your code goes here
+    pass
 
 print(bestWord)
 print(bestScore)
