@@ -457,6 +457,19 @@ e 12.6
 ...
 ```
 
+`counts`
+
+```py
+{
+    "a": 8.2,
+    "b": 1.4,
+    "c": 2.2,
+    "d": 4.6,
+    "e": 12.6,
+    # ...
+}
+```
+
 ## Problem: Longest Words
 
 Find the longest word starting with each letter of the alphabet in the text of
@@ -471,6 +484,32 @@ extraordinary
 ...
 ```
 
+`longWords`
+
+```py
+{
+    "affectionately": 0,
+    "beautifully": 0,
+    "contemptuously": 0,
+    "disappointment": 0,
+    "extraordinary": 0,
+    # ...
+}
+```
+
+`wordLengths`
+
+```py
+{
+    "affectionately": 14,
+    "beautifully": 11,
+    "contemptuously": 14,
+    "disappointment": 14,
+    "extraordinary": 13,
+    # ...
+}
+```
+
 ## Problem: Best Word Each Letter
 
 Find the word with the highest scrabble score starting with each letter of the
@@ -483,4 +522,30 @@ contemptuously 23
 difficulty 22
 extraordinary 24
 ...
+```
+
+`bestWords`
+
+```py
+{
+    "a": "affectionately",
+    "b": "beautifully",
+    "c": "contemptuously",
+    "d": "difficulty",
+    "e": "extraordinary",
+    # ...
+}
+```
+
+`bestScores`
+
+```py
+{
+    "a": 25,
+    "b": 19,
+    "c": 23,
+    "d": 22,
+    "e": 24,
+    # ...
+}
 ```
