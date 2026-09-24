@@ -66,13 +66,6 @@ My goals for this class are:
 - That students work hard and focus in class
 - That students learn a lot
 
-## Grading
-
-Class grade breakdown:
-
-- 60% Participation and effective work
-- 40% Completion of assignments
-
 ## Participation
 
 - Quiet during classwork
