@@ -461,11 +461,11 @@ e 12.6
 
 ```py
 {
-    "a": 8.2,
-    "b": 1.4,
-    "c": 2.2,
-    "d": 4.6,
-    "e": 12.6,
+    "a": 8788,
+    "b": 1476,
+    "c": 2396,
+    "d": 4927,
+    "e": 13571,
     # ...
 }
 ```
@@ -488,11 +488,11 @@ extraordinary
 
 ```py
 {
-    "affectionately": 0,
-    "beautifully": 0,
-    "contemptuously": 0,
-    "disappointment": 0,
-    "extraordinary": 0,
+    "a": "affectionately",
+    "b": "beautifully",
+    "c": "contemptuously",
+    "d": "disappointment",
+    "e": "extraordinary",
     # ...
 }
 ```
@@ -501,11 +501,11 @@ extraordinary
 
 ```py
 {
-    "affectionately": 14,
-    "beautifully": 11,
-    "contemptuously": 14,
-    "disappointment": 14,
-    "extraordinary": 13,
+    "a": 14,
+    "b": 11,
+    "c": 14,
+    "d": 14,
+    "e": 13,
     # ...
 }
 ```
