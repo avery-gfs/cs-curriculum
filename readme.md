@@ -70,7 +70,7 @@ My goals for this class are:
 
 Class grade breakdown:
 
-- 60% Participation and fffective work
+- 60% Participation and effective work
 - 40% Completion of assignments
 
 ## Participation
