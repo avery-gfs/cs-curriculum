@@ -457,6 +457,8 @@ e 12.6
 ...
 ```
 
+---
+
 `counts`
 
 ```py
@@ -483,6 +485,8 @@ disappointment
 extraordinary
 ...
 ```
+
+---
 
 `longWords`
 
@@ -523,6 +527,8 @@ difficulty 22
 extraordinary 24
 ...
 ```
+
+---
 
 `bestWords`
 
