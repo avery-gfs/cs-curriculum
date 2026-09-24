@@ -38,9 +38,10 @@ with open("alice.txt") as file:
     text = text.replace(" ", "").replace("\n", "")
 
 counts = {}
-total = len(text)
 
 pass
+
+total = len(text)
 
 for letter in sorted(counts.keys()):
     print(letter, round(counts[letter] / total * 100, 1))

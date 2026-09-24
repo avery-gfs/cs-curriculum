@@ -1,3 +1,35 @@
+# Find the longest word starting with each letter of the alphabet in
+# the text of Alice in Wonderland
+#
+# Expected output:
+#
+# affectionately 25
+# beautifully 19
+# contemptuously 23
+# difficulty 22
+# extraordinary 24
+# frontispiece 19
+# geography 19
+# hjckrrh 26
+# inquisitively 28
+# jumping 19
+# knocking 19
+# lazily 18
+# multiplication 20
+# neighbouring 19
+# occasionally 19
+# puzzling 29
+# quickly 25
+# refreshments 20
+# squeezed 27
+# thoughtfully 25
+# uncomfortably 25
+# vanishing 16
+# whiskers 18
+# xii 10
+# yesterday 16
+# zigzag 26
+
 with open("alice.txt") as file:
     words = file.read().split()  # Get words from file
 
@@ -30,15 +62,8 @@ letterPoints = {
     "z": 10,
 }
 
-# For each letter of the alphabet, find the highest scoring word
-# that starts with that letter. Don't loop through the list of
-# words more than once! Display the highest scoring word for each letter
-# along with its score in alphabetic order
-
-bestWords = {}  # Keep track of the highest scoring word for each letter
-bestScores = {}  # Keep track of the scores for bestWords
-
-# Find the word with the highest Scrabble score
+bestWords = {}
+bestScores = {}
 
 for word in words:
     score = 0
@@ -46,25 +71,12 @@ for word in words:
     for letter in word:
         score += letterPoints[letter]
 
-    # After summing the points for each letter, get the first letter
-    # of the word.
-    #
-    #   - If this is the first word we've seen that starts with this
-    #     first letter, then update bestWord and bestScore to contain
-    #     this word and its score
-    #
-    #   - If we already have a best word that starts with this first
-    #     letter, check if the score for this word is better than the
-    #     score for the old best word. If it is then update bestWord
-    #     and bestScore to contain this new word and its score
-
     firstLetter = word[0]
-
     bestScores.setdefault(firstLetter, 0)
 
     if bestScores[firstLetter] < score:
         bestWords[firstLetter] = word
         bestScores[firstLetter] = score
 
-for letter in bestWords:
+for letter in sorted(bestWords.keys()):
     print(bestWords[letter], bestScores[letter])
