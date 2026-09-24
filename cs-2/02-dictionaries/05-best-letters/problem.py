@@ -68,7 +68,7 @@ bestScores = {}
 for word in words:
     score = 0
 
-    pass
+    pass  # Your code goes here
 
 for letter in sorted(bestWords.keys()):
     print(bestWords[letter], bestScores[letter])

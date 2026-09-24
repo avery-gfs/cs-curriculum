@@ -17,7 +17,7 @@ letters = "abcdefghij"
 
 
 def printGrid(i, j):
-    pass
+    pass  # Your code goes here
 
 
 printGrid(0, 0)

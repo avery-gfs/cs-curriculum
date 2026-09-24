@@ -39,7 +39,7 @@ bestScore = 0
 for word in words:
     score = 0
 
-    pass
+    pass  # Your code goes here
 
 print(bestWord)
 print(bestScore)
