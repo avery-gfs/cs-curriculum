@@ -2,6 +2,10 @@
 
 Algorithms, Data Structures, and Problem Solving
 
+Avery Nortonsmith
+
+anortonsmith@germantownfriends.org
+
 ## Why Study CS?
 
 Because it teaches us how to solve complex problems. There are many tasks we as
@@ -38,7 +42,7 @@ about software are decisions about the world we are creating.
 
 ## Sample Problem
 
-```
+```txt
       ░             ░             ░       
       ░             ░             ░       
       ░             ░             ░       

@@ -2,6 +2,10 @@
 
 Introduction to Programming
 
+Avery Nortonsmith
+
+anortonsmith@germantownfriends.org
+
 ## Why Study CS?
 
 Because it teaches us how to solve complex problems. There are many tasks we as
@@ -41,7 +45,7 @@ about software are decisions about the world we are creating.
 
 ## Sample Problem
 
-```
+```txt
 verb: cook
 adjective: spicy
 plural noun: frogs
@@ -50,7 +54,7 @@ number: 200
 substance: rice pudding
 ```
 
-```
+```txt
 When operating a used car, remember: never cook the engine if the car is spicy.
 Before driving, make sure the gas tank is free of frogs.
 Used cars perform best when driven between 2 and 200 miles per hour.

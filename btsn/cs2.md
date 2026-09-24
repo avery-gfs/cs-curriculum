@@ -2,6 +2,10 @@
 
 Data Processing and Practical Applications
 
+Avery Nortonsmith
+
+anortonsmith@germantownfriends.org
+
 ## Why Study CS?
 
 Because it teaches us how to solve complex problems. There are many tasks we as
@@ -36,7 +40,7 @@ about software are decisions about the world we are creating.
 
 ## Sample Problem
 
-```
+```txt
 Eg ranr xtbck bt qa wvqrwaf kwam, nhgdr Wiezz'f dizkfbnzawa.
 Q nwie lpr jmnr, gngctn nnx wsl plsf, zzig zivrk gnw ako pxwigogv.
 Sjbbw gnw gaecyz iaj buk agxanr, Q nwie lpr ecfou eofovty.

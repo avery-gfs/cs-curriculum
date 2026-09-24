@@ -2,6 +2,10 @@
 
 Software Engineering Lab
 
+Avery Nortonsmith
+
+anortonsmith@germantownfriends.org
+
 ## Why Study CS?
 
 Because it teaches us how to solve complex problems. There are many tasks we as
