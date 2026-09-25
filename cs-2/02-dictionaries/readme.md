@@ -591,48 +591,44 @@ sequence. Then, choose the next word at random from the list of words that
 follow the current word from the dictionary. Repeat this process to choose
 subsequence words in the output sequence.
 
-...
+---
 
-Choose a random word from the story: `in`
+For the following `successors` dictionary:
 
-...
+```py
+{
+    "sun": ["shines", "shines", "sets"],
+    "shines": ["brightly", "warmly"],
+    "sets": ["slowly", "today"],
+    "brightly": ["today", "again"],
+    "warmly": ["today"],
+    "slowly": ["today"],
+    "again": ["sun"],
+    "today": ["sun", "ends"],
+    "ends": ["today"],
+}
+```
 
-Choose a random word from `successors["in"]` -> `wonderland`
+Choose a random word from the story: `sun`
 
-...
+Choose a random word from `successors["sun"]` -> `sets`
 
-Choose a random word from `successors["wonderland"]` -> `of`
+Choose a random word from `successors["sets"]` -> `slowly`
 
-...
+Choose a random word from `successors["slowly"]` -> `today`
 
-Choose a random word from `successors["of"]` -> `tarts`
+Choose a random word from `successors["today"]` -> `sun`
 
-...
+Choose a random word from `successors["sun"]` -> `shines`
 
-Choose a random word from `successors["tarts"]` -> `on`
+Choose a random word from `successors["shines"]` -> `warmly`
 
-...
-
-Choose a random word from `successors["on"]` -> `like`
-
-...
-
-Choose a random word from `successors["like"]` -> `a`
-
-...
-
-Choose a random word from `successors["a"]` -> `graceful`
-
-...
-
-Choose a random word from `successors["graceful"]` -> `zigzag`
-
-...
+Choose a random word from `successors["warmly"]` -> `today`
 
 Final Output:
 
 ```
-in wonderland of tarts on like a graceful zigzag
+sun sets slowly today sun shines warmly today
 ```
 
 ---
