@@ -472,13 +472,6 @@ items[i], items[j] = items[j], items[i]
 
 _(silly Python nonsense)_
 
-## Challenge: Better Algorithm
-
-Can you come up with a better algorithm for sorting? One that doesn't have
-$O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
-description of your procedure, and an argument for why it has better algorithmic
-complexity than bubble sort.
-
 ## Complexity Exercise
 
 Which is larger?
@@ -529,14 +522,9 @@ $$
 b^n >> n^b
 $$
 
-## Sophia Sort
+## Challenge: Better Algorithm
 
-```py
-def sophiaSort(items):
-    for i in range(len(items)):
-        for j in range(i, len(items)):
-            if items[i] > items[j]:
-                tmp = items[i]
-                items[i] = items[j]
-                items[j] = tmp
-```
+Can you come up with a better algorithm for sorting? One that doesn't have
+$O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
+description of your procedure, and an argument for why it has better algorithmic
+complexity than bubble sort.
