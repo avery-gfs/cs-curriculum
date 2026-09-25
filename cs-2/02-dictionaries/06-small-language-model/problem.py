@@ -12,23 +12,25 @@ successors = {}
 # dictionary. The value for each entry should be the list of words that
 # come immediately after the given key word in the story (with duplicates).
 #
-# Example:
+# For example, given this text:
+#
+# "the rabbit was late and the rabbit ran away"
+#
+# The `successors` dictionary would contain:
 #
 # {
-#   ...
-#   'falling': ['down', 'through'],
-#   'deep': ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice'],
-#   'fell': ['very', 'past', 'off', 'on', 'upon', 'asleep'],
-#   'slowly': ['for', 'back', 'back', 'beginning', 'opened', 'followed', 'after', 'and'],
-#   'plenty': ['of', 'of'],
-#   ...
+#     "the": ["rabbit", "rabbit"],
+#     "rabbit": ["was", "ran"],
+#     "was": ["late"],
+#     "late": ["and"],
+#     "and": ["the"],
+#     "ran": ["away"],
 # }
 
 # You code goes here
 
-print(
-    successors["deep"]
-)  # Should print ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice']
+# Should print ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice']
+print(successors["deep"])
 
 output = []
 current = random.choice(words)
