@@ -628,7 +628,7 @@ You can choose a random value from a list using `random.choice`.
 ```py
 import random
 
-words = ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice']
+words = ["well", "or", "and", "hollow", "sigh", "voice", "voice"]
 
 random.choice(words)  # A random word from the list
 ```
