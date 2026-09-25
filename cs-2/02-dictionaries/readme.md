@@ -565,8 +565,6 @@ First, create a dictionary `successors` that maps each word to a list of the
 words that immediately follow it in the story. Keep duplicate words in each
 list.
 
----
-
 For example, given this text:
 
 ```txt
