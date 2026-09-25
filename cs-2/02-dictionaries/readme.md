@@ -609,21 +609,14 @@ For the following `successors` dictionary:
 }
 ```
 
-Choose a random word from the story: `sun`
-
-Choose a random word from `successors["sun"]` -> `sets`
-
-Choose a random word from `successors["sets"]` -> `slowly`
-
-Choose a random word from `successors["slowly"]` -> `today`
-
-Choose a random word from `successors["today"]` -> `sun`
-
-Choose a random word from `successors["sun"]` -> `shines`
-
-Choose a random word from `successors["shines"]` -> `warmly`
-
-Choose a random word from `successors["warmly"]` -> `today`
+1. Choose a random word from the story: `sun`
+1. Choose a random word from `successors["sun"]` -> `sets`
+1. Choose a random word from `successors["sets"]` -> `slowly`
+1. Choose a random word from `successors["slowly"]` -> `today`
+1. Choose a random word from `successors["today"]` -> `sun`
+1. Choose a random word from `successors["sun"]` -> `shines`
+1. Choose a random word from `successors["shines"]` -> `warmly`
+1. Choose a random word from `successors["warmly"]` -> `today`
 
 Final Output:
 
