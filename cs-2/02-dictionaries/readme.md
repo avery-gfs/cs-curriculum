@@ -589,7 +589,8 @@ The `successors` dictionary would contain:
 Next, choose a random word from the story. This is the first word in the output
 sequence. Then, choose the next word at random from the list of words that
 follow the current word from the dictionary. Repeat this process to choose
-subsequence words in the output sequence.
+subsequence words in the output sequence. For example, using the following
+`successors` dictionary:
 
 ```py
 {
@@ -618,6 +619,18 @@ Final Output:
 
 ```
 sun sets slowly today sun shines warmly today
+```
+
+---
+
+You can choose a random value from a list using `random.choice`.
+
+```py
+import random
+
+words = ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice']
+
+random.choice(words)  # A random word from the list
 ```
 
 ---
