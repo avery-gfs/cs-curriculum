@@ -472,56 +472,6 @@ items[i], items[j] = items[j], items[i]
 
 _(silly Python nonsense)_
 
-## Complexity Exercise
-
-Which is larger?
-
-$$
-100^4
-$$
-
-Or
-
-$$
-4^{100}
-$$
-
----
-
-$$
-4^{100} = (4^4)^{96} = 256^{96} > 100^4
-$$
-
-...
-
-$$
-log_2(100^4) = 4 \cdot log_2(100)
-$$
-
-$$
-log_2(4^{100}) = 100 \cdot log_2(4)
-$$
-
----
-
-$$
-100^4 = 100000000
-$$
-
-...
-
-$$
-4^{100} = 1606938044258990275541962092341162602522202993782792835301376
-$$
-
-...
-
-In general, for a small number $b$ greater than $1$ and a large number $n$:
-
-$$
-b^n >> n^b
-$$
-
 ## Challenge: Better Algorithm
 
 Can you come up with a better algorithm for sorting? One that doesn't have

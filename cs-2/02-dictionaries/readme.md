@@ -555,3 +555,99 @@ extraordinary 24
     # ...
 }
 ```
+
+## Challenge: Not-So-Large Language Model
+
+Use the text of _Alice in Wonderland_ to probabilistically generate a sequence
+of 100 words.
+
+First, create a dictionary `successors` that maps each word to a list of the
+words that immediately follow it in the story. Keep duplicate words in each
+list.
+
+---
+
+For example, given this text:
+
+```txt
+the rabbit was late and the rabbit ran away
+```
+
+The `successors` dictionary would contain:
+
+```py
+{
+    "the": ["rabbit", "rabbit"],
+    "rabbit": ["was", "ran"],
+    "was": ["late"],
+    "late": ["and"],
+    "and": ["the"],
+    "ran": ["away"],
+}
+```
+
+---
+
+Next, choose a random word from the story. This is the first word in the output
+sequence. Then, choose the next word at random from the list of words that
+follow the current word from the dictionary. Repeat this process to choose
+subsequence words in the output sequence.
+
+...
+
+Choose a random word from the story: `in`
+
+...
+
+Choose a random word from `successors["in"]`: `wonderland`
+
+...
+
+Choose a random word from `successors["wonderland"]`: `of`
+
+...
+
+Choose a random word from `successors["of"]`: `tarts`
+
+...
+
+Choose a random word from `successors["tarts"]`: `on`
+
+...
+
+Choose a random word from `successors["on"]`: `like`
+
+...
+
+Choose a random word from `successors["like"]`: `a`
+
+...
+
+Choose a random word from `successors["a"]`: `graceful`
+
+...
+
+Choose a random word from `successors["graceful"]`: `zigzag`
+
+...
+
+Final Output:
+
+```
+in wonderland of tarts on like a graceful zigzag
+```
+
+---
+
+Example output:
+
+```
+his claws and off you getting its head do next peeped into a pair of
+more i tell you make out who is like the refreshments but why is the
+gryphon the meaning of course not becoming and barking hoarsely all
+about them a sound of white kid gloves and say presently the distance
+and in wonderland of tarts on like a graceful zigzag and oh how the
+jurors she had not make it pleaded poor child said alice added the
+things that i think it muttered to speak but i could think i beg pardon
+said the little nervous
+```

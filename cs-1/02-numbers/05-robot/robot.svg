@@ -4,45 +4,45 @@
   width="100mm"
   height="100mm"
 >
-  <g stroke-width="1.0" stroke="black">
+  <g stroke-width="4.0" stroke="black">
     <rect
       width="80"
       height="60"
       x="-40"
       y="-30"
-      fill="none"
+      fill="red"
     />
 
     <line
       x1="-25"
       y1="-20"
       x2="-15"
-      y2="-22.0"
+      y2="-15.0"
     />
 
     <line
       x1="25"
       y1="-20"
       x2="15"
-      y2="-22.0"
+      y2="-15.0"
     />
 
     <circle
       cx="-20"
       cy="-5"
-      r="5.0"
-      fill="none"
+      r="2.0"
+      fill="2"
     />
 
     <circle
       cx="20"
       cy="-5"
-      r="5.0"
-      fill="none"
+      r="2.0"
+      fill="2"
     />
 
     <path
-      d="M 0 0 l 5.0 10.0 h -10.0 z"
+      d="M 0 0 l 1.0 20.0 h -2.0 z"
       fill="none"
     />
 
