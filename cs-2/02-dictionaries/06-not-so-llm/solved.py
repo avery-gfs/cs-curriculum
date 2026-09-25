@@ -46,6 +46,24 @@ current = random.choice(words)
 #
 # 2) Choose a new word at random from the list of words in `successors`
 #    for the key `current`. Set this new word as the new value for `current`.
+#
+# For example, using the following `successors` dictionary:
+#
+# {
+#     "sun": ["shines", "shines", "sets"],
+#     "shines": ["brightly", "warmly"],
+#     "sets": ["slowly", "today"],
+#     "brightly": ["today", "again"],
+#     "warmly": ["today"],
+#     "slowly": ["today"],
+#     "again": ["sun"],
+#     "today": ["sun", "ends"],
+#     "ends": ["today"],
+# }
+#
+# Possible result:
+#
+# "sun sets slowly today sun shines warmly today"
 
 for _ in range(100):
     output.append(current)
