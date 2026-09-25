@@ -641,21 +641,26 @@ in wonderland of tarts on like a graceful zigzag
 
 Example output from the final model:
 
-```
-his claws and off you getting its head do next peeped into a pair of
-more i tell you make out who is like the refreshments but why is the
-gryphon the meaning of course not becoming and barking hoarsely all
-about them a sound of white kid gloves and say presently the distance
-and in wonderland of tarts on like a graceful zigzag and oh how the
-jurors she had not make it pleaded poor child said alice added the
-things that i think it muttered to speak but i could think i beg pardon
-said the little nervous
-```
+> his claws and off you getting its head do next peeped into a pair of more i
+> tell you make out who is like the refreshments but why is the gryphon the
+> meaning of course not becoming and barking hoarsely all about them a sound of
+> white kid gloves and say presently the distance and in wonderland of tarts on
+> like a graceful zigzag and oh how the jurors she had not make it pleaded poor
+> child said alice added the things that i think it muttered to speak but i
+> could think i beg pardon said the little nervous
 
-```
-business there seemed to come on it does it occurred to alice cautiously replied alice but why i mentioned before and repeat you like it was a moment and waving of march hare alice called softly after the game the eaglet bent down and stupid but they draw you dont believe you my tail but youre falling through into the king said the fifth bend i beg for such a thick wood to find them and she took the temper of trees a very queer indeed the way which word i could and the sea but said the right size
-```
+> business there seemed to come on it does it occurred to alice cautiously
+> replied alice but why i mentioned before and repeat you like it was a moment
+> and waving of march hare alice called softly after the game the eaglet bent
+> down and stupid but they draw you dont believe you my tail but youre falling
+> through into the king said the fifth bend i beg for such a thick wood to find
+> them and she took the temper of trees a very queer indeed the way which word i
+> could and the sea but said the right size
 
-```
-and tillie and then unrolled the moment she had made of his head how she walked off this time said alice im glad she began dreaming after a little timidly saying lessons youd rather alarmed at the march hare sixteenth added the moral of boots and looked round on messages for having the reason to him sighing in but she left her to take me see you manage on they were silent the judge ill set dinah tell you our cat said alice went alice that she could not a poor man said alice that to set out again no
-```
+> and tillie and then unrolled the moment she had made of his head how she
+> walked off this time said alice im glad she began dreaming after a little
+> timidly saying lessons youd rather alarmed at the march hare sixteenth added
+> the moral of boots and looked round on messages for having the reason to him
+> sighing in but she left her to take me see you manage on they were silent the
+> judge ill set dinah tell you our cat said alice went alice that she could not
+> a poor man said alice that to set out again no
