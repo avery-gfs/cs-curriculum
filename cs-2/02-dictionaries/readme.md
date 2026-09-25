@@ -591,10 +591,6 @@ sequence. Then, choose the next word at random from the list of words that
 follow the current word from the dictionary. Repeat this process to choose
 subsequence words in the output sequence.
 
----
-
-For the following `successors` dictionary:
-
 ```py
 {
     "sun": ["shines", "shines", "sets"],
@@ -610,13 +606,13 @@ For the following `successors` dictionary:
 ```
 
 1. Choose a random word from the story: `sun`
-1. Choose a random word from `successors["sun"]` -> `sets`
-1. Choose a random word from `successors["sets"]` -> `slowly`
-1. Choose a random word from `successors["slowly"]` -> `today`
-1. Choose a random word from `successors["today"]` -> `sun`
-1. Choose a random word from `successors["sun"]` -> `shines`
-1. Choose a random word from `successors["shines"]` -> `warmly`
-1. Choose a random word from `successors["warmly"]` -> `today`
+2. Choose a random word from `successors["sun"]` -> `sets`
+3. Choose a random word from `successors["sets"]` -> `slowly`
+4. Choose a random word from `successors["slowly"]` -> `today`
+5. Choose a random word from `successors["today"]` -> `sun`
+6. Choose a random word from `successors["sun"]` -> `shines`
+7. Choose a random word from `successors["shines"]` -> `warmly`
+8. Choose a random word from `successors["warmly"]` -> `today`
 
 Final Output:
 
