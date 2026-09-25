@@ -599,35 +599,35 @@ Choose a random word from the story: `in`
 
 ...
 
-Choose a random word from `successors["in"]`: `wonderland`
+Choose a random word from `successors["in"]` -> `wonderland`
 
 ...
 
-Choose a random word from `successors["wonderland"]`: `of`
+Choose a random word from `successors["wonderland"]` -> `of`
 
 ...
 
-Choose a random word from `successors["of"]`: `tarts`
+Choose a random word from `successors["of"]` -> `tarts`
 
 ...
 
-Choose a random word from `successors["tarts"]`: `on`
+Choose a random word from `successors["tarts"]` -> `on`
 
 ...
 
-Choose a random word from `successors["on"]`: `like`
+Choose a random word from `successors["on"]` -> `like`
 
 ...
 
-Choose a random word from `successors["like"]`: `a`
+Choose a random word from `successors["like"]` -> `a`
 
 ...
 
-Choose a random word from `successors["a"]`: `graceful`
+Choose a random word from `successors["a"]` -> `graceful`
 
 ...
 
-Choose a random word from `successors["graceful"]`: `zigzag`
+Choose a random word from `successors["graceful"]` -> `zigzag`
 
 ...
 
