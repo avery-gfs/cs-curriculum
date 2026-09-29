@@ -2,27 +2,23 @@ def quicksort(items):
     if items == []:
         return []
 
-    lo = [item < pivot for item in items]
-    eq = [item == pivot for item in items]
-    hi = [item > pivot for item in items]
+    pivot = items[0]
 
-    quicksort(lo)
-    quicksort(hi)
+    lo = [item for item in items if item < pivot]
+    eq = [item for item in items if item == pivot]
+    hi = [item for item in items if item > pivot]
 
-    return lo + eq + hi
+    return quicksort(lo) + eq + quicksort(hi)
 
 
 numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
 
-quicksort(numbers)
-print(numbers)
+print(quicksort(numbers))
 
 emojis = list("🦀🥦🫖🐼🧲🐼🏀🫖🪭💩🍄⚽🥑🥦🦘🫖")
 
-quicksort(emojis)
-print(emojis)
+print(quicksort(emojis))
 
 words = "Mayday Mayday watch the needle leave the dial".split()
 
-quicksort(words)
-print(words)
+print(quicksort(words))
