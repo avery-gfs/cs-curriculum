@@ -492,17 +492,15 @@ To quicksort a list `items`:
   sorted order). Return the three sublists concatenated:
   `quicksort(lo) + eq + quicksort(hi)`.
 
----
+  List concatenation
 
-List concatenation
+  ```py
+  [1, 2, 3] + [4] + [5, 6]
+  ```
 
-```py
-[1, 2, 3] + [4] + [5, 6]
-```
-
-```
-[1, 2, 3, 4, 5, 6]
-```
+  ```
+  [1, 2, 3, 4, 5, 6]
+  ```
 
 ---
 
