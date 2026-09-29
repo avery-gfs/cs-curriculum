@@ -599,3 +599,35 @@ hi: 5 4 3 -> 4 5 5
 ## Practice by Hand
 
 https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=3%2C2%2C5%2C1%2C4%2C1%2C5
+
+## In Place Sorting
+
+In place:
+
+```py
+def bubbleSort(items):
+    for limit in range(len(items) - 1, 0, -1):
+        for index in range(limit):
+            if items[index] > items[index + 1]:
+                tmp = items[index]
+                items[index] = items[index + 1]
+                items[index + 1] = tmp
+
+
+numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+
+bubbleSort(numbers)
+print(numbers)
+```
+
+Not in place:
+
+```py
+def quicksort(items):
+    # ...
+
+
+numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+
+print(quicksort(numbers))
+```
