@@ -637,6 +637,8 @@ bubbleSort(numbers)
 print(numbers)
 ```
 
+...
+
 Not in place:
 
 ```py
@@ -648,6 +650,8 @@ numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
 
 print(quicksort(numbers))
 ```
+
+...
 
 There is an in-place version of quicksort but it's a little more complex so we
 won't look at that right now.
