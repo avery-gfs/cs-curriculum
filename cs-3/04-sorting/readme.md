@@ -656,3 +656,192 @@ print(quicksort(numbers))
 
 There is an in-place version of quicksort but it's a little more complex so we
 won't look at that right now.
+
+## Quicksort Worst Case
+
+```
+1 2 3 4 5 6 7
+*
+
+lo:
+eq: 1
+hi:
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+* ^
+
+lo:
+eq: 1
+hi: 2
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+*   ^
+
+lo:
+eq: 1
+hi: 2 3
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+*     ^
+
+lo:
+eq: 1
+hi: 2 3 4
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+*       ^
+
+lo:
+eq: 1
+hi: 2 3 4 5
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+*         ^
+
+lo:
+eq: 1
+hi: 2 3 4 5 6
+```
+
+---
+
+```
+1 2 3 4 5 6 7
+*           ^
+
+lo:
+eq: 1
+hi: 2 3 4 5 6 7
+```
+
+## Quicksort Best Case
+
+What is the "best case" arrangement for the numbers 1 through 7 (the one which
+will require the fewest comparisons to quicksort)?
+
+---
+
+```
+4 2 1 3 6 5 7
+*
+
+lo:
+eq: 4
+hi:
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+* ^
+
+lo: 2
+eq: 4
+hi:
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+*   ^
+
+lo: 2 1
+eq: 4
+hi:
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+*     ^
+
+lo: 2 1 3
+eq: 4
+hi:
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+*       ^
+
+lo: 2 1 3
+eq: 4
+hi: 6
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+*         ^
+
+lo: 2 1 3
+eq: 4
+hi: 6 5
+```
+
+---
+
+```
+4 2 1 3 6 5 7
+*           ^
+
+lo: 2 1 3
+eq: 4
+hi: 6 5 7
+```
+
+## Quicksort Analysis
+
+```
+[***************] = O(n)
+```
+
+...
+
+```
+[*******] [*] [*******] = O(n)
+```
+
+...
+
+```
+[***] [*] [***] [*] [***] [*] [***] = O(n)
+```
+
+...
+
+```
+[*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [*] [*] = O(n)
+```
+
+...
+
+$$
+\log_2(n) * O(n) = n\log_2(n)
+$$
