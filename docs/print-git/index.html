@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Markdown Print Renderer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-light.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f6f8fa;
+        color: #1f2328;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica,
+          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      .app {
+        max-width: 980px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+
+      .controls {
+        background: #ffffff;
+        border: 1px solid #d1d9e0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      label {
+        font-size: 14px;
+        min-width: 140px;
+      }
+
+      input[type="url"] {
+        flex: 1 1 400px;
+        min-width: 240px;
+        border: 1px solid #d1d9e0;
+        border-radius: 6px;
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      input[type="file"] {
+        font-size: 14px;
+      }
+
+      button {
+        border: 1px solid #1f883d;
+        background: #2da44e;
+        color: #ffffff;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      button.secondary {
+        border-color: #d1d9e0;
+        background: #f6f8fa;
+        color: #1f2328;
+      }
+
+      button:hover {
+        filter: brightness(0.98);
+      }
+
+      .status {
+        font-size: 13px;
+        color: #59636e;
+        margin-top: 6px;
+        word-break: break-word;
+      }
+
+      .paper {
+        background: #ffffff;
+        border: 1px solid #d1d9e0;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .markdown-body {
+        max-width: none;
+        padding: 32px;
+      }
+
+      /* Firefox can misrender GitHub table borders without explicit collapse rules. */
+      .markdown-body table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      .markdown-body th,
+      .markdown-body td {
+        border: 1px solid #d0d7de;
+      }
+
+      .empty {
+        color: #59636e;
+      }
+
+      @media (max-width: 720px) {
+        .markdown-body {
+          padding: 18px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .app {
+          max-width: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .controls {
+          display: none;
+        }
+
+        .paper {
+          border: 0;
+          border-radius: 0;
+        }
+
+        .markdown-body {
+          padding: 0;
+        }
+
+        @page {
+          margin: 0.6in;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <section class="controls">
+        <div class="row">
+          <label for="fileInput">Upload markdown file</label>
+          <input
+            id="fileInput"
+            type="file"
+            accept=".md, .markdown, .mdown, .txt, text/markdown, text/plain"
+          />
+        </div>
+
+        <div class="row">
+          <label for="urlInput">Markdown URL</label>
+          <input
+            id="urlInput"
+            type="url"
+            placeholder="https://raw.githubusercontent.com/... or https://github.com/.../blob/.../README.md"
+          />
+          <button id="loadUrlButton" type="button">Load URL</button>
+        </div>
+
+        <div class="row">
+          <button id="printButton" class="secondary" type="button">
+            Print
+          </button>
+          <button id="clearButton" class="secondary" type="button">
+            Clear
+          </button>
+        </div>
+
+        <p id="status" class="status">
+          Load a file or URL to render markdown with GitHub-like styling.
+        </p>
+      </section>
+
+      <section class="paper">
+        <article id="output" class="markdown-body">
+          <p class="empty">No markdown loaded yet.</p>
+        </article>
+      </section>
+    </main>
+
+    <script type="module">
+      import { marked } from "https://esm.sh/marked@13.0.3";
+      import { markedHighlight } from "https://esm.sh/marked-highlight@2.1.2";
+      import hljs from "https://esm.sh/highlight.js@11.11.1";
+      import DOMPurify from "https://esm.sh/dompurify@3.2.6";
+
+      const fileInput = document.getElementById("fileInput");
+      const urlInput = document.getElementById("urlInput");
+      const loadUrlButton = document.getElementById("loadUrlButton");
+      const printButton = document.getElementById("printButton");
+      const clearButton = document.getElementById("clearButton");
+      const output = document.getElementById("output");
+      const status = document.getElementById("status");
+
+      marked.use(
+        markedHighlight({
+          highlight(code, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+              return hljs.highlight(code, { language: lang }).value;
+            }
+            return hljs.highlightAuto(code).value;
+          },
+        }),
+      );
+
+      marked.setOptions({
+        gfm: true,
+        breaks: false,
+        headerIds: true,
+      });
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      function convertGithubBlobUrlToRaw(value) {
+        let parsed;
+        try {
+          parsed = new URL(value);
+        } catch {
+          return value;
+        }
+
+        if (parsed.hostname !== "github.com") {
+          return value;
+        }
+
+        const pathParts = parsed.pathname.split("/").filter(Boolean);
+        if (pathParts.length < 5) {
+          return value;
+        }
+
+        const [owner, repo, marker, branch, ...restPath] = pathParts;
+        if (marker !== "blob" || restPath.length === 0) {
+          return value;
+        }
+
+        const raw = new URL(
+          `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${
+            restPath.join("/")
+          }`,
+        );
+        return raw.toString();
+      }
+
+      function buildGithubReadmeCandidates(owner, repo, branch, dirPath = "") {
+        const base =
+          `https://raw.githubusercontent.com/${owner}/${repo}/${branch}`;
+        const prefix = dirPath ? `${dirPath.replace(/^\/+|\/+$/g, "")}/` : "";
+        const names = [
+          "README.md",
+          "Readme.md",
+          "readme.md",
+          "README.markdown",
+          "README",
+        ];
+        return names.map((name) => `${base}/${prefix}${name}`);
+      }
+
+      function buildCandidateUrls(rawInputUrl) {
+        const cleaned = rawInputUrl.trim();
+        if (!cleaned) {
+          return [];
+        }
+
+        let parsed;
+        try {
+          parsed = new URL(cleaned);
+        } catch {
+          return [cleaned];
+        }
+
+        if (parsed.hostname === "raw.githubusercontent.com") {
+          return [cleaned];
+        }
+
+        if (parsed.hostname !== "github.com") {
+          return [cleaned];
+        }
+
+        const pathParts = parsed.pathname.split("/").filter(Boolean);
+        if (pathParts.length < 2) {
+          return [cleaned];
+        }
+
+        const [owner, repo, marker, branch, ...restPath] = pathParts;
+
+        if (marker === "blob" && restPath.length > 0) {
+          return [convertGithubBlobUrlToRaw(cleaned)];
+        }
+
+        if (marker === "tree" && branch) {
+          const dirPath = restPath.join("/");
+          return buildGithubReadmeCandidates(owner, repo, branch, dirPath);
+        }
+
+        // Repo root pages (with or without #readme): try common README locations on main/master.
+        const pathAfterRepo = pathParts.slice(2).join("/");
+        return [
+          ...buildGithubReadmeCandidates(owner, repo, "main", pathAfterRepo),
+          ...buildGithubReadmeCandidates(owner, repo, "master", pathAfterRepo),
+        ];
+      }
+
+      function renderMarkdown(markdownText, sourceLabel = "content") {
+        const rendered = marked.parse(markdownText ?? "");
+        const safe = DOMPurify.sanitize(rendered, {
+          USE_PROFILES: { html: true },
+        });
+
+        output.innerHTML = safe ||
+          "<p class='empty'>Markdown rendered to empty output.</p>";
+        setStatus(`Rendered markdown from ${sourceLabel}.`);
+      }
+
+      async function loadMarkdownFromUrl(rawInputUrl) {
+        const candidates = buildCandidateUrls(rawInputUrl);
+        if (candidates.length === 0) {
+          setStatus("Enter a URL first.");
+          return;
+        }
+
+        let lastError = "Unable to fetch markdown from the provided URL.";
+        for (const candidate of candidates) {
+          setStatus(`Fetching: ${candidate}`);
+
+          let response;
+          try {
+            response = await fetch(candidate, {
+              headers: {
+                Accept: "text/plain, text/markdown; q=0.9, */*; q=0.8",
+              },
+            });
+          } catch (error) {
+            lastError = `Network/CORS error for ${candidate}: ${error.message}`;
+            continue;
+          }
+
+          if (!response.ok) {
+            lastError =
+              `HTTP ${response.status} ${response.statusText} for ${candidate}`;
+            continue;
+          }
+
+          const text = await response.text();
+          if (/<!doctype html>|<html[\s>]/i.test(text.slice(0, 300))) {
+            lastError =
+              `Fetched HTML page instead of markdown from ${candidate}`;
+            continue;
+          }
+
+          renderMarkdown(text, candidate);
+          return;
+        }
+
+        setStatus(lastError);
+      }
+
+      async function loadMarkdownFromFile(file) {
+        if (!file) {
+          setStatus("Choose a file first.");
+          return;
+        }
+
+        const text = await file.text();
+        renderMarkdown(text, file.name);
+      }
+
+      fileInput.addEventListener("change", () => {
+        loadMarkdownFromFile(fileInput.files?.[0]);
+      });
+
+      loadUrlButton.addEventListener("click", () => {
+        loadMarkdownFromUrl(urlInput.value);
+      });
+
+      urlInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          loadMarkdownFromUrl(urlInput.value);
+        }
+      });
+
+      printButton.addEventListener("click", () => {
+        window.print();
+      });
+
+      clearButton.addEventListener("click", () => {
+        fileInput.value = "";
+        urlInput.value = "";
+        output.innerHTML = "<p class='empty'>No markdown loaded yet.</p>";
+        setStatus("Cleared.");
+      });
+    </script>
+  </body>
+</html>
