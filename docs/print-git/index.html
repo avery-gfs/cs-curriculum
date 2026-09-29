@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    />
     <style>
       :root {
         color-scheme: light;
@@ -206,6 +210,7 @@
     <script type="module">
       import { marked } from "https://esm.sh/marked@13.0.3";
       import { markedHighlight } from "https://esm.sh/marked-highlight@2.1.2";
+      import markedKatex from "https://esm.sh/marked-katex-extension@5.1.0";
       import hljs from "https://esm.sh/highlight.js@11.11.1";
       import DOMPurify from "https://esm.sh/dompurify@3.2.6";
 
@@ -217,16 +222,27 @@
       const output = document.getElementById("output");
       const status = document.getElementById("status");
 
+      function escapeHtml(value) {
+        const element = document.createElement("span");
+        element.textContent = value;
+        return element.innerHTML;
+      }
+
       marked.use(
         markedHighlight({
           highlight(code, lang) {
-            if (lang && hljs.getLanguage(lang)) {
+            if (!lang) {
+              // An unlabeled fence is text, not a request to guess a language.
+              return escapeHtml(code);
+            }
+            if (hljs.getLanguage(lang)) {
               return hljs.highlight(code, { language: lang }).value;
             }
             return hljs.highlightAuto(code).value;
           },
         }),
       );
+      marked.use(markedKatex({ throwOnError: false }));
 
       marked.setOptions({
         gfm: true,
@@ -327,19 +343,110 @@
         ];
       }
 
-      function renderMarkdown(markdownText, sourceLabel = "content") {
-        const rendered = marked.parse(markdownText ?? "");
-        const safe = DOMPurify.sanitize(rendered, {
-          USE_PROFILES: { html: true },
+      function getUrlFragment(value) {
+        try {
+          return decodeURIComponent(new URL(value).hash.slice(1));
+        } catch {
+          return "";
+        }
+      }
+
+      function removeUrlFragment(value) {
+        try {
+          const url = new URL(value);
+          url.hash = "";
+          return url.toString();
+        } catch {
+          return value;
+        }
+      }
+
+      function githubHeadingSlug(value) {
+        return value
+          .toLowerCase()
+          .trim()
+          .replace(/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, "")
+          .replace(/\s+/g, "-");
+      }
+
+      function selectHeadingSection(renderedHtml, fragment) {
+        if (!fragment) {
+          return { html: renderedHtml, found: true };
+        }
+
+        const documentForSection = new DOMParser().parseFromString(
+          `<article>${renderedHtml}</article>`,
+          "text/html",
+        );
+        const article = documentForSection.body.firstElementChild;
+        const targetId = fragment.trim();
+        const headings = Array.from(
+          article.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+        );
+        const duplicateSlugs = new Map();
+        const heading = headings.find((candidate) => {
+          const baseSlug = githubHeadingSlug(candidate.textContent);
+          const occurrence = duplicateSlugs.get(baseSlug) ?? 0;
+          duplicateSlugs.set(baseSlug, occurrence + 1);
+          const slug = occurrence === 0
+            ? baseSlug
+            : `${baseSlug}-${occurrence}`;
+
+          // Marked does not always emit heading IDs, so also calculate the
+          // GitHub-style fragment from the visible heading text.
+          return candidate.id === targetId || slug === targetId;
         });
 
-        output.innerHTML = safe ||
-          "<p class='empty'>Markdown rendered to empty output.</p>";
+        if (!heading) {
+          return { html: "", found: false };
+        }
+
+        const level = Number(heading.tagName.slice(1));
+        const children = Array.from(article.children);
+        const start = children.indexOf(heading);
+        const section = [];
+
+        for (const child of children.slice(start)) {
+          if (
+            child !== heading &&
+            /^H[1-6]$/.test(child.tagName) &&
+            Number(child.tagName.slice(1)) <= level
+          ) {
+            break;
+          }
+          section.push(child.outerHTML);
+        }
+
+        return { html: section.join(""), found: true };
+      }
+
+      function renderMarkdown(
+        markdownText,
+        sourceLabel = "content",
+        fragment = "",
+      ) {
+        const rendered = marked.parse(markdownText ?? "");
+        const safe = DOMPurify.sanitize(rendered, {
+          USE_PROFILES: { html: true, mathMl: true },
+        });
+        const section = selectHeadingSection(safe, fragment);
+
+        output.innerHTML = section.html ||
+          (section.found
+            ? "<p class='empty'>Markdown rendered to empty output.</p>"
+            : "<p class='empty'>No heading matches the URL fragment.</p>");
+        if (!section.found) {
+          setStatus(
+            `No heading matching #${fragment} was found in ${sourceLabel}.`,
+          );
+          return;
+        }
         setStatus(`Rendered markdown from ${sourceLabel}.`);
       }
 
       async function loadMarkdownFromUrl(rawInputUrl) {
-        const candidates = buildCandidateUrls(rawInputUrl);
+        const fragment = getUrlFragment(rawInputUrl);
+        const candidates = buildCandidateUrls(removeUrlFragment(rawInputUrl));
         if (candidates.length === 0) {
           setStatus("Enter a URL first.");
           return;
@@ -374,7 +481,7 @@
             continue;
           }
 
-          renderMarkdown(text, candidate);
+          renderMarkdown(text, candidate, fragment);
           return;
         }
 
