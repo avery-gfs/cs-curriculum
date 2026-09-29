@@ -317,18 +317,34 @@ For a list with `10` distinct values, how many comparisons do we need?
 
 ...
 
+With optimization
+
 $$
 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45
 $$
 
-...
+Without optimization
+
+$$
+9 + 9 + 9 + 9 + 9 + 9 + 9 + 9 + 9 = 81
+$$
+
+---
 
 For a list with $n$ distinct values, how many comparisons do we need?
 
 ...
 
+With optimization:
+
 $$
 (n - 1) + (n - 2) + ... + 2 + 1 = \frac{n^2 - n}{2}
+$$
+
+Without optimization:
+
+$$
+(n - 1) * (n - 1)  = n^2 - 2n + 1
 $$
 
 ---
@@ -395,39 +411,14 @@ How do we break this problem down into smaller steps?
 
 ---
 
-Looping through a range of numbers from high to low:
-
-```py
-for i in range(5, 0, -1):
-    print(i)
-```
-
-What does this print?
-
-...
-
-```
-5
-4
-3
-2
-1
-```
-
-...
-
-_(silly Python nonsense)_
-
----
-
-How to swap values at indices `i` and `j` in a list?
+How to swap values at indices `0` and `1` in a list?
 
 ...
 
 ```py
-tmp = items[i]
-items[i] = items[j]
-items[j] = tmp
+tmp = items[0]
+items[0] = items[1]
+items[1] = tmp
 ```
 
 ...
@@ -465,7 +456,7 @@ tmp: 5
 Alternatively
 
 ```py
-items[i], items[j] = items[j], items[i]
+items[0], items[1] = items[1], items[0]
 ```
 
 ...
@@ -478,3 +469,133 @@ Can you come up with a better algorithm for sorting? One that doesn't have
 $O(n^2)$ complexity? Do it! Don't worry about writing code, just come up with a
 description of your procedure, and an argument for why it has better algorithmic
 complexity than bubble sort.
+
+## Quicksort
+
+To quicksort a list `items`:
+
+- If `items` is empty, return an empty list.
+
+- Otherwise, choose the first value from `items` as your `pivot` value.
+
+- Make three new sublists lists: `lo`, `eq`, and `hi`.
+
+- Loop through the values in items, for each `value`:
+
+  - If `value < pivot`, add `value` to the list `lo`
+
+  - If `value == pivot`, add `value` to the list `eq`
+
+  - If `value > pivot`, add `value` to the list `hi`
+
+- Call quicksort to recursively sort the lists `lo` and `hi` (`eq` is already in
+  sorted order).
+
+- Return the three sublists concatenated: `lo + eq + hi`
+
+---
+
+```
+3 2 5 1 4 1 5
+*
+
+lo:
+eq: 3
+hi:
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+* ^
+
+lo: 2
+eq: 3
+hi:
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*   ^
+
+lo: 2
+eq: 3
+hi: 5
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*     ^
+
+lo: 2 1
+eq: 3
+hi: 5
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*       ^
+
+lo: 2 1
+eq: 3
+hi: 5 4
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*         ^
+
+lo: 2 1 1
+eq: 3
+hi: 5 4
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*           ^
+
+lo: 2 1 1
+eq: 3
+hi: 5 4 5
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*           ^
+
+lo: 2 1 1 -> 1 1 2
+eq: 3
+hi: 5 4 5 -> 5 4 5
+```
+
+---
+
+```
+3 2 5 1 4 1 5
+*           ^
+
+lo: 2 1 1 -> 1 1 2
+eq: 3
+hi: 5 4 3 -> 4 5 5
+```
+
+```
+1 1 2 3 4 5 5
+```
+
+## Practice by Hand
+
+https://avery-gfs.github.io/cs-curriculum/apps/click-drag.html?q=3%2C2%2C5%2C1%2C4%2C1%2C5
