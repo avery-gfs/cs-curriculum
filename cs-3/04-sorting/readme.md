@@ -489,9 +489,8 @@ To quicksort a list `items`:
   - If `value > pivot`, add `value` to the list `hi`
 
 - Call quicksort to recursively sort the lists `lo` and `hi` (`eq` is already in
-  sorted order).
-
-- Return the three sublists concatenated: `lo + eq + hi`
+  sorted order). Return the three sublists concatenated:
+  `quicksort(lo) + eq + quicksort(hi)`.
 
 ---
 
@@ -578,7 +577,7 @@ hi: 5 4 5
 
 lo: 2 1 1 -> 1 1 2
 eq: 3
-hi: 5 4 5 -> 5 4 5
+hi: 5 4 5 -> 4 5 5
 ```
 
 ---
@@ -589,7 +588,7 @@ hi: 5 4 5 -> 5 4 5
 
 lo: 2 1 1 -> 1 1 2
 eq: 3
-hi: 5 4 3 -> 4 5 5
+hi: 5 4 5 -> 4 5 5
 ```
 
 ```

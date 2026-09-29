@@ -4,9 +4,17 @@ def quicksort(items):
 
     pivot = items[0]
 
-    lo = [item for item in items if item < pivot]
-    eq = [item for item in items if item == pivot]
-    hi = [item for item in items if item > pivot]
+    lo = []
+    eq = []
+    hi = []
+
+    for item in items:
+        if item < pivot:
+            lo.append(item)
+        elif item == pivot:
+            eq.append(item)
+        else:
+            hi.append(item)
 
     return quicksort(lo) + eq + quicksort(hi)
 
