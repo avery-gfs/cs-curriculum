@@ -478,7 +478,7 @@ To quicksort a list `items`:
 
 - Otherwise, choose the first value from `items` as your `pivot` value.
 
-- Make three new sublists lists: `lo`, `eq`, and `hi`.
+- Make three new empty sublists lists: `lo`, `eq`, and `hi`.
 
 - Loop through the values in items, for each `value`:
 
@@ -491,6 +491,18 @@ To quicksort a list `items`:
 - Call quicksort to recursively sort the lists `lo` and `hi` (`eq` is already in
   sorted order). Return the three sublists concatenated:
   `quicksort(lo) + eq + quicksort(hi)`.
+
+---
+
+List concatenation
+
+```py
+[1, 2, 3] + [4] + [5, 6]
+```
+
+```
+[1, 2, 3, 4, 5, 6]
+```
 
 ---
 
@@ -630,3 +642,6 @@ numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
 
 print(quicksort(numbers))
 ```
+
+There is an in-place version of quicksort but it's a little more complex so we
+won't look at that right now.
