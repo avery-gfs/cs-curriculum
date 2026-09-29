@@ -562,8 +562,7 @@ Use the text of _Alice in Wonderland_ to probabilistically generate a sequence
 of 100 words.
 
 First, create a dictionary `successors` that maps each word to a list of the
-words that immediately follow it in the story. Keep duplicate words in each
-list.
+words that immediately follow it in the story (duplicate words are allowed).
 
 For example, given this text:
 

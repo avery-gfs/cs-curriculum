@@ -31,11 +31,8 @@
 # z 0.1
 
 with open("alice.txt") as file:
-    # Get text from file
-    text = file.read()
-
-    # Remove spaces and newlines
-    text = text.replace(" ", "").replace("\n", "")
+    # Get text from file, emove spaces and newlines
+    text = file.read().replace(" ", "").replace("\n", "")
 
 counts = {}
 
