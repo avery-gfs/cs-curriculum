@@ -644,6 +644,7 @@ Not in place:
 ```py
 def quicksort(items):
     # ...
+    return quicksort(lo) + eq + quicksort(hi)
 
 
 numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
