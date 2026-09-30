@@ -142,6 +142,12 @@ True
 False
 ```
 
+---
+
+```py
+states = {"NY", "CA", "IL", "TX", "AZ", "PA"}
+```
+
 ...
 
 ```py
