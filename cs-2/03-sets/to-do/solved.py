@@ -6,6 +6,9 @@ undone = set()
 while True:
     os.system("clear")
 
+    numTasks = len(done) + len(undone)
+    print(f"{numTasks} tasks, {len(undone)} undone")
+
     for name in undone:
         print(f"[ ] {name}")
 

@@ -24,7 +24,7 @@ specifically a "hashmap"). The name "record" or "object" is potentially
 acceptable. Python's decision to name these data structures "dictionaries" is
 idiosyncratic, and a silly and confusing choice imo._
 
-## Look up a value
+## Look Up a Value
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
@@ -62,7 +62,7 @@ Traceback (most recent call last):
 KeyError: 'garlic'
 ```
 
-## Add a value
+## Add a Value
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
@@ -80,7 +80,7 @@ votes["mint"] = 1
 {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 1}
 ```
 
-## Update a value
+## Update a Value
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
@@ -100,7 +100,7 @@ votes["strawberry"] = 3
 
 **A dictionary can only contain a single entry for a given key.**
 
-## Increment a value
+## Increment a Value
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
@@ -144,7 +144,7 @@ del votes["chocolate"]
 votes = {}
 ```
 
-## Check membership
+## Check Membership
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 3}
@@ -164,7 +164,39 @@ True
 False
 ```
 
-## Iterate over keys
+...
+
+```py
+"mint" not in votes
+"pineapple" not in votes
+```
+
+...
+
+```py
+False
+True
+```
+
+## Count Entries
+
+```py
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 3}
+```
+
+...
+
+```py
+len(votes)
+```
+
+...
+
+```py
+4
+```
+
+## Iterate Over Keys
 
 ```py
 votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 3}
@@ -182,7 +214,7 @@ vanilla 2
 mint 3
 ```
 
-## Ice cream flavor voting
+## Ice Cream Flavor Voting
 
 ```py
 votes = {}
