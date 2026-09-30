@@ -248,11 +248,8 @@ Checking set membership is much more efficient than checking list membership.
 ## Problem: To Do App
 
 - Entering a new task name adds the task to the list in an undone state.
-
 - Entering the task name a second time sets the task's state to done.
-
 - Entering the task name a third time removes the task from the to do app list.
-
 - Display the total number of tasks, and the number currently undone.
 
 Use input to ask the user for a task name:
