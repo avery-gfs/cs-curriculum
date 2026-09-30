@@ -195,20 +195,6 @@ with open("alice.txt") as file:
 
 ```py
 wordSet = set()
-count = 0
-
-for word in words:
-    if word not in wordSet:
-        count += 1
-        wordSet.add(word)
-
-print(count)
-```
-
-...
-
-```py
-wordSet = set()
 
 for word in words:
     wordSet.add(word)
@@ -223,21 +209,24 @@ wordSet = set(words)
 print(len(wordSet))
 ```
 
-## Duplicate Words?
+## Why Use Sets?
 
-How many duplicate words are there in Alice in Wonderland?
+Why use sets instead of lists?
 
-...
-
-```py
-with open("alice.txt") as file:
-    words = file.read().split()  # Get words from file
-
-wordSet = set(words)
-print(len(words) - len(wordSet))
-```
+1. To work with deduplicated data
+2. To efficiently check set membership
 
 ## Membership Check Efficiency
+
+```py
+statesList = ["NY", "CA", "IL", "TX", "AZ", "PA"]
+states = {"NY", "CA", "IL", "TX", "AZ", "PA"}
+```
+
+```py
+"NY" in statesList
+"NY" in states
+```
 
 Checking set membership is much more efficient than checking list membership.
 
