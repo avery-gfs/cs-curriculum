@@ -260,3 +260,5 @@ Use input to ask the user for a task name:
 ```py
 task = input("\nEnter a task: ")
 ```
+
+![](/assets/to-do-simple.gif)
