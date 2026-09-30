@@ -255,7 +255,7 @@ Checking set membership is much more efficient than checking list membership.
 Use input to ask the user for a task name:
 
 ```py
-task = input("\nEnter a task: ")
+task = input("Enter a task: ")
 ```
 
-![](/assets/to-do-simple.gif)
+![](/assets/to-do.gif)

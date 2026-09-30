@@ -2,7 +2,7 @@
 
 ## To Do List
 
-![](/assets/to-do-simple.gif)
+![](/assets/to-do.gif)
 
 ---
 
