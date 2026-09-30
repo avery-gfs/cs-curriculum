@@ -654,7 +654,7 @@ sun sets slowly today sun shines warmly today
 
 ---
 
-You can choose a random value from a list using `random.choice`.
+You can choose a random value from a list using `random.choice()`.
 
 ```py
 import random
