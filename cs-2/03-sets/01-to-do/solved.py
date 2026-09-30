@@ -16,7 +16,7 @@ while True:
     for name in done:
         print(f"[x] {name}")
 
-    task = input("\nEnter a task: ")
+    task = input("\nEnter a task: ")  # Get a task name as input
 
     if task in done:
         done.remove(task)

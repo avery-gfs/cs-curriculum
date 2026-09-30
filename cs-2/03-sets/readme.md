@@ -252,10 +252,4 @@ Checking set membership is much more efficient than checking list membership.
 - Entering the task name a third time removes the task from the to do app list.
 - Display the total number of tasks, and the number currently undone.
 
-Use input to ask the user for a task name:
-
-```py
-task = input("Enter a task: ")
-```
-
 ![](/assets/to-do.gif)
