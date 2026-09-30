@@ -3,8 +3,9 @@ import os
 done = set()
 undone = set()
 
+# Loop forever
 while True:
-    os.system("clear")
+    os.system("clear")  # Clear the screen
 
     numTasks = len(done) + len(undone)
     print(f"{numTasks} tasks, {len(undone)} undone\n")
