@@ -1,7 +1,7 @@
 import os
 
-done = set()
 undone = set()
+done = set()
 
 # Loop forever
 while True:
@@ -12,6 +12,6 @@ while True:
     print(undone)
     print(done)
 
-    task = input("\nEnter a task: ")
+    task = input("\nEnter a task: ")  # Get a task name as input
 
     # Your code goes here

@@ -1,7 +1,7 @@
 import os
 
-done = set()
 undone = set()
+done = set()
 
 # Loop forever
 while True:
