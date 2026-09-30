@@ -255,4 +255,4 @@ Checking set membership is much more efficient than checking list membership.
 
 - Display the total number of tasks, and the number currently undone.
 
-![](/assets/to-do.gif)
+<img height="400" src="/assets/to-do.gif" />
