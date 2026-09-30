@@ -12,7 +12,7 @@ lists, tuples, **sets**, dictionaries
 
 ## What are Sets
 
-A dictionary is a collection of unique values that allows us to quickly check
+A set is a collection of unique values that allows us to quickly check
 membership.
 
 ```py
@@ -119,6 +119,8 @@ _Notice that the order has changed_
 ```py
 states = set()
 ```
+
+Why not `{}`?
 
 ## Check membership
 
@@ -233,9 +235,9 @@ print(len(words) - len(wordSet))
 
 Checking set membership is much more efficient than checking list membership.
 
-- List membership checking scales with the size of the list.
+- List membership checking scales with the **size of the list**.
 
-- Set membership checking stays (relatively) constant.
+- Set membership checking stays (relatively) **constant**.
 
 ## Problem: To Do App
 
