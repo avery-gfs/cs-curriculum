@@ -60,7 +60,9 @@ The `successors` dictionary would contain:
 }
 ```
 
-_Note: you may want to use the `.setdefault()` dictionary method._
+_Note: you may want to use the
+[setdefault](https://www.w3schools.com/python/ref_dictionary_setdefault.asp)
+dictionary method._
 
 ---
 
