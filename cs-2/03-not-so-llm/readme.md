@@ -59,6 +59,8 @@ The `successors` dictionary would contain:
 }
 ```
 
+You may want to use the `.setdefault()` dictionary method.
+
 ---
 
 Next, choose one of the successors of the `.` character. This is the first word
