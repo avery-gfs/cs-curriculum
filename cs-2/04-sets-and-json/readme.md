@@ -162,7 +162,7 @@ False
 True
 ```
 
-## Iterate Over Valeus
+## Iterate Over Values
 
 ```py
 states = {"NY", "CA", "IL", "TX", "AZ", "PA"}
