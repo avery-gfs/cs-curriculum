@@ -15,17 +15,20 @@ that process creates an original sequence of text.
 
 ## Source Text
 
-Alice in wonderland, lowercase, including spaces, line breaks, periods, hyphens,
-and apostrophes.
+The source text file `alice-punct.txt` contains the text of Alice in wonderland,
+in lowercase, including spaces, line breaks, periods (with spaces added before
+them), hyphens, and apostrophes.
 
 ```
-in another moment down went alice after it never once considering how in
-the world she was to get out again . the rabbit-hole went straight on like a
-tunnel for some way and then dipped suddenly down so suddenly that alice had
-not a moment to think about stopping herself before she found herself falling
-down a very deep well . either the well was very deep or she fell very slowly
-for she had plenty of time as she went down to look about her and to wonder
-what was going to happen next .
+please ma'am is this new zealand or australia and she tried to curtsey as she
+spoke fancy curtseying as you're falling through the air do you think you
+could manage it and what an ignorant little girl she'll think me for asking
+no it'll never do to ask perhaps i shall see it written up somewhere . down
+down down . there was nothing else to do so alice soon began talking again .
+dinah'll miss me very much to-night i should think dinah was the cat . i hope
+they'll remember her saucer of milk at tea-time . dinah my dear i wish you
+were down here with me there are no mice in the air i'm afraid but you might
+catch a bat and that's very like a mouse you know .
 ```
 
 ## Problem: Language Model
@@ -61,7 +64,7 @@ The `successors` dictionary would contain:
 Next, choose one of the successors of the `.` character. This is the first word
 in the output sequence. Then, choose the next word at random from the list of
 words that follow the current word from the dictionary. Repeat this process to
-choose subsequence words in the output sequence. For example, using the
+choose subsequent words for the output sequence. For example, using the
 following `successors` dictionary:
 
 ```py
@@ -79,7 +82,7 @@ following `successors` dictionary:
 }
 ```
 
-1. Choose a random word from the story: `sun`
+1. Choose a random word from `successors["."]` -> `sun`
 2. Choose a random word from `successors["sun"]` -> `sets`
 3. Choose a random word from `successors["sets"]` -> `slowly`
 4. Choose a random word from `successors["slowly"]` -> `today`
