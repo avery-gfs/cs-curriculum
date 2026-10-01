@@ -60,7 +60,7 @@ The `successors` dictionary would contain:
 }
 ```
 
-You may want to use the `.setdefault()` dictionary method.
+_Note: you may want to use the `.setdefault()` dictionary method._
 
 ---
 
