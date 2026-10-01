@@ -100,6 +100,13 @@ sun sets slowly today sun shines warmly today .
 
 ---
 
+You should stop the generation process when these two conditions are true:
+
+1. The output sequence is at least 100 words long, **and**
+2. The final word in the sequence is `.`
+
+---
+
 You can choose a random value from a list using `random.choice()`.
 
 ```py

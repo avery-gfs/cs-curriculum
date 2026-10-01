@@ -36,13 +36,12 @@ print(successors["deep"])
 output = []
 current = "."
 
-# The variable `current` is initialized as a random word from the story.
-# Repeat the following steps 100 times:
+# To generate new text:
 #
-# 1) Add the current word to the list `output`
-#
-# 2) Choose a new word at random from the list of words in `successors`
+# 1) Choose a new word at random from the list of words in `successors`
 #    for the key `current`. Set this new word as the new value for `current`.
+#
+# 2) Add the current word to the list `output`
 #
 # For example, using the following `successors` dictionary:
 #
@@ -62,6 +61,11 @@ current = "."
 # Possible result:
 #
 # "sun sets slowly today sun shines warmly today ."
+#
+# Keep generating text until:
+#
+# 1. The output sequence is at least 100 words long, **and**
+# 2. The final word in the sequence is `.`
 
 # You code goes here
 
