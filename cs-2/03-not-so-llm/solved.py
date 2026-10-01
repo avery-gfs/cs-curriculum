@@ -3,7 +3,7 @@
 
 import random
 
-with open("alice.txt") as file:
+with open("alice-punct.txt") as file:
     words = file.read().split()  # Get words from file
 
 successors = {}
@@ -14,7 +14,7 @@ successors = {}
 #
 # For example, given this text:
 #
-# "the rabbit was late and the rabbit ran away"
+# "the rabbit was late and the rabbit ran away ."
 #
 # The `successors` dictionary would contain:
 #
@@ -25,6 +25,7 @@ successors = {}
 #     "late": ["and"],
 #     "and": ["the"],
 #     "ran": ["away"],
+#     "away": ["."],
 # }
 
 for index, word in enumerate(words):
@@ -37,7 +38,7 @@ for index, word in enumerate(words):
 print(successors["deep"])
 
 output = []
-current = random.choice(words)
+current = "."
 
 # The variable `current` is initialized as a random word from the story.
 # Repeat the following steps 100 times:
@@ -50,6 +51,7 @@ current = random.choice(words)
 # For example, using the following `successors` dictionary:
 #
 # {
+#     ".": ["sun"],
 #     "sun": ["shines", "shines", "sets"],
 #     "shines": ["brightly", "warmly"],
 #     "sets": ["slowly", "today"],
@@ -57,16 +59,16 @@ current = random.choice(words)
 #     "warmly": ["today"],
 #     "slowly": ["today"],
 #     "again": ["sun"],
-#     "today": ["sun", "ends"],
+#     "today": ["sun", "ends", "."],
 #     "ends": ["today"],
 # }
 #
 # Possible result:
 #
-# "sun sets slowly today sun shines warmly today"
+# "sun sets slowly today sun shines warmly today ."
 
-for _ in range(100):
-    output.append(current)
+while len(output) < 100 or current != ".":
     current = random.choice(successors[current])
+    output.append(current)
 
 print(" ".join(output))
