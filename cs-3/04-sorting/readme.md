@@ -657,6 +657,17 @@ print(quicksort(numbers))
 There is an in-place version of quicksort but it's a little more complex so we
 won't look at that right now.
 
+## Quicksort Performance
+
+Say we want to run quicksort on a list containing the numbers 1 through 7:
+
+```
+1 2 3 4 5 6 7
+```
+
+What ordering of these numbers will make our quicksort algorithm use the
+**most** comparisons? What ordering will make it user the **fewest**?
+
 ## Quicksort Worst Case
 
 ```
