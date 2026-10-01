@@ -7,7 +7,8 @@ likely to come next, based on the text that came before it.
 
 This problem builds a much simpler version of that idea. Instead of considering
 an entire conversation, the model looks at the most recent word generated and
-randomly chooses one of the words that followed it in _Alice in Wonderland_.
+randomly chooses one of the words that follows it in the text of the story
+_Alice in Wonderland_.
 
 For example, if the word `alice` is often followed by `said`, `was`, or
 `thought`, this model can choose one of those words as its prediction. Repeating
