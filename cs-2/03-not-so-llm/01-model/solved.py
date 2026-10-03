@@ -30,9 +30,8 @@ successors = {}
 
 for index, word in enumerate(words):
     if index < len(words) - 1:
-        nextWord = words[index + 1]
         successors.setdefault(word, [])
-        successors[word].append(nextWord)
+        successors[word].append(words[index + 1])
 
 # Should print ['well', 'or', 'and', 'hollow', 'sigh', 'voice', 'voice']
 print(successors["deep"])
