@@ -41,7 +41,7 @@ set your sights towards bigger goals.
 
 Choices:
 
-Join the debate team (team)
+Join the debate team (debate)
 Star in the school play (play)
 """
 
