@@ -28,7 +28,7 @@ so it didn't get messed up. The French government was upset with you but they
 gave you some free healthcare and sent you on your way.
 
 You realize halfway through that your story doesn't really have a connection
-to Quaker values.
+to Quaker worship. The meeting begins to boo your message.
 
 GAME OVER
 """
