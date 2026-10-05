@@ -189,6 +189,13 @@ Means:
 > Subtract (or add) zero or more copies of `b` from `a` in order to get the
 > smallest number possible that is `>= 0`
 
+...
+
+(Or, if `a` is negative)
+
+> Subtract (or add) zero or more copies of `b` from `a` in order to get the
+> highest (least negative) number possible that is `<= 0`
+
 ---
 
 What value does this expression produce?
