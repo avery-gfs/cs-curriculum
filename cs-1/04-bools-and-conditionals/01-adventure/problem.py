@@ -101,15 +101,15 @@ elif choice == "song":
     if choice == "run":
         print(run)
 
-    else:
+    elif choice == "hide":
         print(hide)
 
-else:
+elif choice == "speech":
     print(speech)
     choice = input("Enter choice: ")
 
     if choice == "debate":
         print(debate)
 
-    else:
+    elif choice == "play":
         print(play)
