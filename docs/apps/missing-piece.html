@@ -1,0 +1,406 @@
+<!--
+Build a standalone web app styled like emoji-comparison.html. Simulate a sliding
+number puzzle using a 2 x 4 grid containing tiles 1–7 and one empty square.
+Show two copies side by side: the left puzzle must always be solvable and the
+right puzzle must always be unsolvable, but do not say this anywhere in visible
+site text. Clicking a puzzle gives it keyboard focus, visibly indicated. Arrow
+keys move a tile into the empty square only when that move is legal; e.g. if the
+empty square is to the right of tile 3, Right Arrow moves tile 3 right. Include
+shuffle controls that preserve each puzzle's transposition parity.
+Keep the tiles light gray and do not change tile color or puzzle position on
+hover or selection. Use a single puzzle border rather than a separate border
+and shadow, with intermediate brightness between the existing border and
+shadow colors.
+Use individual shuffle buttons for each puzzle.
+For the solved left puzzle, use #eaae1f for the focused border and #ffe5a7
+when it is not focused.
+Show a quick animated tile motion whenever a puzzle is shuffled.
+Show the actual intermediate legal tile moves during shuffling, rather than
+only animating the final arrangement.
+Add a subtle monospace section below each puzzle showing the linearized tile
+list without the blank and the blank row index (zero-based), live-updated.
+-->
+
+<!-- 
+HINT:
+
+Step 1:
+
+2 . . .
+1 . . .
+
+Step 2:
+
+2 . . 3
+1 . . 4
+
+Step 3:
+
+2 . 7 3
+1 5 6 4
+
+Step 4:
+
+1 2 3 4
+5 6 7 .
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Missing Piece</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --indigo: #4f46e5;
+        --indigo-dark: #4338ca;
+        --ink: #1f2937;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+        --canvas: #f3f4f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--canvas);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(100%, 850px);
+        padding: clamp(24px, 5vw, 42px);
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 18px 45px rgba(31, 41, 55, 0.13);
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      h1 {
+        margin: 0;
+        color: #111827;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        letter-spacing: -0.055em;
+      }
+      header p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .puzzles {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .puzzle-column {
+        min-width: 0;
+      }
+      .puzzle {
+        width: 100%;
+        border: 2px solid var(--line);
+        border-radius: 18px;
+        background: #fafafa;
+        padding: 18px;
+        text-align: left;
+        cursor: pointer;
+        transition: border-color 0.18s ease;
+      }
+      .puzzle:hover {
+        border-color: #b8bec8;
+      }
+      .puzzle:focus-visible, .puzzle.active {
+        outline: none;
+        border-color: #b8bec8;
+      }
+      .puzzle-label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .board {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .tile, .empty {
+        aspect-ratio: 1;
+        border-radius: 11px;
+        display: grid;
+        place-items: center;
+      }
+      .tile {
+        color: #374151;
+        background: #e5e7eb;
+        font-size: clamp(1.15rem, 4vw, 1.75rem);
+        font-weight: 800;
+        box-shadow: 0 3px 7px rgba(31, 41, 55, 0.12);
+        transition: transform 0.15s ease, background-color 0.15s ease;
+      }
+      .puzzle:hover .tile {
+        background: #e5e7eb;
+      }
+      .puzzle.solved {
+        border-color: #ffe5a7;
+      }
+      .puzzle.active.solved {
+        border-color: #eaae1f;
+      }
+      .empty {
+        border: 2px dashed #d1d5db;
+        background: #f3f4f6;
+      }
+      .actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 28px;
+      }
+      button.shuffle {
+        border: 0;
+        border-radius: 10px;
+        padding: 12px 21px;
+        background: var(--indigo);
+        color: white;
+        font: 700 1rem Inter, system-ui, sans-serif;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(79, 70, 229, 0.23);
+        transition: transform 0.16s ease, background-color 0.16s ease;
+      }
+      button.shuffle:hover {
+        background: var(--indigo-dark);
+        transform: scale(1.035);
+      }
+      button.shuffle:focus-visible {
+        outline: 3px solid #a5b4fc;
+        outline-offset: 3px;
+      }
+      .puzzle > button.shuffle {
+        width: 100%;
+        margin-top: 16px;
+        padding: 9px 14px;
+        font-size: 0.9rem;
+      }
+      .puzzle-state {
+        margin: 10px 4px 0;
+        color: #9ca3af;
+        font: 500 0.72rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+        text-align: center;
+      }
+      @media (max-width: 560px) {
+        body {
+          padding: 14px;
+        }
+        main {
+          border-radius: 18px;
+        }
+        .puzzles {
+          gap: 12px;
+        }
+        .puzzle {
+          padding: 12px;
+          border-radius: 14px;
+        }
+        .board {
+          gap: 5px;
+        }
+        .puzzle-label {
+          font-size: 0.68rem;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Missing Piece</h1>
+        <p>Choose a puzzle, then use the arrow keys to slide its tiles.</p>
+      </header>
+
+      <section class="puzzles" aria-label="Sliding puzzles">
+        <div class="puzzle-column">
+          <div
+            class="puzzle active"
+            tabindex="0"
+            role="button"
+            data-puzzle="0"
+            aria-label="First puzzle. Use arrow keys to move tiles."
+          >
+            <span class="puzzle-label">Puzzle one</span>
+            <span class="board" aria-hidden="true"></span>
+            <button class="shuffle" type="button">Shuffle</button>
+          </div>
+          <div class="puzzle-state" aria-live="polite"></div>
+        </div>
+        <div class="puzzle-column">
+          <div
+            class="puzzle"
+            tabindex="0"
+            role="button"
+            data-puzzle="1"
+            aria-label="Second puzzle. Use arrow keys to move tiles."
+          >
+            <span class="puzzle-label">Puzzle two</span>
+            <span class="board" aria-hidden="true"></span>
+            <button class="shuffle" type="button">Shuffle</button>
+          </div>
+          <div class="puzzle-state" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const puzzles = [...document.querySelectorAll(".puzzle")];
+        // The second arrangement differs by one tile swap, so its parity is opposite.
+        const states = [[1, 2, 3, 4, 5, 6, 7, null], [
+          2,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          null,
+        ]];
+        const shuffleTimers = [null, null];
+        let activeIndex = 0;
+
+        function render(index) {
+          const puzzle = puzzles[index];
+          const board = puzzles[index].querySelector(".board");
+          board.replaceChildren(...states[index].map((value) => {
+            const square = document.createElement("span");
+            square.className = value === null ? "empty" : "tile";
+            square.textContent = value === null ? "" : value;
+            return square;
+          }));
+          const solved = index === 0 &&
+            states[index].every((value, position) =>
+              value === (position === 7 ? null : position + 1)
+            );
+          puzzle.classList.toggle("solved", solved);
+          const blankRow = Math.floor(states[index].indexOf(null) / 4);
+          const tiles = states[index].filter((value) => value !== null).join(
+            ", ",
+          );
+          puzzle.parentElement.querySelector(".puzzle-state").textContent =
+            `tiles: [${tiles}] · blank row: ${blankRow}`;
+        }
+
+        function setActive(index, focus = false) {
+          activeIndex = index;
+          puzzles.forEach((puzzle, puzzleIndex) =>
+            puzzle.classList.toggle("active", puzzleIndex === index)
+          );
+          if (focus) puzzles[index].focus();
+        }
+
+        function move(index, key) {
+          if (shuffleTimers[index]) return false;
+          const deltas = {
+            ArrowUp: [0, -1],
+            ArrowDown: [0, 1],
+            ArrowLeft: [-1, 0],
+            ArrowRight: [1, 0],
+          };
+          const [dx, dy] = deltas[key] || [];
+          if (dx === undefined) return false;
+          const blank = states[index].indexOf(null);
+          const blankRow = Math.floor(blank / 4);
+          const blankColumn = blank % 4;
+          // The named direction is the tile's direction of travel, toward the blank.
+          const tileRow = blankRow - dy;
+          const tileColumn = blankColumn - dx;
+          if (tileRow < 0 || tileRow > 1 || tileColumn < 0 || tileColumn > 3) {
+            return false;
+          }
+          const tile = tileRow * 4 + tileColumn;
+          [states[index][blank], states[index][tile]] = [
+            states[index][tile],
+            states[index][blank],
+          ];
+          render(index);
+          return true;
+        }
+
+        function shuffleByLegalMoves(index) {
+          if (shuffleTimers[index]) return;
+          let previousBlank = -1;
+          let step = 0;
+          const totalSteps = 24;
+          puzzles[index].classList.add("is-shuffling");
+          shuffleTimers[index] = window.setInterval(() => {
+            const blank = states[index].indexOf(null);
+            const row = Math.floor(blank / 4);
+            const column = blank % 4;
+            const options = [];
+            [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dy]) => {
+              const nextRow = row + dy,
+                nextColumn = column + dx,
+                next = nextRow * 4 + nextColumn;
+              if (
+                nextRow >= 0 && nextRow < 2 && nextColumn >= 0 &&
+                nextColumn < 4 && next !== previousBlank
+              ) options.push(next);
+            });
+            const next = options[Math.floor(Math.random() * options.length)];
+            [states[index][blank], states[index][next]] = [
+              states[index][next],
+              states[index][blank],
+            ];
+            previousBlank = blank;
+            render(index);
+            step += 1;
+            if (step >= totalSteps) {
+              window.clearInterval(shuffleTimers[index]);
+              shuffleTimers[index] = null;
+              puzzles[index].classList.remove("is-shuffling");
+            }
+          }, 45);
+        }
+
+        puzzles.forEach((puzzle, index) =>
+          puzzle.addEventListener("click", () => setActive(index))
+        );
+        document.addEventListener("keydown", (event) => {
+          if (!event.key.startsWith("Arrow")) return;
+          if (move(activeIndex, event.key)) event.preventDefault();
+        });
+        puzzles.forEach((puzzle, index) => {
+          puzzle.querySelector(".shuffle").addEventListener(
+            "click",
+            (event) => {
+              event.stopPropagation();
+              shuffleByLegalMoves(index);
+              setActive(index);
+            },
+          );
+        });
+        states.forEach((_, index) => render(index));
+      })();
+    </script>
+  </body>
+</html>
