@@ -408,13 +408,15 @@ JSON
 
 ...
 
-Pointless
+Pointless sets
 
 ```
 #{"NY", "CA", "IL", "TX", "AZ", "PA"}
 ```
 
 ...
+
+Pointless tables
 
 ```
 #{
