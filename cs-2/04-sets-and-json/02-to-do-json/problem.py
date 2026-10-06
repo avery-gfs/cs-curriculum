@@ -11,28 +11,7 @@ with open("tasks.json") as file:
 
 # Loop forever
 while True:
-    os.system("clear")  # Clear the screen
-
-    numTasks = len(done) + len(undone)
-    print(f"{numTasks} tasks, {len(undone)} undone\n")
-
-    for name in undone:
-        print(f"[ ] {name}")
-
-    for name in done:
-        print(f"[x] {name}")
-
-    task = input("\nEnter a task: ")  # Get a task name as input
-
-    if task in done:
-        done.remove(task)
-
-    elif task in undone:
-        undone.remove(task)
-        done.add(task)
-
-    else:
-        undone.add(task)
+    # Your to-do code from part 01 here
 
     # Make dictionary with `undone` and `done` fields (lists of task names)
     # for conversion to JSON
