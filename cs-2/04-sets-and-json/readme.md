@@ -268,11 +268,15 @@ Python program -> Network (JSON) -> Python program (another computer)
 
 ## JSON Numbers
 
+Python
+
 ```py
 1234
 ```
 
 ...
+
+JSON
 
 ```json
 1234
@@ -280,11 +284,15 @@ Python program -> Network (JSON) -> Python program (another computer)
 
 ...
 
+Python
+
 ```py
 0.5
 ```
 
 ...
+
+JSON
 
 ```json
 0.5
@@ -292,17 +300,23 @@ Python program -> Network (JSON) -> Python program (another computer)
 
 ## JSON Strings
 
+Python
+
 ```py
 "Hello world!"
 ```
 
 ...
 
+JSON
+
 ```json
 "Hello world!"
 ```
 
 ## JSON Booleans
+
+Python
 
 ```py
 True
@@ -311,6 +325,8 @@ False
 
 ...
 
+JSON
+
 ```json
 true
 false
@@ -318,11 +334,15 @@ false
 
 ## JSON Null
 
+Python
+
 ```py
 None
 ```
 
 ...
+
+JSON
 
 ```json
 null
@@ -330,17 +350,23 @@ null
 
 ## JSON Arrays (Lists)
 
+Python
+
 ```py
 ["The", "quick", "brown", "fox"]
 ```
 
 ...
 
+JSON
+
 ```json
 ["The", "quick", "brown", "fox"]
 ```
 
 ## JSON Objects (Dicts)
+
+Python
 
 ```py
 {"strawberry": 1, "chocolate": 1, "vanilla": 2}
@@ -353,6 +379,8 @@ null
 ```
 
 ## JSON Sets
+
+Python
 
 ```py
 {"NY", "CA", "IL", "TX", "AZ", "PA"}
