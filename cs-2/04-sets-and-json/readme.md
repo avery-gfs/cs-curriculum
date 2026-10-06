@@ -258,11 +258,17 @@ https://www.json.org/json-en.html
 
 ```
 Python program -> Text file (JSON)
+```
 
+```
 Text file (JSON) -> Python program
+```
 
+```
 Python program -> Text file (JSON) -> Program in another language
+```
 
+```
 Python program -> Network (JSON) -> Python program (another computer)
 ```
 
