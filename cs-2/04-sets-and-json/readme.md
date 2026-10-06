@@ -332,7 +332,7 @@ true
 false
 ```
 
-## JSON Null
+## JSON Null (None)
 
 Python
 
@@ -388,6 +388,8 @@ Python
 
 ...
 
+JSON
+
 ```
 ¯\_(ツ)_/¯
 ```
@@ -405,8 +407,6 @@ using a program.
 
 Normally, our program starts "from scratch" each time we run it. Persistence
 allows our program to remember information for the next time it runs.
-
-...
 
 We can use JSON to add persistence to our to do app.
 
