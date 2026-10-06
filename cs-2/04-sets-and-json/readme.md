@@ -1,4 +1,4 @@
-# Sets
+# Sets and JSON
 
 ## Data Structures
 
@@ -245,3 +245,23 @@ Checking set membership is much more efficient than checking list membership.
 - Display the total number of tasks, and the number currently undone.
 
 <img height="400" src="/assets/to-do.gif" />
+
+## JSON (JavaScript Object Notation)
+
+JSON is a data serialization format, which allows us to convert structured data
+(strings, numbers, lists, etc) into text format. This allows us to easily save
+the data to a file, load it from a file, send it over the internet, open it with
+other programs, etc. It is a simple but immensely useful and widely used tool
+that every software engineer should be familiar with.
+
+https://www.json.org/json-en.html
+
+```
+Python program -> Text file (JSON)
+
+Text file (JSON) -> Python program
+
+Python program -> Network (JSON) -> Python program (another computer)
+
+Python program -> Text file (JSON) -> Program in another language
+```
