@@ -400,6 +400,26 @@ JSON
 ["NY", "CA", "IL", "TX", "AZ", "PA"]
 ```
 
+...
+
+Pointless
+
+```
+#{"NY", "CA", "IL", "TX", "AZ", "PA"}
+```
+
+...
+
+```
+#{
+  date         , city           , low , high
+  "2025-12-02" , "boston"       ,  29 ,   36
+  "2025-12-02" , "philadelphia" ,  32 ,   42
+  "2025-12-04" , "boston"       ,  18 ,   40
+  "2025-12-04" , "philadelphia" ,  29 ,   43
+}
+```
+
 ## Persistence
 
 **Persistent data**: Data that lasts (persists) across different sessions of
