@@ -122,6 +122,15 @@ states = set()
 
 Why not `{}`?
 
+...
+
+Pointless
+
+```
+#{"NY", "CA", "IL", "TX", "AZ", "PA"}
+#{}
+```
+
 ## Check membership
 
 ```py
@@ -404,28 +413,6 @@ JSON
 
 ```json
 ["NY", "CA", "IL", "TX", "AZ", "PA"]
-```
-
-...
-
-Pointless sets
-
-```
-#{"NY", "CA", "IL", "TX", "AZ", "PA"}
-```
-
-...
-
-Pointless tables
-
-```
-#{
-  date         , city           , low , high
-  "2025-12-02" , "boston"       ,  29 ,   36
-  "2025-12-02" , "philadelphia" ,  32 ,   42
-  "2025-12-04" , "boston"       ,  18 ,   40
-  "2025-12-04" , "philadelphia" ,  29 ,   43
-}
 ```
 
 ## Persistence
