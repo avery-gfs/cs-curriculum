@@ -261,7 +261,183 @@ Python program -> Text file (JSON)
 
 Text file (JSON) -> Python program
 
-Python program -> Network (JSON) -> Python program (another computer)
-
 Python program -> Text file (JSON) -> Program in another language
+
+Python program -> Network (JSON) -> Python program (another computer)
+```
+
+## JSON Numbers
+
+```py
+1234
+```
+
+...
+
+```json
+1234
+```
+
+...
+
+```py
+0.5
+```
+
+...
+
+```json
+0.5
+```
+
+## JSON Strings
+
+```py
+"Hello world!"
+```
+
+...
+
+```json
+"Hello world!"
+```
+
+## JSON Booleans
+
+```py
+True
+False
+```
+
+...
+
+```json
+true
+false
+```
+
+## JSON Null
+
+```py
+None
+```
+
+...
+
+```json
+null
+```
+
+## JSON Arrays (Lists)
+
+```py
+["The", "quick", "brown", "fox"]
+```
+
+...
+
+```json
+["The", "quick", "brown", "fox"]
+```
+
+## JSON Objects (Dicts)
+
+```py
+{"strawberry": 1, "chocolate": 1, "vanilla": 2}
+```
+
+...
+
+```json
+{ "strawberry": 1, "chocolate": 1, "vanilla": 2 }
+```
+
+## JSON Sets
+
+```py
+{"NY", "CA", "IL", "TX", "AZ", "PA"}
+```
+
+...
+
+```
+¯\_(ツ)_/¯
+```
+
+...
+
+```json
+["NY", "CA", "IL", "TX", "AZ", "PA"]
+```
+
+## Persistence
+
+**Persistent data**: Data that lasts (persists) across different sessions of
+using a program.
+
+Normally, our program starts "from scratch" each time we run it. Persistence
+allows our program to remember information for the next time it runs.
+
+...
+
+We can use JSON to add persistence to our to do app.
+
+---
+
+```py
+undone = {"cook dinner", "walk dog"}
+done = {"homework", "work out", "call friends"}
+```
+
+How to represent in JSON?
+
+...
+
+```json
+{
+  "undone": ["cook dinner", "walk dog"],
+  "done": ["homework", "work out", "call friends"]
+}
+```
+
+---
+
+```py
+undone = set()
+done = set()
+```
+
+How to represent in JSON?
+
+...
+
+```json
+{ "undone": [], "done": [] }
+```
+
+## Convert Sets
+
+```py
+list({"cook dinner", "walk dog"})  # ["cook dinner", "walk dog"]
+set(["cook dinner", "walk dog"])   # {"cook dinner", "walk dog"}
+```
+
+## Reading and Writing JSON
+
+```py
+import json
+```
+
+Read JSON
+
+```py
+with open("tasks.json") as file:
+    data = json.load(file)
+```
+
+Write JSON
+
+```py
+with open("tasks.json", "w") as file:
+    json.dump(data, file)
 ```
