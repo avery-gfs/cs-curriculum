@@ -421,6 +421,8 @@ How to represent in JSON?
 
 ...
 
+`tasks.json`
+
 ```json
 {
   "undone": ["cook dinner", "walk dog"],
@@ -439,11 +441,13 @@ How to represent in JSON?
 
 ...
 
+`tasks.json`
+
 ```json
 { "undone": [], "done": [] }
 ```
 
-## Convert Sets
+## Converting Sets
 
 ```py
 list({"cook dinner", "walk dog"})  # ["cook dinner", "walk dog"]
