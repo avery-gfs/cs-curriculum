@@ -18,9 +18,10 @@ Show a quick animated tile motion whenever a puzzle is shuffled.
 Show the actual intermediate legal tile moves during shuffling, rather than
 only animating the final arrangement.
 Add a subtle monospace section below each puzzle showing the linearized tile
-list without the blank and the blank row index (zero-based), live-updated.
+list without the blank, live-updated.
 Start both boards shuffled on every page reload while preserving their solvability.
 Update to be 3x3 with numbers 1-8.
+dedupe logic between animated shuffle and immediate shuffle:
 -->
 
 <!-- 
@@ -288,6 +289,7 @@ Step 5:
         const ROWS = 3;
         const COLS = 3;
         const LAST = ROWS * COLS - 1; // index of the blank in the solved layout
+        const SHUFFLE_STEPS = 24;
 
         const puzzles = [...document.querySelectorAll(".puzzle")];
         // The second arrangement differs by one tile swap.
@@ -358,65 +360,52 @@ Step 5:
           return true;
         }
 
+        // One random legal move, never undoing the previous one.
+        // Returns the blank's old position, which is the next call's previousBlank.
+        function shuffleStep(index, previousBlank) {
+          const blank = states[index].indexOf(null);
+          const row = Math.floor(blank / COLS);
+          const column = blank % COLS;
+          const options = [];
+          [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dy]) => {
+            const nextRow = row + dy,
+              nextColumn = column + dx,
+              next = nextRow * COLS + nextColumn;
+            if (
+              nextRow >= 0 && nextRow < ROWS && nextColumn >= 0 &&
+              nextColumn < COLS && next !== previousBlank
+            ) options.push(next);
+          });
+          const next = options[Math.floor(Math.random() * options.length)];
+          [states[index][blank], states[index][next]] = [
+            states[index][next],
+            states[index][blank],
+          ];
+          return blank;
+        }
+
+        function scrambleImmediately(index) {
+          let previousBlank = -1;
+          for (let step = 0; step < SHUFFLE_STEPS; step += 1) {
+            previousBlank = shuffleStep(index, previousBlank);
+          }
+        }
+
         function shuffleByLegalMoves(index) {
           if (shuffleTimers[index]) return;
           let previousBlank = -1;
           let step = 0;
-          const totalSteps = 24;
           puzzles[index].classList.add("is-shuffling");
           shuffleTimers[index] = window.setInterval(() => {
-            const blank = states[index].indexOf(null);
-            const row = Math.floor(blank / COLS);
-            const column = blank % COLS;
-            const options = [];
-            [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dy]) => {
-              const nextRow = row + dy,
-                nextColumn = column + dx,
-                next = nextRow * COLS + nextColumn;
-              if (
-                nextRow >= 0 && nextRow < ROWS && nextColumn >= 0 &&
-                nextColumn < COLS && next !== previousBlank
-              ) options.push(next);
-            });
-            const next = options[Math.floor(Math.random() * options.length)];
-            [states[index][blank], states[index][next]] = [
-              states[index][next],
-              states[index][blank],
-            ];
-            previousBlank = blank;
+            previousBlank = shuffleStep(index, previousBlank);
             render(index);
             step += 1;
-            if (step >= totalSteps) {
+            if (step >= SHUFFLE_STEPS) {
               window.clearInterval(shuffleTimers[index]);
               shuffleTimers[index] = null;
               puzzles[index].classList.remove("is-shuffling");
             }
           }, 45);
-        }
-
-        function scrambleImmediately(index) {
-          let previousBlank = -1;
-          for (let step = 0; step < 24; step += 1) {
-            const blank = states[index].indexOf(null);
-            const row = Math.floor(blank / COLS);
-            const column = blank % COLS;
-            const options = [];
-            [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dy]) => {
-              const nextRow = row + dy,
-                nextColumn = column + dx,
-                next = nextRow * COLS + nextColumn;
-              if (
-                nextRow >= 0 && nextRow < ROWS && nextColumn >= 0 &&
-                nextColumn < COLS && next !== previousBlank
-              ) options.push(next);
-            });
-            const next = options[Math.floor(Math.random() * options.length)];
-            [states[index][blank], states[index][next]] = [
-              states[index][next],
-              states[index][blank],
-            ];
-            previousBlank = blank;
-          }
         }
 
         puzzles.forEach((puzzle, index) =>
