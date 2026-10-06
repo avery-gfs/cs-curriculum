@@ -1,3 +1,10 @@
+import os
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")  # Clear screen
+
+
 intro = """
 You are at school on a pleasant Thursday morning.
 You find yourself in Quaker meeting.
@@ -88,28 +95,36 @@ Walk to center city (walk)
 Watch a movie in Yarnall (movie)
 """
 
+clear()
 print(intro)
 choice = input("Enter choice: ")
 
 if choice == "story":
+    clear()
     print(story)
 
 elif choice == "song":
+    clear()
     print(song)
     choice = input("Enter choice: ")
 
     if choice == "run":
+        clear()
         print(run)
 
     elif choice == "hide":
+        clear()
         print(hide)
 
 elif choice == "speech":
+    clear()
     print(speech)
     choice = input("Enter choice: ")
 
     if choice == "debate":
+        clear()
         print(debate)
 
     elif choice == "play":
+        clear()
         print(play)

@@ -112,6 +112,26 @@ set(statesList)
 
 _Notice that the order has changed_
 
+## List From a Set
+
+```py
+states = {"NY", "CA", "IL", "TX", "AZ", "PA"}
+```
+
+...
+
+```py
+list(states)
+```
+
+...
+
+```py
+['IL', 'CA', 'AZ', 'NY', 'PA', 'TX']
+```
+
+_Notice that the order has changed_
+
 ## Empty Set
 
 ...
