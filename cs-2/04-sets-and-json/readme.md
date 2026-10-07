@@ -142,15 +142,6 @@ states = set()
 
 Why not `{}`?
 
-...
-
-Pointless
-
-```
-#{"NY", "CA", "IL", "TX", "AZ", "PA"}
-#{}
-```
-
 ## Check membership
 
 ```py
@@ -243,6 +234,7 @@ print(len(wordSet))
 Why use sets instead of lists?
 
 1. To work with deduplicated data
+
 2. To efficiently check set membership
 
 ## Membership Check Efficiency
@@ -284,22 +276,6 @@ other programs, etc. It is a simple but immensely useful and widely used tool
 that every software engineer should be familiar with.
 
 https://www.json.org/json-en.html
-
-```
-Python program -> Text file (JSON)
-```
-
-```
-Text file (JSON) -> Python program
-```
-
-```
-Python program -> Text file (JSON) -> Program in another language
-```
-
-```
-Python program -> Network (JSON) -> Python program (another computer)
-```
 
 ## JSON Numbers
 
