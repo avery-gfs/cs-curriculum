@@ -22,7 +22,7 @@ list without the blank, live-updated.
 Start both boards shuffled on every page reload while preserving their solvability.
 Update to be 3x3 with numbers 1-8.
 dedupe logic between animated shuffle and immediate shuffle.
-within the linearized display, highlight the last moved number and (in the case of move across rows) the two other shifted numbers (more subtle highlight).
+within the linearized display, highlight the last moved number and the two other shifted numbers in the case of move across rows.
 ...plus manual style editing
 -->
 
@@ -250,8 +250,8 @@ Step 8:
         font-weight: 700;
       }
       .puzzle-state .shifted {
-        color: #5eb4f3;
-        background-color: #5eb4f322;
+        color: #438cff;
+        background-color: #438cff22;
         font-weight: 700;
       }
       @media (max-width: 560px) {
@@ -426,12 +426,14 @@ Step 8:
           const cells = states[index];
           const blank = cells.indexOf(null);
           const value = cells[tile];
-          const shifted = tile % COLS === blank % COLS
+          const vertical = tile % COLS === blank % COLS;
+          const shifted = vertical
             ? cells.slice(Math.min(tile, blank) + 1, Math.max(tile, blank))
             : [];
           cells[blank] = value;
           cells[tile] = null;
-          lastMoves[index] = { value, shifted };
+          // Only a move between rows reorders the tiles list, so only it is highlighted.
+          lastMoves[index] = vertical ? { value, shifted } : null;
         }
 
         // One random legal move, never undoing the previous one.
