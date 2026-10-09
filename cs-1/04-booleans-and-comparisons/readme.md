@@ -320,6 +320,8 @@ larger or smaller than another.
 | `>`    | Greater than             |
 | `>=`   | Greater than or equal to |
 
+...
+
 ```py
 1 <= 1
 ```
@@ -533,7 +535,29 @@ True
 
 ## Boolean Operator Precedence
 
----
+```py
+False and (True or True)
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+(False and True) or True
+```
+
+...
+
+```py
+True
+```
+
+...
 
 ```py
 False and True or True
@@ -543,26 +567,4 @@ False and True or True
 
 ```py
 True
-```
-
----
-
-```py
-False and True or True
-```
-
-```py
-(False and True) or True
-```
-
----
-
-```py
-False and (True or True)
-```
-
-...
-
-```py
-False
 ```
