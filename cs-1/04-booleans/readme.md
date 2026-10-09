@@ -194,9 +194,6 @@ confusing, it's because it is.
 True
 ```
 
-In Python, `True` is equal to `1` and `False` is equal to `0`. If you find this
-confusing, it's because it is.
-
 ---
 
 ```py
