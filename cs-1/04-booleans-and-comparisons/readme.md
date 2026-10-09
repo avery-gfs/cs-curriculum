@@ -25,17 +25,13 @@ False
 ## Keyword Case
 
 ```py
-print(True)
-```
-
-```
 True
 ```
 
 ...
 
 ```py
-print(true)
+true
 ```
 
 ```
@@ -57,12 +53,24 @@ One way to get booleans in Python is by comparing values using the equality `==`
 operator.
 
 ```py
-print(1 == 1)
-print(1 == 7)
+1 == 1
 ```
 
-```
+...
+
+```py
 True
+```
+
+...
+
+```py
+1 == 7
+```
+
+...
+
+```py
 False
 ```
 
@@ -239,6 +247,11 @@ nice to us here.
 
 ```py
 n = 5
+```
+
+...
+
+```py
 n == 5
 ```
 
@@ -264,9 +277,7 @@ name == "Avery"
 name = "Avery"
 ```
 
----
-
-https://99percentinvisible.org/episode/ten-thousand-years/
+...
 
 <img src="/assets/equals-song.png" />
 
@@ -276,12 +287,24 @@ We can use the not equal operators `!=` to check whether two values are not
 equal.
 
 ```py
-print(1 != 1)
-print(1 != 7)
+1 != 1
 ```
+
+...
 
 ```py
 False
+```
+
+...
+
+```py
+1 != 7
+```
+
+...
+
+```py
 True
 ```
 
