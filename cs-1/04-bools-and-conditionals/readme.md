@@ -82,4 +82,4 @@ name = "Avery"
 
 ...
 
-<img src="/assets/comparison-song.png" />
+<img src="/assets/equals-song.png" />
