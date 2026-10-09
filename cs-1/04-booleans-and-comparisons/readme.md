@@ -321,12 +321,24 @@ larger or smaller than another.
 | `>=`   | Greater than or equal to |
 
 ```py
-print(1 <= 1)
-print(1 > 7)
+1 <= 1
 ```
+
+...
 
 ```py
 True
+```
+
+...
+
+```py
+1 > 7
+```
+
+...
+
+```py
 False
 ```
 
