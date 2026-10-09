@@ -507,3 +507,17 @@ not "a" == "b"
 ```py
 True
 ```
+
+## Boolean Operator Precedence
+
+---
+
+```py
+not "a" == "b"
+```
+
+...
+
+```py
+True
+```
