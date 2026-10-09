@@ -264,6 +264,168 @@ name == "Avery"
 name = "Avery"
 ```
 
-...
+---
+
+https://99percentinvisible.org/episode/ten-thousand-years/
 
 <img src="/assets/equals-song.png" />
+
+## Not Equals
+
+We can use the not equal operators `!=` to check whether two values are not
+equal.
+
+```py
+print(1 != 1)
+print(1 != 7)
+```
+
+```py
+False
+True
+```
+
+## Inequality
+
+We can use the not following inequaliy operators to test whether a value is
+larger or smaller than another.
+
+| Symbol | Operation                |
+| ------ | ------------------------ |
+| `<`    | Less Than                |
+| `<=`   | Less than or equal to    |
+| `>`    | Greater than             |
+| `>=`   | Greater than or equal to |
+
+```py
+print(1 <= 1)
+print(1 > 7)
+```
+
+```py
+True
+False
+```
+
+---
+
+```py
+5 < 5
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+5 <= 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 < 10
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 > 10
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"banana" > "peach"
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"banana" > "apple"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"apple" > "app"
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"apple" > "Apple"
+```
+
+...
+
+```py
+True
+```
+
+## Comparison Operators
+
+| Symbol | Operation                |
+| ------ | ------------------------ |
+| `==`   | Equal                    |
+| `!=`   | Not equal                |
+| `<`    | Less than                |
+| `<=`   | Less than or equal to    |
+| `>`    | Greater than             |
+| `>=`   | Greater than or equal to |
+
+## Boolean Operators
+
+Python includes the following boolean operators: `and`, `or`, `not`.
+
+| Operator | Usage     | Operation                                              |
+| -------- | --------- | ------------------------------------------------------ |
+| `and`    | `a and b` | Check that both `a` and `b` are `True`                 |
+| `or`     | `a or b`  | Check that either `a` or `b` is `True`                 |
+| `not`    | `not a`   | Flip a `True` value to `False`, or a `False` to `True` |
+
+- Is positive
+- Is whole
+- is odd
+- Discount
+- Neg Even
