@@ -81,19 +81,6 @@ True
 ---
 
 ```py
-n = 5
-n == 5
-```
-
-...
-
-```py
-True
-```
-
----
-
-```py
 5 == 5.0
 ```
 
@@ -251,7 +238,20 @@ True
 In many other languges this comparison would give us `False`. Python is being
 nice to us here.
 
-## Equality Song
+---
+
+```py
+n = 5
+n == 5
+```
+
+...
+
+```py
+True
+```
+
+## The Equals Song
 
 **Comparing values**
 
