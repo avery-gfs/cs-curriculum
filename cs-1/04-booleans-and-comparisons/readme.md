@@ -424,6 +424,90 @@ Python includes the following boolean operators: `and`, `or`, `not`.
 | `or`     | `a or b`  | Check that either `a` or `b` is `True`                 |
 | `not`    | `not a`   | Flip a `True` value to `False`, or a `False` to `True` |
 
+---
+
+```py
+"banana" > "peach" and 10 < 5
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"banana" > "peach" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"banana" > "peach" or 10 < 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"banana" > "peach" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"a" == "b" or 10 < 5
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+not 2 > 1
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+not "a" == "b"
+```
+
+...
+
+```py
+True
+```
+
 - Is positive
 - Is whole
 - is odd
