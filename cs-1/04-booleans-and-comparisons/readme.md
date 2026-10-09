@@ -61,7 +61,7 @@ print(1 == 1)
 print(1 == 7)
 ```
 
-```py
+```
 True
 False
 ```
@@ -209,10 +209,10 @@ False
 ...
 
 ```py
-print(0.1 + 0.2)
+0.1 + 0.2
 ```
 
-```
+```py
 0.30000000000000004
 ```
 
@@ -427,7 +427,7 @@ Python includes the following boolean operators: `and`, `or`, `not`.
 ---
 
 ```py
-"banana" > "peach" and 10 < 5
+"a" == "b" and 10 < 5
 ```
 
 ...
@@ -439,7 +439,7 @@ False
 ---
 
 ```py
-"banana" > "peach" or 10 > 5
+"a" == "b" or 10 > 5
 ```
 
 ...
@@ -451,19 +451,7 @@ True
 ---
 
 ```py
-"banana" > "peach" or 10 < 5
-```
-
-...
-
-```py
-True
-```
-
----
-
-```py
-"banana" > "peach" or 10 > 5
+"a" == "a" or 10 < 5
 ```
 
 ...
@@ -522,7 +510,7 @@ False and True or True
 True
 ```
 
-...
+---
 
 ```py
 False and True or True
