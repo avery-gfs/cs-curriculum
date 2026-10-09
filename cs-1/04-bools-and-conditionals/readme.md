@@ -66,6 +66,191 @@ True
 False
 ```
 
+## Comparisons
+
+```py
+5 == 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+n = 5
+n == 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 == 5.0
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 == "5"
+```
+
+...
+
+```py
+False
+```
+
+Values of different types are _usually_ not equal.
+
+---
+
+```py
+"Avery" == "Avery"
+```
+
+...
+
+```py
+True
+```
+
+In some languages this would give us `False` (yikes!). Python is being nice to
+us here.
+
+---
+
+```py
+"Avery" == " Avery"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"Avery" == "avery"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+False == "False"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+False == 2
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+False == 0
+```
+
+...
+
+```py
+True
+```
+
+In Python, `True` is equal to `1` and `False` is equal to `0`. If you find this
+confusing, it's because it is.
+
+---
+
+```py
+1 + 2 == 3
+```
+
+...
+
+```py
+True
+```
+
+In Python, `True` is equal to `1` and `False` is equal to `0`. If you find this
+confusing, it's because it is.
+
+---
+
+```py
+0.1 + 0.2 == 0.3
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+print(0.1 + 0.2)
+```
+
+```
+0.30000000000000004
+```
+
+In general, math with floating-point numbers is inexact. Be careful when
+comparing decimal results to specific values. If you find this confusing, it's
+because it is.
+
+---
+
+```py
+[1, 2, 3] == [1, 2, 3]
+```
+
+...
+
+```py
+True
+```
+
+In many other languges this comparison would give us `False`. Python is being
+nice to us here.
+
 ## Equality Song
 
 **Comparing values**
