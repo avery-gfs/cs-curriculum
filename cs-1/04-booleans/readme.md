@@ -256,6 +256,8 @@ True
 name == "Avery"
 ```
 
+...
+
 **Assigning variables**
 
 ```py
