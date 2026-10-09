@@ -49,8 +49,7 @@ NameError: name 'true' is not defined. Did you mean: 'True'?
 In Python the first letters of these keywords are capitalized. Virtually every
 other mainstream language writes booleans in lowercase, but Python writes them
 in uppercase. If you find forget to capitalize the first letter, you'll get an
-error message. If you find this confusing, it's because it is: Python makes a
-bad design choice here; programming languages are full of them.
+error message. If you find this confusing, it's because it is.
 
 ## Comparisons
 
@@ -83,11 +82,4 @@ name = "Avery"
 
 ...
 
-> Double equals, double equals for comparing Single equals for assigning
-
-_(In C Major)_
-
-```
-mi-mi mi-mi, mi-mi mi-mi fa re mi mi
-do-do do-do  la    so    do do
-```
+<img src="/assets/comparison-song.png" />
