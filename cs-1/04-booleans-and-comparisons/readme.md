@@ -358,7 +358,7 @@ False
 ---
 
 ```py
-"banana" > "peach"
+"banana" < "peach"
 ```
 
 ...
@@ -370,7 +370,7 @@ True
 ---
 
 ```py
-"banana" > "apple"
+"banana" < "apple"
 ```
 
 ...
@@ -382,7 +382,7 @@ False
 ---
 
 ```py
-"apple" > "app"
+"app" < "apple"
 ```
 
 ...
@@ -394,13 +394,13 @@ True
 ---
 
 ```py
-"apple" > "Apple"
+"apple" < "Apple"
 ```
 
 ...
 
 ```py
-True
+False
 ```
 
 ## Comparison Operators
