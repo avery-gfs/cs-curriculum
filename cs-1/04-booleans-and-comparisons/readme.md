@@ -513,11 +513,33 @@ True
 ---
 
 ```py
-not "a" == "b"
+False and True or True
 ```
 
 ...
 
 ```py
 True
+```
+
+...
+
+```py
+False and True or True
+```
+
+```py
+(False and True) or True
+```
+
+---
+
+```py
+False and (True or True)
+```
+
+...
+
+```py
+False
 ```
