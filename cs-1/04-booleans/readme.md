@@ -146,7 +146,7 @@ False
 ---
 
 ```py
-False == "False"
+True == "True"
 ```
 
 ...
@@ -158,7 +158,7 @@ False
 ---
 
 ```py
-False == 2
+True == 2
 ```
 
 ...
@@ -170,7 +170,7 @@ False
 ---
 
 ```py
-False == 0
+True == 1
 ```
 
 ...
