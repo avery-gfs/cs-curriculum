@@ -51,7 +51,7 @@ other mainstream language writes booleans in lowercase, but Python writes them
 in uppercase. If you find forget to capitalize the first letter, you'll get an
 error message. If you find this confusing, it's because it is.
 
-## Comparisons
+## Equality
 
 One way to get booleans in Python is by comparing values using the equality `==`
 operator.
@@ -66,7 +66,7 @@ True
 False
 ```
 
-## Comparisons
+---
 
 ```py
 5 == 5
