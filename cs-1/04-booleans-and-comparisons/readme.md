@@ -507,9 +507,3 @@ not "a" == "b"
 ```py
 True
 ```
-
-- Is positive
-- Is whole
-- is odd
-- Discount
-- Neg Even
