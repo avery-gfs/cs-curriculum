@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
 Build a standalone web app styled like emoji-comparison.html. Simulate a sliding
 number puzzle using a 2 x 4 grid containing tiles 1–7 and one empty square.
@@ -24,6 +25,15 @@ Update to be 3x3 with numbers 1-8.
 dedupe logic between animated shuffle and immediate shuffle.
 within the linearized display, highlight the last moved number and the two other shifted numbers in the case of move across rows.
 ...plus manual style editing
+show the transpositions within the number lists displays, as blue arcs between
+  transposed pairs of numbers. hovering over a number should highlight the transpose arc lines that it
+  connects to. update html comment for this and future instructions
+by transpositions I mean any pair of numbers that's out of order. put arcs below list not above
+make all arcs the same height. also highlight number on hover and numbers it is transposed with on hover (same highlight that three moved nums in vertical move uses)
+undo making arcs same height. use green for last 3 highlight, blue for hover highlight
+back to same height
+  (Implementation note: arcs connect every out-of-order pair, i.e. each inversion,
+  tracked by number identity; the arcs hang below the list, all at one height.)
 -->
 
 <!-- 
@@ -78,7 +88,6 @@ Step 8:
 7 8 .
 -->
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -234,7 +243,9 @@ Step 8:
         font-size: 0.9rem;
       }
       .puzzle-state {
+        position: relative;
         margin: 10px 4px 0;
+        padding-bottom: 32px;
         color: #9ca3af;
         font: 500 1rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
         text-align: center;
@@ -245,14 +256,43 @@ Step 8:
         transition: color 300ms linear, background-color 300ms linear;
       }
       .puzzle-state .last {
+        color: #1f9d55;
+        background-color: #1f9d5522;
+        font-weight: 700;
+      }
+      .puzzle-state .shifted {
+        color: #1f9d55;
+        background-color: #1f9d5522;
+        font-weight: 700;
+      }
+      .puzzle-state .linked {
         color: #438cff;
         background-color: #438cff22;
         font-weight: 700;
       }
-      .puzzle-state .shifted {
-        color: #438cff;
-        background-color: #438cff22;
-        font-weight: 700;
+      .arcs {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 32px;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .arcs path {
+        fill: none;
+        stroke: #438cff;
+        stroke-width: 1.25;
+        stroke-linecap: round;
+        opacity: 0.4;
+        transition: opacity 150ms linear, stroke-width 150ms linear;
+      }
+      .puzzle-state.hovering .arcs path {
+        opacity: 0.12;
+      }
+      .puzzle-state.hovering .arcs path.hot {
+        opacity: 1;
+        stroke-width: 2.75;
       }
       @media (max-width: 560px) {
         body {
@@ -323,6 +363,8 @@ Step 8:
         const COLS = 3;
         const LAST = ROWS * COLS - 1; // index of the blank in the solved layout
         const SHUFFLE_STEPS = 24;
+        const SVG_NS = "http://www.w3.org/2000/svg";
+        const ARC_BASE = 0; // y of the arc baseline: top of the svg, directly under the list
 
         const puzzles = [...document.querySelectorAll(".puzzle")];
         // The second arrangement differs by one tile swap.
@@ -337,11 +379,18 @@ Step 8:
         // They are created once and only mutated afterwards, so CSS
         // transitions on their color have a previous style to animate from.
         const stateSpans = [null, null];
+        // Per puzzle: the <svg> that holds the transposition arcs.
+        const arcLayers = [null, null];
+        // Per puzzle: the number currently hovered in the state line, or null.
+        const hovered = [null, null];
         let activeIndex = 0;
 
         function initState(index) {
           const items = [];
-          const parts = ["tiles: ["];
+          const svg = document.createElementNS(SVG_NS, "svg");
+          svg.setAttribute("class", "arcs");
+          svg.setAttribute("aria-hidden", "true");
+          const parts = [svg, "tiles: ["];
           for (let position = 0; position < ROWS * COLS - 1; position += 1) {
             if (position > 0) parts.push(", ");
             const item = document.createElement("span");
@@ -352,6 +401,82 @@ Step 8:
           puzzles[index].parentElement.querySelector(".puzzle-state")
             .replaceChildren(...parts);
           stateSpans[index] = items;
+          arcLayers[index] = svg;
+          items.forEach((item) => {
+            item.addEventListener("mouseenter", () => {
+              hovered[index] = Number(item.textContent);
+              applyHover(index);
+            });
+            item.addEventListener("mouseleave", () => {
+              hovered[index] = null;
+              applyHover(index);
+            });
+          });
+        }
+
+        // A transposition is any pair of numbers that is out of order
+        // (an earlier number larger than a later one).
+        function transpositions(tiles) {
+          const pairs = [];
+          for (let i = 0; i < tiles.length; i += 1) {
+            for (let j = i + 1; j < tiles.length; j += 1) {
+              if (tiles[i] > tiles[j]) pairs.push([tiles[i], tiles[j]]);
+            }
+          }
+          return pairs;
+        }
+
+        function drawArcs(index, tiles) {
+          const container = puzzles[index].parentElement.querySelector(
+            ".puzzle-state",
+          );
+          const origin = container.getBoundingClientRect().left;
+          const centerOf = (value) => {
+            const box = stateSpans[index][tiles.indexOf(value)]
+              .getBoundingClientRect();
+            return box.left + box.width / 2 - origin;
+          };
+          const paths = transpositions(tiles).map(([a, b]) => {
+            const x1 = centerOf(a);
+            const x2 = centerOf(b);
+            const height = 22;
+            const path = document.createElementNS(SVG_NS, "path");
+            path.setAttribute(
+              "d",
+              `M ${x1} ${ARC_BASE} Q ${(x1 + x2) / 2} ${
+                ARC_BASE + 2 * height
+              } ${x2} ${ARC_BASE}`,
+            );
+            path.dataset.a = a;
+            path.dataset.b = b;
+            return path;
+          });
+          arcLayers[index].replaceChildren(...paths);
+          applyHover(index);
+        }
+
+        function applyHover(index) {
+          const value = hovered[index];
+          const container = puzzles[index].parentElement.querySelector(
+            ".puzzle-state",
+          );
+          container.classList.toggle("hovering", value !== null);
+          const linked = new Set();
+          arcLayers[index].querySelectorAll("path").forEach((path) => {
+            const a = Number(path.dataset.a);
+            const b = Number(path.dataset.b);
+            const hot = value !== null && (a === value || b === value);
+            path.classList.toggle("hot", hot);
+            if (hot) linked.add(a === value ? b : a);
+          });
+          // The hovered number and the numbers it is transposed with.
+          stateSpans[index].forEach((item) => {
+            const number = Number(item.textContent);
+            item.classList.toggle(
+              "linked",
+              value !== null && (number === value || linked.has(number)),
+            );
+          });
         }
 
         function render(index) {
@@ -381,6 +506,7 @@ Step 8:
               ? "shifted"
               : "";
           });
+          drawArcs(index, tiles);
         }
 
         function setActive(index, focus = false) {
@@ -498,6 +624,10 @@ Step 8:
             },
           );
         });
+        window.addEventListener(
+          "resize",
+          () => states.forEach((_, index) => render(index)),
+        );
         states.forEach((_, index) => scrambleImmediately(index));
         states.forEach((_, index) => initState(index));
         states.forEach((_, index) => render(index));

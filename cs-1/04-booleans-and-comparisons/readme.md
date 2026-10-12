@@ -431,13 +431,13 @@ True
 ---
 
 ```py
-"apple" < "Apple"
+"Apple" < "apple"
 ```
 
 ...
 
 ```py
-False
+True
 ```
 
 ## Comparison Operators
@@ -473,22 +473,20 @@ Python includes the following boolean operators: `and`, `or`, `not`.
 False
 ```
 
----
+...
 
 ```py
-"a" == "b" or 10 > 5
+"a" == "b" and 10 > 5
 ```
 
 ...
 
 ```py
-True
+False
 ```
 
----
-
 ```py
-"a" == "a" or 10 < 5
+"a" == "a" and 10 > 5
 ```
 
 ...
@@ -509,6 +507,30 @@ True
 False
 ```
 
+...
+
+```py
+"a" == "b" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+...
+
+```py
+"a" == "a" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
 ---
 
 ```py
@@ -521,7 +543,7 @@ not 2 > 1
 False
 ```
 
----
+...
 
 ```py
 not "a" == "b"

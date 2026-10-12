@@ -389,6 +389,8 @@ Python
 { "strawberry": 1, "chocolate": 1, "vanilla": 2 }
 ```
 
+_Note that object keys in JSON must be strings_
+
 ## JSON Sets
 
 Python
