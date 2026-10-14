@@ -380,8 +380,10 @@ class Rectangle:
 
 ---
 
-Python's choice to require and explicit `self` parameter is a bad design
-decision. If you find it confusing, it's because it is.
+It's a questionable design decision, in my opinion. If you find it confusing,
+it's because it is.
+
+https://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html
 
 ...
 
