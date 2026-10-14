@@ -919,7 +919,7 @@ $$
 
 To merge-sort a list `items`:
 
-- If `items` is empty, return an empty list.
+- If `len(items) <= 1` is empty, return `items` as-is.
 
 - Otherwise, split `items` into to halves `left` and `right`.
 
@@ -932,9 +932,18 @@ To merge-sort a list `items`:
 - Call merge sort to **recursively** sort `left` and `right`.
 
 - **Merge** the sorted values from `left` and `right` to form a new sorted list.
+  To merge two sorted lists `sortedLeft` and `sortedRight`:
+
+  Make a new empty list `result`. Look at the first values in `sortedLeft` and
+  `sortedRight`. Take the smaller value and remove it from from the front of its
+  list, and add it to the end of `result` (if the first values in the lists are
+  the same, you can remove from either list). Continue until either `sortedLeft`
+  or `sortedRight` is empty. Then add any remaining values from `sortedLeft` or
+  `sortedRight` to `result`.
 
   Use `list[0]` to access the first value in a list. Use `list.pop(0)` to remove
-  and return the first value in a list.
+  and return the first value in a list. Use `list.extend(values)` to add all the
+  values in one list to the end of another.
 
 ## Merging Sorted Lists
 
@@ -1021,13 +1030,13 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[3] [2] [5] [1] [4] [1] [5] []
+[3] [2] [5] [1] [4] [1] [5]
 ```
 
 ---
 
 ```
-[3] [2] [5] [1] [4] [1] [5] []
+[3] [2] [5] [1] [4] [1] [5]
 ```
 
 ```
@@ -1037,7 +1046,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[3] [] [5] [1] [4] [1] [5] []
+[3] [] [5] [1] [4] [1] [5]
 ```
 
 ```
@@ -1047,7 +1056,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [5] [1] [4] [1] [5] []
+[] [] [5] [1] [4] [1] [5]
 ```
 
 ```
@@ -1057,7 +1066,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [5] [] [4] [1] [5] []
+[] [] [5] [] [4] [1] [5]
 ```
 
 ```
@@ -1067,7 +1076,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [] [] [4] [1] [5] []
+[] [] [] [] [4] [1] [5]
 ```
 
 ```
@@ -1077,7 +1086,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [] [] [4] [] [5] []
+[] [] [] [] [4] [] [5]
 ```
 
 ```
@@ -1087,7 +1096,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [] [] [] [] [5] []
+[] [] [] [] [] [] [5]
 ```
 
 ```
@@ -1097,7 +1106,7 @@ Merged result: 1 1 2 3 4 5 5
 ---
 
 ```
-[] [] [] [] [] [] [] []
+[] [] [] [] [] [] []
 ```
 
 ```
