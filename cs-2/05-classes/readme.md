@@ -374,3 +374,26 @@ class Rectangle:
     def perimeter(self):
         return 2 * (self.width + self.height)
 ```
+
+...
+
+Python's choice to require and explicit `self` parameter is a bad design
+decision. If you find it confusing, it's because it is.
+
+...
+
+```py
+class Rectangle:
+    def __init__(width, height):
+        self.width = width
+        self.height = height
+
+    def __repr__():
+        return f"Rectangle({self.width}, {self.height})"
+
+    def area():
+        return self.width * self.height
+
+    def perimeter():
+        return 2 * (self.width + self.height)
+```
