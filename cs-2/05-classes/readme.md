@@ -136,6 +136,8 @@ class Rectangle:
         self.height = height
 ```
 
+...
+
 ```py
 r = Rectangle(3, 4)
 ```
@@ -164,9 +166,9 @@ r.height
 4
 ```
 
-...
+---
 
-<img src="/assets/init-meme.png" height="200" />
+<img src="/assets/init-meme.png" />
 
 ## Terms
 
