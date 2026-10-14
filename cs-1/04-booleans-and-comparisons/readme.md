@@ -566,3 +566,26 @@ n = float(input("Enter a number: "))
 
 print(n < 100)
 ```
+
+## Problem: Is Negative
+
+Print True if `n` is negative, or False otherwise
+
+## Problem: Is Whole
+
+Print True if `n` is a whole number, or False otherwise Hint: use the `round`
+function
+
+## Problem: Is Multiple
+
+Print True if `a` is a multiple of `b`, or False otherwise Hint: use the `%`
+operator
+
+## Problem: Has Discount
+
+Print True if the user gets a discount, or False otherwise Users with below the
+age or 18 or aged 65 or above get discounts
+
+## Problem: Is Positive Even
+
+Print True if `n` is a positive, even number (including 0), or False otherwise

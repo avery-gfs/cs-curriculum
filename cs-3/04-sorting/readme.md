@@ -951,7 +951,9 @@ To merge two sorted lists `left` and `right`:
 Hints:
 
 - Use `list[0]` to access the first value in a list.
+
 - Use `list.pop(0)` to remove and return the first value in a list.
+
 - Use `list.extend(values)` to add all the values in one list to the end of
   another.
 
