@@ -375,7 +375,7 @@ class Rectangle:
         return 2 * (self.width + self.height)
 ```
 
-...
+---
 
 Python's choice to require and explicit `self` parameter is a bad design
 decision. If you find it confusing, it's because it is.
