@@ -938,11 +938,15 @@ To merge-sort a list `items`:
 To merge two sorted lists `sortedLeft` and `sortedRight`:
 
 - Make a new empty list `result`.
+
 - Compare the first values in `sortedLeft` and `sortedRight`.
+
 - Take the smaller value and remove it from from the front of its list, and add
   it to the end of `result` (if the first values in the lists are the same, you
   can remove from either list).
+
 - Continue until either `sortedLeft` or `sortedRight` is empty.
+
 - Add any remaining values from `sortedLeft` or `sortedRight` to `result`.
 
 Hints:
