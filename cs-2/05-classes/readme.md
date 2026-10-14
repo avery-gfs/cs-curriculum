@@ -53,9 +53,18 @@ def smallest(a, b):
         return a
 
     return b
+```
 
+...
 
-print(smallest(3, 4))
+```py
+smallest(3, 4)
+```
+
+...
+
+```
+3
 ```
 
 ## Object Oriented Programming
@@ -70,13 +79,23 @@ nums = [1, 2, 3, 4]
 
 ```py
 nums
-nums[0]
 ```
 
 ...
 
 ```
 [1, 2, 3, 4]
+```
+
+...
+
+```py
+nums[0]
+```
+
+...
+
+```
 1
 ```
 
