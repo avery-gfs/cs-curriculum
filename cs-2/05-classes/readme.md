@@ -12,7 +12,7 @@ def greeting(name, school):
 ...
 
 ```py
-print(greeting("Avery", "gfs"))
+greeting("Avery", "gfs")
 ```
 
 ...
@@ -212,7 +212,7 @@ r = Rectangle(3, 4)
 ...
 
 ```py
-print(r)
+r
 ```
 
 ...
