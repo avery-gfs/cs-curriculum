@@ -485,6 +485,8 @@ False
 False
 ```
 
+...
+
 ```py
 "a" == "a" and 10 > 5
 ```
@@ -555,38 +557,12 @@ not "a" == "b"
 True
 ```
 
-## Boolean Operator Precedence
+## Boolean Demo Program
 
 ```py
-False and (True or True)
-```
+n = float(input("Enter a number: "))
 
-...
+# Print True if `n` is less than 100, or False otherwise
 
-```py
-False
-```
-
-...
-
-```py
-(False and True) or True
-```
-
-...
-
-```py
-True
-```
-
-...
-
-```py
-False and True or True
-```
-
-...
-
-```py
-True
+print(n < 100)
 ```
