@@ -206,7 +206,6 @@ class Rectangle:
 
 ```py
 r = Rectangle(3, 4)
-print(r)
 ```
 
 ...
@@ -269,11 +268,11 @@ r.perimeter()
 14
 ```
 
-...
+---
 
 Why use methods vs extra fields?
 
----
+...
 
 ```py
 r = Rectangle(3, 4)
