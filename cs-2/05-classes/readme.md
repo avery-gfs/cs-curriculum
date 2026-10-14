@@ -241,14 +241,29 @@ r.perimeter()
 14
 ```
 
+...
+
 Why use methods vs extra fields?
 
-## Mutation
+---
 
 ```py
 r = Rectangle(3, 4)
 r.width = 5
-print(r.area())  # ??
+```
+
+...
+
+What does this give us?
+
+```py
+r.area()
+```
+
+...
+
+```py
+20
 ```
 
 ## Self
