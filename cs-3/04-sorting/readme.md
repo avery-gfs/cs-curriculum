@@ -919,7 +919,7 @@ $$
 
 To merge sort a list `items`:
 
-- If `len(items) <= 1` is empty, return `items` as-is.
+- If `len(items) <= 1`, return `items` as-is.
 
 - Otherwise, split `items` into to halves and call merge **recursively** on
   these halves to make two new sorted lists `left` and `right`.
