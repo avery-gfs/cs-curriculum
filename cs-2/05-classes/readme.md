@@ -21,6 +21,30 @@ print(greeting("Avery", "gfs"))
 Hello Avery from gfs!
 ```
 
+---
+
+```py
+def average(numbers):
+    total = 0
+
+    for n in numbers:
+        total += n
+
+    return total / len(numbers)
+```
+
+...
+
+```py
+average([1, 4, 2, 7, 3, 1])
+```
+
+...
+
+```
+3.0
+```
+
 ## Early returns
 
 ```py
@@ -128,10 +152,14 @@ r.height
 ## Terms
 
 - **Objects**: Structures that combine data and functionality (methods)
+
 - **Methods**: Functions that are attached to a value
+
 - **Classes**: The categories that objects belong to
+
 - **Instance**: An object is an "instance" of a class if the object belongs to
   that class category
+
 - **Fields**: Variables that are stored inside an object
 
 ## Repr
@@ -146,10 +174,20 @@ class Rectangle:
         return f"Rectangle({self.width}, {self.height})"
 ```
 
+...
+
 ```py
 r = Rectangle(3, 4)
 print(r)
 ```
+
+...
+
+```py
+print(r)
+```
+
+...
 
 ```
 Rectangle(3, 4)
@@ -173,10 +211,34 @@ class Rectangle:
         return 2 * (self.width + self.height)
 ```
 
+...
+
 ```py
 r = Rectangle(3, 4)
-print(r.area())  # 12
-print(r.perimeter())  # 14
+```
+
+...
+
+```py
+r.area()
+```
+
+...
+
+```
+12
+```
+
+...
+
+```py
+r.perimeter()
+```
+
+...
+
+```
+14
 ```
 
 Why use methods vs extra fields?
