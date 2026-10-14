@@ -1104,12 +1104,8 @@ $n$ comparisons per layer.
 
 ...
 
-Total complexity
-
-$$
-O(n \cdot log(n))
-$$
+Total complexity $O(n \cdot log(n))$
 
 ...
 
-<img src="/assets/nlogn.png" />
+<img src="/assets/nlogn.png" height="400" />
