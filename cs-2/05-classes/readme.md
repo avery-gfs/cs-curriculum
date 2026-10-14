@@ -164,6 +164,9 @@ Rectangle(3, 4)
 
 - **Fields**: Variables that are stored inside an object
 
+- **Self**: A special variable used to keep track of an object's fields and
+  methods, within the methods of that object's class.
+
 ## Making Classes
 
 ```py
