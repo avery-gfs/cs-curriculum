@@ -296,6 +296,10 @@ r.area()
 
 ## Self
 
+The `self` variable helps us keep track of which data and functionality is
+inside of the objects of our class (that is, which variables and functions are
+fields and methods).
+
 ```py
 class Rectangle:
     def __init__(self, width, height):
@@ -311,7 +315,3 @@ class Rectangle:
     def perimeter(self):
         return 2 * (self.width + self.height)
 ```
-
-The `self` variable helps us keep track of which data and functionality is
-inside of the objects of our class (that is, which variables and functions are
-fields and methods).
