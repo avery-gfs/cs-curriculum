@@ -1,32 +1,36 @@
-def quicksort(items):
+def mergeSort(items):
     if items == []:
         return []
 
-    pivot = items[0]
+    mid = len(items) // 2
+    left = items[:mid]
+    right = items[mid:]
 
-    lo = []
-    eq = []
-    hi = []
+    sortedLeft = mergeSort(left)
+    sortedRight = mergeSort(right)
 
-    for item in items:
-        if item < pivot:
-            lo.append(item)
-        elif item == pivot:
-            eq.append(item)
+    result = []
+
+    while sortedLeft != [] and sortedRight != []:
+        if sortedLeft[0] < sortedRight[0]:
+            result.append(sortedLeft.pop(0))
         else:
-            hi.append(item)
+            result.append(sortedRight.pop(0))
 
-    return quicksort(lo) + eq + quicksort(hi)
+    result.extend(sortedLeft)
+    result.extend(sortedRight)
+
+    return result
 
 
 numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
 
-print(quicksort(numbers))
+print(mergeSort(numbers))
 
 emojis = list("🦀🥦🫖🐼🧲🐼🏀🫖🪭💩🍄⚽🥑🥦🦘🫖")
 
-print(quicksort(emojis))
+print(mergeSort(emojis))
 
 words = "Mayday Mayday watch the needle leave the dial".split()
 
-print(quicksort(words))
+print(mergeSort(words))

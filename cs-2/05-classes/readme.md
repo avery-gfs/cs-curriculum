@@ -11,15 +11,31 @@ def greeting(name, school):
 
 ...
 
+What are `name` and `school` called here?
+
+...
+
+Parameters
+
+...
+
 ```py
 greeting("Avery", "gfs")
 ```
 
 ...
 
+```py
+"Hello Avery from gfs!"
 ```
-Hello Avery from gfs!
-```
+
+...
+
+What are "Avery" and "gfs" called here?
+
+...
+
+Arguments
 
 ---
 
@@ -41,7 +57,7 @@ average([1, 4, 2, 7, 3, 1])
 
 ...
 
-```
+```py
 3.0
 ```
 
@@ -63,7 +79,7 @@ smallest(3, 4)
 
 ...
 
-```
+```py
 3
 ```
 
@@ -78,24 +94,12 @@ nums = [1, 2, 3, 4]
 ...
 
 ```py
-nums
-```
-
-...
-
-```
-[1, 2, 3, 4]
-```
-
-...
-
-```py
 nums[0]
 ```
 
 ...
 
-```
+```py
 1
 ```
 
@@ -107,7 +111,7 @@ nums.index(2)
 
 ...
 
-```
+```py
 1
 ```
 
@@ -128,6 +132,39 @@ nums.append(5)
 We use **classes** to make custom objects.
 
 https://www.w3schools.com/python/python_classes.asp
+
+```py
+r = Rectangle(3, 4)
+```
+
+```py
+r
+r.width
+r.height
+r.area()
+r.perimeter()
+```
+
+```
+Rectangle(3, 4)
+3
+4
+12
+14
+```
+
+- **Objects**: Structures that combine data and functionality (methods)
+
+- **Methods**: Functions that are attached to a value
+
+- **Classes**: The categories that objects belong to
+
+- **Instance**: An object is an "instance" of a class if the object belongs to
+  that class category
+
+- **Fields**: Variables that are stored inside an object
+
+## Making Classes
 
 ```py
 class Rectangle:
@@ -170,28 +207,18 @@ r.height
 
 <img src="/assets/init-meme.png" />
 
-## Terms
-
-**Objects**: Structures that combine data and functionality (methods)
-
-...
-
-**Methods**: Functions that are attached to a value
-
-...
-
-**Classes**: The categories that objects belong to
-
-...
-
-**Instance**: An object is an "instance" of a class if the object belongs to
-that class category
-
-...
-
-**Fields**: Variables that are stored inside an object
-
 ## Repr
+
+```py
+r = Rectangle(3, 4)
+print(r)
+```
+
+```
+<__main__.Rectangle object at 0x710f081cf380>
+```
+
+---
 
 ```py
 class Rectangle:
@@ -207,12 +234,7 @@ class Rectangle:
 
 ```py
 r = Rectangle(3, 4)
-```
-
-...
-
-```py
-r
+print(r)
 ```
 
 ...
@@ -222,6 +244,44 @@ Rectangle(3, 4)
 ```
 
 ## Methods
+
+```py
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        self.area = width * width
+        self.perimeter = 2 * (width + height)
+
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
+```
+
+...
+
+```py
+r = Rectangle(3, 4)
+```
+
+...
+
+```py
+r.width = 5
+```
+
+...
+
+```py
+r.area()
+```
+
+...
+
+```py
+12
+```
+
+---
 
 ```py
 class Rectangle:
@@ -271,18 +331,17 @@ r.perimeter()
 
 ---
 
-Why use methods vs extra fields?
-
-...
-
 ```py
 r = Rectangle(3, 4)
-r.width = 5
 ```
 
 ...
 
-What does this give us?
+```py
+r.width = 5
+```
+
+...
 
 ```py
 r.area()
