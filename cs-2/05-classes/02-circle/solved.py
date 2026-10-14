@@ -1,23 +1,23 @@
 import math
 
 
-class Square:
-    def __init__(self, width):
-        self.width = width
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
 
     def __repr__(self):
-        return f"Square({self.width})"
+        return f"Circle({self.radius})"
 
     def area(self):
-        return self.width**2
+        return math.pi * self.radius**2
 
     def perimeter(self):
-        return 4 * self.width
+        return 2 * math.pi * self.radius
 
 
-s = Square(10)
+c = Circle(10)
 
-print(s)
-print(s.width)
-print(s.area())
-print(s.perimeter())
+print(c)
+print(c.radius)
+print(c.area())
+print(c.perimeter())
