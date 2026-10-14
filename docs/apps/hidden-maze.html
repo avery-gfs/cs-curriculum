@@ -300,9 +300,7 @@ redo ui without tailwind
         function init() {
           const urlParams = new URLSearchParams(window.location.search);
           const mazeQuery = urlParams.get("maze");
-          const mazeString = decodeURIComponent(
-            mazeQuery ?? defaultMazeString,
-          );
+          const mazeString = decodeURIComponent(mazeQuery ?? defaultMazeString);
 
           parseMaze(mazeString);
           if (!startPos || !endPos) {
