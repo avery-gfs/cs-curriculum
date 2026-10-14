@@ -301,8 +301,7 @@ redo ui without tailwind
           const urlParams = new URLSearchParams(window.location.search);
           const mazeQuery = urlParams.get("maze");
           const mazeString = decodeURIComponent(
-            mazeQuery ??
-              defaultMazeString,
+            mazeQuery ?? defaultMazeString,
           );
 
           parseMaze(mazeString);
