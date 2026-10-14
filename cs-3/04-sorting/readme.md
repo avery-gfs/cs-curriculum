@@ -1108,4 +1108,4 @@ Total complexity $O(n \cdot log(n))$
 
 ...
 
-<img src="/assets/nlogn.png" height="400" />
+<img src="/assets/nlogn.png" height="600" />
