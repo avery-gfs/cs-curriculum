@@ -174,13 +174,20 @@ r.height
 
 - **Objects**: Structures that combine data and functionality (methods)
 
+...
+
 - **Methods**: Functions that are attached to a value
 
+...
+
 - **Classes**: The categories that objects belong to
+
+...
 
 - **Instance**: An object is an "instance" of a class if the object belongs to
   that class category
 
+  ...
 - **Fields**: Variables that are stored inside an object
 
 ## Repr
