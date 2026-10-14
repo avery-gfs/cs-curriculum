@@ -1,6 +1,3 @@
-import math
-
-
 class Square:
     def __init__(self, width):
         pass

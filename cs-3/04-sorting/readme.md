@@ -488,8 +488,8 @@ To quicksort a list `items`:
 
   - If `value > pivot`, add `value` to the list `hi`
 
-- Call quicksort to recursively sort the lists `lo` and `hi` (`eq` is already in
-  sorted order). Return the three sublists concatenated:
+- Call quicksort to **recursively** sort the lists `lo` and `hi` (`eq` is
+  already in sorted order). Return the three sublists concatenated:
   `quicksort(lo) + eq + quicksort(hi)`.
 
   List concatenation
@@ -923,10 +923,18 @@ To merge-sort a list `items`:
 
 - Otherwise, split `items` into to halves `left` and `right`.
 
-- Call merge sort to recursively sort `left` and `right`.
+  ```py
+  mid = len(items) // 2
+  left = items[:mid]
+  right = items[mid:]
+  ```
 
-- **Merge** the sorted values from `left` and `right` to forma a new sorted
-  list.
+- Call merge sort to **recursively** sort `left` and `right`.
+
+- **Merge** the sorted values from `left` and `right` to form a new sorted list.
+
+  Use `list[0]` to access the first value in a list. Use `list.pop(0)` to remove
+  and return the first value in a list.
 
 ## Merging Sorted Lists
 
@@ -1256,8 +1264,68 @@ Merged result: 1 1 2 3 4 5 5
 [1, 1, 2, 3, 4, 5, 5]
 ```
 
+## In Place Sorting
+
+In place:
+
+```py
+def bubbleSort(items):
+    for limit in range(len(items) - 1, 0, -1):
+        for index in range(limit):
+            if items[index] > items[index + 1]:
+                tmp = items[index]
+                items[index] = items[index + 1]
+                items[index + 1] = tmp
+
+
+numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+
+bubbleSort(numbers)
+print(numbers)
+```
+
 ---
 
+Not in place:
+
+```py
+def quicksort(items):
+    if items == []:
+        return []
+
+    pivot = items[0]
+
+    lo = []
+    eq = []
+    hi = []
+
+    for item in items:
+        if item < pivot:
+            lo.append(item)
+        elif item == pivot:
+            eq.append(item)
+        else:
+            hi.append(item)
+
+    return quicksort(lo) + eq + quicksort(hi)
+
+
+numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+
+print(quicksort(numbers))
 ```
-[1, 1, 2, 3, 4, 5, 5]
+
+---
+
+Not in place:
+
+```py
+def mergeSort(items):
+    # ...
+    return result
+
+
+numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
+
+print(mergeSort(numbers))
 ```

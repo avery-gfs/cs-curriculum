@@ -15,8 +15,8 @@ class Rectangle:
 
 r = Rectangle(3, 4)
 
-print(r)
-print(r.width)
-print(r.height)
-print(r.area())
-print(r.perimeter())
+print(r)  # Rectangle(3, 4)
+print(r.width)  # 3
+print(r.height)  # 4
+print(r.area())  # 12
+print(r.perimeter())  # 14
