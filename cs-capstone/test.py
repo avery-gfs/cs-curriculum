@@ -4,5 +4,48 @@ conn = sqlite3.connect("movies.db", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
-for row in conn.execute("SELECT * FROM movie WHERE imdb_rank = 1"):
-    print(row)
+rows = conn.execute("""
+SELECT * from movie
+order by imdb_rank
+limit 10
+""")
+
+print("\nTop Movies:\n")
+
+for row in rows:
+    print(row["title"], row["imdb_rank"])
+
+rows = conn.execute("""
+SELECT * from movie
+order by year
+limit 10
+""")
+
+print("\nOld Movies:\n")
+
+for row in rows:
+    print(row["title"], row["year"])
+
+rows = conn.execute("""
+SELECT year, count(*) as movies from movie
+group by year
+order by year
+""")
+
+print("\nNumber of Movies by Year:\n")
+
+for row in rows:
+    print(row["year"], row["movies"])
+
+rows = conn.execute("""
+SELECT name, count(*) as roles from role
+join person on person.id = role.person_id
+group by person_id
+order by roles desc
+limit 20
+""")
+
+print("\nFrequent Stars:\n")
+
+for row in rows:
+    print(row["name"], row["roles"])

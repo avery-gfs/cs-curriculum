@@ -1,21 +1,40 @@
 #!/usr/bin/env python3
 """
-Build a Top-250 SQLite DB from the IMDb datasets, the pasted chart text, and the pasted chart links.
+Build movies.db (IMDb Top 250) from the IMDb datasets. Just run:  python build_imdb_top250.py
 
-    python build_imdb_top250.py --chart top250.txt --links links.txt --out movies.db
-    python build_imdb_top250.py ... --birth-year-fallback
+Inputs (current directory):
+  links.txt   required: one imdb.com/title/tt... URL per line (rank from ref_=chttp_t_N)
+  *.tsv.gz    name.basics, title.basics, title.crew, title.principals
+              (any missing file is downloaded automatically)
 
-Needs in --data-dir: name.basics, title.basics, title.crew, title.principals (.tsv.gz)
+All ids start at 1: movie.id = chart rank, person and genre ordered by name,
+role ordered by movie then billing.
 """
 
-import argparse, csv, gzip, json, os, re, sqlite3, sys
+import csv, gzip, json, os, re, sqlite3, sys, time, urllib.request
 
 csv.field_size_limit(sys.maxsize)
+
+DATA_DIR = "."
+OUT_DB = "movies.db"
+LINKS_FILE = "links.txt"
+DATASET_BASE = "https://datasets.imdbws.com/"
+DATASETS = [
+    "name.basics.tsv.gz",
+    "title.basics.tsv.gz",
+    "title.crew.tsv.gz",
+    "title.principals.tsv.gz",
+]
+CAST_CATEGORIES = {"actor", "actress", "self"}
+UA = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
 
 SCHEMA = """
 CREATE TABLE movie (
   id INTEGER PRIMARY KEY, title TEXT NOT NULL, year INTEGER, runtime INTEGER,
-  content_rating TEXT, imdb_rank INTEGER
+  imdb_rank INTEGER
 );
 CREATE TABLE genre (id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE);
 CREATE TABLE movie_genre (
@@ -23,7 +42,7 @@ CREATE TABLE movie_genre (
   genre_id INTEGER NOT NULL REFERENCES genre(id),
   PRIMARY KEY (movie_id, genre_id)
 );
-CREATE TABLE person (id INTEGER PRIMARY KEY, name TEXT NOT NULL, birth_date TEXT);
+CREATE TABLE person (id INTEGER PRIMARY KEY, name TEXT NOT NULL, birth_year INTEGER);
 CREATE TABLE director (
   movie_id INTEGER NOT NULL REFERENCES movie(id),
   person_id INTEGER NOT NULL REFERENCES person(id),
@@ -37,168 +56,243 @@ CREATE TABLE role (
 );
 """
 
-CAST_CATEGORIES = {"actor", "actress", "self"}
-META = re.compile(r"^(\d{4})(?:(\d+)h)?\s*(?:(\d+)m)?\s*(.*)$")
+
+# ------------------------------------------------------------------ progress
+class Bar:
+    def __init__(self, label):
+        self.label, self.last = label, 0.0
+
+    def show(self, frac, detail=""):
+        now = time.time()
+        if now - self.last < 0.1 and frac < 1:
+            return
+        self.last = now
+        frac = max(0.0, min(1.0, frac))
+        filled = int(frac * 24)
+        sys.stdout.write(
+            f"\r  {self.label:<22} [{'#' * filled}{'.' * (24 - filled)}] "
+            f"{frac * 100:5.1f}% {detail:<22}"
+        )
+        sys.stdout.flush()
+
+    def done(self, detail=""):
+        self.last = 0
+        self.show(1.0, detail)
+        sys.stdout.write("\n")
 
 
-def num(imdb_id):  # 'tt0111161' -> 111161
-    return int(imdb_id[2:])
+def mb(n):
+    return f"{n / 1e6:.0f} MB"
+
+
+# ----------------------------------------------------------------- datasets
+def ensure_datasets():
+    missing = [n for n in DATASETS if not os.path.exists(os.path.join(DATA_DIR, n))]
+    if not missing:
+        print("  dataset files found, skipping download")
+        return
+    print(f"  downloading {len(missing)} missing file(s)")
+    for name in missing:
+        path = os.path.join(DATA_DIR, name)
+        part = path + ".part"
+        req = urllib.request.Request(DATASET_BASE + name, headers={"User-Agent": UA})
+        bar = Bar(name)
+        try:
+            with (
+                urllib.request.urlopen(req, timeout=60) as resp,
+                open(part, "wb") as out,
+            ):
+                total = int(resp.headers.get("Content-Length") or 0)
+                got = 0
+                while chunk := resp.read(1 << 20):
+                    out.write(chunk)
+                    got += len(chunk)
+                    bar.show(
+                        got / total if total else 0,
+                        f"{mb(got)}/{mb(total)}" if total else mb(got),
+                    )
+            os.replace(part, path)
+            bar.done(mb(got))
+        except Exception as ex:
+            if os.path.exists(part):
+                os.remove(part)
+            sys.exit(f"\nDownload of {name} failed: {ex}")
+
+
+def read_tsv(name, label):
+    path = os.path.join(DATA_DIR, name)
+    size = os.path.getsize(path)
+    bar = Bar(label)
+    i = -1
+    with open(path, "rb") as raw:
+        with gzip.open(raw, "rt", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE)
+            for i, row in enumerate(reader):
+                if i % 20000 == 0:
+                    bar.show(raw.tell() / size, f"{i:,} rows")
+                yield row
+            bar.done(f"{i + 1:,} rows")
 
 
 def nul(v):
     return None if v == r"\N" else v
 
 
-def read_tsv(path):
-    with gzip.open(path, "rt", encoding="utf-8", newline="") as f:
-        yield from csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE)
-
-
-def parse_chart(path):
-    """Pasted chart text: '#N', title line, then 'YYYY<runtime><rating>' (rating may be empty)."""
-    text = open(path, encoding="utf-8").read()
-    parts = re.split(r"(?m)^#(\d+)\s*$", text)
-    out = {}
-    for rank, body in zip(parts[1::2], parts[2::2]):
-        lines = [l.strip() for l in body.splitlines() if l.strip()]
-        m = META.match(lines[1])
-        if not m:
-            raise ValueError(f"cannot parse meta line for #{rank}: {lines[1]!r}")
-        year, h, mi, rating = m.groups()
-        out[int(rank)] = dict(
-            title=lines[0],
-            year=int(year),
-            runtime=(int(h or 0) * 60 + int(mi or 0)) or None,
-            rating=rating.strip() or None,
+# ------------------------------------------------------------------- links
+def load_links():
+    if not os.path.exists(LINKS_FILE):
+        sys.exit(
+            f"{LINKS_FILE} not found. Put one imdb.com/title/tt... URL per line "
+            f"in this folder."
         )
-    return out
-
-
-def parse_links(path):
-    """Rank from ref_=chttp_t_N, falling back to line order."""
-    out = {}
-    for i, line in enumerate(open(path, encoding="utf-8"), 1):
+    entries, seen = [], set()
+    for i, line in enumerate(open(LINKS_FILE, encoding="utf-8"), 1):
         t = re.search(r"tt\d+", line)
         if not t:
             continue
         r = re.search(r"chttp_t_(\d+)", line)
-        out[int(r.group(1)) if r else i] = t.group(0)
-    return out
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--chart", required=True, help="pasted text of the chart page")
-    ap.add_argument(
-        "--links", required=True, help="one imdb.com/title/tt... URL per line"
-    )
-    ap.add_argument("--out", default="movies.db")
-    ap.add_argument("--data-dir", default=".")
-    ap.add_argument(
-        "--birth-year-fallback",
-        action="store_true",
-        help="store birthYear ('1952') in birth_date; default leaves it NULL",
-    )
-    a = ap.parse_args()
-    p = lambda n: os.path.join(a.data_dir, n)
-
-    chart, links = parse_chart(a.chart), parse_links(a.links)
-    if set(chart) != set(links):
-        print(
-            "WARNING: ranks differ between chart and links:",
-            sorted(set(chart) ^ set(links))[:10],
-        )
-    entries = {}  # tconst -> merged entry
-    for rank in sorted(set(chart) & set(links)):
-        entries[links[rank]] = dict(chart[rank], rank=rank)
-    print(f"{len(entries)} movies")
-
-    if os.path.exists(a.out):
-        os.remove(a.out)
-    db = sqlite3.connect(a.out)
-    db.executescript(SCHEMA)
-
-    # movie + genre. Title/rank/rating from the chart; runtime/genres from basics.
-    genre_ids, seen = {}, set()
-    for r in read_tsv(p("title.basics.tsv.gz")):
-        e = entries.get(r["tconst"])
-        if not e:
+        rank = int(r.group(1)) if r else i
+        if t.group(0) in seen:
+            print(f"  WARNING: duplicate id {t.group(0)} on line {i}, ignored")
             continue
-        seen.add(r["tconst"])
-        sy = nul(r["startYear"])
-        if sy and int(sy) != e["year"]:
-            print(
-                f"WARNING: #{e['rank']} {e['title']!r}: chart year {e['year']} "
-                f"!= dataset {sy} ({r['tconst']}) - check the link/rank alignment"
-            )
-        rt = nul(r["runtimeMinutes"])
-        db.execute(
-            "INSERT INTO movie VALUES (?,?,?,?,?,?)",
-            (
-                num(r["tconst"]),
-                e["title"],
-                e["year"],
-                int(rt) if rt else e["runtime"],
-                e["rating"],
-                e["rank"],
-            ),
-        )
-        g = nul(r["genres"])
-        for name in g.split(",") if g else []:
-            if name not in genre_ids:
-                genre_ids[name] = len(genre_ids) + 1
-                db.execute("INSERT INTO genre VALUES (?,?)", (genre_ids[name], name))
-            db.execute(
-                "INSERT OR IGNORE INTO movie_genre VALUES (?,?)",
-                (num(r["tconst"]), genre_ids[name]),
-            )
-    for t in sorted(set(entries) - seen):
-        print(
-            f"WARNING: {t} (#{entries[t]['rank']} {entries[t]['title']}) "
-            f"not in title.basics - dataset snapshot too old? Row skipped."
-        )
+        seen.add(t.group(0))
+        entries.append(dict(rank=rank, tconst=t.group(0)))
+    if not entries:
+        sys.exit(f"No tt ids found in {LINKS_FILE}.")
+    entries.sort(key=lambda e: e["rank"])
+    for i, e in enumerate(entries, 1):  # ranks exactly 1..N, in link order
+        e["rank"] = i
+    return entries
 
-    # directors (title.crew) and cast roles (title.principals)
+
+# --------------------------------------------------------------------- main
+def main():
+    print("[1/6] Dataset files")
+    ensure_datasets()
+
+    print("[2/6] Reading list")
+    entries = load_links()
+    by_t = {e["tconst"]: e for e in entries}
+    print(f"  {len(entries)} movies from {LINKS_FILE}")
+
+    print("[3/6] Reading dataset files")
+    basics = {}  # tconst -> (primaryTitle, year, runtime, genres)
+    for r in read_tsv("title.basics.tsv.gz", "title.basics"):
+        if r["tconst"] in by_t:
+            sy, rt, g = nul(r["startYear"]), nul(r["runtimeMinutes"]), nul(r["genres"])
+            basics[r["tconst"]] = (
+                r["primaryTitle"],
+                int(sy) if sy else None,
+                int(rt) if rt else None,
+                g.split(",") if g else [],
+            )
+    kept = {}
+    for t, e in by_t.items():
+        if t not in basics:
+            print(
+                f"  WARNING: #{e['rank']} ({t}) not in title.basics "
+                f"(dataset older than the list?). Skipped."
+            )
+            continue
+        kept[t] = e
+
     dir_pairs = set()
-    for r in read_tsv(p("title.crew.tsv.gz")):
-        if r["tconst"] in seen:
+    for r in read_tsv("title.crew.tsv.gz", "title.crew"):
+        if r["tconst"] in kept:
             d = nul(r["directors"])
             for nm in d.split(",") if d else []:
                 dir_pairs.add((r["tconst"], nm))
 
     people = {nm for _, nm in dir_pairs}
-    role_rows = []
-    for r in read_tsv(p("title.principals.tsv.gz")):
-        if r["tconst"] in seen and r["category"] in CAST_CATEGORIES:
+    role_rows = []  # (rank, billing order, nconst, character)
+    for r in read_tsv("title.principals.tsv.gz", "title.principals"):
+        if r["tconst"] in kept and r["category"] in CAST_CATEGORIES:
             people.add(r["nconst"])
             chars = nul(r["characters"])
             for c in json.loads(chars) if chars else [None]:
-                role_rows.append((r["tconst"], r["nconst"], c))
+                role_rows.append((
+                    kept[r["tconst"]]["rank"],
+                    int(r["ordering"]),
+                    r["nconst"],
+                    c,
+                ))
 
-    for r in read_tsv(p("name.basics.tsv.gz")):
+    plist = []
+    for r in read_tsv("name.basics.tsv.gz", "name.basics"):
         if r["nconst"] in people:
             by = nul(r["birthYear"])
-            db.execute(
-                "INSERT INTO person VALUES (?,?,?)",
-                (
-                    num(r["nconst"]),
-                    r["primaryName"],
-                    by if (a.birth_year_fallback and by) else None,
-                ),
-            )
+            plist.append((r["primaryName"], r["nconst"], int(by) if by else None))
+    plist.sort()
+    pid = {nconst: i for i, (_, nconst, _) in enumerate(plist, 1)}
 
-    for t, nm in sorted(dir_pairs):
-        db.execute("INSERT INTO director VALUES (?,?)", (num(t), num(nm)))
-    for t, nm, c in role_rows:
+    print("[4/6] Writing database")
+    tmp = OUT_DB + ".tmp"
+    for f in (tmp, tmp + "-journal"):
+        if os.path.exists(f):
+            os.remove(f)
+    db = sqlite3.connect(tmp)
+    db.executescript(SCHEMA)
+
+    gid = {
+        n: i for i, n in enumerate(sorted({g for t in kept for g in basics[t][3]}), 1)
+    }
+    db.executemany("INSERT INTO genre VALUES (?,?)", [(i, n) for n, i in gid.items()])
+
+    bar = Bar("movies")
+    ordered = sorted(kept.items(), key=lambda kv: kv[1]["rank"])
+    for k, (t, e) in enumerate(ordered, 1):
+        title, year, runtime, genres = basics[t]
+        db.execute(
+            "INSERT INTO movie VALUES (?,?,?,?,?)",
+            (e["rank"], title, year, runtime, e["rank"]),
+        )
+        for g in genres:
+            db.execute("INSERT INTO movie_genre VALUES (?,?)", (e["rank"], gid[g]))
+        bar.show(k / len(ordered), f"{k}/{len(ordered)}")
+    bar.done(f"{len(ordered)}/{len(ordered)}")
+
+    bar = Bar("people")
+    db.executemany(
+        "INSERT INTO person VALUES (?,?,?)",
+        [(i, name, by) for i, (name, _, by) in enumerate(plist, 1)],
+    )
+    bar.done(f"{len(plist):,}")
+
+    bar = Bar("directors and roles")
+    dir_sorted = sorted(dir_pairs, key=lambda x: (kept[x[0]]["rank"], pid[x[1]]))
+    role_sorted = sorted(role_rows, key=lambda x: (x[0], x[1], x[2], x[3] or ""))
+    total = len(dir_sorted) + len(role_sorted)
+    n = 0
+    for t, nm in dir_sorted:
+        db.execute("INSERT INTO director VALUES (?,?)", (kept[t]["rank"], pid[nm]))
+        n += 1
+        if n % 500 == 0:
+            bar.show(n / total, f"{n:,}/{total:,}")
+    for rank, _, nm, c in role_sorted:
         db.execute(
             "INSERT INTO role (movie_id, person_id, role_name) VALUES (?,?,?)",
-            (num(t), num(nm), c),
+            (rank, pid[nm], c),
         )
+        n += 1
+        if n % 500 == 0:
+            bar.show(n / total, f"{n:,}/{total:,}")
+    bar.done(f"{total:,}")
 
+    print("[5/6] Verifying")
     db.commit()
+    assert db.execute("PRAGMA integrity_check").fetchone()[0] == "ok"
+    assert not db.execute("PRAGMA foreign_key_check").fetchall(), (
+        "foreign key violation"
+    )
     for tbl in ("movie", "genre", "movie_genre", "person", "director", "role"):
-        print(f"{tbl:12s} {db.execute(f'SELECT COUNT(*) FROM {tbl}').fetchone()[0]}")
+        print(
+            f"  {tbl:12s} {db.execute(f'SELECT COUNT(*) FROM {tbl}').fetchone()[0]:,}"
+        )
     db.close()
+
+    print("[6/6] Finalizing")
+    os.replace(tmp, OUT_DB)
+    print(f"Done: {OUT_DB}")
 
 
 if __name__ == "__main__":
