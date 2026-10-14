@@ -3,22 +3,19 @@ def mergeSort(items):
         return items
 
     mid = len(items) // 2
-    left = items[:mid]
-    right = items[mid:]
-
-    sortedLeft = mergeSort(left)
-    sortedRight = mergeSort(right)
+    left = mergeSort(items[:mid])
+    right = mergeSort(items[mid:])
 
     result = []
 
-    while sortedLeft != [] and sortedRight != []:
-        if sortedLeft[0] < sortedRight[0]:
-            result.append(sortedLeft.pop(0))
+    while left != [] and right != []:
+        if left[0] < right[0]:
+            result.append(left.pop(0))
         else:
-            result.append(sortedRight.pop(0))
+            result.append(right.pop(0))
 
-    result.extend(sortedLeft)
-    result.extend(sortedRight)
+    result.extend(left)
+    result.extend(right)
 
     return result
 

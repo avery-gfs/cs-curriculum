@@ -2,11 +2,8 @@ def mergeSort(items):
     # Add base case
 
     mid = len(items) // 2
-    left = items[:mid]
-    right = items[mid:]
-
-    sortedLeft = mergeSort(left)
-    sortedRight = mergeSort(right)
+    left = mergeSort(items[:mid])
+    right = mergeSort(items[mid:])
 
     result = []
 

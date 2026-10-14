@@ -921,15 +921,14 @@ To merge sort a list `items`:
 
 - If `len(items) <= 1` is empty, return `items` as-is.
 
-- Otherwise, split `items` into to halves `left` and `right`.
+- Otherwise, split `items` into to halves and call merge **recursively** on
+  these halves to make two new sorted lists `left` and `right`.
 
   ```py
   mid = len(items) // 2
-  left = items[:mid]
-  right = items[mid:]
+  left = mergeSort(items[:mid])
+  right = mergeSort(items[mid:])
   ```
-
-- Call merge sort to **recursively** sort `left` and `right`.
 
 - **Merge** the sorted values from `left` and `right` to form a new sorted list.
 
