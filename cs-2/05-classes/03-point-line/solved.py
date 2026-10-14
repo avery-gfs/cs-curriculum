@@ -17,12 +17,12 @@ class Point:
 
 p = Point(3, 4)
 
-print(p)
-print(p.x)
-print(p.y)
+print(p)  # (3, 4)
+print(p.x)  # 3
+print(p.y)  # 4
 
 origin = Point(0, 0)
-print(p.distance_to(origin))
+print(p.distance_to(origin))  # 5.0
 
 
 class Line:
@@ -44,8 +44,8 @@ class Line:
 
 l = Line(Point(0, 0), Point(3, 4))
 
-print(l)
-print(l.p1)
-print(l.p2)
-print(l.length())
-print(l.slope())
+print(l)  # Line((0, 0), (3, 4))
+print(l.p1)  # (0, 0)
+print(l.p2)  # (3, 4)
+print(l.length())  # 5.0
+print(l.slope())  # 1.3333333333333333

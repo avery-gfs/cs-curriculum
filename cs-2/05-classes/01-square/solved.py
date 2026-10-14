@@ -17,7 +17,7 @@ class Square:
 
 s = Square(10)
 
-print(s)
-print(s.width)
-print(s.area())
-print(s.perimeter())
+print(s)  # Square(10)
+print(s.width)  # 10
+print(s.area())  # 100
+print(s.perimeter())  # 40
