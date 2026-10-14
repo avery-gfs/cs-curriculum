@@ -917,7 +917,7 @@ $$
 
 ## Merge Sort
 
-To merge-sort a list `items`:
+To merge sort a list `items`:
 
 - If `len(items) <= 1` is empty, return `items` as-is.
 
@@ -1089,3 +1089,27 @@ numbers = [8, 7, 12, 4, 10, 4, 3, 12, 11, 5, 2, 1, 6, 7, 9, 12]
 
 print(mergeSort(numbers))
 ```
+
+## Merge Sort Complexity
+
+What is the complexity of merge sort?
+
+...
+
+$log(n)$ layers of recursion.
+
+...
+
+$n$ comparisons per layer.
+
+...
+
+Total complexity
+
+$$
+O(n \cdot log(n))
+$$
+
+...
+
+<img src="/assets/nlogn.png" />
