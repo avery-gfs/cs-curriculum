@@ -49,3 +49,45 @@ print("\nFrequent Stars:\n")
 
 for row in rows:
     print(row["name"], row["roles"])
+
+rows = conn.execute("""
+SELECT genre.name, count(*) AS movies
+FROM genre
+JOIN movie_genre ON movie_genre.genre_id = genre.id
+GROUP BY genre.id
+ORDER BY movies DESC;
+""")
+
+print("\nMovies per Genre:\n")
+
+for row in rows:
+    print(row["name"], row["movies"])
+
+rows = conn.execute("""
+SELECT person.name, count(*) AS films
+FROM director
+JOIN person ON person.id = director.person_id
+GROUP BY person.id
+HAVING films >= 2
+ORDER BY films DESC;
+""")
+
+print("\nFrequent Directors:\n")
+
+for row in rows:
+    print(row["name"], row["films"])
+
+rows = conn.execute("""
+SELECT
+    (year / 10) * 10 AS decade, count(*) AS movies,
+    round(avg(runtime), 1) AS avg_runtime,
+    round(avg(imdb_rank), 1) AS avg_rank
+FROM movie
+GROUP BY decade
+ORDER BY decade;
+""")
+
+print("\nDecade Stats:\n")
+
+for row in rows:
+    print(row["movies"], row["avg_runtime"], rows["avg_runtime"])
