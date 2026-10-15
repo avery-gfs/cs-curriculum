@@ -11,8 +11,5 @@ SELECT title from movie
 where title like ?
 """
 
-for row in conn.execute(
-    query,
-    [f"%{title}%"],
-):
+for row in conn.execute(query, [f"%{title}%"]):
     print(dict(row))
