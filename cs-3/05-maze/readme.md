@@ -2,7 +2,7 @@
 
 ## Hidden Maze
 
-<img src="/assets/maze-manson.webp" height="500px" />
+<img src="/assets/maze-manson.webp" height="550px" />
 
 https://avery-gfs.github.io/cs-curriculum/apps/hidden-maze.html
 
