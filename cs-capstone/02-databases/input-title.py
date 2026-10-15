@@ -4,16 +4,15 @@ conn = sqlite3.connect("movies.db", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
-query = input("Enter title query: ")
-query = f"%{query}%"
+title = input("Enter title: ")
 
-rows = conn.execute(
-    """
+query = """
 SELECT title from movie
 where title like ?
-""",
-    [query],
-)
+"""
 
-for row in rows:
+for row in conn.execute(
+    query,
+    [f"%{title}%"],
+):
     print(dict(row))
