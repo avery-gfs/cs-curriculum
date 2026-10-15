@@ -4,7 +4,16 @@ conn = sqlite3.connect("movies.db", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
-print("Top Movies:\n")
+print("Movie Count:\n")
+
+query = """
+SELECT count(*) as num_movies from movie
+"""
+
+for row in conn.execute(query):
+    print(dict(row))
+
+print("\nTop Movies:\n")
 
 query = """
 SELECT * from movie
