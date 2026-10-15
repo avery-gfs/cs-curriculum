@@ -40,10 +40,30 @@ for row in conn.execute(query):
 print("\nTop Movie Years:\n")
 
 query = """
-SELECT year, count(*) as num_movies, GROUP_CONCAT(title, ", ") as movies from movie
+SELECT
+    year,
+    count(*) as num_movies,
+    GROUP_CONCAT(title, ", ") as movies
+    from movie
 group by year
 order by num_movies desc
 limit 10
+"""
+
+for row in conn.execute(query):
+    print(dict(row))
+
+print("\nDecade Stats:\n")
+
+query = """
+SELECT
+    (year / 10) * 10 as decade,
+    count(*) as num_movies,
+    round(avg(runtime), 1) as avg_runtime,
+    round(avg(imdb_rank), 1) as avg_rank
+from movie
+group by decade
+order by decade;
 """
 
 for row in conn.execute(query):
@@ -121,21 +141,6 @@ join person on person.id = director.person_id
 group by person.id
 having films >= 2
 order by films desc;
-"""
-
-for row in conn.execute(query):
-    print(dict(row))
-
-print("\nDecade Stats:\n")
-
-query = """
-SELECT
-    (year / 10) * 10 as decade, count(*) as num_movies,
-    round(avg(runtime), 1) as avg_runtime,
-    round(avg(imdb_rank), 1) as avg_rank
-from movie
-group by decade
-order by decade;
 """
 
 for row in conn.execute(query):
