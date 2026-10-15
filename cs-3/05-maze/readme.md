@@ -2,12 +2,11 @@
 
 ## Hidden Maze
 
-<img src="/assets/maze-manson.webp" height="600px" />
+<img src="/assets/maze-manson.webp" height="500px" />
 
 https://avery-gfs.github.io/cs-curriculum/apps/hidden-maze.html
 
 1. Solve the maze
-
 2. Write an algorithm for solving the maze
 
 Note that this maze has **no loops**
@@ -165,7 +164,7 @@ update(2, 1, "▒")
 - Make your probe erase previous path characters as it backtracks from exploring
   a branch
 
-...
+---
 
 ```py
 def probe(r, c):
