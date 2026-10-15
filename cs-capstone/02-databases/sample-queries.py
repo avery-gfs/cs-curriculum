@@ -63,7 +63,7 @@ SELECT
     round(avg(imdb_rank), 1) as avg_rank
 from movie
 group by decade
-order by decade;
+order by decade
 """
 
 for row in conn.execute(query):
@@ -89,7 +89,7 @@ SELECT genre.name, count(*) AS num_movies
 from genre
 join movie_genre on movie_genre.genre_id = genre.id
 group by genre.id
-order by num_movies desc;
+order by num_movies desc
 """
 
 for row in conn.execute(query):
@@ -132,7 +132,7 @@ limit 10
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nFrequent Directors:\n")
+print("\nRepeat Directors:\n")
 
 query = """
 SELECT person.name, count(*) AS films
@@ -140,7 +140,7 @@ from director
 join person on person.id = director.person_id
 group by person.id
 having films >= 2
-order by films desc;
+order by films desc
 """
 
 for row in conn.execute(query):
@@ -149,13 +149,14 @@ for row in conn.execute(query):
 print("\nDivas:\n")
 
 query = """
-SELECT DISTINCT person.name, movie.title, role_name
+SELECT person.name, movie.title, GROUP_CONCAT(role_name, ", ") as roles
 from director
 join role on
     role.movie_id = director.movie_id
     and role.person_id = director.person_id
 join person on person.id = director.person_id
-join movie on movie.id = director.movie_id;
+join movie on movie.id = director.movie_id
+group by person.name, movie.title
 """
 
 for row in conn.execute(query):
@@ -171,8 +172,8 @@ join person d on d.id = director.person_id
 join person a on a.id = role.person_id
 where d.id != a.id
 group by director.person_id, role.person_id
+having num_movies >= 4
 order by num_movies desc
-limit 10;
 """
 
 for row in conn.execute(query):
