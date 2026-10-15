@@ -15,7 +15,7 @@ What are `name` and `school` called here?
 
 ...
 
-Parameters
+**Parameters**
 
 ...
 
@@ -35,7 +35,7 @@ What are "Avery" and "gfs" called here?
 
 ...
 
-Arguments
+**Arguments**
 
 ---
 

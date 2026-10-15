@@ -159,12 +159,15 @@ update(2, 1, "▒")
 <img src="/assets/probe.gif" height="400px" />
 
 - Recursively "probe" every path in the maze
+
 - Don't worry about stopping when you find the goal ("B")
+
 - Make sure your probe accesses each cell of the maze
+
 - Make your probe erase previous path characters as it backtracks from exploring
   a branch
 
----
+## Starter Code
 
 ```py
 def probe(r, c):
@@ -177,4 +180,35 @@ def probe(r, c):
 
     update(r, c, "▒")
     probe(r + 1, c)
+```
+
+## Backtracking
+
+```py
+def hello(n):
+    if n < 5:
+        print("Hello world!")
+        hello(n + 1)
+        print("Goodbye")
+```
+
+...
+
+```py
+hello(0)
+```
+
+...
+
+```
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Goodbye
+Goodbye
+Goodbye
+Goodbye
+Goodbye
 ```
