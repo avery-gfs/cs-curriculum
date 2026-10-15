@@ -267,8 +267,7 @@ redo ui without tailwind
     </div>
 
     <script>
-      // --- Default Maze (if no query string is provided) ---
-      const defaultMazeString =
+      const default =
         `%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%0A%E2%96%88A%E2%96%88%20%20%20%20%20%E2%96%88B%E2%96%88%20%20%20%E2%96%88%0A%E2%96%88%20%E2%96%88%20%E2%96%88%E2%96%88%E2%96%88%20%E2%96%88%20%E2%96%88%E2%96%88%E2%96%88%20%E2%96%88%0A%E2%96%88%20%E2%96%88%20%E2%96%88%20%E2%96%88%20%E2%96%88%20%20%20%20%20%E2%96%88%0A%E2%96%88%20%E2%96%88%20%E2%96%88%20%E2%96%88%20%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%20%E2%96%88%0A%E2%96%88%20%20%20%E2%96%88%20%E2%96%88%20%20%20%20%20%E2%96%88%20%E2%96%88%0A%E2%96%88%20%E2%96%88%E2%96%88%E2%96%88%20%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%20%E2%96%88%20%E2%96%88%0A%E2%96%88%20%20%20%20%20%E2%96%88%20%20%20%20%20%20%20%E2%96%88%0A%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88`;
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -300,7 +299,7 @@ redo ui without tailwind
         function init() {
           const urlParams = new URLSearchParams(window.location.search);
           const mazeQuery = urlParams.get("maze");
-          const mazeString = decodeURIComponent(mazeQuery ?? defaultMazeString);
+          const mazeString = decodeURIComponent(mazeQuery ?? default);
 
           parseMaze(mazeString);
           if (!startPos || !endPos) {
