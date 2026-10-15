@@ -75,6 +75,43 @@ order by num_movies desc;
 for row in conn.execute(query):
     print(dict(row))
 
+print("\nBaby Stars:\n")
+
+query = """
+SELECT
+  person.name,
+  person.birth_year,
+  movie.year - person.birth_year as age,
+  movie.title, movie.year
+  from person
+join role on person.id = role.person_id
+join movie on movie.id = role.movie_id
+where person.birth_year is not null
+order by age
+limit 10
+"""
+
+for row in conn.execute(query):
+    print(dict(row))
+
+print("\nOld Stars:\n")
+
+query = """
+SELECT
+  person.name,
+  person.birth_year,
+  movie.year - person.birth_year as age,
+  movie.title, movie.year
+  from person
+join role on person.id = role.person_id
+join movie on movie.id = role.movie_id
+order by age desc
+limit 10
+"""
+
+for row in conn.execute(query):
+    print(dict(row))
+
 print("\nFrequent Directors:\n")
 
 query = """
@@ -119,7 +156,7 @@ join movie on movie.id = director.movie_id;
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nDirector Actor Pairs:\n")
+print("\nDirector-Actor Pairs:\n")
 
 query = """
 SELECT d.name AS director, a.name AS actor, count(*) AS num_movies
