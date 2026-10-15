@@ -4,9 +4,23 @@ conn = sqlite3.connect("movies.db", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
-min_year = input("Enter minimum year: ")
-max_year = input("Enter maximum year: ")
-genre = input("Enter genre: ")
+search = "for"
+
+print(f"Titles with '{search}':\n")
+
+query = """
+SELECT title, year from movie
+where title like ?
+"""
+
+for row in conn.execute(query, [f"%{search}%"]):
+    print(dict(row))
+
+min_year = 1990
+max_year = 2020
+genre = "sci-fi"
+
+print(f"\nGenre {genre} {min_year} - {max_year}:\n")
 
 query = """
 SELECT movie.title, movie.year from movie
