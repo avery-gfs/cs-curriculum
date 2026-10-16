@@ -575,7 +575,7 @@ THE PERFECT TEMPERATURE!
 What will this code print?
 
 ```py
-languages = "Spanish"
+language = "Spanish"
 n = -7
 
 if language == "Spanish":
@@ -611,7 +611,7 @@ Negativo
 What will this code print?
 
 ```py
-languages = "English"
+language = "English"
 n = 0
 
 if language == "Spanish":
@@ -647,7 +647,7 @@ Zero
 What will this code print?
 
 ```py
-languages = "French"
+language = "French"
 n = 10
 
 if language == "Spanish":
