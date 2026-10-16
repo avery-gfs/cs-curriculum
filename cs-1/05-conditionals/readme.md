@@ -579,3 +579,100 @@ else:
 ```
 THE PERFECT TEMPERATURE!
 ```
+
+## Nested Conditionals
+
+What will this code print?
+
+```py
+languages = "Spanish"
+n = -7
+
+if language == "Spanish":
+    if n > 0:
+        print("positivo")
+    elif n < 0:
+        print("negativo")
+    else:
+        print("cero")
+
+elif language == "English":
+    if n > 0:
+        print("positive")
+    elif n < 0:
+        print("negative")
+    else:
+        print("zero")
+```
+
+...
+
+```
+negativo
+```
+
+---
+
+What will this code print?
+
+```py
+languages = "English"
+n = 0
+
+if language == "Spanish":
+    if n > 0:
+        print("positivo")
+    elif n < 0:
+        print("negativo")
+    else:
+        print("cero")
+
+elif language == "English":
+    if n > 0:
+        print("positive")
+    elif n < 0:
+        print("negative")
+    else:
+        print("zero")
+```
+
+...
+
+```
+zero
+```
+
+---
+
+What will this code print?
+
+```py
+languages = "French"
+n = 10
+
+if language == "Spanish":
+    if n > 0:
+        print("positivo")
+        
+    elif n < 0:
+        print("negativo")
+        
+    else:
+        print("cero")
+
+        
+elif language == "English":
+    if n > 0:
+        print("positive")
+        
+    elif n < 0:
+        print("negative")
+        
+    else:
+        print("zero")
+```
+
+...
+
+```
+```
