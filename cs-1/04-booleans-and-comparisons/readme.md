@@ -112,9 +112,10 @@ False
 
 Values of different types are _usually_ not equal.
 
-...
+_(In Python `False == 0` and `True == 1`. If you find this confusing, don't
+worry about it)_
 
-## _(In Python `False == 0` and `True == 1`. If you find this confusing, don't worry about it)_
+...
 
 ```py
 "Avery" == "Avery"
