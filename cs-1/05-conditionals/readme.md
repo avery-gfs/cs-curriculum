@@ -591,16 +591,21 @@ n = -7
 if language == "Spanish":
     if n > 0:
         print("positivo")
+        
     elif n < 0:
         print("negativo")
+        
     else:
         print("cero")
 
+        
 elif language == "English":
     if n > 0:
         print("positive")
+        
     elif n < 0:
         print("negative")
+        
     else:
         print("zero")
 ```
@@ -622,16 +627,21 @@ n = 0
 if language == "Spanish":
     if n > 0:
         print("positivo")
+        
     elif n < 0:
         print("negativo")
+        
     else:
         print("cero")
 
+        
 elif language == "English":
     if n > 0:
         print("positive")
+        
     elif n < 0:
         print("negative")
+        
     else:
         print("zero")
 ```
