@@ -115,7 +115,7 @@ Values of different types are _usually_ not equal.
 _(In Python `False == 0` and `True == 1`. If you find this confusing, don't
 worry about it)_
 
-...
+---
 
 ```py
 "Avery" == "Avery"
@@ -534,6 +534,14 @@ True
 ```
 
 ## Boolean Demo Program
+
+```py
+n = float(input("Enter a number: "))
+
+# Print True if `n` is less than 100, or False otherwise
+```
+
+---
 
 ```py
 n = float(input("Enter a number: "))
