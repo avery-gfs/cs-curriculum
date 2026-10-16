@@ -7,7 +7,7 @@ days = totalSeconds // (60 * 60 * 24)
 
 # Calculate the days, hours, minutes, and seconds in the total
 # number of seconds entered by the user. Print these values,
-# omitting zero values, with correct pluralization.
+# omitting zero values, with correct pluralization
 #
 # Examples:
 #
