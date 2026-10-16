@@ -676,3 +676,88 @@ elif language == "English":
 
 ```
 ```
+
+## Problem: Sign
+
+```py
+n = float(input("Enter a number: "))
+
+# Print "Positive" if `n` greater than 0.
+# Print "Negative" if `n` less than 0.
+# Print "Zero" if `n` is 0.
+```
+
+## Problem: Grades
+
+```py
+points = int(input("Enter assignment points: "))
+
+# Print a letter grade (A, B, C, D, or F) based on
+# the points earned for an assignment
+```
+
+## Problem: Positive Even Whole
+
+```py
+n = float(input("Enter a number: "))
+
+# Print "Positive" if `n` greater than or equal to 0.
+# Print "Even" if `n` is even.
+# Print "Whole" if `n` is a whole number.
+#
+# For numbers that satisfy multiple conditions, print all relavant messages
+```
+
+## Problem: Discount
+
+```py
+age = float(input("Enter age: "))
+
+# Print "Youth discount" for users aged below 18.
+# Print "Senior discount" for users aged 65 or above.
+# Print "No discount" for all other users.
+```
+
+## Problem: Rock Paper Scissors
+
+```py
+import random
+
+move = input("Enter a move (rock, paper, or scissors): ")
+
+computerMove = random.choice(["rock", "paper", "scissors"])
+
+print(f"Computer's move: {computerMove}")
+
+# Print "You win!", "You lose!" or "You tie!" for a rock-paper-scissors
+# game depending on the user's input and the computer's random move
+```
+
+## Problem: Time Conversion
+
+```py
+totalSeconds = int(input("Enter a duration in seconds: "))
+
+seconds = totalSeconds % 60
+minutes = totalSeconds // 60 % 60
+hours = totalSeconds // (60 * 60) % 24
+days = totalSeconds // (60 * 60 * 24)
+
+# Calculate the days, hours, minutes, and seconds in the total
+# number of seconds entered by the user. Print these values,
+# omitting zero values, with correct pluralization.
+#
+# Examples:
+#
+# Enter a duration in seconds: 1234561
+#
+# 14 days
+# 6 hours
+# 56 minutes
+# 1 second
+#
+# Enter a duration in seconds: 7205
+#
+# 2 hours
+# 5 seconds
+```
