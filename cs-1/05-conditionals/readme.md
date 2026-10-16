@@ -544,30 +544,6 @@ elif tempF <= 212:
 ```
 ```
 
-## Exclusivity
-
-What will this code print?
-
-```py
-n = -8
-
-if n < 0:
-    print("n is negative")
-
-elif n % 2 == 0:
-    print("n is even")
-```
-
-...
-
-```
-n is negative
-```
-
-...
-
-Only one code block will run.
-
 ## Multiple Elifs
 
 What will this code print?
@@ -604,30 +580,30 @@ n = -7
 
 if language == "Spanish":
     if n > 0:
-        print("positivo")
+        print("Positivo")
         
     elif n < 0:
-        print("negativo")
+        print("Negativo")
         
     else:
-        print("cero")
+        print("Cero")
 
         
 elif language == "English":
     if n > 0:
-        print("positive")
+        print("Positive")
         
     elif n < 0:
-        print("negative")
+        print("Negative")
         
     else:
-        print("zero")
+        print("Zero")
 ```
 
 ...
 
 ```
-negativo
+Negativo
 ```
 
 ---
@@ -640,30 +616,30 @@ n = 0
 
 if language == "Spanish":
     if n > 0:
-        print("positivo")
+        print("Positivo")
         
     elif n < 0:
-        print("negativo")
+        print("Negativo")
         
     else:
-        print("cero")
+        print("Cero")
 
         
 elif language == "English":
     if n > 0:
-        print("positive")
+        print("Positive")
         
     elif n < 0:
-        print("negative")
+        print("Negative")
         
     else:
-        print("zero")
+        print("Zero")
 ```
 
 ...
 
 ```
-zero
+Zero
 ```
 
 ---
@@ -676,24 +652,24 @@ n = 10
 
 if language == "Spanish":
     if n > 0:
-        print("positivo")
+        print("Positivo")
 
     elif n < 0:
-        print("negativo")
+        print("Negativo")
 
     else:
-        print("cero")
+        print("Cero")
 
 
 elif language == "English":
     if n > 0:
-        print("positive")
+        print("Positive")
 
     elif n < 0:
-        print("negative")
+        print("Negative")
 
     else:
-        print("zero")
+        print("Zero")
 ```
 
 ...
