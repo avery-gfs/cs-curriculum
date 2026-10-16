@@ -426,6 +426,8 @@ else:
     print("Water is gas: steam")
 ```
 
+What will this code print?
+
 ...
 
 ```
@@ -478,26 +480,32 @@ else:
 Water is solid: ice
 ```
 
----
+## Ordering
 
 What will this code print?
 
 ```py
-tempF = 300
+tempF = 10
 
-if tempF < 32:
+if tempF <= 212:
+    print("Water is liquid: water")
+
+elif tempF < 32:
     print("Water is solid: ice")
 
-elif tempF <= 212:
-    print("Water is liquid: water")
+else:
+    print("Water is gas: steam")
 ```
 
 ...
 
 ```
+Water is liquid: water
 ```
 
----
+Ordering matters!
+
+## Elif Without Else
 
 What will this code print?
 
@@ -522,25 +530,19 @@ Water is liquid: water
 What will this code print?
 
 ```py
-tempF = 10
+tempF = 300
 
-if tempF <= 212:
-    print("Water is liquid: water")
-
-elif tempF < 32:
+if tempF < 32:
     print("Water is solid: ice")
 
-else:
-    print("Water is gas: steam")
+elif tempF <= 212:
+    print("Water is liquid: water")
 ```
 
 ...
 
 ```
-Water is liquid: water
 ```
-
-Ordering matters!
 
 ## Exclusivity
 
