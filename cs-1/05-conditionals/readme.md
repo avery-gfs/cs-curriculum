@@ -45,7 +45,7 @@ if <condition>:
 
 ...
 
-Write a progam that calculates and displays the parity of an integer that the
+Write a program that calculates and displays the parity of an integer that the
 user inputs using two `if` statements. "Parity" refers to whether a number is
 even or odd.
 
@@ -316,7 +316,7 @@ else:
 
 ...
 
-Rewrite using an `if` statements with an `else` clause.
+Rewrite using an `if` statement with an `else` clause.
 
 ```py
 n = int(input("Enter a number: "))
@@ -549,6 +549,10 @@ elif n % 2 == 0:
 ```
 n is negative
 ```
+
+...
+
+Only one code block will run.
 
 ## Multiple Elifs
 
