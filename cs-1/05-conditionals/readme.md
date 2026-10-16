@@ -5,17 +5,17 @@
 ```py
 tempF = 75
 
-print("Ice")
-print("Water")
-print("Steam")
+print("Water is solid: ice")
+print("Water is liquid: water")
+print("Water is gas: steam")
 ```
 
 ...
 
 ```
-Ice
-Water
-Steam
+Water is solid: ice
+Water is liquid: water
+Water is gas: steam
 ```
 
 ---
@@ -24,25 +24,33 @@ Steam
 tempF = 75
 
 if tempF < 32:
-    print("Ice")
+    print("Water is solid: ice")
 
 elif tempF <= 212:
-    print("Water")
+    print("Water is liquid: water")
 
 else:
-    print("Steam")
+    print("Water is gas: steam")
 ```
 
 ...
 
 ```
-Water
+Water is liquid: water
 ```
 
 ## If Statements
 
 If statements contain a condition and an indented code block. The code block
 runs only if the condition is `True`.
+
+```
+if <condition>:
+    <code block>
+    ...
+```
+
+---
 
 ```py
 n = -7
