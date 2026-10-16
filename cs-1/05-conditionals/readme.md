@@ -57,7 +57,7 @@ n = int(input("Enter a number: "))
 if n % 2 == 0:
     print("Even")
 
-if n % 2 == 1:
+if n % 2 != 0:
     print("Odd")
 ```
 
@@ -164,7 +164,7 @@ n = 10
 if n % 2 == 0:
 print("Even")
 
-if n % 2 == 1:
+if n % 2 != 0:
 print("Odd")
 ```
 
@@ -187,7 +187,7 @@ n = 10
 if n % 2 == 0
     print("Even")
 
-if n % 2 == 1
+if n % 2 != 0
     print("Odd")
 ```
 
@@ -209,7 +209,7 @@ n = 10
 
 if n % 2 == 0:
 
-if n % 2 == 1:
+if n % 2 != 0:
     print("Odd")
 ```
 
@@ -217,7 +217,7 @@ if n % 2 == 1:
 
 ```
   File "<python-input-2>", line 5
-    if n % 2 == 1:
+    if n % 2 != 0:
     ^^
 IndentationError: expected an indented block after 'if' statement on line 3
 ```
@@ -232,7 +232,7 @@ n = 10
 if n % 2 = 0:
     print("Even")
 
-if n % 2 = 1:
+if n % 2 != 0:
     print("Odd")
 ```
 
@@ -302,7 +302,7 @@ World
 ## Else Clauses
 
 Else clauses can be added to if statements to write code that runs when the if
-condition doesn't run.
+condition is `False`.
 
 ```
 if <condition>:
@@ -324,7 +324,7 @@ n = int(input("Enter a number: "))
 if n % 2 == 0:
     print("Even")
 
-if n % 2 == 1:
+if n % 2 != 0:
     print("Odd")
 ```
 
@@ -341,6 +341,8 @@ else:
 ```
 
 ---
+
+What will this code print?
 
 ```py
 n = 4
@@ -360,6 +362,8 @@ Even
 
 ---
 
+What will this code print?
+
 ```py
 n = 5
 
@@ -377,7 +381,6 @@ Odd
 ```
 
 ---
-
 Will this code even print both "Even" and "Odd" for some value of `n`? Will it
 ever print neither?
 
@@ -388,8 +391,7 @@ if n % 2 == 0:
 else:
     print("Odd")
 ```
-
-...
+---
 
 No. Exactly one of the code blocks will run.
 
@@ -527,6 +529,26 @@ Water is liquid: water
 ```
 
 Ordering matters!
+
+## Exclusivity
+
+What will this code print?
+
+```py
+n = -8
+
+if n < 0:
+    print("n is negative")
+
+elif n % 2 == 0:
+    print("n is even")
+```
+
+...
+
+```
+n is negative
+```
 
 ## Multiple Elifs
 
