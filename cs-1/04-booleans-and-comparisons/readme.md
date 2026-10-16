@@ -1,4 +1,4 @@
-# Booleans and Conditionals
+# Booleans and Comparisons
 
 ## Python Types (So Far)
 
@@ -540,7 +540,7 @@ True
 ```py
 n = float(input("Enter a number: "))
 
-# Print True if `n` is less than 100, or False otherwise
+# Print True if `n` is negative, or False otherwise
 ```
 
 ---

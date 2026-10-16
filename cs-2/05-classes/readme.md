@@ -378,27 +378,9 @@ class Rectangle:
         return 2 * (self.width + self.height)
 ```
 
----
+...
 
 It's a questionable design decision, in my opinion. If you find it confusing,
 it's because it is.
 
 https://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html
-
-...
-
-```py
-class Rectangle:
-    def __init__(width, height):
-        self.width = width
-        self.height = height
-
-    def __repr__():
-        return f"Rectangle({self.width}, {self.height})"
-
-    def area():
-        return self.width * self.height
-
-    def perimeter():
-        return 2 * (self.width + self.height)
-```
