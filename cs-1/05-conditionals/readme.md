@@ -1,0 +1,573 @@
+# Conditionals
+
+## Python Types (So Far)
+
+- Strings
+- Ints
+- Floats
+- **Booleans**
+
+Booleans are a simple type, but they are key to unlocking a vast array of new
+possibilities for our programs.
+
+## Booleans
+
+Booleans are true/false values. We can write them using the keywords `True` and
+`False`.
+
+```py
+True
+False
+```
+
+- **Booleans**: true/false values
+
+## Keyword Case
+
+```py
+True
+```
+
+...
+
+```py
+true
+```
+
+```
+Traceback (most recent call last):
+  File "<python-input-0>", line 1, in <module>
+    print(true)
+          ^^^^
+NameError: name 'true' is not defined. Did you mean: 'True'?
+```
+
+In Python the first letters of these keywords are capitalized. Virtually every
+other mainstream language writes booleans in lowercase, but Python writes them
+in uppercase. If you find forget to capitalize the first letter, you'll get an
+error message. If you find this confusing, it's because it is.
+
+## Equality
+
+One way to get booleans in Python is by comparing values using the equality `==`
+operator.
+
+```py
+1 == 1
+```
+
+...
+
+```py
+True
+```
+
+...
+
+```py
+1 == 7
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+5 == 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 == 5.0
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 == "5"
+```
+
+...
+
+```py
+False
+```
+
+Values of different types are _usually_ not equal.
+
+_(In Python `False == 0` and `True == 1`. If you find this confusing, don't
+worry about it)_
+
+---
+
+```py
+"Avery" == "Avery"
+```
+
+...
+
+```py
+True
+```
+
+In some languages this would give us `False` (yikes!). Python is being nice to
+us here.
+
+---
+
+```py
+"Avery" == " Avery"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"Avery" == "avery"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+True == "True"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+1 + 2 == 3
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+0.1 + 0.2 == 0.3
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+0.1 + 0.2 == 0.30000000000000004
+```
+
+...
+
+```py
+True
+```
+
+In general, math with floating-point numbers is inexact. Be careful when
+comparing decimal results to specific values. If you find this confusing, it's
+because it is.
+
+---
+
+```py
+[1, 2, 3] == [1, 2, 3]
+```
+
+...
+
+```py
+True
+```
+
+In many other languges this comparison would give us `False`. Python is being
+nice to us here.
+
+---
+
+```py
+n = 5
+```
+
+...
+
+```py
+n == 5
+```
+
+...
+
+```py
+True
+```
+
+## The Equals Song
+
+**Comparing values**
+
+```py
+name == "Avery"
+```
+
+...
+
+**Assigning variables**
+
+```py
+name = "Avery"
+```
+
+...
+
+<img src="/assets/equals-song.png" />
+
+## Not Equals
+
+We can use the not equal operators `!=` to check whether two values are not
+equal.
+
+```py
+1 != 1
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+1 != 7
+```
+
+...
+
+```py
+True
+```
+
+## Inequality
+
+We can use the not following inequaliy operators to test whether a value is
+larger or smaller than another.
+
+| Symbol | Operation                |
+| ------ | ------------------------ |
+| `<`    | Less Than                |
+| `<=`   | Less than or equal to    |
+| `>`    | Greater than             |
+| `>=`   | Greater than or equal to |
+
+...
+
+```py
+1 <= 1
+```
+
+...
+
+```py
+True
+```
+
+...
+
+```py
+1 > 7
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+5 < 5
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+5 <= 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 < 10
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+5 > 10
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"banana" < "peach"
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"banana" < "apple"
+```
+
+...
+
+```py
+False
+```
+
+---
+
+```py
+"app" < "apple"
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"Apple" < "apple"
+```
+
+...
+
+```py
+True
+```
+
+## Comparison Operators
+
+| Symbol | Operation                |
+| ------ | ------------------------ |
+| `==`   | Equal                    |
+| `!=`   | Not equal                |
+| `<`    | Less than                |
+| `<=`   | Less than or equal to    |
+| `>`    | Greater than             |
+| `>=`   | Greater than or equal to |
+
+## Boolean Operators
+
+Python includes the following boolean operators: `and`, `or`, `not`.
+
+| Operator | Usage     | Operation                                              |
+| -------- | --------- | ------------------------------------------------------ |
+| `and`    | `a and b` | Check that both `a` and `b` are `True`                 |
+| `or`     | `a or b`  | Check that either `a` or `b` is `True`                 |
+| `not`    | `not a`   | Flip a `True` value to `False`, or a `False` to `True` |
+
+---
+
+```py
+"a" == "b" and 10 < 5
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+"a" == "b" and 10 > 5
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+"a" == "a" and 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+"a" == "b" or 10 < 5
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+"a" == "b" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+...
+
+```py
+"a" == "a" or 10 > 5
+```
+
+...
+
+```py
+True
+```
+
+---
+
+```py
+not 2 > 1
+```
+
+...
+
+```py
+False
+```
+
+...
+
+```py
+not "a" == "b"
+```
+
+...
+
+```py
+True
+```
+
+## Boolean Demo Program
+
+```py
+n = float(input("Enter a number: "))
+
+# Print True if `n` is negative, or False otherwise
+```
+
+---
+
+```py
+n = float(input("Enter a number: "))
+
+# Print True if `n` is negative, or False otherwise
+
+print(n < 0)
+```
+
+## Problem: Is Whole
+
+Print True if `n` is a whole number, or False otherwise Hint: use the `round`
+function
+
+## Problem: Is Multiple
+
+Print True if `a` is a multiple of `b`, or False otherwise Hint: use the `%`
+operator
+
+## Problem: Has Discount
+
+Print True if the user gets a discount, or False otherwise Users with below the
+age or 18 or aged 65 or above get discounts
+
+## Problem: Is Positive Even
+
+Print True if `n` is a positive, even number (including 0), or False otherwise
