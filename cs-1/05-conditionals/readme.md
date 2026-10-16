@@ -314,7 +314,17 @@ else:
     ...
 ```
 
-...
+```py
+n = int(input("Enter a number: "))
+
+if n < 0:
+    print("Negative")
+
+else:
+    print("Not negative")
+```
+
+---
 
 Rewrite using an `if` statement with an `else` clause.
 
@@ -381,6 +391,7 @@ Odd
 ```
 
 ---
+
 Will this code even print both "Even" and "Odd" for some value of `n`? Will it
 ever print neither?
 
@@ -391,7 +402,8 @@ if n % 2 == 0:
 else:
     print("Odd")
 ```
----
+
+...
 
 No. Exactly one of the code blocks will run.
 
@@ -663,21 +675,21 @@ n = 10
 if language == "Spanish":
     if n > 0:
         print("positivo")
-        
+
     elif n < 0:
         print("negativo")
-        
+
     else:
         print("cero")
 
-        
+
 elif language == "English":
     if n > 0:
         print("positive")
-        
+
     elif n < 0:
         print("negative")
-        
+
     else:
         print("zero")
 ```
