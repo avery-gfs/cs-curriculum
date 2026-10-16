@@ -193,11 +193,13 @@ False
 ...
 
 ```py
-0.1 + 0.2
+0.1 + 0.2 == 0.30000000000000004
 ```
 
+...
+
 ```py
-0.30000000000000004
+True
 ```
 
 In general, math with floating-point numbers is inexact. Be careful when
@@ -546,14 +548,10 @@ n = float(input("Enter a number: "))
 ```py
 n = float(input("Enter a number: "))
 
-# Print True if `n` is less than 100, or False otherwise
+# Print True if `n` is negative, or False otherwise
 
-print(n < 100)
+print(n < 0)
 ```
-
-## Problem: Is Negative
-
-Print True if `n` is negative, or False otherwise
 
 ## Problem: Is Whole
 
