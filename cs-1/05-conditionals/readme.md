@@ -682,9 +682,9 @@ elif language == "English":
 ```py
 n = float(input("Enter a number: "))
 
-# Print "Positive" if `n` greater than 0.
-# Print "Negative" if `n` less than 0.
-# Print "Zero" if `n` is 0.
+# Print "Positive" if `n` greater than 0
+# Print "Negative" if `n` less than 0
+# Print "Zero" if `n` is 0
 ```
 
 ## Problem: Grades
@@ -701,9 +701,9 @@ points = int(input("Enter assignment points: "))
 ```py
 n = float(input("Enter a number: "))
 
-# Print "Positive" if `n` greater than or equal to 0.
-# Print "Even" if `n` is even.
-# Print "Whole" if `n` is a whole number.
+# Print "Positive" if `n` greater than or equal to 0
+# Print "Even" if `n` is even
+# Print "Whole" if `n` is a whole number
 #
 # For numbers that satisfy multiple conditions, print all relavant messages
 ```
@@ -713,9 +713,9 @@ n = float(input("Enter a number: "))
 ```py
 age = float(input("Enter age: "))
 
-# Print "Youth discount" for users aged below 18.
-# Print "Senior discount" for users aged 65 or above.
-# Print "No discount" for all other users.
+# Print "Youth discount" for users aged below 18
+# Print "Senior discount" for users aged 65 or above
+# Print "No discount" for all other users
 ```
 
 ## Problem: Rock Paper Scissors
@@ -745,7 +745,7 @@ days = totalSeconds // (60 * 60 * 24)
 
 # Calculate the days, hours, minutes, and seconds in the total
 # number of seconds entered by the user. Print these values,
-# omitting zero values, with correct pluralization.
+# omitting zero values, with correct pluralization
 #
 # Examples:
 #
