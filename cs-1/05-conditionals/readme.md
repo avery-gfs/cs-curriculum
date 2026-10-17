@@ -162,6 +162,10 @@ n is negative
 
 for some value of `n`?
 
+...
+
+No, that ordering is not possible.
+
 ## Syntax Issues
 
 What will this code print?
@@ -561,6 +565,8 @@ else:
 THE PERFECT TEMPERATURE!
 ```
 
+Only the first branch whose condition matches is evaluated.
+
 ## Nested Conditionals
 
 What will this code print?
@@ -710,7 +716,7 @@ computerMove = random.choice(["rock", "paper", "scissors"])
 
 print(f"Computer's move: {computerMove}")
 
-# Print "You win!", "Invalid move. You lose!" or "You tie!" for a rock-paper-scissors
+# Print "You win!", "You lose!" or "You tie!" for a rock-paper-scissors
 # game depending on the user's input and the computer's random move. Print
 # "Invalid move. You lose!" for invalid user move inputs
 #
@@ -723,6 +729,10 @@ print(f"Computer's move: {computerMove}")
 # Enter a move (rock, paper, or scissors): rock
 # Computer's move: paper
 # You lose!
+#
+# Enter a move (rock, paper, or scissors): scissors
+# Computer's move: scissors
+# You tie!
 #
 # Enter a move (rock, paper, or scissors): towel
 # Computer's move: rock
