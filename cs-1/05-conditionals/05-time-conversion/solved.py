@@ -18,9 +18,9 @@ days = totalSeconds // (60 * 60 * 24)
 # 56 minutes
 # 1 second
 #
-# Enter a duration in seconds: 7205
+# Enter a duration in seconds: 3605
 #
-# 2 hours
+# 1 hour
 # 5 seconds
 
 if days == 1:
@@ -46,3 +46,16 @@ if seconds == 1:
 
 elif seconds > 0:
     print(f"{seconds} seconds")
+
+# Or, using a function
+#
+# def showUnits(n, name):
+#     if n >= 2:
+#         print(f"{n} {name}s")
+#     elif n == 1:
+#         print(f"{n} {name}")
+#
+# showUnits(days, "day")
+# showUnits(hours, "hour")
+# showUnits(minutes, "minute")
+# showUnits(seconds, "second")
