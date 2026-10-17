@@ -18,7 +18,7 @@ days = totalSeconds // (60 * 60 * 24)
 # 56 minutes
 # 1 second
 #
-# Enter a duration in seconds: 7205
+# Enter a duration in seconds: 3605
 #
-# 2 hours
+# 1 hour
 # 5 seconds
