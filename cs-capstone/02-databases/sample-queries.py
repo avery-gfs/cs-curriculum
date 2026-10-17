@@ -4,16 +4,7 @@ conn = sqlite3.connect("movies.db", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
-print("Movie Count:\n")
-
-query = """
-SELECT count(*) as num_movies from movie
-"""
-
-for row in conn.execute(query):
-    print(dict(row))
-
-print("\nTop Movies:\n")
+print("Top Movies:\n")
 
 query = """
 SELECT * from movie
@@ -35,10 +26,20 @@ limit 10
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nNumber of Movies by Year:\n")
+print("\nMovie Count:\n")
+
+query = """
+SELECT count(*) as num_movies from movie
+"""
+
+for row in conn.execute(query):
+    print(dict(row))
+
+print("\nNumber of Movies by Year 21st Century:\n")
 
 query = """
 SELECT year, count(*) as num_movies from movie
+where year >= 2000
 group by year
 order by year
 """
@@ -69,7 +70,10 @@ SELECT
     (year / 10) * 10 as decade,
     count(*) as num_movies,
     round(avg(runtime), 1) as avg_runtime,
-    round(avg(imdb_rank), 1) as avg_rank
+    round(avg(imdb_rank), 1) as avg_rank,
+    movie.title as top_movie,
+    movie.year as top_movie_year,
+    min(imdb_rank) as top_movie_rank
 from movie
 group by decade
 order by decade
@@ -104,7 +108,7 @@ order by num_movies desc
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nBaby Stars:\n")
+print("\nYoung Stars:\n")
 
 query = """
 SELECT
@@ -134,6 +138,7 @@ SELECT
   from person
 join role on person.id = role.person_id
 join movie on movie.id = role.movie_id
+where person.birth_year is not null
 order by age desc
 limit 10
 """
