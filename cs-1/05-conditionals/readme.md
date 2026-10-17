@@ -63,6 +63,8 @@ if n % 2 != 0:
 
 ## Independent Ifs
 
+What will this code print?
+
 ```py
 n = -7
 
@@ -80,6 +82,8 @@ n is negative
 ```
 
 ---
+
+What will this code print?
 
 ```py
 n = 6
@@ -99,6 +103,8 @@ n is even
 
 ---
 
+What will this code print?
+
 ```py
 n = 7
 
@@ -115,6 +121,8 @@ if n % 2 == 0:
 ```
 
 ---
+
+What will this code print?
 
 ```py
 n = -8
@@ -154,7 +162,7 @@ n is negative
 
 for some value of `n`?
 
-## Syntax
+## Syntax Issues
 
 What will this code print?
 
@@ -389,23 +397,6 @@ else:
 ```
 Odd
 ```
-
----
-
-Will this code even print both "Even" and "Odd" for some value of `n`? Will it
-ever print neither?
-
-```py
-if n % 2 == 0:
-    print("Even")
-
-else:
-    print("Odd")
-```
-
-...
-
-No. Exactly one of the code blocks will run.
 
 ## Elif Clauses
 
@@ -675,16 +666,6 @@ elif language == "English":
 ...
 
 ```
-```
-
-## Problem: Sign
-
-```py
-n = float(input("Enter a number: "))
-
-# Print "Positive" if `n` greater than 0
-# Print "Negative" if `n` less than 0
-# Print "Zero" if `n` is 0
 ```
 
 ## Problem: Grades
