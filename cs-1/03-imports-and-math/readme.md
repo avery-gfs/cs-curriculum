@@ -12,8 +12,10 @@ Python provides functions for common numeric tasks.
 | `max(a, b)` | Get the maximum of `a` and `b`                                                                                              |
 
 ```py
-round(3.7)  # 4
-abs(-8)     # 8
+round(3.7)   # 4
+abs(-8)      # 8
+min(10, 20)  # 10
+max(10, 20)  # 20
 ```
 
 ## Rounding
@@ -179,14 +181,14 @@ module is imported, we use a dot to access the functionality inside it.
 ```py
 import math
 
-print(math.sqrt(16))  # 4.0
-print(math.pi)        # 3.141592653589793
+math.sqrt(16)  # 4.0
+math.pi        # 3.141592653589793
 ```
 
 ```py
 import random
 
-print(random.random())  # Random decimal number betwen 0.0 and 1.0
+random.random()  # Random decimal number betwen 0.0 and 1.0
 ```
 
 - **Module**: a library of pre-written code that we can use in our own programs.
