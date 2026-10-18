@@ -4,10 +4,12 @@
 
 Python provides functions for common numeric tasks.
 
-| Function   | Operation                                                                                                                   |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `round(x)` | Round to the nearest whole number (using [banker's rounding](https://en.wikipedia.org/wiki/Rounding#Rounding_half_to_even)) |
-| `abs(x)`   | Absolute value (convert negatives to positives)                                                                             |
+| Function    | Operation                                                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `round(x)`  | Round to the nearest whole number (using [banker's rounding](https://en.wikipedia.org/wiki/Rounding#Rounding_half_to_even)) |
+| `abs(x)`    | Absolute value (convert negatives to positives)                                                                             |
+| `min(a, b)` | Get the minimum of `a` and `b`                                                                                              |
+| `max(a, b)` | Get the maximum of `a` and `b`                                                                                              |
 
 ```py
 round(3.7)  # 4
@@ -134,6 +136,34 @@ one is bigger.
 7
 ```
 
+## Extrema
+
+What value does this expression produce?
+
+```py
+min(4, -5)
+```
+
+...
+
+```
+-5
+```
+
+---
+
+What value does this expression produce?
+
+```py
+max(10, 10)
+```
+
+...
+
+```
+10
+```
+
 ## Imports
 
 Python has more useful mathematical functions in the `math` **module**. We have
@@ -151,6 +181,12 @@ import math
 
 print(math.sqrt(16))  # 4.0
 print(math.pi)        # 3.141592653589793
+```
+
+```py
+import random
+
+print(random.random())  # Random decimal number betwen 0.0 and 1.0
 ```
 
 - **Module**: a library of pre-written code that we can use in our own programs.
@@ -171,6 +207,20 @@ Useful definitions in the `math` module.
 
 The full list is in the
 [Python documentation](https://docs.python.org/3/library/math.html).
+
+## The Random Module
+
+Useful definitions in the `random` module.
+
+| Name                   | Meaning                                              |
+| ---------------------- | ---------------------------------------------------- |
+| `random.random()`      | Random decimal number between `0.0` and `1.0`        |
+| `random.randint(a, b)` | Random integer number between `a` and `b`, inclusive |
+| `random.choice(list)`  | Choose a random value from a `list`                  |
+| `random.shuffle(list)` | Shuffle a `list` in place                            |
+
+The full list is in the
+[Python documentation](https://docs.python.org/3/library/random.html).
 
 ## Problem: Distance Formula
 
@@ -203,6 +253,28 @@ y2: 1
 
 ```
 Distance: 1.41
+```
+
+## Problem: Sphere Calculator
+
+Write a program that asks the user for the radius of a sphere and prints its
+volume and surface area, each rounded to two decimal places.
+
+$$
+V = \frac{4}{3} \pi r^3
+$$
+
+$$
+A = 4 \pi r^2
+$$
+
+```
+Radius: 2
+```
+
+```
+Volume: 33.51
+Surface area: 50.27
 ```
 
 ## Problem: Sphere Calculator
