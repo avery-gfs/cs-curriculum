@@ -224,6 +224,17 @@ Useful definitions in the `random` module.
 The full list is in the
 [Python documentation](https://docs.python.org/3/library/random.html).
 
+## The Time Module
+
+Useful definitions in the `time` module.
+
+| Name            | Meaning                                  |
+| --------------- | ---------------------------------------- |
+| `time.sleep(n)` | Pause program evaluation for `n` seconds |
+
+The full list is in the
+[Python documentation](https://docs.python.org/3/library/time.html).
+
 ## Problem: Distance Formula
 
 Write a program that asks the user for the coordinates of two points and prints
