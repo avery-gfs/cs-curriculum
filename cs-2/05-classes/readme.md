@@ -227,6 +227,15 @@ r.height
 ## Repr
 
 ```py
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+```
+
+...
+
+```py
 r = Rectangle(3, 4)
 print(r)
 ```
