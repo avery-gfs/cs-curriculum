@@ -19,7 +19,9 @@ What are `name` and `school` called here?
 
 ...
 
-Function **call**:
+How do we **call** a function?
+
+...
 
 ```py
 greeting("Avery", "gfs")
