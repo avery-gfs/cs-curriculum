@@ -41,6 +41,11 @@ What are `"Avery"` and `"gfs"` called here?
 
 ---
 
+Write a function named `average` that takes a list of numbers as an argument,
+and returns the average of those numbers.
+
+...
+
 ```py
 def average(numbers):
     total = 0
@@ -64,6 +69,11 @@ average([1, 4, 2, 7, 3, 1])
 ```
 
 ## Early returns
+
+Write a function named `smallest` that takes two numbers as arguments and
+returns the smaller of the two numbers.
+
+...
 
 ```py
 def smallest(a, b):
