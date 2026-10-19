@@ -19,6 +19,8 @@ What are `name` and `school` called here?
 
 ...
 
+Function **call**:
+
 ```py
 greeting("Avery", "gfs")
 ```
@@ -31,7 +33,7 @@ greeting("Avery", "gfs")
 
 ...
 
-What are "Avery" and "gfs" called here?
+What are `"Avery"` and `"gfs"` called here?
 
 ...
 

@@ -11,12 +11,3 @@ import random
 # 6 x 27
 # <wait 5 seconds>
 # 162
-
-a = random.randint(2, 10)
-b = random.randint(2, 100)
-
-print(f"{a} x {b}")
-
-time.sleep(5)
-
-print(a * b)
