@@ -145,25 +145,27 @@ We use **classes** to make custom objects.
 
 https://www.w3schools.com/python/python_classes.asp
 
+...
+
 ```py
 r = Rectangle(3, 4)
 ```
 
+...
+
 ```py
-r
 r.width
-r.height
 r.area()
-r.perimeter()
 ```
 
+...
+
 ```
-Rectangle(3, 4)
 3
-4
 12
-14
 ```
+
+...
 
 - **Objects**: Structures that combine data and functionality (methods)
 
