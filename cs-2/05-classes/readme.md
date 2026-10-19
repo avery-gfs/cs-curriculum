@@ -324,30 +324,6 @@ r.perimeter()
 ---
 
 ```py
-r = Rectangle(3, 4)
-```
-
-...
-
-```py
-r.width = 5
-```
-
-...
-
-```py
-r.area()
-```
-
-...
-
-```py
-20
-```
-
----
-
-```py
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -381,6 +357,30 @@ r.area
 
 ```py
 12
+```
+
+---
+
+```py
+r = Rectangle(3, 4)
+```
+
+...
+
+```py
+r.width = 5
+```
+
+...
+
+```py
+r.area()
+```
+
+...
+
+```py
+20
 ```
 
 ## Self
