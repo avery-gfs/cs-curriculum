@@ -427,3 +427,58 @@ It's a questionable design decision, in my opinion. If you find it confusing,
 it's because it is.
 
 https://neopythonic.blogspot.com/2008/10/why-explicit-self-has-to-stay.html
+
+## Problem: Square
+
+```py
+s = Square(10)
+```
+
+```py
+print(s)       # Square(10)
+s.width        # 10
+s.area()       # 100
+s.perimeter()  # 40
+```
+
+## Problem: Circle
+
+```py
+c = Circle(10)
+```
+
+```py
+print(c)       # Circle(10)
+c.radius       # 10
+c.area()       # 314.1592653589793
+c.perimeter()  # 62.83185307179586
+```
+
+## Problem: Point
+
+```py
+p = Point(3, 4)
+```
+
+```py
+print(p)  # (3, 4)
+p.x       # 3
+p.y       # 4
+
+origin = Point(0, 0)
+p.distance_to(origin)  # 5.0
+```
+
+## Problem: Line
+
+```py
+l = Line(Point(0, 0), Point(3, 4))
+```
+
+```py
+print(l)    # Line((0, 0), (3, 4))
+l.p1        # (0, 0)
+l.p2        # (3, 4)
+l.length()  # 5.0
+l.slope()   # 1.3333333333333333
+```
