@@ -231,6 +231,8 @@ r = Rectangle(3, 4)
 print(r)
 ```
 
+...
+
 ```
 <__main__.Rectangle object at 0x710f081cf380>
 ```
@@ -289,7 +291,7 @@ r.width = 5
 ...
 
 ```py
-r.area()
+r.area
 ```
 
 ...
@@ -390,6 +392,22 @@ class Rectangle:
 
     def perimeter(self):
         return 2 * (self.width + self.height)
+```
+
+...
+
+```py
+Rectangle(4, 5, 6)
+```
+
+...
+
+```
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    Rectangle(4, 5, 6)
+    ~~~~~~~~~^^^^^^^^^
+TypeError: Rectangle.__init__() takes 3 positional arguments but 4 were given
 ```
 
 ...
