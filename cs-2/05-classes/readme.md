@@ -278,44 +278,6 @@ class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.area = width * width
-        self.perimeter = 2 * (width + height)
-
-    def __repr__(self):
-        return f"Rectangle({self.width}, {self.height})"
-```
-
-...
-
-```py
-r = Rectangle(3, 4)
-```
-
-...
-
-```py
-r.width = 5
-```
-
-...
-
-```py
-r.area
-```
-
-...
-
-```py
-12
-```
-
----
-
-```py
-class Rectangle:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
@@ -379,6 +341,44 @@ r.area()
 
 ```py
 20
+```
+
+---
+
+```py
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        self.area = width * width
+        self.perimeter = 2 * (width + height)
+
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
+```
+
+...
+
+```py
+r = Rectangle(3, 4)
+```
+
+...
+
+```py
+r.width = 5
+```
+
+...
+
+```py
+r.area
+```
+
+...
+
+```py
+12
 ```
 
 ## Self
