@@ -257,3 +257,18 @@ decide whether to erase the current path.
 ## Trees
 
 <img src="/assets/tree.svg" height="500" />
+
+---
+
+```
+█████████
+█A█ █B█ █
+█ █ █   █
+█   ███ █
+█ █     █
+█████████
+```
+
+---
+
+<img src="/assets/maze-tree-full-paths.svg" height="500" />

@@ -39,10 +39,10 @@ def probe(r, c):
 
     update(r, c, "▒")
 
-    probe(r - 1, c)
     probe(r + 1, c)
-    probe(r, c - 1)
     probe(r, c + 1)
+    probe(r, c - 1)
+    probe(r - 1, c)
 
     update(r, c, " ")
 
