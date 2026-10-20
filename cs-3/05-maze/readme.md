@@ -233,4 +233,4 @@ To probe from position `(r, c)`:
 
 ## Trees
 
-<img src="/assets/tere.svg" height="500" />
+<img src="/assets/tree.svg" height="500" />
