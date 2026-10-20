@@ -212,3 +212,25 @@ Goodbye
 Goodbye
 Goodbye
 ```
+
+## Probe Algorithm
+
+To probe from position `(r, c)`:
+
+- If the cell at `(r, c)` is a wall, or in the currently probed path, then do
+  nothing. Otherwise:
+
+- Mark the cell at `(r, c)` as being on the current path.
+
+- Probe each of the neighbor cells `(r + 1, c)`, `(r - 1, c)`, `(r, c + 1)`,
+  `(r, c - 1)`.
+
+- Once the four neighbor probes have completed, mark the cell at `(r, c)` as
+  empty.
+
+- No need to do anything else to handle backtracking: the structure of recursion
+  does it for us!
+
+## Trees
+
+<img src="/assets/tere.svg" height="500" />
