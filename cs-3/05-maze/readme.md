@@ -247,7 +247,12 @@ def search(r, c):
 ```
 
 `search` is similar to `probe`, except that it returns `True` or `False`
-depending on whether the current path found the goal `B`.
+depending on whether the current path found the goal `B`. A path that finds the
+goal doesn't get erased, and no further paths are explored after the goal is
+found
+
+`search` should use these `True` / `False` results from its recursive calls to
+decide whether to erase the current path.
 
 ## Trees
 
