@@ -235,6 +235,20 @@ To probe from position `(r, c)`:
 
 <img src="/assets/search.gif" height="400" />
 
+---
+
+```py
+def search(r, c):
+    # if ??:
+        return True
+
+    # if ??:
+        return False
+```
+
+`search` is similar to `probe`, except that it returns `True` or `False`
+depending on whether the current path found the goal `B`.
+
 ## Trees
 
 <img src="/assets/tree.svg" height="500" />
