@@ -271,4 +271,4 @@ decide whether to erase the current path.
 
 ---
 
-<img src="/assets/maze-tree-full-paths.svg" height="500" />
+<img src="/assets/maze-tree-full-paths-horizontal.png" height="500" />
