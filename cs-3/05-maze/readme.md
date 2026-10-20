@@ -231,6 +231,10 @@ To probe from position `(r, c)`:
 - No need to do anything else to handle backtracking: the structure of recursion
   does it for us!
 
+## Search
+
+<img src="/assets/search.gif" height="400" />
+
 ## Trees
 
 <img src="/assets/tree.svg" height="500" />
