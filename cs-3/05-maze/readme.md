@@ -273,4 +273,4 @@ decide whether to erase the current path.
 
 <img src="/assets/maze-tree-full-paths-horizontal.png" height="500" />
 
-_Diagram generated with AI_
+_Tree diagram generated with AI_
