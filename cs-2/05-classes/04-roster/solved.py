@@ -27,13 +27,7 @@ class Team:
                 player.shots += 1
 
     def removePlayer(self, name):
-        newPlayers = []
-
-        for player in self.players:
-            if player.name != name:
-                newPlayers.append(player)
-
-        self.players = newPlayers
+        self.players = [p if p.name != name for p in players]
 
     def __repr__(self):
         numPlayers = len(self.players)
