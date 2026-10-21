@@ -19,12 +19,7 @@ class Item:
         return self.price * self.quantity
 
     def __repr__(self):
-        if self.quantity > 1:
-            return (
-                f"{self.name} {self.total():.2f} (${self.quantity} x ${self.price:.2f})"
-            )
-
-        return f"{self.name} {self.total():.2f}"
+        return f"{self.name} {self.total():.2f} (${self.quantity} x ${self.price:.2f})"
 
 
 class Receipt:
@@ -75,7 +70,7 @@ test(str(b), "bagel 5.00 ($2 x $2.50)")
 
 c = Item("coffee", 3, 1)
 
-test(str(c), "coffee 3.00")
+test(str(c), "coffee 3.00 ($1 x $3.00)")
 
 receipt = Receipt()
 
@@ -90,7 +85,7 @@ test(
     """
 juice 15.00 ($3 x $5.00)
 salad 30.00 ($3 x $10.00)
-brownie 4.00
+brownie 4.00 ($1 x $4.00)
 ----------
 total: $49.00
 """.strip(),
@@ -107,7 +102,7 @@ test(
     """
 salad 30.00 ($3 x $10.00)
 brownie 8.00 ($2 x $4.00)
-yogurt 2.00
+yogurt 2.00 ($1 x $2.00)
 ----------
 total: $40.00
 """.strip(),
