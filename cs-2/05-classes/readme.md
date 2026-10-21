@@ -588,9 +588,9 @@ print(receipt)
 ...
 
 ```
-salad 30.00 ($3 x $10.00)
-brownie 8.00 ($2 x $4.00)
-yogurt 2.00 ($1 x $2.00)
+salad $30.00 (3 x $10.00)
+brownie $8.00 (2 x $4.00)
+yogurt $2.00 (1 x $2.00)
 ----------
 total: $40.00
 ```
