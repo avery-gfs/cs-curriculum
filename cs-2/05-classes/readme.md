@@ -485,7 +485,7 @@ class Team:
     def removePlayer(self, name):
         # ...
 
-    def average(self):
+    def percent(self):
         # ...
 
     def __repr__(self):
