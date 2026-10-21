@@ -62,11 +62,11 @@ test(b.name, "bagel")
 test(b.price, 2.5)
 test(b.quantity, 2)
 test(b.total(), 5)
-test(str(b), "bagel 5.00 ($2 x $2.50)")
+test(str(b), "bagel $5.00 (2 x $2.50)")
 
 c = Item("coffee", 3, 1)
 
-test(str(c), "coffee 3.00 ($1 x $3.00)")
+test(str(c), "coffee $3.00 (1 x $3.00)")
 
 receipt = Receipt()
 
@@ -79,9 +79,9 @@ test(receipt.total(), 49)
 test(
     str(receipt),
     """
-juice 15.00 ($3 x $5.00)
-salad 30.00 ($3 x $10.00)
-brownie 4.00 ($1 x $4.00)
+juice $15.00 (3 x $5.00)
+salad $30.00 (3 x $10.00)
+brownie $4.00 (1 x $4.00)
 ----------
 total: $49.00
 """.strip(),
@@ -96,9 +96,9 @@ test(receipt.total(), 40)
 test(
     str(receipt),
     """
-salad 30.00 ($3 x $10.00)
-brownie 8.00 ($2 x $4.00)
-yogurt 2.00 ($1 x $2.00)
+salad $30.00 (3 x $10.00)
+brownie $8.00 (2 x $4.00)
+yogurt $2.00 (1 x $2.00)
 ----------
 total: $40.00
 """.strip(),
