@@ -6,8 +6,8 @@ class Player:
         self.shots = 0
 
     def percent(self):
-        # Percent of shots that went in
-        return self.baskets / self.shots * 100
+        # Percent of shots that went in (use max to avoid division by zero)
+        return self.baskets / max(1, self.shots) * 100
 
     def __repr__(self):
         # Example: Avery 3/4 (75.00)
@@ -72,6 +72,8 @@ a = Player("Avery")
 print(a.name)  # Avery
 print(a.baskets)  # 0
 print(a.shots)  # 0
+print(a.percent())  # 0.0
+print(a)  # Avery 0/0 (0.00)
 
 a.baskets = 3
 a.shots = 4
