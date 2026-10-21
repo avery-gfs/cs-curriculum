@@ -48,7 +48,7 @@ class Team:
 
         self.players = newPlayers
 
-    def average(self):
+    def percent(self):
         # Percent of shots that went in for all players on the team
 
         totalBaskets = 0
@@ -62,13 +62,13 @@ class Team:
         return totalBaskets / max(1, totalShots)
 
     def __repr__(self):
-        # One line per player, then a divider and the team average
+        # One line per player, then a divider and the team average percent
         playerRows = ""
 
         for player in self.players:
             playerRows += f"{player}\n"
 
-        return f"{playerRows}----------\naverage: {self.average():.2f}"
+        return f"{playerRows}----------\naverage: {self.percent():.2f}"
 
 
 a = Player("Avery")
