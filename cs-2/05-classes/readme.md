@@ -510,7 +510,7 @@ team.addBasket("Marty")
 team.addBasket("Marty")
 team.addBasket("Marty")
 team.addMiss("Marty")
-team.addMiss("Marty")
+team.addBasket("Marty")
 
 team.addBasket("Mercedes")
 ```
@@ -525,10 +525,10 @@ print(team)
 
 ```
 Luna 1/2 (50.00)
-Marty 3/5 (60.00)
+Marty 4/5 (80.00)
 Mercedes 1/1 (100.00)
 ----------
-average: 70.00
+average: 0.75
 ```
 
 ---
