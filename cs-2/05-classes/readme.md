@@ -460,84 +460,36 @@ l.slope()   # 1.3333333333333333
 ```py
 class Player:
     def __init__(self, name):
-        self.name = name
-        # Every player starts with no baskets and no shots
-        self.baskets = 0
-        self.shots = 0
+        # ...
 
     def percent(self):
-        # Percent of shots that went in (use max to avoid division by zero)
-        return self.baskets / max(1, self.shots) * 100
+        # ...
 
     def __repr__(self):
-        # Example: Avery 3/4 (75.00)
-        # ':.2f' in the format string displays number with 2 decimal places
-        return f"{self.name} {self.baskets}/{self.shots} ({self.percent():.2f})"
+        # ...
+
+
+class Team:
+    def __init__(self):
+        # ...
+
+    def addPlayer(self, name):
+        # ...
+
+    def addBasket(self, name):
+        # ...
+
+    def addMiss(self, name):
+        # ...
+
+    def removePlayer(self, name):
+        # ...
+
+    def average(self):
+        # ...
+
+    def __repr__(self):
+        # ...
 ```
 
-...
-
-```py
-a = Player("Avery")
-```
-
-...
-
-```py
-a.name
-a.baskets
-a.shots
-a.percent()
-```
-
-...
-
-```py
-"Avery"
-0
-0
-0
-```
-
-...
-
-```py
-print(a)
-```
-
-...
-
-```
-Avery 0/0 (0.00)
-```
-
-...
-
-```py
-a.baskets = 3
-a.shots = 4
-```
-
-...
-
-```py
-a.percent()
-```
-
-...
-
-```py
-75
-```
-
-...
-
-```py
-print(a)
-```
-
-...
-
-```
-Avery 3/4 (75.00)
-```
+https://github.com/avery-gfs/cs-curriculum/blob/public/cs-2/05-classes/04-receipt/roster-demo.py
