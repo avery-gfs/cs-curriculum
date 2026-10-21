@@ -493,3 +493,36 @@ class Team:
 ```
 
 https://github.com/avery-gfs/cs-curriculum/blob/public/cs-2/05-classes/04-receipt/roster-demo.py
+
+---
+
+```py
+team = Team()
+
+team.addPlayer("Luna")
+team.addPlayer("Marty")
+team.addPlayer("Mercedes")
+
+team.addBasket("Luna")
+team.addMiss("Luna")
+
+team.addBasket("Marty")
+team.addBasket("Marty")
+team.addBasket("Marty")
+team.addMiss("Marty")
+team.addMiss("Marty")
+
+team.addBasket("Mercedes")
+```
+
+```py
+print(team)
+```
+
+```
+Luna 1/2 (50.00)
+Marty 3/5 (60.00)
+Mercedes 1/1 (100.00)
+----------
+average: 70.00
+```
