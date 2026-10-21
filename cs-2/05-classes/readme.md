@@ -515,9 +515,13 @@ team.addMiss("Marty")
 team.addBasket("Mercedes")
 ```
 
+...
+
 ```py
 print(team)
 ```
+
+...
 
 ```
 Luna 1/2 (50.00)
@@ -525,4 +529,68 @@ Marty 3/5 (60.00)
 Mercedes 1/1 (100.00)
 ----------
 average: 70.00
+```
+
+---
+
+```py
+class Item:
+    def __init__(self, name, price, quantity):
+        # ...
+
+    def total(self):
+        # ...
+
+    def __repr__(self):
+        # ...
+
+
+
+class Receipt:
+    def __init__(self):
+        # ...
+
+    def addItem(self, name, price, quantity):
+        # ...
+
+    def updateQuantity(self, name, newQuantity):
+        # ...
+
+    def removeitem(self, name):
+        # ...
+
+    def total(self):
+        # ...
+
+    def __repr__(self):
+        # ...
+```
+
+---
+
+```py
+receipt = Receipt()
+
+receipt.addItem("juice", 5, 3)
+receipt.addItem("salad", 10, 3)
+receipt.addItem("brownie", 4, 1)
+receipt.updateQuantity("brownie", 2)
+receipt.removeitem("juice")
+receipt.addItem("yogurt", 2, 1)
+```
+
+...
+
+```py
+print(receipt)
+```
+
+...
+
+```
+salad 30.00 ($3 x $10.00)
+brownie 8.00 ($2 x $4.00)
+yogurt 2.00 ($1 x $2.00)
+----------
+total: $40.00
 ```
