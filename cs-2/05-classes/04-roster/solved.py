@@ -1,72 +1,114 @@
-class Player:
-    def __init__(self, name):
+def test(result, expected):
+    if result != expected:
+        print("!!!!! Invalid result !!!!!\n")
+
+    else:
+        print("----- Ok: -----\n")
+
+    print(result)
+    print()
+
+
+class Item:
+    def __init__(self, name, price, quantity):
         self.name = name
-        self.baskets = 0
-        self.shots = 0
+        self.price = price
+        self.quantity = quantity
+
+    def total(self):
+        return self.price * self.quantity
 
     def __repr__(self):
-        return f"{self.name} {self.baskets}/{self.shots}"
+        if self.quantity > 1:
+            return (
+                f"{self.name} {self.total():.2f} (${self.quantity} x ${self.price:.2f})"
+            )
+
+        return f"{self.name} {self.total():.2f}"
 
 
-class Team:
+class Receipt:
     def __init__(self):
-        self.players = []
+        self.items = []
 
-    def addPlayer(self, name):
-        self.players.append(Player(name))
+    def addItem(self, name, price, quantity):
+        self.items.append(Item(name, price, quantity))
 
-    def addBasket(self, name):
-        for player in self.players:
-            if player.name == name:
-                player.baskets += 1
-                player.shots += 1
+    def updateQuantity(self, name, newQuantity):
+        for item in self.items:
+            if item.name == name:
+                item.quantity = newQuantity
 
-    def addMiss(self, name):
-        for player in self.players:
-            if player.name == name:
-                player.shots += 1
+    def removeitem(self, name):
+        newItems = []
 
-    def removePlayer(self, name):
-        self.players = [p if p.name != name for p in players]
+        for item in self.items:
+            if item.name != name:
+                newItems.append(item)
+
+        self.items = newItems
+
+    def total(self):
+        totalCost = 0
+
+        for item in self.items:
+            totalCost += item.total()
+
+        return totalCost
 
     def __repr__(self):
-        numPlayers = len(self.players)
-        totalBaskets = 0
-        totalShots = 0
-        playerRows = ""
+        itemRows = ""
 
-        for player in self.players:
-            playerRows += f"\n{player}"
-            totalBaskets += player.baskets
-            totalShots += player.shots
+        for item in self.items:
+            itemRows += f"{item}\n"
 
-        return f"{numPlayers} players, {totalBaskets}/{totalShots} total{playerRows}"
+        return f"{itemRows}----------\ntotal: ${self.total():.2f}"
 
 
-print("Test player:\n")
+b = Item("bagel", 2.5, 2)
 
-avery = Player("Avery")
-print(avery.name)  # "Avery"
+test(b.name, "bagel")
+test(b.price, 2.5)
+test(b.quantity, 2)
+test(b.total(), 5)
+test(str(b), "bagel 5.00 ($2 x $2.50)")
 
-avery.baskets = 2
-avery.shots = 3
-print(avery)  # Avery 2/3
+c = Item("coffee", 3, 1)
 
-print("\nTest roster:\n")
+test(str(c), "coffee 3.00")
 
-team = Team()
+receipt = Receipt()
 
-team.addPlayer("Judy")
-team.addPlayer("Marcus")
-team.addPlayer("Mercedes")
+receipt.addItem("juice", 5, 3)
+receipt.addItem("salad", 10, 3)
+receipt.addItem("brownie", 4, 1)
 
-team.addBasket("Marcus")
-team.addBasket("Marcus")
+test(receipt.total(), 49)
 
-team.addMiss("Marcus")
-team.addMiss("Judy")
-team.addMiss("Mercedes")
+test(
+    str(receipt),
+    """
+juice 15.00 ($3 x $5.00)
+salad 30.00 ($3 x $10.00)
+brownie 4.00
+----------
+total: $49.00
+""".strip(),
+)
 
-team.removePlayer("Mercedes")
+receipt.updateQuantity("brownie", 2)
+receipt.removeitem("juice")
+receipt.addItem("yogurt", 2, 1)
 
-print(team)
+test(receipt.total(), 40)
+
+test(
+    str(receipt),
+    """
+salad 30.00 ($3 x $10.00)
+brownie 8.00 ($2 x $4.00)
+yogurt 2.00
+----------
+total: $40.00
+""".strip(),
+)
