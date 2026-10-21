@@ -49,13 +49,17 @@ class Team:
         self.players = newPlayers
 
     def average(self):
-        # Add up each player's percent, then divide by the number of players
-        total = 0
+        # Percent of shots that went in for all players on the team
+
+        totalBaskets = 0
+        totalShots = 0
 
         for player in self.players:
-            total += player.percent()
+            totalBaskets += player.baskets
+            totalShots += player.shots
 
-        return total / len(self.players)
+        # (use max to avoid division by zero)
+        return totalBaskets / max(1, totalShots)
 
     def __repr__(self):
         # One line per player, then a divider and the team average
@@ -94,7 +98,7 @@ team.addBasket("Marty")
 team.addBasket("Marty")
 team.addBasket("Marty")
 team.addMiss("Marty")
-team.addMiss("Marty")
+team.addBasket("Marty")
 
 team.addBasket("Mercedes")
 
@@ -105,17 +109,16 @@ print(team)
 print()
 
 # Luna 1/2 (50.00)
-# Marty 3/5 (60.00)
+# Marty 4/5 (80.00)
 # Mercedes 1/1 (100.00)
 # ----------
-# average: 70.00
+# average: 0.75
 
 team.removePlayer("Mercedes")
 team.addMiss("Luna")
 team.addMiss("Luna")
 team.addPlayer("Judy")
 team.addBasket("Judy")
-team.addMiss("Judy")
 
 print(team.average())  # 45.0
 
@@ -123,7 +126,7 @@ print()
 print(team)
 
 # Luna 1/4 (25.00)
-# Marty 3/5 (60.00)
-# Judy 1/2 (50.00)
+# Marty 4/5 (80.00)
+# Judy 1/1 (100.00)
 # ----------
-# average: 45.00
+# average: 0.60
