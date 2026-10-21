@@ -355,30 +355,6 @@ r.area
 12
 ```
 
----
-
-```py
-r = Rectangle(3, 4)
-```
-
-...
-
-```py
-r.width = 5
-```
-
-...
-
-```py
-r.area()
-```
-
-...
-
-```py
-20
-```
-
 ## Self
 
 The `self` variable helps us keep track of which data and functionality is
@@ -477,4 +453,91 @@ l.p1        # (0, 0)
 l.p2        # (3, 4)
 l.length()  # 5.0
 l.slope()   # 1.3333333333333333
+```
+
+## Roster Demo
+
+```py
+class Player:
+    def __init__(self, name):
+        self.name = name
+        # Every player starts with no baskets and no shots
+        self.baskets = 0
+        self.shots = 0
+
+    def percent(self):
+        # Percent of shots that went in (use max to avoid division by zero)
+        return self.baskets / max(1, self.shots) * 100
+
+    def __repr__(self):
+        # Example: Avery 3/4 (75.00)
+        # ':.2f' in the format string displays number with 2 decimal places
+        return f"{self.name} {self.baskets}/{self.shots} ({self.percent():.2f})"
+```
+
+...
+
+```py
+a = Player("Avery")
+```
+
+...
+
+```py
+a.name
+a.baskets
+a.shots
+a.percent()
+```
+
+...
+
+```py
+"Avery"
+0
+0
+0
+```
+
+...
+
+```py
+print(a)
+```
+
+...
+
+```
+Avery 0/0 (0.00)
+```
+
+...
+
+```py
+a.baskets = 3
+a.shots = 4
+```
+
+...
+
+```py
+a.percent()
+```
+
+...
+
+```py
+75
+```
+
+...
+
+```py
+print(a)
+```
+
+...
+
+```
+Avery 3/4 (75.00)
 ```
