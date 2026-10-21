@@ -102,13 +102,25 @@ smallest(3, 4)
 **Objects** are **data** + **functionality**.
 
 ```py
-nums = [1, 2, 3, 4]
+people = ["Luna", "Marty", "Mercedes", "Judy"]
 ```
 
 ...
 
 ```py
-nums[0]
+people[0]
+```
+
+...
+
+```py
+"Luna"
+```
+
+...
+
+```py
+people.index("Marty")
 ```
 
 ...
@@ -120,25 +132,13 @@ nums[0]
 ...
 
 ```py
-nums.index(2)
+people.append("DeVondre")
 ```
 
 ...
 
 ```py
-1
-```
-
-...
-
-```py
-nums.append(5)
-```
-
-...
-
-```py
-[1, 2, 3, 4, 5]
+["Luna", "Marty", "Mercedes", "Judy", "DeVondre"]
 ```
 
 ## Classes
@@ -221,10 +221,6 @@ r.height
 ```
 4
 ```
-
----
-
-<img src="/assets/init-meme.png" />
 
 ## Repr
 
