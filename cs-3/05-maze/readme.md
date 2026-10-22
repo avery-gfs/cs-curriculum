@@ -182,6 +182,24 @@ def probe(r, c):
     probe(r + 1, c)
 ```
 
+## Probe Algorithm
+
+To probe from position `(r, c)`:
+
+- If the cell at `(r, c)` is a wall, or in the currently probed path, then do
+  nothing. Otherwise:
+
+- Mark the cell at `(r, c)` as being on the current path.
+
+- Probe each of the neighbor cells `(r + 1, c)`, `(r - 1, c)`, `(r, c + 1)`,
+  `(r, c - 1)`.
+
+- Once the four neighbor probes have completed, mark the cell at `(r, c)` as
+  empty.
+
+- No need to do anything else to handle backtracking: the structure of recursion
+  does it for us!
+
 ## Backtracking
 
 ```py
@@ -213,24 +231,6 @@ Goodbye
 Goodbye
 ```
 
-## Probe Algorithm
-
-To probe from position `(r, c)`:
-
-- If the cell at `(r, c)` is a wall, or in the currently probed path, then do
-  nothing. Otherwise:
-
-- Mark the cell at `(r, c)` as being on the current path.
-
-- Probe each of the neighbor cells `(r + 1, c)`, `(r - 1, c)`, `(r, c + 1)`,
-  `(r, c - 1)`.
-
-- Once the four neighbor probes have completed, mark the cell at `(r, c)` as
-  empty.
-
-- No need to do anything else to handle backtracking: the structure of recursion
-  does it for us!
-
 ## Search
 
 <img src="/assets/search.gif" height="400" />
@@ -258,21 +258,10 @@ decide whether to erase the current path.
 
 <img src="/assets/tree.svg" height="500" />
 
-Networks composed of **nodes** (locations) and **edges** (connections) that have
-**no loops**. These nodes are arranged as a parent-child hierarchy, where each
-node has zero or more **child nodes** and exactly one **parent node**, except
-for the **root node** which has no parent.
-
-## Depth-First Search
-
-Recursive definition:
-
-Start at the root node of the tree. For each node, check if the location/data
-represented by the node is the desired value. If so, return true. Otherwise,
-continue the search process recursively on each of the current node's child
-nodes (if any). If the search on any of the child nodes succeeds, then return
-true. If the searches on all child nodes fail, or if the current node has no
-children, then return false.
+Networks (graphs) composed of **nodes** (locations) and **edges** (connections)
+that have **no loops**. These nodes are arranged as a parent-child hierarchy,
+where each node has zero or more **child nodes** and exactly one **parent
+node**, except for the **root node** which has no parent.
 
 ...
 
@@ -284,3 +273,14 @@ children, then return false.
 █ █     █
 █████████
 ```
+
+## Depth-First Search
+
+Recursive definition for depth-first search on trees:
+
+Start at the root node of the tree. For each node, check if the location/data
+represented by the node is the desired value. If so, return true. Otherwise,
+continue the search process recursively on each of the current node's child
+nodes (if any). If the search on any of the child nodes succeeds, then return
+true. If the searches on all child nodes fail, or if the current node has no
+children, then return false.
