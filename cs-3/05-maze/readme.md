@@ -256,7 +256,7 @@ decide whether to erase the current path.
 
 ## Trees
 
-<img src="/assets/tree.svg" height="500" />
+<img src="/assets/tree.svg" height="450" />
 
 Networks (graphs) composed of **nodes** (locations) and **edges** (connections)
 that have **no loops**. These nodes are arranged as a parent-child hierarchy,
