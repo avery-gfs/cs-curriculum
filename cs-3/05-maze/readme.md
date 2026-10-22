@@ -17,6 +17,19 @@ Note that this maze has **no loops**
 
 2. Backtrack (green) otherwise
 
+## Maze Probe
+
+<img src="/assets/probe.gif" height="400px" />
+
+- Recursively "probe" every path in the maze
+
+- Don't worry about stopping when you find the goal ("B")
+
+- Make sure your probe accesses each cell of the maze
+
+- Make your probe erase previous path characters as it backtracks from exploring
+  a branch
+
 ## Maze Data
 
 ```
@@ -153,19 +166,6 @@ update(2, 1, "▒")
 █     █       █
 ███████████████
 ```
-
-## Maze Probe
-
-<img src="/assets/probe.gif" height="400px" />
-
-- Recursively "probe" every path in the maze
-
-- Don't worry about stopping when you find the goal ("B")
-
-- Make sure your probe accesses each cell of the maze
-
-- Make your probe erase previous path characters as it backtracks from exploring
-  a branch
 
 ## Starter Code
 
