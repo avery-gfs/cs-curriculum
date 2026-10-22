@@ -59,7 +59,7 @@ class Team:
             totalShots += player.shots
 
         # (use max to avoid division by zero)
-        return totalBaskets / max(1, totalShots)
+        return totalBaskets / max(1, totalShots) * 100
 
     def __repr__(self):
         # One line per player, then a divider and the team average percent
@@ -112,7 +112,7 @@ print()
 # Marty 4/5 (80.00)
 # Mercedes 1/1 (100.00)
 # ----------
-# average: 0.75
+# average: 75.00
 
 team.removePlayer("Mercedes")
 team.addMiss("Luna")
@@ -129,4 +129,4 @@ print(team)
 # Marty 4/5 (80.00)
 # Judy 1/1 (100.00)
 # ----------
-# average: 0.60
+# average: 60.00
