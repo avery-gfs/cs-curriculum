@@ -284,3 +284,7 @@ continue the search process recursively on each of the current node's child
 nodes (if any). If the search on any of the child nodes succeeds, then return
 true. If the searches on all child nodes fail, or if the current node has no
 children, then return false.
+
+...
+
+<img src="/assets/search-trace.gif" height="600" />
