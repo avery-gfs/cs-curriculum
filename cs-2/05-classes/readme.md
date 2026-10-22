@@ -495,6 +495,8 @@ class Team:
         # ...
 ```
 
+...
+
 https://github.com/avery-gfs/cs-curriculum/blob/public/cs-2/05-classes/04-receipt/roster-demo.py
 
 ---
