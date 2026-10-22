@@ -37,10 +37,10 @@ def search(r, c):
     if cell == "█" or cell == "▒":
         return False
 
-    update(r, c, "▒")
-
     if cell == "B":
         return True
+
+    update(r, c, "▒")
 
     if search(r - 1, c) or search(r + 1, c) or search(r, c - 1) or search(r, c + 1):
         return True
