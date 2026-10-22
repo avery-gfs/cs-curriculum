@@ -235,7 +235,7 @@ To probe from position `(r, c)`:
 
 <img src="/assets/search.gif" height="400" />
 
----
+...
 
 ```py
 def search(r, c):
