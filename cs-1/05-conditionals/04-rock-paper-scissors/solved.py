@@ -9,7 +9,7 @@ print(f"Computer's move: {computerMove}")
 
 # Print "You win!", "You lose!" or "You tie!" for a rock-paper-scissors
 # game depending on the user's input and the computer's random move. Print
-# "Invalid move. You lose!" for invalid user move inputs
+# "Invalid move" for invalid user move inputs
 #
 # Examples:
 #
@@ -27,7 +27,7 @@ print(f"Computer's move: {computerMove}")
 #
 # Enter a move (rock, paper, or scissors): towel
 # Computer's move: rock
-# Invalid move. You lose!
+# Invalid move
 
 if move == "rock":
     if computerMove == "rock":
