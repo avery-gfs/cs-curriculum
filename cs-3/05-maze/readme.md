@@ -258,7 +258,23 @@ decide whether to erase the current path.
 
 <img src="/assets/tree.svg" height="500" />
 
----
+Networks composed of **nodes** (locations) and **edges** (connections) that have
+**no loops**. These nodes are arranged as a parent-child hierarchy, where each
+node has zero or more **child nodes** and exactly one **parent node**, except
+for the **root node** which has no parent.
+
+## Depth-First Search
+
+Recursive definition:
+
+Start at the root node of the tree. For each node, check if the location/data
+represented by the node is the desired value. If so, return true. Otherwise,
+continue the search process recursively on each of the current node's child
+nodes (if any). If the search on any of the child nodes succeeds, then return
+true. If the searches on all child nodes fail, or if the current node has no
+children, then return false.
+
+...
 
 ```
 █████████
@@ -268,9 +284,3 @@ decide whether to erase the current path.
 █ █     █
 █████████
 ```
-
-...
-
-<img src="/assets/maze-tree-full-paths-horizontal.png" height="500" />
-
-_Tree diagram generated with AI_
