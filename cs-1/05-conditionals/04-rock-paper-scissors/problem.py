@@ -2,6 +2,7 @@ import random
 
 move = input("Enter a move (rock, paper, or scissors): ")
 
+# Choose a random move for the computer
 computerMove = random.choice(["rock", "paper", "scissors"])
 
 print(f"Computer's move: {computerMove}")
