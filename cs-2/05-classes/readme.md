@@ -467,8 +467,9 @@ class Player:
 
     def __repr__(self):
         # ...
+```
 
-
+```py
 class Team:
     def __init__(self):
         # ...
@@ -543,9 +544,9 @@ class Item:
 
     def __repr__(self):
         # ...
+```
 
-
-
+```py
 class Receipt:
     def __init__(self):
         # ...
