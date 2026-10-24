@@ -1,9 +1,9 @@
 def test(result, expected):
     if result != expected:
-        print("!!!!! Invalid result !!!!!\n")
+        print("!!!!! Fail !!!!!\n")
 
     else:
-        print("----- Ok: -----\n")
+        print("----- PASS: -----\n")
 
     print(result)
     print()
