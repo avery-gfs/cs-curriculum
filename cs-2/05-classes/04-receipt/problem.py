@@ -3,7 +3,7 @@ def test(result, expected):
         print("!!!!! FAIL !!!!!\n")
 
     else:
-        print("----- PASS: -----\n")
+        print("----- PASS -----\n")
 
     print(result)
     print()
