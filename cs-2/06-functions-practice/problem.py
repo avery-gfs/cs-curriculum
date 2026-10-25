@@ -110,9 +110,6 @@ test(middle([1, 2, 3, 4, 5]), [2, 3, 4])
 
 # Write countEven(numbers), which returns how many of the numbers are even.
 
-# def countEven(numbers):
-# 	return sum(n % 2 == 0 for n in numbers)
-
 
 def countEven():
     pass
@@ -126,6 +123,11 @@ test(countEven([1, 2, 3, 4, -2, 0]), 4)
 # Write negate(numbers), which changes the list so that every number is
 # negated. It should change the original list and not return anything.
 
+
+def negate():
+    pass
+
+
 numbers = [1, -2, 0]
 negate(numbers)
 test(numbers, [-1, 2, 0])
@@ -134,6 +136,11 @@ test(numbers, [-1, 2, 0])
 
 # Write negateCopy(numbers), which returns a new list with every number
 # negated. The original list should not change.
+
+
+def negateCopy():
+    pass
+
 
 numbers = [2, -4, 0]
 test(negateCopy(numbers), [-2, 4, 0])
@@ -185,6 +192,11 @@ test(isSorted([1, 3, 2, 4]), False)
 # Write swap(values, i, j), which swaps the items at indexes i and j.
 # It should change the original list and not return anything.
 # Assume i and j are valid indexes.
+
+
+def swap():
+    pass
+
 
 values = ["a", "b", "c"]
 swap(values, 0, 2)
