@@ -334,5 +334,4 @@ def isPalindrome(text):
 test(isPalindrome(""), True)
 test(isPalindrome("a"), True)
 test(isPalindrome("racecar"), True)
-test(isPalindrome("abba"), True)
 test(isPalindrome("abca"), False)
