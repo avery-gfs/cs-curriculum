@@ -19,7 +19,7 @@ class Item:
         pass
 
     def __repr__(self):
-        # Return a string like: bagel 5.00 ($2 x $2.50)
+        # Return a string like: bagel $5.00 (2 x $2.50)
         # (name, total, then quantity and price in parentheses)
         pass
 
