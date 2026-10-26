@@ -69,17 +69,16 @@ print(distance(1, 2, 4, 6))
 # ---------------------------------------------------------
 
 
-def sum(numbers):
-    total = 0
+def product(numbers):
+    result = 1
 
     for n in numbers:
-        total += n
+        result *= n
 
-    return total
+    return result
 
 
-print(sum([1, 2, 3, 4, 5]))
-print(sum([]))
+print(product([1, 2, 3, 4, 5]))
 
 # ---------------------------------------------------------
 
