@@ -87,17 +87,16 @@ print(distance(1, 2, 4, 6))
 # ---------------------------------------------------------
 
 
-def sum(numbers):
-    sum = 0
+def product(numbers):
+    product = 1
 
     for index in range(len(numbers)):
-        sum = sum + numbers[index]
+        product = product * numbers[index]
 
-    return sum
+    return product
 
 
-print(sum([1, 2, 3, 4, 5]))
-print(sum([]))
+print(product([1, 2, 3, 4, 5]))
 
 # ---------------------------------------------------------
 
