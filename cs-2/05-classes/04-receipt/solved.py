@@ -1,6 +1,6 @@
 def test(result, expected):
     if result != expected:
-        print("!!!!! Fail !!!!!\n")
+        print("!!!!! FAIL !!!!!\n")
 
     else:
         print("----- PASS -----\n")
