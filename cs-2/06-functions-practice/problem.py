@@ -74,12 +74,11 @@ def letterGrade():
     pass
 
 
-test(letterGrade(100), "A")
-test(letterGrade(90), "A")
-test(letterGrade(89), "B")
-test(letterGrade(70), "C")
-test(letterGrade(60), "D")
-test(letterGrade(59), "F")
+test(letterGrade(99), "A")
+test(letterGrade(88), "B")
+test(letterGrade(77), "C")
+test(letterGrade(66), "D")
+test(letterGrade(55), "F")
 
 # ----------------------------------------------------------
 

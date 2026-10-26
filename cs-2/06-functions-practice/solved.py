@@ -104,12 +104,11 @@ def letterGrade(points):
 # def letterGrade(points):
 # 	return { 10: "A", 9: "A", 8: "B", 7: "C", 6: "D" }.get(points // 10, "F")
 
-test(letterGrade(100), "A")
-test(letterGrade(90), "A")
-test(letterGrade(89), "B")
-test(letterGrade(70), "C")
-test(letterGrade(60), "D")
-test(letterGrade(59), "F")
+test(letterGrade(99), "A")
+test(letterGrade(88), "B")
+test(letterGrade(77), "C")
+test(letterGrade(66), "D")
+test(letterGrade(55), "F")
 
 # ----------------------------------------------------------
 
@@ -249,8 +248,9 @@ def isSorted(numbers):
     return True
 
 
-# def isSorted(numbers):
-# 	return all(numbers[i - 1] <= numbers[i] for i in range(1, len(numbers)))
+def isSorted(numbers):
+    return numbers == sorted(numbers)
+
 
 test(isSorted([]), True)
 test(isSorted([1, 2, 2, 3]), True)
