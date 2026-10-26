@@ -34,16 +34,16 @@ class Receipt:
         # and add it to the receipt
         pass
 
+    def total(self):
+        # Return the total cost of every item on the receipt added together
+        pass
+
     def updateQuantity(self, name, newQuantity):
         # Find the item with a matching name, set its quantity to newQuantity
         pass
 
     def removeitem(self, name):
         # Remove the item with a matching name from the receipt
-        pass
-
-    def total(self):
-        # Return the total cost of every item on the receipt added together
         pass
 
     def __repr__(self):
