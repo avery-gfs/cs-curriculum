@@ -37,6 +37,14 @@ class Receipt:
 
         return totalCost
 
+    def __repr__(self):
+        itemRows = ""
+
+        for item in self.items:
+            itemRows += f"{item}\n"
+
+        return f"{itemRows}----------\ntotal: ${self.total():.2f}"
+
     def updateQuantity(self, name, newQuantity):
         for item in self.items:
             if item.name == name:
@@ -50,14 +58,6 @@ class Receipt:
                 newItems.append(item)
 
         self.items = newItems
-
-    def __repr__(self):
-        itemRows = ""
-
-        for item in self.items:
-            itemRows += f"{item}\n"
-
-        return f"{itemRows}----------\ntotal: ${self.total():.2f}"
 
 
 b = Item("bagel", 2.5, 2)

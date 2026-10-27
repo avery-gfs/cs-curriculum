@@ -24,6 +24,28 @@ class Team:
         # Make a new Player object with the given name and add them to the team
         self.players.append(Player(name))
 
+    def percent(self):
+        # Percent of shots that went in for all players on the team
+
+        totalBaskets = 0
+        totalShots = 0
+
+        for player in self.players:
+            totalBaskets += player.baskets
+            totalShots += player.shots
+
+        # (use max to avoid division by zero)
+        return totalBaskets / max(1, totalShots) * 100
+
+    def __repr__(self):
+        # One line per player, then a divider and the team average percent
+        playerRows = ""
+
+        for player in self.players:
+            playerRows += f"{player}\n"
+
+        return f"{playerRows}----------\naverage: {self.percent():.2f}"
+
     def addBasket(self, name):
         # Find the player with a matching name, increase their basket and shot
         # counts by 1 each
@@ -47,28 +69,6 @@ class Team:
                 newPlayers.append(player)
 
         self.players = newPlayers
-
-    def percent(self):
-        # Percent of shots that went in for all players on the team
-
-        totalBaskets = 0
-        totalShots = 0
-
-        for player in self.players:
-            totalBaskets += player.baskets
-            totalShots += player.shots
-
-        # (use max to avoid division by zero)
-        return totalBaskets / max(1, totalShots) * 100
-
-    def __repr__(self):
-        # One line per player, then a divider and the team average percent
-        playerRows = ""
-
-        for player in self.players:
-            playerRows += f"{player}\n"
-
-        return f"{playerRows}----------\naverage: {self.percent():.2f}"
 
 
 a = Player("Avery")
