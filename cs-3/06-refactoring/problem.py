@@ -31,16 +31,16 @@ print(priceTag("banana", 10))
 # ---------------------------------------------------------
 
 
-def absValue(n):
-    if n < 0:
-        return -n
+def canVote(age):
+    if age >= 18:
+        return "can vote"
 
-    return n
+    return "cannot vote"
 
 
-print(absValue(-5))
-print(absValue(5))
-print(absValue(0))
+print(canVote(5))
+print(canVote(18))
+print(canVote(50))
 
 # ---------------------------------------------------------
 
