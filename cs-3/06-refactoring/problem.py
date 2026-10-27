@@ -49,11 +49,10 @@ def clamp(num, low, high):
     if num < low:
         return low
 
-    elif num > high:
+    if num > high:
         return high
 
-    elif num >= low and num <= high:
-        return num
+    return num
 
 
 print(clamp(-7, 0, 10))
@@ -259,6 +258,7 @@ def shout(words):
         result += words[index].upper()
         result += "!"
         index = index + 1
+
         if index < len(words):
             result += " "
 

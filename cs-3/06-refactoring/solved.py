@@ -106,7 +106,8 @@ def hexToDec(hexStr):
     result = 0
 
     for d in hexStr:
-        result = result * 16 + hexValues[d]
+        result *= 16
+        result += hexValues[d]
 
     return result
 
