@@ -24,11 +24,11 @@ def sign(num):
     if num > 0 == True:
         return "positive"
 
-    elif num == 0:
-        return "zero"
-
     elif num < 0 == True:
         return "negative"
+
+    elif num == 0 == True:
+        return "zero"
 ```
 
 ...
@@ -46,25 +46,25 @@ def sign(num):
     if num > 0:
         return "positive"
 
+    elif num < 0:
+        return "negative"
+
     elif num == 0:
         return "zero"
+```
+
+---
+
+```py
+def sign(num):
+    if num > 0:
+        return "positive"
 
     elif num < 0:
         return "negative"
-```
-
----
-
-```py
-def sign(num):
-    if num > 0:
-        return "positive"
-
-    elif num == 0:
-        return "zero"
 
     else:
-        return "negative"
+        return "zero"
 ```
 
 ---
@@ -74,10 +74,10 @@ def sign(num):
     if num > 0:
         return "positive"
 
-    if num == 0:
-        return "zero"
+    if num < 0:
+        return "negative"
 
-    return "negative"
+    return "zero"
 ```
 
 # Refactoring isn't Code Golf!

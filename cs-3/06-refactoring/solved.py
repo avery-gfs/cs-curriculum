@@ -5,10 +5,10 @@ def sign(num):
     if num > 0:
         return "positive"
 
-    if num == 0:
-        return "zero"
+    if num < 0:
+        return "negative"
 
-    return "negative"
+    return "zero"
 
 
 print(sign(8))
