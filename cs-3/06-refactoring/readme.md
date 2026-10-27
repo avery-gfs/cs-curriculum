@@ -80,7 +80,7 @@ def sign(num):
     return "zero"
 ```
 
-# Refactoring isn't Code Golf!
+## Refactoring isn't Code Golf!
 
 ...
 
