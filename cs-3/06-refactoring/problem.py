@@ -86,16 +86,21 @@ print(distance(1, 2, 4, 6))
 # ---------------------------------------------------------
 
 
-def product(numbers):
-    product = 1
+def longestWord(words):
+    if not words:
+        return None
 
-    for index in range(len(numbers)):
-        product = product * numbers[index]
+    longest = ""
 
-    return product
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+
+    return longest
 
 
-print(product([1, 2, 3, 4, 5]))
+print(longestWord([]))
+print(longestWord("friends romans countrymen lend me your ears".split()))
 
 # ---------------------------------------------------------
 
