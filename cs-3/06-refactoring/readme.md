@@ -75,11 +75,15 @@ def sign(num):
     return "negative"
 ```
 
----
+# Refactoring isn't Code Golf!
+
+...
 
 ```py
 def sign(num):
     return ["zero", "positive", "negative"][num // (abs(num) or 1)]
 ```
 
-Don't do this. Refactoring is not code golf!
+...
+
+Don't do this.
