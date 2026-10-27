@@ -115,13 +115,17 @@ def sign(num):
     return "negative" if num < 0 else "positive" if num else "zero"
 ```
 
-82 characters ...
+82 characters
+
+...
 
 ```py
 def sign(num):
     return ["zero", "positive", "negative"][(num > 0) - (num < 0)]
 ```
 
-81 characters ...
+81 characters
+
+...
 
 Don't do this.
