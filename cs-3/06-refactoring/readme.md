@@ -74,6 +74,19 @@ def sign(num):
     if num > 0:
         return "positive"
 
+    elif num < 0:
+        return "negative"
+
+    return "zero"
+```
+
+---
+
+```py
+def sign(num):
+    if num > 0:
+        return "positive"
+
     if num < 0:
         return "negative"
 
@@ -81,6 +94,17 @@ def sign(num):
 ```
 
 ## Refactoring isn't Code Golf!
+
+```py
+def sign(num):
+    if num > 0:
+        return "positive"
+
+    if num < 0:
+        return "negative"
+
+    return "zero"
+```
 
 ...
 
