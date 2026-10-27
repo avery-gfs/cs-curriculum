@@ -8,11 +8,11 @@ def sign(num):
     if num > 0 == True:
         return "positive"
 
-    elif num == 0:
-        return "zero"
-
     elif num < 0 == True:
         return "negative"
+
+    elif num == 0 == True:
+        return "zero"
 
 
 print(sign(8))
