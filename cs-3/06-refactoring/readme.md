@@ -2,7 +2,7 @@
 
 ## What is Refactoring?
 
-<img src="/assets/refactoring.png" height="600px" />
+<img src="/assets/refactoring.png" height="400px" />
 
 ...
 
