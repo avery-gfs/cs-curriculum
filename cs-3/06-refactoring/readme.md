@@ -6,11 +6,16 @@
 
 ...
 
-Make code better...
+Make code better written...
 
 ...
 
 **Without** changing its behavior
+
+...
+
+This is a somewhat subjective process, but there are also norms within software
+engineering about what constitutes "well-written" code.
 
 ## Example
 
