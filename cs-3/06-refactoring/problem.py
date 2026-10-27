@@ -4,20 +4,20 @@
 import math
 
 
-def clamp(num, low, high):
-    if num < low:
-        return low
+def sign(num):
+    if num > 0 == True:
+        return "positive"
 
-    elif num > high:
-        return high
+    elif num == 0:
+        return "zero"
 
-    elif num >= low and num <= high:
-        return num
+    elif num < 0 == True:
+        return "negative"
 
 
-print(clamp(-7, 0, 10))
-print(clamp(7, 0, 10))
-print(clamp(17, 0, 10))
+print(sign(8))
+print(sign(0))
+print(sign(-7))
 
 # ---------------------------------------------------------
 
@@ -45,20 +45,20 @@ print(absValue(0))
 # ---------------------------------------------------------
 
 
-def sign(num):
-    if (num > 0) == True:
-        return "positive"
+def clamp(num, low, high):
+    if num < low:
+        return low
 
-    elif num == 0:
-        return "zero"
+    elif num > high:
+        return high
 
-    elif (num < 0) == True:
-        return "negative"
+    elif num >= low and num <= high:
+        return num
 
 
-print(sign(8))
-print(sign(0))
-print(sign(-7))
+print(clamp(-7, 0, 10))
+print(clamp(7, 0, 10))
+print(clamp(17, 0, 10))
 
 # ---------------------------------------------------------
 
