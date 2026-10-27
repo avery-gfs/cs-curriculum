@@ -1,13 +1,19 @@
 import math
 
 
-def clamp(num, low, high):
-    return max(low, min(high, num))
+def sign(num):
+    if num > 0:
+        return "positive"
+
+    if num == 0:
+        return "zero"
+
+    return "negative"
 
 
-print(clamp(-7, 0, 10))
-print(clamp(7, 0, 10))
-print(clamp(17, 0, 10))
+print(sign(8))
+print(sign(0))
+print(sign(-7))
 
 # ---------------------------------------------------------
 
@@ -33,19 +39,13 @@ print(absValue(0))
 # ---------------------------------------------------------
 
 
-def sign(num):
-    if num > 0:
-        return "positive"
-
-    if num == 0:
-        return "zero"
-
-    return "negative"
+def clamp(num, low, high):
+    return max(low, min(high, num))
 
 
-print(sign(8))
-print(sign(0))
-print(sign(-7))
+print(clamp(-7, 0, 10))
+print(clamp(7, 0, 10))
+print(clamp(17, 0, 10))
 
 # ---------------------------------------------------------
 

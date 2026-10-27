@@ -1,0 +1,20 @@
+10/26
+10/28
+11/4
+11/5
+11/10
+11/17
+11/18
+11/20
+12/2
+12/3
+12/7
+12/14
+12/15
+12/17
+
+version control
+databases
+apis
+llms
+public speaking
