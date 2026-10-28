@@ -3,6 +3,9 @@
 
 import math
 
+# ---------------------------------------------------------
+# Hint: simplify
+
 
 def sign(num):
     if num > 0 == True:
@@ -20,6 +23,7 @@ print(sign(0))
 print(sign(-7))
 
 # ---------------------------------------------------------
+# Hint: format strings
 
 
 def priceTag(a, b):
@@ -29,6 +33,7 @@ def priceTag(a, b):
 print(priceTag("banana", 10))
 
 # ---------------------------------------------------------
+# Hint: if expression
 
 
 def canVote(age):
@@ -43,6 +48,7 @@ print(canVote(18))
 print(canVote(50))
 
 # ---------------------------------------------------------
+# Hint: min and max
 
 
 def clamp(num, low, high):
@@ -60,6 +66,7 @@ print(clamp(7, 0, 10))
 print(clamp(17, 0, 10))
 
 # ---------------------------------------------------------
+# Hint: modulo
 
 
 def isEven(num):
@@ -75,6 +82,7 @@ print(isEven(7))
 print(isEven(8))
 
 # ---------------------------------------------------------
+# Hint: library function
 
 
 def distance(x1, y1, x2, y2):
@@ -84,6 +92,7 @@ def distance(x1, y1, x2, y2):
 print(distance(1, 2, 4, 6))
 
 # ---------------------------------------------------------
+# Hint: min
 
 
 def longestWord(words):
@@ -103,6 +112,7 @@ print(longestWord([]))
 print(longestWord("friends romans countrymen lend me your ears".split()))
 
 # ---------------------------------------------------------
+# Hint: dictionary
 
 
 def hexToDec(hexStr):
@@ -154,6 +164,7 @@ def hexToDec(hexStr):
 print(hexToDec("1a"))  # Should print 26
 
 # ---------------------------------------------------------
+# Hint: set
 
 
 def areUnique(values):
@@ -169,6 +180,7 @@ print(areUnique([1, 2, 3]))
 print(areUnique([1, 2, 1]))
 
 # ---------------------------------------------------------
+# Hint: match
 
 
 def rpsWinner(player, ai):
@@ -201,6 +213,7 @@ print(rpsWinner("paper", "paper"))
 
 
 # ---------------------------------------------------------
+# Hint: sorted
 
 
 def isSorted(numbers):
@@ -216,6 +229,7 @@ print(isSorted([1, 2, 2, 3]))
 print(isSorted([1, 3, 2, 4]))
 
 # ---------------------------------------------------------
+# Hint: isEven, generator expression
 
 
 def countEvens(numbers):
@@ -233,6 +247,7 @@ def countEvens(numbers):
 print(countEvens([1, 4, 2, 7, 3, 1]))
 
 # ---------------------------------------------------------
+# Hint: join, generator expression
 
 
 def shout(words):
