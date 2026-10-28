@@ -1,0 +1,166 @@
+fn sign(num)
+  if num > 0 then
+    "positive"
+  elif num < 0 then
+    "negative"
+  else
+    "zero"
+  end
+end
+
+print(sign(8))
+print(sign(0))
+print(sign(-7))
+
+--------------------------------------------------
+
+fn priceTag(item, price)
+  "A $item costs $$price"
+end
+
+print(priceTag("banana", 10))
+
+--------------------------------------------------
+
+fn canVote(age)
+  age >= 18 then "can vote" else "cannot vote"
+end
+
+print(canVote(5))
+print(canVote(18))
+print(canVote(50))
+
+--------------------------------------------------
+
+fn clamp(num, low, high)
+  Math.clamp(num, low, high)
+end
+
+print(clamp(-7, 0, 10))
+print(clamp(7, 0, 10))
+print(clamp(17, 0, 10))
+
+--------------------------------------------------
+
+fn isEven(num)
+  num % 2 == 0
+end
+
+print(isEven(7))
+print(isEven(8))
+
+--------------------------------------------------
+
+fn distance(x1, y1, x2, y2)
+  Math.hypot([x2 - x1, y2 - y1])
+end
+
+print(distance(1, 2, 4, 6))
+
+--------------------------------------------------
+
+fn longestWord(words)
+  words == [] then none else List.maxBy(words, len)
+end
+
+print(longestWord([]))
+
+"friends romans countrymen lend me your ears"
+  | split(" ")
+  | longestWord
+  | print
+
+--------------------------------------------------
+
+hexValues = {
+  "0": 0,
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "a": 10,
+  "b": 11,
+  "c": 12,
+  "d": 13,
+  "e": 14,
+  "f": 15,
+}
+
+fn hexToDec(hexStr)
+  result = 0
+
+  for d in chars(hexStr) do
+    result *= 16
+    result += hexValues[d]
+  end
+
+  result
+end
+
+print(hexToDec("1a"))
+
+--------------------------------------------------
+
+fn areUnique(values)
+  len(Set.of(values)) == len(values)
+end
+
+print(areUnique([]))
+print(areUnique([1, 2, 3]))
+print(areUnique([1, 2, 1]))
+
+--------------------------------------------------
+
+fn rpsWinner(player, ai)
+  match [player, ai]
+    case ["paper", "paper"] then "tie"
+    case ["paper", "rock"] then "player"
+    case ["paper", "scissors"] then "ai"
+    case ["rock", "paper"] then "ai"
+    case ["rock", "rock"] then "tie"
+    case ["rock", "scissors"] then "player"
+    case ["scissors", "paper"] then "player"
+    case ["scissors", "rock"] then "ai"
+    case ["scissors", "scissors"] then "tie"
+  end
+end
+
+print(rpsWinner("rock", "paper"))
+print(rpsWinner("scissors", "paper"))
+print(rpsWinner("paper", "paper"))
+
+--------------------------------------------------
+
+fn isSorted(numbers)
+  numbers == sort(numbers)
+end
+
+print(isSorted([]))
+print(isSorted([1, 2, 2, 3]))
+print(isSorted([1, 3, 2, 4]))
+
+--------------------------------------------------
+
+fn countEvens(numbers)
+  numbers
+    ? isEven
+    | len
+end
+
+print(countEvens([1, 4, 2, 7, 3, 1]))
+
+--------------------------------------------------
+
+fn shout(words)
+  words
+    $ Str.toUpper
+    $ "$arg!"
+    | join(" ")
+end
+
+print(shout(["germantown", "friends", "school"]))
