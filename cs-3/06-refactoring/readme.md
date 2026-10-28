@@ -8,6 +8,8 @@
 
 <img src="/assets/refactoring.png" height="400px" />
 
+https://xkcd.com/844/
+
 ...
 
 Make code better written...
@@ -34,8 +36,6 @@ def sign(num):
     elif num == 0 == True:
         return "zero"
 ```
-
-...
 
 ```py
 sign(8)   # "positive"
