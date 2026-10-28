@@ -4,11 +4,11 @@
 
 <img src="https://imgs.xkcd.com/comics/good_code.png" height="600px" />
 
+https://xkcd.com/844/
+
 ---
 
 <img src="/assets/refactoring.png" height="400px" />
-
-https://xkcd.com/844/
 
 ...
 
