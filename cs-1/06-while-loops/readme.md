@@ -166,6 +166,8 @@ while True:
     print(f"Hello {name}!")
 ```
 
+...
+
 ```
 Enter a name: Avery
 Hello Avery!
