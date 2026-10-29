@@ -158,9 +158,9 @@ print(countEvens([1, 4, 2, 7, 3, 1]))
 
 fn shout(words)
   words
-    $ Str.toUpper
     $ "$arg!"
     | join(" ")
+    | Str.toUpper
 end
 
 print(shout(["germantown", "friends", "school"]))

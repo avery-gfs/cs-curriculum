@@ -257,60 +257,6 @@ if n % 2 != 0:
 SyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?
 ```
 
-## Indentation
-
-What will this code print?
-
-```py
-greet = True
-
-if greet:
-    print("Hello")
-    print("World")
-```
-
-...
-
-```
-Hello
-World
-```
-
----
-
-What will this code print?
-
-```py
-greet = False
-
-if greet:
-    print("Hello")
-    print("World")
-```
-
-...
-
-```
-```
-
----
-
-What will this code print?
-
-```py
-greet = False
-
-if greet:
-    print("Hello")
-print("World")
-```
-
-...
-
-```
-World
-```
-
 ## Else Clauses
 
 Else clauses can be added to if statements to write code that runs when the if
