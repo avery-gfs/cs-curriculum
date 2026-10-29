@@ -129,15 +129,13 @@ while True:
 
 ```
 Enter a number: 5
-50
-Enter a number: 12
-170
+5
+Enter a number: 10
+15
 Enter a number: -4
-130
+11
 Enter a number: 33
-460
-Enter a number: 14
-600
+44
 ...
 ```
 
@@ -147,7 +145,7 @@ Enter a number: 14
 total = 0
 
 while True:
-    n = float(input("Enter a number: "))
+    n = int(input("Enter a number: "))
     total += n
     print(total)
 ```
