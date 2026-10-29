@@ -22,3 +22,8 @@ days = totalSeconds // (60 * 60 * 24)
 #
 # 1 hour
 # 5 seconds
+
+print(f"{days} days")
+print(f"{hours} hours")
+print(f"{minutes} minutes")
+print(f"{seconds} seconds")
