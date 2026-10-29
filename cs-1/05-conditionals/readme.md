@@ -69,16 +69,16 @@ What will this code print?
 n = -7
 
 if n < 0:
-    print("n is negative")
+    print("foo")
 
 if n % 2 == 0:
-    print("n is even")
+    print("bar")
 ```
 
 ...
 
 ```
-n is negative
+foo
 ```
 
 ---
@@ -89,16 +89,16 @@ What will this code print?
 n = 6
 
 if n < 0:
-    print("n is negative")
+    print("foo")
 
 if n % 2 == 0:
-    print("n is even")
+    print("bar")
 ```
 
 ...
 
 ```
-n is even
+bar
 ```
 
 ---
@@ -109,10 +109,10 @@ What will this code print?
 n = 7
 
 if n < 0:
-    print("n is negative")
+    print("foo")
 
 if n % 2 == 0:
-    print("n is even")
+    print("bar")
 ```
 
 ...
@@ -128,17 +128,17 @@ What will this code print?
 n = -8
 
 if n < 0:
-    print("n is negative")
+    print("foo")
 
 if n % 2 == 0:
-    print("n is even")
+    print("bar")
 ```
 
 ...
 
 ```
-n is negative
-n is even
+foo
+bar
 ```
 
 ## Control Flow Ordering
@@ -147,17 +147,17 @@ Will this code
 
 ```py
 if n < 0:
-    print("n is negative")
+    print("foo")
 
 if n % 2 == 0:
-    print("n is even")
+    print("bar")
 ```
 
 ever print
 
 ```
-n is even
-n is negative
+bar
+foo
 ```
 
 for some value of `n`?
@@ -316,16 +316,16 @@ What will this code print?
 n = 4
 
 if n % 2 == 0:
-    print("Even")
+    print("Foo")
 
 else:
-    print("Odd")
+    print("Bar")
 ```
 
 ...
 
 ```
-Even
+Foo
 ```
 
 ---
@@ -336,16 +336,16 @@ What will this code print?
 n = 5
 
 if n % 2 == 0:
-    print("Even")
+    print("Foo")
 
 else:
-    print("Odd")
+    print("Bar")
 ```
 
 ...
 
 ```
-Odd
+Bar
 ```
 
 ## Elif Clauses
