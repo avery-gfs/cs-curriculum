@@ -96,6 +96,34 @@ What value does this expression produce?
 What value does this expression produce?
 
 ```py
+14 % -5
+```
+
+...
+
+```
+14 -> 9 -> 4 -> -1
+```
+
+---
+
+What value does this expression produce?
+
+```py
+-14 % -5
+```
+
+...
+
+```
+-14 -> -9 -> -4
+```
+
+---
+
+What value does this expression produce?
+
+```py
 14 % 14
 ```
 
