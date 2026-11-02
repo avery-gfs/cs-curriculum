@@ -105,10 +105,10 @@ def showHeight(totalInches):
 
     inches = totalInches % 12
     feet = totalInches // 12
-    return f"{feet}'{inches:02}\""
+    return f"{feet}'{inches}\""
 
 
-test(showHeight(66), "5'06\"")
+test(showHeight(66), "5'6\"")
 
 
 # ---------------------------------------------------------
@@ -121,24 +121,6 @@ def factors(n):
 
 
 test(factors(40), [1, 2, 4, 5, 8, 10, 20, 40])
-
-
-# ---------------------------------------------------------
-
-
-def loading():
-    # Display an animated loading bar
-
-    for n in range(10):
-        print("loading" + "." * (n % 5))
-        time.sleep(0.2)
-
-        # This code to clears the current line:
-        print("\x1b[1A\x1b[2K", end="")
-
-
-loading()
-
 
 # ---------------------------------------------------------
 

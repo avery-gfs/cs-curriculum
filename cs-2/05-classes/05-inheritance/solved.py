@@ -12,19 +12,14 @@ class Triangle:
         return f"Triangle({self.side1}, {self.angle}, {self.side2})"
 
     def side3(self):
-        return round(
-            math.sqrt(
-                self.side1**2
-                + self.side2**2
-                - 2 * self.side1 * self.side2 * math.cos(math.radians(self.angle))
-            ),
-            2,
+        return math.sqrt(
+            self.side1**2
+            + self.side2**2
+            - 2 * self.side1 * self.side2 * math.cos(math.radians(self.angle))
         )
 
     def area(self):
-        return round(
-            0.5 * self.side1 * self.side2 * math.sin(math.radians(self.angle)), 2
-        )
+        return 0.5 * self.side1 * self.side2 * math.sin(math.radians(self.angle))
 
     def perimeter(self):
         return self.side1 + self.side2 + self.side3()
@@ -101,7 +96,7 @@ class Parallelogram:
         return f"Parallelogram({self.side1}, {self.angle}, {self.side2})"
 
     def area(self):
-        return round(self.side1 * self.side2 * math.sin(math.radians(self.angle)), 2)
+        return self.side1 * self.side2 * math.sin(math.radians(self.angle))
 
     def perimeter(self):
         return 2 * (self.side1 + self.side2)
