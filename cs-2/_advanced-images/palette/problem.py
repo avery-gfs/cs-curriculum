@@ -14,7 +14,7 @@ output = Image.new(im.mode, im.size)
 def distance(c1, c2):
     (r1, g1, b1) = c1
     (r2, g2, b2) = c2
-    return math.sqrt((r1 - r2) ** 2 + (g1 - g2) ** 2 + (b1 - b2) ** 2)
+    return math.hypot(r1 - r2, +g1 - g2, +b1 - b2)
 
 
 # https://rgbcolorpicker.com/
@@ -43,8 +43,8 @@ for y in range(im.height):
     for x in range(im.width):
         color = im.getpixel((x, y))
 
-        bestColor = endesga16[0]
-        minDist = distance(color, endesga16[0])
+        bestColor = None
+        minDist = None
 
         # Look through the colors in palette, and find
         # the one that is closest to the current pixel color
