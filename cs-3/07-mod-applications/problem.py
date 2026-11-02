@@ -94,7 +94,7 @@ def showHeight(totalInches):
     pass
 
 
-test(showHeight(66), "5'06\"")
+test(showHeight(66), "5'6\"")
 
 
 # ---------------------------------------------------------
@@ -106,18 +106,6 @@ def factors(n):
 
 
 test(factors(40), [1, 2, 4, 5, 8, 10, 20, 40])
-
-
-# ---------------------------------------------------------
-
-
-def loading():
-    # Display an animated loading bar
-    pass
-
-
-loading()
-
 
 # ---------------------------------------------------------
 
