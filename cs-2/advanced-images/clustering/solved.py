@@ -15,7 +15,7 @@ output = Image.new(im.mode, im.size)
 def distance(c1, c2):
     (r1, g1, b1) = c1
     (r2, g2, b2) = c2
-    return math.hypot(r1 - r2, +g1 - g2, +b1 - b2)
+    return math.hypot(r1 - r2, g1 - g2, b1 - b2)
 
 
 class Cluster:
