@@ -7,16 +7,6 @@ im = Image.open("bird.png")
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)
 
-# Calculate color distance between two colors
-# https://en.wikipedia.org/wiki/Color_difference
-
-
-def distance(c1, c2):
-    (r1, g1, b1) = c1
-    (r2, g2, b2) = c2
-    return math.hypot(r1 - r2, g1 - g2, b1 - b2)
-
-
 # https://rgbcolorpicker.com/
 # https://lospec.com/palette-list/endesga-16
 
@@ -48,8 +38,14 @@ for y in range(im.height):
 
         # Look through the colors in palette, and find
         # the one that is closest to the current pixel color
+
+        # Calculate color distance between two colors using distance formula
+        # https://en.wikipedia.org/wiki/Color_difference
+
         for paletteColor in endesga16:
-            dist = distance(color, paletteColor)
+            (r1, g1, b1) = color
+            (r2, g2, b2) = paletteColor
+            dist = math.hypot(r1 - r2, g1 - g2, b1 - b2)
 
             if minDist == None or dist < minDist:
                 minDist = dist

@@ -8,15 +8,6 @@ im = Image.open("bird.png")
 # Make blank output image with same dimension as the original
 output = Image.new(im.mode, im.size)
 
-# Calculate color distance between two colors
-# https://en.wikipedia.org/wiki/Color_difference
-
-
-def distance(c1, c2):
-    (r1, g1, b1) = c1
-    (r2, g2, b2) = c2
-    return math.hypot(r1 - r2, g1 - g2, b1 - b2)
-
 
 class Cluster:
     def __init__(self, color):
@@ -34,7 +25,12 @@ class Cluster:
         )
 
     def distance(self, color):
-        return distance(self.getRGB(), color)
+        # Calculate color distance between two colors
+        # https://en.wikipedia.org/wiki/Color_difference
+
+        (r1, g1, b1) = color
+        (r2, g2, b2) = self.getRGB()
+        return math.hypot(r1 - r2, g1 - g2, b1 - b2)
 
     def absorb(self, color):
         (r, g, b) = color
