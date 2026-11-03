@@ -1,0 +1,21 @@
+# Keep track of the average of the integers entered so far.
+#
+# Example:
+#
+# Enter a number: 10
+# Average: 10.0
+# Enter a number: 4
+# Average: 7.0
+# Enter a number: 4
+# Average: 6.0
+# Enter a number: 0
+# Average: 4.5
+# Enter a number: 100
+# Average: 23.6
+# ...
+
+count = 0
+total = 0
+
+while True:
+    pass  # Your code goes here

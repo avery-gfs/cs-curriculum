@@ -156,6 +156,29 @@ while True:
 
 ## Break
 
+The `break` keyword stops a while loop. Often used as a way to break out of
+otherwise infinite loops.
+
+```
+while True:
+    ...
+
+    if <condition>:
+        break
+
+    ...
+```
+
+...
+
+```py
+while True:
+    name = input("Enter a name: ")
+    print(f"Hello {name}!")
+```
+
+---
+
 ```py
 while True:
     name = input("Enter a name: ")
@@ -207,12 +230,3 @@ while x <= 4:
 4 x 2 = 8
 4 x 3 = 12
 ```
-
-**Problems**
-
-- Prime test
-- Prime factors
-- Simplify fractions
-- Running sum of inputs
-- Running average of inputs
-- 99 bottles of beer
