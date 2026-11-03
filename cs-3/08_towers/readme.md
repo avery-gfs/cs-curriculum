@@ -8,6 +8,30 @@
 
 https://www.youtube.com/watch?v=TTKwx1xIx6g
 
+## Numbers of moves
+
+```
+2 discs: 3
+3 discs: 7
+4 discs: 15
+5 discs: 31
+6 discs: 63
+```
+
+...
+
+What is the pattern?
+
+...
+
+$$
+n -> 2n + 1
+$$
+
+...
+
+Why?
+
 ## Tower Representation
 
 ```txt
@@ -148,13 +172,3 @@ To move `n` discs from the `src` tower to the `dest` tower:
 - Move `n - 1` discs from the `src` tower to the `tmp` tower
 - Move the next `n`th disc from the `src` tower to the `dest` tower
 - Move `n - 1` discs from the `tmp` tower to the `dest` tower
-
-...
-
-Where does `* 2 + 1` pattern in step counts come from?
-
-...
-
-```txt
-steps(n + 1) = 2 * steps(n) + 1
-```
