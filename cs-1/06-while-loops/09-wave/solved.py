@@ -1,6 +1,6 @@
 # Generate a wave using text characters.
 #
-# See
+# See https://github.com/avery-gfs/cs-curriculum/blob/public/assets/wave.gif
 
 import math
 import time
