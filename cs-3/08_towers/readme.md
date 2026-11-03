@@ -25,7 +25,7 @@ What is the pattern?
 ...
 
 $$
-n -> 2n + 1
+n \rightarrow 2n + 1
 $$
 
 ...
