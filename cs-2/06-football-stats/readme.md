@@ -25,7 +25,7 @@ CSV: "Comma separated values".
 
 ...
 
-```txt
+```
 away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
@@ -41,7 +41,7 @@ Arizona Cardinals,20,New Orleans Saints,13
 
 ## Loading CSVs
 
-```txt
+```
 away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
@@ -91,7 +91,7 @@ What's the issue?
 
 ## Converting Numbers
 
-```txt
+```
 away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
@@ -143,3 +143,66 @@ for game in games:
 ## Review Dictionaries
 
 https://avery-gfs.github.io/cs-curriculum/slides/view.html?src=cs-2%2F02-dictionaries%2Freadme.md
+
+## Problem: Eagles Record
+
+```
+away_team,away_score,home_team,home_score
+Dallas Cowboys,20,Philadelphia Eagles,24
+Kansas City Chiefs,21,Los Angeles Chargers,27
+Arizona Cardinals,20,New Orleans Saints,13
+...
+```
+
+...
+
+```
+Eagles record: 11 6 0
+```
+
+## Problem: All Records
+
+```
+away_team,away_score,home_team,home_score
+Dallas Cowboys,20,Philadelphia Eagles,24
+Kansas City Chiefs,21,Los Angeles Chargers,27
+Arizona Cardinals,20,New Orleans Saints,13
+...
+```
+
+...
+
+```
+Philadelphia Eagles 11 6 0 0.647
+Dallas Cowboys 7 9 1 0.441
+Los Angeles Chargers 11 6 0 0.647
+Kansas City Chiefs 6 11 0 0.353
+New Orleans Saints 6 11 0 0.353
+Arizona Cardinals 3 14 0 0.176
+New York Jets 3 14 0 0.176
+Pittsburgh Steelers 10 7 0 0.588
+Indianapolis Colts 8 9 0 0.471
+Miami Dolphins 7 10 0 0.412
+Atlanta Falcons 8 9 0 0.471
+Tampa Bay Buccaneers 8 9 0 0.471
+Washington Commanders 5 12 0 0.294
+New York Giants 4 13 0 0.235
+Jacksonville Jaguars 13 4 0 0.765
+Carolina Panthers 8 9 0 0.471
+Cleveland Browns 5 12 0 0.294
+Cincinnati Bengals 6 11 0 0.353
+New England Patriots 14 3 0 0.824
+Las Vegas Raiders 3 14 0 0.176
+Seattle Seahawks 14 3 0 0.824
+San Francisco 49ers 12 5 0 0.706
+Denver Broncos 14 3 0 0.824
+Tennessee Titans 3 14 0 0.176
+Los Angeles Rams 12 5 0 0.706
+Houston Texans 12 5 0 0.706
+Green Bay Packers 9 7 1 0.559
+Detroit Lions 9 8 0 0.529
+Buffalo Bills 12 5 0 0.706
+Baltimore Ravens 8 9 0 0.471
+Chicago Bears 11 6 0 0.647
+Minnesota Vikings 9 8 0 0.529
+```
