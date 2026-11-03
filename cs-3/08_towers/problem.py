@@ -37,15 +37,15 @@ def showTowers():
 
 # Tower Labels:
 #
-#     ░             ░             ░
-#     ░             ░             ░
-#     ░             ░             ░
-#     ░             ░             ░
-#     ░             ░             ░
-#     ░             ░             ░
-#     ░             ░             ░
+#        ░             ░             ░
+#       ▇▇▇            ░             ░
+#      ▇▇▇▇▇           ░             ░
+#     ▇▇▇▇▇▇▇          ░             ░
+#    ▇▇▇▇▇▇▇▇▇         ░             ░
+#   ▇▇▇▇▇▇▇▇▇▇▇        ░             ░
+#  ▇▇▇▇▇▇▇▇▇▇▇▇▇       ░             ░
 #
-#     0             1             2
+#        0             1             2
 
 
 def moveSingle(src, dest):
@@ -85,8 +85,6 @@ def solve(src, dest, depth):
 
     # Your code goes here
 
-    moveSingle(src, dest)  # Change
-
     pass
 
 
@@ -95,6 +93,11 @@ def solve(src, dest, depth):
 # smallest and 6 is the largest.
 
 towers = [[6, 5, 4, 3, 2, 1], [], []]
+
+# Test moveSingle
+# Remove this once you have moveSingle working
+# before you start implementing solve
+moveSingle(0, 2)
 
 showTowers()
 solve(0, 2, 6)
