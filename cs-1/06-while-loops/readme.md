@@ -1,4 +1,4 @@
-# Conditionals
+# While Loops
 
 ## Variable Updates
 
@@ -230,3 +230,249 @@ while x <= 4:
 4 x 2 = 8
 4 x 3 = 12
 ```
+
+## Problem: Range
+
+```py
+# Print the numbers between a given lower and upper bound
+#
+# Example:
+#
+# Enter lower bound: 4
+# Enter upper bound: 14
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# 11
+# 12
+# 13
+# 14
+
+low = int(input("Enter lower bound: "))
+high = int(input("Enter upper bound: "))
+
+# Your code goes here
+```
+
+## Problem: Running Maximum
+
+```py
+# Keep track of the largest integer entered so far. Assume that the largest
+# number is 0 to start.
+#
+# Example:
+#
+# Enter a number: 9
+# Maximum: 9
+# Enter a number: 90
+# Maximum: 90
+# Enter a number: 7
+# Maximum: 90
+# Enter a number: 100
+# Maximum: 100
+# ...
+
+maximum = 0
+
+while True:
+    pass  # Your code goes here
+```
+
+## Problem: Running Average
+
+```py
+# Keep track of the average of the integers entered so far.
+#
+# Example:
+#
+# Enter a number: 10
+# Average: 10.0
+# Enter a number: 4
+# Average: 7.0
+# Enter a number: 4
+# Average: 6.0
+# Enter a number: 0
+# Average: 4.5
+# Enter a number: 100
+# Average: 23.6
+# ...
+
+count = 0
+total = 0
+
+while True:
+    pass  # Your code goes here
+```
+
+## Problem: Collatz
+
+```py
+# Generate the Collatz sequence for a given starting number.
+#
+# See https://en.wikipedia.org/wiki/Collatz_conjecture
+#
+# Example:
+#
+# Enter a starting number: 17
+# 17
+# 52
+# 26
+# 13
+# 40
+# 20
+# 10
+# 5
+# 16
+# 8
+# 4
+# 2
+# 1
+
+n = int(input("Enter a starting number: "))
+
+print(n)
+
+while n > 1:
+    pass  # Your code goes here
+```
+
+https://en.wikipedia.org/wiki/Collatz_conjecture
+
+## Problem: Lyrics
+
+```py
+# Print the lyrics to "99 Bottles of Beer". Use "bottle" instead of "bottles"
+# when there is only 1 left.
+#
+# Example:
+#
+# 99 bottles of beer on the wall, 99 bottles of beer.
+# Take one down, pass it around, 98 bottles of beer on the wall.
+#
+# 98 bottles of beer on the wall, 98 bottles of beer.
+# Take one down, pass it around, 97 bottles of beer on the wall.
+#
+# ...
+#
+# 2 bottles of beer on the wall, 2 bottles of beer.
+# Take one down, pass it around, 1 bottle of beer on the wall.
+#
+# 1 bottle of beer on the wall, 1 bottle of beer.
+# Take one down, pass it around, 0 bottles of beer on the wall.
+
+bottles = 99
+
+while bottles > 0:
+    pass  # Your code goes here
+```
+
+## Problem: Prime Test
+
+```py
+# Determine whether a given number is prime. Assume the number is at least 2.
+#
+# A number is prime if it has no factors other than 1 and itself.
+#
+# Example:
+#
+# Enter a number: 17
+# 17 is prime
+#
+# Example:
+#
+# Enter a number: 51
+# 51 is not prime
+
+n = int(input("Enter a number: "))
+
+isPrime = True
+factor = 2
+
+# Your code goes here
+
+if isPrime:
+    print(f"Prime")
+else:
+    print(f"Not prime")
+```
+
+## Problem: Prime Factors
+
+```py
+# Print the prime factors of a given number, from smallest to largest.
+#
+# Example:
+#
+# Enter a number: 60
+# 2
+# 2
+# 3
+# 5
+#
+# Example:
+#
+# Enter a number: 17
+# 17
+
+n = int(input("Enter a number: "))
+
+factor = 2
+
+while n > 1:
+    pass  # Your code goes here
+```
+
+## Problem: Simplify Fraction
+
+```py
+# Simplify the fraction with the given numerator and denominator.
+#
+# Example:
+#
+# Enter numerator: 10
+# Enter denominator: 24
+# Simplified: 5 / 12
+#
+# Example:
+#
+# Enter numerator: 5
+# Enter denominator: 50
+# Simplified: 1 / 10
+#
+# Example:
+#
+# Enter numerator: 7
+# Enter denominator: 17
+# Simplified: 7 / 17
+
+num = int(input("Enter numerator: "))
+den = int(input("Enter denominator: "))
+
+factor = 2
+
+# Your code goes here
+
+print(f"Simplified: {num} / {den}")
+```
+
+## Problem: Wave
+
+```py
+# Generate a wave using text characters.
+#
+# See https://github.com/avery-gfs/cs-curriculum/blob/public/assets/wave.gif
+
+import math
+import time
+
+n = 0
+
+while True:
+    pass  # Your code goes here
+```
+
+<img src="/assets/wave.gif" />
