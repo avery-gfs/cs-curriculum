@@ -475,4 +475,4 @@ while True:
     pass  # Your code goes here
 ```
 
-<img src="/assets/wave.gif" />
+<img src="/assets/wave.gif" height="400px" />
