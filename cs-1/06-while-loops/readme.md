@@ -392,8 +392,9 @@ n = int(input("Enter a number: "))
 isPrime = True
 factor = 2
 
-# Your code goes here
-
+while factor < n:
+    pass  # Your code goes here
+    
 if isPrime:
     print(f"Prime")
 else:
