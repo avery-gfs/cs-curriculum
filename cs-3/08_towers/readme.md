@@ -50,12 +50,8 @@ towers[0][-1]  # 1
 
 "Last in, first out" datastructure. We can represent them using lists in Python.
 
-...
-
-Push (add value) `append`
-
 ```py
-values.append(something)
+values = ["a", "b", "c"]
 ```
 
 ...
@@ -63,7 +59,15 @@ values.append(something)
 Pop (remove last) `pop`
 
 ```py
-values.pop()
+values.pop()  # values = ["a", "b"]
+```
+
+...
+
+Push (add value) `append`
+
+```py
+values.append("d")  # values = ["a", "b", "d"]
 ```
 
 ...
@@ -71,7 +75,7 @@ values.pop()
 Check last (without removing)
 
 ```py
-values[-1]
+values[-1]  # "d"
 ```
 
 ...
@@ -80,7 +84,8 @@ What are some real-life examples of stacks?
 
 ...
 
-browser history, loading truck (shelf before books)
+- Browser history
+- Loading truck (shelf before books)
 
 ## Functions
 
