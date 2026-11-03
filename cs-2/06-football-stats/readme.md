@@ -141,3 +141,5 @@ for game in games:
 ```
 
 ## Review Dictionaries
+
+https://avery-gfs.github.io/cs-curriculum/slides/view.html?src=cs-2%2F02-dictionaries%2Freadme.md
