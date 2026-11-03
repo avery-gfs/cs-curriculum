@@ -30,8 +30,6 @@ away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
-Pittsburgh Steelers,34,New York Jets,32
-Miami Dolphins,8,Indianapolis Colts,33
 ...
 ```
 
@@ -48,8 +46,6 @@ away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
-Pittsburgh Steelers,34,New York Jets,32
-Miami Dolphins,8,Indianapolis Colts,33
 ...
 ```
 
@@ -85,21 +81,13 @@ with open("games.csv") as file:
         "home_team": "New Orleans Saints",
         "home_score": "13",
     },
-    {
-        "away_team": "Pittsburgh Steelers",
-        "away_score": "34",
-        "home_team": "New York Jets",
-        "home_score": "32",
-    },
-    {
-        "away_team": "Miami Dolphins",
-        "away_score": "8",
-        "home_team": "Indianapolis Colts",
-        "home_score": "33",
-    },
     # ...
 ]
 ```
+
+...
+
+What's the issue?
 
 ## Converting Numbers
 
@@ -108,10 +96,10 @@ away_team,away_score,home_team,home_score
 Dallas Cowboys,20,Philadelphia Eagles,24
 Kansas City Chiefs,21,Los Angeles Chargers,27
 Arizona Cardinals,20,New Orleans Saints,13
-Pittsburgh Steelers,34,New York Jets,32
-Miami Dolphins,8,Indianapolis Colts,33
 ...
 ```
+
+...
 
 ```py
 import csv
@@ -126,7 +114,7 @@ for game in games:
     game["home_score"] = int(game["home_score"])
 ```
 
-<div style="font-size: 16px;">
+...
 
 ```py
 [
@@ -148,22 +136,8 @@ for game in games:
         "home_team": "New Orleans Saints",
         "home_score": 13,
     },
-    {
-        "away_team": "Pittsburgh Steelers",
-        "away_score": 34,
-        "home_team": "New York Jets",
-        "home_score": 32,
-    },
-    {
-        "away_team": "Miami Dolphins",
-        "away_score": 8,
-        "home_team": "Indianapolis Colts",
-        "home_score": 33,
-    },
     # ...
 ]
 ```
-
-</div>
 
 ## Review Dictionaries
