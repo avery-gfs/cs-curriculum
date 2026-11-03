@@ -95,13 +95,19 @@ moveSingle(src, dest)
 
 Move a single disc from the top of tower `src` to tower `dest`.
 
+...
+
 For example, if `towers` is
 
 `[[6, 5, 4], [3, 2, 1], []]`
 
+...
+
 and we run
 
 `moveSingle(0, 2)`
+
+...
 
 then `towers` will become
 
@@ -115,13 +121,19 @@ solve(src, dest, depth)
 
 Using recursion, move the top `depth` discs from tower `src` to tower `dest`.
 
+...
+
 For example, if `towers` is
 
 `[[6, 5, 4, 3, 2, 1], [], []]`
 
+...
+
 and we run
 
 `solve(0, 2, 3)`
+
+...
 
 then `towers` will become
 
