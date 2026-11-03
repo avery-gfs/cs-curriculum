@@ -17,10 +17,6 @@ maximum = 0
 
 while True:
     n = int(input("Enter a number: "))
-
-    if n > maximum:
-        maximum = n
-
-    # Or: maximum = max(maximum, n)
+    maximum = max(maximum, n)
 
     print(f"Maximum: {maximum}")
