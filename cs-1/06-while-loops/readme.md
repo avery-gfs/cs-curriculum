@@ -34,7 +34,7 @@ print(n)
 
 ```
 while <condition>:
-    <code block
+    <code block>
 ```
 
 ---
