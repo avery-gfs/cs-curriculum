@@ -95,8 +95,7 @@ def solve(src, dest, depth):
 towers = [[6, 5, 4, 3, 2, 1], [], []]
 
 # Test moveSingle
-# Remove this once you have moveSingle working
-# before you start implementing solve
+# Remove this once moveSingle is working before you start implementing solve
 moveSingle(0, 2)
 
 showTowers()
