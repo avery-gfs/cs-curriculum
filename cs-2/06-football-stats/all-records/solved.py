@@ -22,7 +22,6 @@ ties = {}
 for game in games:
     homeTeam = game["home_team"]
     homeScore = game["home_score"]
-
     awayTeam = game["away_team"]
     awayScore = game["away_score"]
 
@@ -38,9 +37,11 @@ for game in games:
     if game["home_score"] > game["away_score"]:
         wins[homeTeam] += 1
         losses[awayTeam] += 1
+
     elif game["home_score"] < game["away_score"]:
         losses[homeTeam] += 1
         wins[awayTeam] += 1
+
     else:
         ties[homeTeam] += 1
         ties[awayTeam] += 1

@@ -24,6 +24,6 @@ while factor < n:
     factor += 1
 
 if isPrime:
-    print(f"Prime")
+    print("Prime")
 else:
-    print(f"Not prime")
+    print("Not prime")

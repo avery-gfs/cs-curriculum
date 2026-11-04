@@ -396,9 +396,9 @@ while factor < n:
     pass  # Your code goes here
     
 if isPrime:
-    print(f"Prime")
+    print("Prime")
 else:
-    print(f"Not prime")
+    print("Not prime")
 ```
 
 ## Problem: Prime Factors
