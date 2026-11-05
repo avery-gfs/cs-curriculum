@@ -140,35 +140,7 @@ games = [
 ]
 ```
 
-## Reading Values
-
-```py
-games = [
-    {
-        "away_team": "Dallas Cowboys",
-        "away_score": 20,
-        "home_team": "Philadelphia Eagles",
-        "home_score": 24,
-    },
-    {
-        "away_team": "Kansas City Chiefs",
-        "away_score": 21,
-        "home_team": "Los Angeles Chargers",
-        "home_score": 27,
-    },
-    {
-        "away_team": "Arizona Cardinals",
-        "away_score": 20,
-        "home_team": "New Orleans Saints",
-        "home_score": 13,
-    },
-    # ...
-]
-```
-
 What does this expression produce?
-
-+++
 
 ```py
 games[0]
@@ -180,10 +152,23 @@ games[0]
 {"away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24}
 ```
 
+## Reading Values
+
+```py
+game = {
+    "away_team": "Dallas Cowboys",
+    "away_score": 20,
+    "home_team": "Philadelphia Eagles",
+    "home_score": 24,
+}
+```
+
+What does this expression produce?
+
 +++
 
 ```py
-games[0]["away_team"]
+game["away_team"]
 ```
 
 ...
@@ -195,7 +180,7 @@ games[0]["away_team"]
 +++
 
 ```py
-games[0]["home_score"]
+game["home_score"]
 ```
 
 ...
