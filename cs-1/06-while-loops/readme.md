@@ -380,12 +380,12 @@ while bottles > 0:
 # Example:
 #
 # Enter a number: 17
-# 17 is prime
+# Prime
 #
 # Example:
 #
 # Enter a number: 51
-# 51 is not prime
+# Not prime
 
 n = int(input("Enter a number: "))
 
