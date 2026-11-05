@@ -59,7 +59,7 @@ with open("games.csv") as file:
     games = list(csv.DictReader(file))
 ```
 
-...
+---
 
 ```py
 [
@@ -114,7 +114,7 @@ for game in games:
     game["home_score"] = int(game["home_score"])
 ```
 
-...
+---
 
 ```py
 [
@@ -138,6 +138,70 @@ for game in games:
     },
     # ...
 ]
+```
+
+## Reading Values
+
+```py
+games = [
+    {
+        "away_team": "Dallas Cowboys",
+        "away_score": 20,
+        "home_team": "Philadelphia Eagles",
+        "home_score": 24,
+    },
+    {
+        "away_team": "Kansas City Chiefs",
+        "away_score": 21,
+        "home_team": "Los Angeles Chargers",
+        "home_score": 27,
+    },
+    {
+        "away_team": "Arizona Cardinals",
+        "away_score": 20,
+        "home_team": "New Orleans Saints",
+        "home_score": 13,
+    },
+    # ...
+]
+```
+
+What does this expression produce?
+
++++
+
+```py
+games[0]
+```
+
+...
+
+```py
+{"away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24}
+```
+
++++
+
+```py
+games[0]["away_team"]
+```
+
+...
+
+```py
+"Dallas Cowboys"
+```
+
++++
+
+```py
+games[0]["home_score"]
+```
+
+...
+
+```py
+24
 ```
 
 ## Review Dictionaries
@@ -219,16 +283,6 @@ Eagles record: 1 1 0
 ## Problem: All Records
 
 ```
-away_team,away_score,home_team,home_score
-Dallas Cowboys,20,Philadelphia Eagles,24
-Kansas City Chiefs,21,Los Angeles Chargers,27
-Arizona Cardinals,20,New Orleans Saints,13
-...
-```
-
-...
-
-```
 Philadelphia Eagles 11 6 0 0.647
 Dallas Cowboys 7 9 1 0.441
 Los Angeles Chargers 11 6 0 0.647
@@ -262,5 +316,3 @@ Baltimore Ravens 8 9 0 0.471
 Chicago Bears 11 6 0 0.647
 Minnesota Vikings 9 8 0 0.529
 ```
-
----
