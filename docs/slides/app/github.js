@@ -407,7 +407,11 @@ export function deckPaths(paths) {
 // Cuts a document into one string per slide. A `##` heading starts a new slide,
 // and so does a `---` rule — which carries the heading it sits under along with
 // it, so a run of them steps through one section a screenful at a time, each
-// step replacing the last. Markers inside a fenced code block are left alone.
+// step replacing the last. Within one of those, the first `+++` changes nothing,
+// but each later one starts a slide that keeps what came before the first —
+// already revealed — and drops what came since, so a shared setup stays on
+// screen while the parts under it take turns. Markers inside a fenced code block
+// are left alone.
 export function splitSlides(markdown) {
   return splitSlideRecords(markdown).map(({ text }) => text);
 }
@@ -427,6 +431,10 @@ function splitSlideRecords(markdown) {
   let lines = [];
   let fence = "";
   let labelled = false;
+  // What sits above this slide's first `+++`, with its `...` breaks taken out,
+  // or null before there is one.
+  let kept = null;
+  let afterMarker = false; // so the marker's own blank lines don't pile up
   // Whether the next line starts a block. A `---` that doesn't is a setext
   // heading underline, which is what markdown makes of it too.
   let open = true;
@@ -439,6 +447,12 @@ function splitSlideRecords(markdown) {
     labelled = false;
   };
 
+  // A `##` or `---` starts over, so a `+++` after it is a first one again.
+  const startSlide = () => {
+    flush();
+    kept = null;
+  };
+
   for (const line of String(markdown || "").split("\n")) {
     const token = /^ {0,3}(`{3,}|~{3,})/.exec(line)?.[1];
 
@@ -449,22 +463,63 @@ function splitSlideRecords(markdown) {
     } else if (token) {
       fence = token;
     } else if (/^##/.test(line)) {
-      flush();
+      startSlide();
       heading = line;
       labelled = true;
       open = true;
       continue;
     } else if (open && /^ {0,3}-{3,}\s*$/.test(line)) {
-      flush();
+      startSlide();
+      continue;
+    } else if (/^ {0,3}\+{3}\s*$/.test(line)) {
+      if (kept === null) {
+        kept = withoutFragmentBreaks(lines);
+      } else {
+        flush();
+        lines = [...kept];
+      }
+      // Keep the blocks either side of the marker apart, with one blank line.
+      if (lines.length && lines.at(-1).trim()) lines.push("");
+      afterMarker = true;
+      open = true;
       continue;
     }
 
+    if (afterMarker && !line.trim() && !lines.at(-1)?.trim()) continue;
+    afterMarker = false;
     lines.push(line);
     open = !fence && !line.trim();
   }
 
   flush();
   return slides;
+}
+
+// The lines of a slide with its `...` fragment breaks taken out, so that
+// repeating them shows everything they held at once. Mirrors the test in
+// view.js's `isFragmentBreak`, and leaves fenced code alone.
+function withoutFragmentBreaks(lines) {
+  const out = [];
+  let fence = "";
+  let dropped = false;
+  for (const line of lines) {
+    const token = /^ {0,3}(`{3,}|~{3,})/.exec(line)?.[1];
+    if (fence) {
+      if (token && token[0] === fence[0] && token.length >= fence.length) {
+        fence = "";
+      }
+    } else if (token) {
+      fence = token;
+    } else if (/^\s*(\.\.\.|…)\s*$/.test(line)) {
+      dropped = true;
+      continue;
+    } else if (dropped && !line.trim() && !out.at(-1)?.trim()) {
+      continue;
+    }
+    dropped = false;
+    out.push(line);
+  }
+  return out;
 }
 
 // The document's `# Title` is the name of the whole deck, so it becomes a

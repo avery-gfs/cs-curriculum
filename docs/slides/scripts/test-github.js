@@ -191,6 +191,50 @@ test("section indexes skip repeated slides and retain repeated heading labels", 
   );
 });
 
+test("the first `+++` is a no-op; later ones erase back to it", () => {
+  assert.deepEqual(
+    splitSlides(
+      "## One\n\nsetup\n\n+++\n\na\n\n...\n\nA\n\n+++\n\nb\n\n+++\n\nc",
+    ),
+    [
+      "## One\n\nsetup\n\na\n\n...\n\nA",
+      "## One\n\nsetup\n\nb",
+      "## One\n\nsetup\n\nc",
+    ],
+  );
+});
+
+test("`+++` keeps earlier fragments revealed when it repeats them", () => {
+  assert.deepEqual(
+    splitSlides("## One\n\nq\n\n...\n\nr\n\n+++\n\na\n\n+++\n\nb"),
+    [
+      "## One\n\nq\n\n...\n\nr\n\na",
+      "## One\n\nq\n\nr\n\nb",
+    ],
+  );
+});
+
+test("`+++` doesn't reach back across `---` or `##`", () => {
+  assert.deepEqual(
+    splitSlides(
+      "## One\n\nx\n\n+++\n\na\n\n---\n\ny\n\n+++\n\nb\n\n+++\n\nc\n\n## Two\n\nz\n\n+++\n\nd",
+    ),
+    [
+      "## One\n\nx\n\na",
+      "## One\n\ny\n\nb",
+      "## One\n\ny\n\nc",
+      "## Two\n\nz\n\nd",
+    ],
+  );
+});
+
+test("`+++` inside a code fence is left alone", () => {
+  const md = "## One\n\n```\n+++\n```\n\n+++\n\n```\n+++\n```";
+  assert.deepEqual(splitSlides(md), [
+    "## One\n\n```\n+++\n```\n\n```\n+++\n```",
+  ]);
+});
+
 test("`---` before any heading just splits", () => {
   assert.deepEqual(splitSlides("a\n\n---\n\nb"), ["a", "b"]);
 });

@@ -63,9 +63,37 @@ That is four slides: three headed "Evaluating" — the third arriving in two
 presses — and whatever follows the next `##`. Blocks between two markers appear
 together as one step, and `#/h/v/f` links still reopen a deck mid-reveal.
 
+`+++` is for a shared setup with parts that take turns under it. The first `+++`
+within a slide does nothing, so what follows it shows straight away. Each later
+one **erases back to the previous `+++`**: it starts a fresh slide that keeps
+everything above the first `+++`, already fully revealed, and replaces what came
+after it. It never reaches back past a `---` or `##`.
+
+```
+## Lookups
+
+games = [...]
+
++++
+
+games[0]
+
+...
+
+{"away_team": ...}
+
++++
+
+games[0]["away_team"]
+```
+
+That is two slides, each showing `games = [...]` at the top: the first steps
+through `games[0]` and then its answer, and the second swaps them for
+`games[0]["away_team"]`.
+
 A `---` needs a blank line above it. Without one, markdown reads it as
 underlining the line before, and so does this — the same as `Heading\n---`. Both
-markers are ignored inside fenced code blocks.
+markers, and `+++`, are ignored inside fenced code blocks.
 
 The document's `# heading` doesn't get a title slide of its own — it becomes a
 small running header at the top of every slide, and stays put while a slide
