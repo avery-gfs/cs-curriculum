@@ -1,5 +1,5 @@
-# Keep track of the largest integer entered so far. Assume that all entries
-# will be positive.
+# Keep track of the largest integer entered so far. Assume that the largest
+# number is 0 to start.
 #
 # Example:
 #
