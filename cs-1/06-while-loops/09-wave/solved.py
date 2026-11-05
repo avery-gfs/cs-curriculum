@@ -1,4 +1,4 @@
-# Generate a wave using text characters.
+# Generate a sine wave using text characters.
 #
 # See https://github.com/avery-gfs/cs-curriculum/blob/public/assets/wave.gif
 
