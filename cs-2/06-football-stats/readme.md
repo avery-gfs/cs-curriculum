@@ -62,7 +62,7 @@ with open("games.csv") as file:
 ---
 
 ```py
-[
+games = [
     {
         "away_team": "Dallas Cowboys",
         "away_score": "20",
@@ -117,7 +117,7 @@ for game in games:
 ---
 
 ```py
-[
+games = [
     {
         "away_team": "Dallas Cowboys",
         "away_score": 20,
