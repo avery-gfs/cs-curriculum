@@ -407,7 +407,7 @@ export function deckPaths(paths) {
 // Cuts a document into one string per slide. A `##` heading starts a new slide,
 // and so does a `---` rule — which carries the heading it sits under along with
 // it, so a run of them steps through one section a screenful at a time, each
-// step replacing the last. Within one of those, the first `+++` changes nothing,
+// step replacing the last. Within one of those, the first `<<<` changes nothing,
 // but each later one starts a slide that keeps what came before the first —
 // already revealed — and drops what came since, so a shared setup stays on
 // screen while the parts under it take turns. Markers inside a fenced code block
@@ -431,7 +431,7 @@ function splitSlideRecords(markdown) {
   let lines = [];
   let fence = "";
   let labelled = false;
-  // What sits above this slide's first `+++`, with its `...` breaks taken out,
+  // What sits above this slide's first `<<<`, with its `...` breaks taken out,
   // or null before there is one.
   let kept = null;
   let afterMarker = false; // so the marker's own blank lines don't pile up
@@ -447,7 +447,7 @@ function splitSlideRecords(markdown) {
     labelled = false;
   };
 
-  // A `##` or `---` starts over, so a `+++` after it is a first one again.
+  // A `##` or `---` starts over, so a `<<<` after it is a first one again.
   const startSlide = () => {
     flush();
     kept = null;
@@ -471,7 +471,7 @@ function splitSlideRecords(markdown) {
     } else if (open && /^ {0,3}-{3,}\s*$/.test(line)) {
       startSlide();
       continue;
-    } else if (/^ {0,3}\+{3}\s*$/.test(line)) {
+    } else if (/^ {0,3}<{3}\s*$/.test(line)) {
       if (kept === null) {
         kept = withoutFragmentBreaks(lines);
       } else {
