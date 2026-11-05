@@ -165,7 +165,7 @@ game = {
 
 What does this expression produce?
 
-+++
+<<<
 
 ```py
 game["away_team"]
@@ -177,7 +177,7 @@ game["away_team"]
 "Dallas Cowboys"
 ```
 
-+++
+<<<
 
 ```py
 game["home_score"]
