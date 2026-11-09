@@ -20,7 +20,7 @@ ties = {}
 # Update stats for home and away teams for each game
 
 for game in games:
-    # Your code goes here
+    pass  # Your code goes here
 
 # Print final stats for each team
 
