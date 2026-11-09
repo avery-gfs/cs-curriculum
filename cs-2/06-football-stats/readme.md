@@ -601,3 +601,17 @@ ties: {
   "Denver Broncos": 0,
 }
 ```
+
+## `dict.setdefault()`
+
+```py
+votes = {"strawberry": 1, "chocolate": 1, "vanilla": 2}
+votes.setdefault("chocolate", 0)
+votes.setdefault("mint", 0)
+```
+
+...
+
+```py
+{"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 0}
+```
