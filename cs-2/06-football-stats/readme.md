@@ -358,8 +358,6 @@ ties: {
 Kansas City Chiefs,21,Los Angeles Chargers,27
 ```
 
-...
-
 <<<
 
 ```py
@@ -434,8 +432,6 @@ ties: {
 ```
 Denver Broncos,21,Philadelphia Eagles,17
 ```
-
-...
 
 <<<
 
