@@ -304,7 +304,7 @@ Dallas Cowboys,20,Philadelphia Eagles,24
 
 ...
 
-+++
+<<<
 
 ```py
 wins: {}
@@ -314,7 +314,7 @@ losses: {}
 ties: {}
 ```
 
-+++
+<<<
 
 ```py
 wins: {
@@ -333,7 +333,7 @@ ties: {
 }
 ```
 
-+++
+<<<
 
 ```py
 wins: {
@@ -360,7 +360,7 @@ Kansas City Chiefs,21,Los Angeles Chargers,27
 
 ...
 
-+++
+<<<
 
 ```py
 wins: {
@@ -379,7 +379,7 @@ ties: {
 }
 ```
 
-+++
+<<<
 
 ```py
 wins: {
@@ -404,7 +404,7 @@ ties: {
 }
 ```
 
-+++
+<<<
 
 ```py
 wins: {
@@ -437,7 +437,7 @@ Denver Broncos,21,Philadelphia Eagles,17
 
 ...
 
-+++
+<<<
 
 ```py
 wins: {
@@ -462,7 +462,7 @@ ties: {
 }
 ```
 
-+++
+<<<
 
 ```py
 wins: {
@@ -490,7 +490,7 @@ ties: {
 }
 ```
 
-+++
+<<<
 
 ```py
 wins: {
