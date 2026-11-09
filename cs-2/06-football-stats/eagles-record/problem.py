@@ -20,6 +20,6 @@ ties = 0
 # Calculate wins and losses for the eagles
 
 for game in games:
-    pass
+    pass  # Your code goes here
 
 print("Eagles record:", wins, losses, ties)

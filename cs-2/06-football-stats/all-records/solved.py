@@ -34,11 +34,11 @@ for game in games:
     ties.setdefault(homeTeam, 0)
     ties.setdefault(awayTeam, 0)
 
-    if game["home_score"] > game["away_score"]:
+    if homeScore > awayScore:
         wins[homeTeam] += 1
         losses[awayTeam] += 1
 
-    elif game["home_score"] < game["away_score"]:
+    elif homeScore < awayScore:
         losses[homeTeam] += 1
         wins[awayTeam] += 1
 
