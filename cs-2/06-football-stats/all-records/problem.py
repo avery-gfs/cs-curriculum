@@ -26,7 +26,7 @@ for game in games:
 
 for team in wins:
     # Add code to print the win percentage for each team, showing three decimal
-    # places for each win percentage value
+    # places for each win percentage value. Ties count as half a win.
 
     winPct = 0  # Your code goes here
 
