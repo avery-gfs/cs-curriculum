@@ -511,3 +511,93 @@ ties: {
   "Denver Broncos": 0,
 }
 ```
+
+---
+
+```
+Philadelphia Eagles,20,Kansas City Chiefs,17
+```
+
+<<<
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+  "Denver Broncos": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+```
+
+<<<
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+  "Denver Broncos": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+```
+
+<<<
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 2,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+  "Denver Broncos": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 2,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+```
