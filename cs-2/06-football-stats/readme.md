@@ -144,18 +144,6 @@ games = [
 ]
 ```
 
-What does this expression produce?
-
-```py
-games[0]
-```
-
-...
-
-```py
-{"away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24}
-```
-
 ## Reading Values
 
 ```py
