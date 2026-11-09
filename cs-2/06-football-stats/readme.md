@@ -298,6 +298,84 @@ Minnesota Vikings 9 8 0 0.529
 
 ---
 
+```py
+# Keys are team names, values are the win, loss, and tie counts for each team
+
+wins = {}
+losses = {}
+ties = {}
+
+# Update stats for home and away teams for each game
+
+for game in games:
+    pass  # Your code goes here
+
+# Print final stats for each team
+
+for team in wins:
+    # Add code to print the win percentage for each team, showing three decimal
+    # places for each win percentage value
+
+    winPct = 0  # Your code goes here
+
+    print(team, wins[team], losses[team], ties[team], winPct)
+```
+
+...
+
+Analogous to scrabble word problems
+
+```
+affectionately 25
+beautifully 19
+contemptuously 23
+difficulty 22
+extraordinary 24
+frontispiece 19
+geography 19
+hjckrrh 26
+inquisitively 28
+jumping 19
+knocking 19
+lazily 18
+multiplication 20
+neighbouring 19
+occasionally 19
+puzzling 29
+quickly 25
+refreshments 20
+squeezed 27
+thoughtfully 25
+uncomfortably 25
+vanishing 16
+whiskers 18
+xii 10
+yesterday 16
+zigzag 26
+```
+
+---
+
+```py
+bestWords = {}
+bestScores = {}
+
+for word in words:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    firstLetter = word[0]
+    bestScores.setdefault(firstLetter, 0)
+
+    if bestScores[firstLetter] < score:
+        bestWords[firstLetter] = word
+        bestScores[firstLetter] = score
+```
+
+## Algorithm
+
 ```
 Dallas Cowboys,20,Philadelphia Eagles,24
 ```
@@ -546,33 +624,9 @@ ties: {
 }
 ```
 
-<<<
+...
 
-```py
-wins: {
-  "Dallas Cowboys": 0,
-  "Philadelphia Eagles": 1,
-  "Kansas City Chiefs": 0,
-  "Los Angeles Chargers": 1,
-  "Denver Broncos": 1,
-}
-
-losses: {
-  "Dallas Cowboys": 1,
-  "Philadelphia Eagles": 1,
-  "Kansas City Chiefs": 1,
-  "Los Angeles Chargers": 0,
-  "Denver Broncos": 0,
-}
-
-ties: {
-  "Dallas Cowboys": 0,
-  "Philadelphia Eagles": 0,
-  "Kansas City Chiefs": 0,
-  "Los Angeles Chargers": 0,
-  "Denver Broncos": 0,
-}
-```
+No change
 
 <<<
 
