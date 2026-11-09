@@ -39,6 +39,10 @@ Arizona Cardinals,20,New Orleans Saints,13
 - Records
 - Can import and export with spreadsheet programs
 
+...
+
+Real world examples of tabular data?
+
 ## Loading CSVs
 
 ```
@@ -573,7 +577,7 @@ ties: {
 
 ...
 
-No change
+No new entries
 
 <<<
 
