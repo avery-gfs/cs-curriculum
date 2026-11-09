@@ -208,28 +208,24 @@ Eagles record: 11 6 0
 ---
 
 ```
-Eagles record: 0 0 0
-```
-
-...
-
-```
 Dallas Cowboys,20,Philadelphia Eagles,24
 ```
 
 ...
+
+<<<
+
+```
+Eagles record: 0 0 0
+```
+
+<<<
 
 ```
 Eagles record: 1 0 0
 ```
 
 ---
-
-```
-Eagles record: 1 0 0
-```
-
-...
 
 ```
 Kansas City Chiefs,21,Los Angeles Chargers,27
@@ -237,6 +233,14 @@ Kansas City Chiefs,21,Los Angeles Chargers,27
 
 ...
 
+<<<
+
+```
+Eagles record: 1 0 0
+```
+
+<<<
+
 ```
 Eagles record: 1 0 0
 ```
@@ -244,16 +248,18 @@ Eagles record: 1 0 0
 ---
 
 ```
-Eagles record: 1 0 0
-```
-
-...
-
-```
 Denver Broncos,21,Philadelphia Eagles,17
 ```
 
 ...
+
+<<<
+
+```
+Eagles record: 1 0 0
+```
+
+<<<
 
 ```
 Eagles record: 1 1 0
