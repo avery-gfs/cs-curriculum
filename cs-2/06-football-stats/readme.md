@@ -302,8 +302,6 @@ Minnesota Vikings 9 8 0 0.529
 Dallas Cowboys,20,Philadelphia Eagles,24
 ```
 
-...
-
 <<<
 
 ```py
