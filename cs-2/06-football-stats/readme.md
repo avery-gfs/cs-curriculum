@@ -321,59 +321,6 @@ for team in wins:
     print(team, wins[team], losses[team], ties[team], winPct)
 ```
 
-...
-
-Analogous to scrabble word problems
-
-```
-affectionately 25
-beautifully 19
-contemptuously 23
-difficulty 22
-extraordinary 24
-frontispiece 19
-geography 19
-hjckrrh 26
-inquisitively 28
-jumping 19
-knocking 19
-lazily 18
-multiplication 20
-neighbouring 19
-occasionally 19
-puzzling 29
-quickly 25
-refreshments 20
-squeezed 27
-thoughtfully 25
-uncomfortably 25
-vanishing 16
-whiskers 18
-xii 10
-yesterday 16
-zigzag 26
-```
-
----
-
-```py
-bestWords = {}
-bestScores = {}
-
-for word in words:
-    score = 0
-
-    for letter in word:
-        score += letterPoints[letter]
-
-    firstLetter = word[0]
-    bestScores.setdefault(firstLetter, 0)
-
-    if bestScores[firstLetter] < score:
-        bestWords[firstLetter] = word
-        bestScores[firstLetter] = score
-```
-
 ## Algorithm
 
 ```
@@ -668,4 +615,55 @@ votes.setdefault("mint", 0)
 
 ```py
 {"strawberry": 1, "chocolate": 1, "vanilla": 2, "mint": 0}
+```
+
+## Analogy to Scrabble Problem
+
+```
+affectionately 25
+beautifully 19
+contemptuously 23
+difficulty 22
+extraordinary 24
+frontispiece 19
+geography 19
+hjckrrh 26
+inquisitively 28
+jumping 19
+knocking 19
+lazily 18
+multiplication 20
+neighbouring 19
+occasionally 19
+puzzling 29
+quickly 25
+refreshments 20
+squeezed 27
+thoughtfully 25
+uncomfortably 25
+vanishing 16
+whiskers 18
+xii 10
+yesterday 16
+zigzag 26
+```
+
+---
+
+```py
+bestWords = {}
+bestScores = {}
+
+for word in words:
+    score = 0
+
+    for letter in word:
+        score += letterPoints[letter]
+
+    firstLetter = word[0]
+    bestScores.setdefault(firstLetter, 0)
+
+    if bestScores[firstLetter] < score:
+        bestWords[firstLetter] = word
+        bestScores[firstLetter] = score
 ```
