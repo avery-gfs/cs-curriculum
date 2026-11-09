@@ -20,11 +20,6 @@ ties = {}
 # Update stats for home and away teams for each game
 
 for game in games:
-    homeTeam = game["home_team"]
-    homeScore = game["home_score"]
-    awayTeam = game["away_team"]
-    awayScore = game["away_score"]
-
     # Your code goes here
 
 # Print final stats for each team

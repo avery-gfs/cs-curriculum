@@ -163,30 +163,24 @@ game = {
 }
 ```
 
-What does this expression produce?
-
 <<<
 
-```py
-game["away_team"]
-```
+How would I access the name of the away team from the `game` dictionary?
 
 ...
 
 ```py
-"Dallas Cowboys"
+game["away_team"]  # "Dallas Cowboys"
 ```
 
 <<<
 
-```py
-game["home_score"]
-```
+How would I access the score of the home team from the `game` dictionary?
 
 ...
 
 ```py
-24
+game["home_score"]  # 24
 ```
 
 ## Review Dictionaries
@@ -300,4 +294,226 @@ Buffalo Bills 12 5 0 0.706
 Baltimore Ravens 8 9 0 0.471
 Chicago Bears 11 6 0 0.647
 Minnesota Vikings 9 8 0 0.529
+```
+
+---
+
+```
+Dallas Cowboys,20,Philadelphia Eagles,24
+```
+
+...
+
++++
+
+```py
+wins: {}
+
+losses: {}
+
+ties: {}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+}
+
+losses: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+}
+```
+
+---
+
+```
+Kansas City Chiefs,21,Los Angeles Chargers,27
+```
+
+...
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+}
+```
+
+---
+
+```
+Denver Broncos,21,Philadelphia Eagles,17
+```
+
+...
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+  "Denver Broncos": 0,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+```
+
++++
+
+```py
+wins: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 1,
+  "Denver Broncos": 1,
+}
+
+losses: {
+  "Dallas Cowboys": 1,
+  "Philadelphia Eagles": 1,
+  "Kansas City Chiefs": 1,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
+
+ties: {
+  "Dallas Cowboys": 0,
+  "Philadelphia Eagles": 0,
+  "Kansas City Chiefs": 0,
+  "Los Angeles Chargers": 0,
+  "Denver Broncos": 0,
+}
 ```
