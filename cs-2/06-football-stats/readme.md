@@ -662,6 +662,333 @@ for word in words:
         bestScores[firstLetter] = score
 ```
 
+## Problem: All Stats
+
+```
+away_team,away_score,home_team,home_score
+Dallas Cowboys,20,Philadelphia Eagles,24
+Kansas City Chiefs,21,Los Angeles Chargers,27
+Arizona Cardinals,20,New Orleans Saints,13
+...
+```
+
+...
+
+```
+name:                    Philadelphia Eagles
+number of games:         17
+wins:                    11
+losses:                  6
+ties:                    0
+win percent:             0.647
+points scored:           379
+points allowed:          325
+points scored per game:  22.3
+points allowed per game: 19.1
+```
+
+(Printed for every team)
+
+---
+
+Also write the stats to a new CSV file, `stats.csv`:
+
+```
+name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
+Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
+Dallas Cowboys,7,9,1,0.412,471,511,17,27.7,30.1
+Los Angeles Chargers,11,6,0,0.647,368,340,17,21.6,20.0
+...
+```
+
+## Too Many Dictionaries
+
+In the all records problem we had one dictionary **per stat**:
+
+```py
+wins = {}
+losses = {}
+ties = {}
+```
+
+...
+
+Now we'd need:
+
+```py
+wins = {}
+losses = {}
+ties = {}
+pointsScored = {}
+pointsAllowed = {}
+numGames = {}
+```
+
+...
+
+Gets messy fast!
+
+---
+
+Instead: one dictionary, with one **object** per team
+
+```py
+stats = {
+    "Dallas Cowboys": TeamStats("Dallas Cowboys"),
+    "Philadelphia Eagles": TeamStats("Philadelphia Eagles"),
+    # ...
+}
+```
+
+...
+
+Each `TeamStats` object holds **all** the stats for one team
+
+```py
+stats["Philadelphia Eagles"].wins           # 11
+stats["Philadelphia Eagles"].pointsScored   # 379
+stats["Philadelphia Eagles"].winPercent()   # 0.647...
+```
+
+## Program Structure
+
+```py
+import csv
+
+# 1. Read game data (given)
+
+# 2. TeamStats class (you write the methods)
+
+# 3. Update stats for each game (given)
+
+# 4. Print stats for each team (given)
+
+# 5. Write stats.csv (given)
+```
+
+...
+
+Your job is to fill in the `TeamStats` class
+
+...
+
+The rest of the program **uses** your class
+
+## The `TeamStats` Class
+
+```py
+class TeamStats:
+    def __init__(self, name):
+        self.name = name
+        self.wins = 0
+        self.losses = 0
+        self.ties = 0
+        self.pointsScored = 0
+        self.pointsAllowed = 0
+        self.numGames = 0
+```
+
+...
+
+Every team starts at zero
+
+---
+
+Methods you'll write:
+
+...
+
+**Updating** stats (change fields):
+
+- `addStatsHome(game)`
+- `addStatsAway(game)`
+
+...
+
+**Calculating** stats (use fields, return a number):
+
+- `winPercent()`
+- `pointsScoredPerGame()`
+- `pointsAllowedPerGame()`
+
+...
+
+**Formatting** stats (return a string):
+
+- `csvRow()`
+
+## The Main Loop (Given)
+
+```py
+stats = {}
+
+for game in games:
+    homeTeam = game["home_team"]
+    awayTeam = game["away_team"]
+
+    stats.setdefault(homeTeam, TeamStats(homeTeam))
+    stats.setdefault(awayTeam, TeamStats(awayTeam))
+
+    stats[homeTeam].addStatsHome(game)
+    stats[awayTeam].addStatsAway(game)
+```
+
+...
+
+- Make a `TeamStats` object for any team we haven't seen yet
+- Tell **each** team's object about the game
+
+...
+
+Each method only has to think about **one team**
+
+## Updating Stats
+
+```
+Dallas Cowboys,20,Philadelphia Eagles,24
+```
+
+```py
+stats["Philadelphia Eagles"].addStatsHome(game)
+```
+
+<<<
+
+```py
+name:          "Philadelphia Eagles"
+numGames:      0
+wins:          0
+losses:        0
+ties:          0
+pointsScored:  0
+pointsAllowed: 0
+```
+
+<<<
+
+```py
+name:          "Philadelphia Eagles"
+numGames:      1
+wins:          1
+losses:        0
+ties:          0
+pointsScored:  24
+pointsAllowed: 20
+```
+
+---
+
+```
+Philadelphia Eagles,20,Kansas City Chiefs,17
+```
+
+```py
+stats["Philadelphia Eagles"].addStatsAway(game)
+```
+
+<<<
+
+```py
+name:          "Philadelphia Eagles"
+numGames:      1
+wins:          1
+losses:        0
+ties:          0
+pointsScored:  24
+pointsAllowed: 20
+```
+
+<<<
+
+```py
+name:          "Philadelphia Eagles"
+numGames:      2
+wins:          2
+losses:        0
+ties:          0
+pointsScored:  44
+pointsAllowed: 37
+```
+
+---
+
+Home vs. away: which score is "ours"?
+
+...
+
+| Method         | Points scored  | Points allowed |
+| -------------- | -------------- | -------------- |
+| `addStatsHome` | `"home_score"` | `"away_score"` |
+| `addStatsAway` | `"away_score"` | `"home_score"` |
+
+...
+
+Same idea for deciding win / loss / tie
+
+## Calculating Stats
+
+Some stats are **stored** (fields), some are **calculated** (methods)
+
+...
+
+```py
+name:          "Philadelphia Eagles"
+numGames:      17
+wins:          11
+losses:        6
+ties:          0
+pointsScored:  379
+pointsAllowed: 325
+```
+
+...
+
+```py
+team.winPercent()            # 11 / 17   -> 0.647...
+team.pointsScoredPerGame()   # 379 / 17  -> 22.29...
+team.pointsAllowedPerGame()  # 325 / 17  -> 19.11...
+```
+
+...
+
+Why calculate these instead of storing them as fields?
+
+## Formatting a CSV Row
+
+```py
+team.csvRow()
+```
+
+...
+
+```
+Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
+```
+
+...
+
+- Same order as the header row
+- Win percent: 3 decimal places (`:.3f`)
+- Per game stats: 1 decimal place (`:.1f`)
+
+## Suggested Approach
+
+1. Write `addStatsHome` and `addStatsAway`
+
+   Run it: do the Eagles have 17 games, 11 wins, 379 points scored?
+
+...
+
+2. Write `winPercent`, `pointsScoredPerGame`, `pointsAllowedPerGame`
+
+   Run it: check the printed output
+
+...
+
+3. Write `csvRow`
+
+   Open `stats.csv`: do the columns line up with the header?
+
 ## Stats Spreadsheet Import
 
 <img src="/assets/stats-spreadsheet.png" >
