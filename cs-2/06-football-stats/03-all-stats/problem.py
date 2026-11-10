@@ -61,20 +61,18 @@ class TeamStats:
         return ""  # Your code goes here
 
     def __repr__(self):
-        result = ""
-
-        result += f"name:                    {self.name}\n"
-        result += f"number of games:         {self.numGames}\n"
-        result += f"wins:                    {self.wins}\n"
-        result += f"losses:                  {self.losses}\n"
-        result += f"ties:                    {self.ties}\n"
-        result += f"win percent:             {self.winPercent():.3f}\n"
-        result += f"points scored:           {self.pointsScored}\n"
-        result += f"points allowed:          {self.pointsAllowed}\n"
-        result += f"points scored per game:  {self.pointsScoredPerGame():.1f}\n"
-        result += f"points allowed per game: {self.pointsAllowedPerGame():.1f}\n"
-
-        return result
+        return "\n".join([
+            f"name:                    {self.name}",
+            f"number of games:         {self.numGames}",
+            f"wins:                    {self.wins}",
+            f"losses:                  {self.losses}",
+            f"ties:                    {self.ties}",
+            f"win percent:             {self.winPercent():.3f}",
+            f"points scored:           {self.pointsScored}",
+            f"points allowed:          {self.pointsAllowed}",
+            f"points scored per game:  {self.pointsScoredPerGame():.1f}",
+            f"points allowed per game: {self.pointsAllowedPerGame():.1f}",
+        ])
 
 
 # Keys are team names, values are TeamStats objects
