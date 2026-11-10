@@ -53,6 +53,13 @@ class TeamStats:
 
         return 0  # Your code goes here
 
+    def csvRow(self):
+        # Write a single CSV line representing the data for this team, with rounding as shown
+        # Format: name, wins, losses, ties, win%, points_scored, points_allowed, # games, points_scored/game, points_allowed/game
+        # Example: Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
+
+        return ""  # Your code goes here
+
     def __repr__(self):
         result = ""
 
@@ -94,11 +101,10 @@ for team in stats:
 # Generate output CSV file for team stats
 # The CSV table should start with the following header row
 
-resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
+resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game\n"
 
 for team in stats:
-    teamStats = stats[team]
-    resultCSV += f"\n"
+    resultCSV += f"{stats[team].csvRow()}\n"
 
 # Write output CSV
 

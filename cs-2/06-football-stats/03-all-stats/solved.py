@@ -73,21 +73,26 @@ class TeamStats:
 
         return self.pointsAllowed / self.numGames
 
+    def csvRow(self):
+        # Write a single CSV line representing the data for this team, with rounding as shown
+        # Format: name, wins, losses, ties, win%, points_scored, points_allowed, # games, points_scored/game, points_allowed/game
+        # Example: Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
+
+        return f"{self.name},{self.numGames},{self.wins},{self.losses},{self.ties},{self.winPercent():.3f},{self.pointsScored},{self.pointsAllowed},{self.pointsScoredPerGame():.1f},{self.pointsAllowedPerGame():.1f}"
+
     def __repr__(self):
-        result = ""
-
-        result += f"name:                    {self.name}\n"
-        result += f"number of games:         {self.numGames}\n"
-        result += f"wins:                    {self.wins}\n"
-        result += f"losses:                  {self.losses}\n"
-        result += f"ties:                    {self.ties}\n"
-        result += f"win percent:             {self.winPercent():.3f}\n"
-        result += f"points scored:           {self.pointsScored}\n"
-        result += f"points allowed:          {self.pointsAllowed}\n"
-        result += f"points scored per game:  {self.pointsScoredPerGame():.1f}\n"
-        result += f"points allowed per game: {self.pointsAllowedPerGame():.1f}\n"
-
-        return result
+        return "\n".join([
+            f"name:                    {self.name}",
+            f"number of games:         {self.numGames}",
+            f"wins:                    {self.wins}",
+            f"losses:                  {self.losses}",
+            f"ties:                    {self.ties}",
+            f"win percent:             {self.winPercent():.3f}",
+            f"points scored:           {self.pointsScored}",
+            f"points allowed:          {self.pointsAllowed}",
+            f"points scored per game:  {self.pointsScoredPerGame():.1f}",
+            f"points allowed per game: {self.pointsAllowedPerGame():.1f}",
+        ])
 
 
 # Keys are team names, values are TeamStats objects
@@ -109,30 +114,15 @@ for game in games:
 # Print final stats for each team
 
 for team in stats:
-    print(stats[team])
+    print(stats[team], "\n")
 
 # Generate output CSV file for team stats
 # The CSV table should start with the following header row
 
-resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game"
+resultCSV = "name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game\n"
 
 for team in stats:
-    teamStats = stats[team]
-
-    rowData = [
-        teamStats.name,
-        teamStats.wins,
-        teamStats.losses,
-        teamStats.ties,
-        teamStats.winPercent(),
-        teamStats.pointsScored,
-        teamStats.pointsAllowed,
-        teamStats.numGames,
-        teamStats.pointsScoredPerGame(),
-        teamStats.pointsAllowedPerGame(),
-    ]
-
-    resultCSV += "\n" + ",".join(map(str, rowData))
+    resultCSV += f"{stats[team].csvRow()}\n"
 
 # Write output CSV
 
