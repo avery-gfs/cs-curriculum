@@ -172,3 +172,5 @@ To move `n` discs from the `src` tower to the `dest` tower:
 - Move `n - 1` discs from the `src` tower to the `tmp` tower
 - Move the next `n`th disc from the `src` tower to the `dest` tower
 - Move `n - 1` discs from the `tmp` tower to the `dest` tower
+
+<img src="/assets/towers.gif" height="300px" />
