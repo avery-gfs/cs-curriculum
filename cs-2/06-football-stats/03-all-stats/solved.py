@@ -61,17 +61,17 @@ class TeamStats:
     def winPercent(self):
         # Calculate the win percentage
 
-        return self.wins / (self.numGames or 1)
+        return self.wins / max(self.numGames, 1)
 
     def pointsScoredPerGame(self):
         # Calculate points scored per game
 
-        return self.pointsScored / self.numGames
+        return self.pointsScored / max(self.numGames, 1)
 
     def pointsAllowedPerGame(self):
         # Calculate points allowed per game
 
-        return self.pointsAllowed / self.numGames
+        return self.pointsAllowed / max(self.numGames, 1)
 
     def csvRow(self):
         # Write a single CSV line representing the data for this team, with rounding as shown
