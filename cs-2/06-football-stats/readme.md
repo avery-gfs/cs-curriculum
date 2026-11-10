@@ -661,3 +661,7 @@ for word in words:
         bestWords[firstLetter] = word
         bestScores[firstLetter] = score
 ```
+
+## Stats Spreadsheet Import
+
+<img src="/assets/stats-spreadsheet.png" >
