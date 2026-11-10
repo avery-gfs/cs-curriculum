@@ -750,31 +750,9 @@ stats["Philadelphia Eagles"].pointsScored   # 379
 stats["Philadelphia Eagles"].winPercent()   # 0.647...
 ```
 
-## Program Structure
-
-```py
-import csv
-
-# 1. Read game data (given)
-
-# 2. TeamStats class (you write the methods)
-
-# 3. Update stats for each game (given)
-
-# 4. Print stats for each team (given)
-
-# 5. Write stats.csv (given)
-```
-
-...
-
-Your job is to fill in the `TeamStats` class
-
-...
-
-The rest of the program **uses** your class
-
 ## The `TeamStats` Class
+
+Your job is to implement in the `TeamStats` class
 
 ```py
 class TeamStats:
@@ -786,11 +764,25 @@ class TeamStats:
         self.pointsScored = 0
         self.pointsAllowed = 0
         self.numGames = 0
+
+    def addStatsHome(self, game):
+        pass  # Your code goes here
+
+    def addStatsAway(self, game):
+        pass  # Your code goes here
+
+    def winPercent(self):
+        return 0  # Your code goes here
+
+    def pointsScoredPerGame(self):
+        return 0  # Your code goes here
+
+    def pointsAllowedPerGame(self):
+        return 0  # Your code goes here
+
+    def csvRow(self):
+        return ""  # Your code goes here
 ```
-
-...
-
-Every team starts at zero
 
 ---
 
