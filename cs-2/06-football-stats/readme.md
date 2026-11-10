@@ -959,12 +959,537 @@ team.csvRow()
 Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
 ```
 
-...
-
-- Same order as the header row
 - Win percent: 3 decimal places (`:.3f`)
 - Per game stats: 1 decimal place (`:.1f`)
 
 ## Stats Spreadsheet Import
 
 <img src="/assets/stats-spreadsheet.png" >
+
+## Dataframes
+
+**Dataframes**: tables of data that we can transform with code
+
+...
+
+We'll use the **Polars** library
+
+https://docs.pola.rs/
+
+...
+
+```py
+import polars as pl
+```
+
+---
+
+```py
+games = pl.read_csv("games.csv")
+
+print(games)
+```
+
+...
+
+```
+shape: (272, 4)
+┌───────────────────────┬────────────┬──────────────────────┬────────────┐
+│ away_team             ┆ away_score ┆ home_team            ┆ home_score │
+│ ---                   ┆ ---        ┆ ---                  ┆ ---        │
+│ str                   ┆ i64        ┆ str                  ┆ i64        │
+╞═══════════════════════╪════════════╪══════════════════════╪════════════╡
+│ Dallas Cowboys        ┆ 20         ┆ Philadelphia Eagles  ┆ 24         │
+│ Kansas City Chiefs    ┆ 21         ┆ Los Angeles Chargers ┆ 27         │
+│ Arizona Cardinals     ┆ 20         ┆ New Orleans Saints   ┆ 13         │
+│ …                     ┆ …          ┆ …                    ┆ …          │
+│ Miami Dolphins        ┆ 10         ┆ New England Patriots ┆ 38         │
+│ Washington Commanders ┆ 24         ┆ Philadelphia Eagles  ┆ 17         │
+│ Baltimore Ravens      ┆ 24         ┆ Pittsburgh Steelers  ┆ 26         │
+└───────────────────────┴────────────┴──────────────────────┴────────────┘
+```
+
+...
+
+Only the first and last few rows are shown
+
+---
+
+```py
+# Show all rows and columns
+
+pl.Config(tbl_rows=-1, tbl_cols=-1)
+```
+
+(The slides will still only show a few rows)
+
+## Home Results
+
+One row per game. But we want stats per **team**.
+
+...
+
+Split each game into a home team row and an away team row
+
+---
+
+```py
+homeResults = games.select(
+    pl.col("home_team"),
+)
+```
+
+...
+
+```
+shape: (272, 1)
+┌──────────────────────┐
+│ home_team            │
+│ ---                  │
+│ str                  │
+╞══════════════════════╡
+│ Philadelphia Eagles  │
+│ Los Angeles Chargers │
+│ New Orleans Saints   │
+│ …                    │
+│ New England Patriots │
+│ Philadelphia Eagles  │
+│ Pittsburgh Steelers  │
+└──────────────────────┘
+```
+
+---
+
+```py
+homeResults = games.select(
+    pl.col("home_team").alias("team"),
+)
+```
+
+...
+
+```
+shape: (272, 1)
+┌──────────────────────┐
+│ team                 │
+│ ---                  │
+│ str                  │
+╞══════════════════════╡
+│ Philadelphia Eagles  │
+│ Los Angeles Chargers │
+│ New Orleans Saints   │
+│ …                    │
+│ New England Patriots │
+│ Philadelphia Eagles  │
+│ Pittsburgh Steelers  │
+└──────────────────────┘
+```
+
+...
+
+`alias` renames a column
+
+---
+
+```py
+homeResults = games.select(
+    pl.col("home_team").alias("team"),
+    pl.col("home_score").alias("scored"),
+)
+```
+
+...
+
+```
+shape: (272, 2)
+┌──────────────────────┬────────┐
+│ team                 ┆ scored │
+│ ---                  ┆ ---    │
+│ str                  ┆ i64    │
+╞══════════════════════╪════════╡
+│ Philadelphia Eagles  ┆ 24     │
+│ Los Angeles Chargers ┆ 27     │
+│ New Orleans Saints   ┆ 13     │
+│ …                    ┆ …      │
+│ New England Patriots ┆ 38     │
+│ Philadelphia Eagles  ┆ 17     │
+│ Pittsburgh Steelers  ┆ 26     │
+└──────────────────────┴────────┘
+```
+
+---
+
+```py
+homeResults = games.select(
+    pl.col("home_team").alias("team"),
+    pl.col("home_score").alias("scored"),
+    pl.col("away_score").alias("allowed"),
+)
+```
+
+...
+
+```
+shape: (272, 3)
+┌──────────────────────┬────────┬─────────┐
+│ team                 ┆ scored ┆ allowed │
+│ ---                  ┆ ---    ┆ ---     │
+│ str                  ┆ i64    ┆ i64     │
+╞══════════════════════╪════════╪═════════╡
+│ Philadelphia Eagles  ┆ 24     ┆ 20      │
+│ Los Angeles Chargers ┆ 27     ┆ 21      │
+│ New Orleans Saints   ┆ 13     ┆ 20      │
+│ …                    ┆ …      ┆ …       │
+│ New England Patriots ┆ 38     ┆ 10      │
+│ Philadelphia Eagles  ┆ 17     ┆ 24      │
+│ Pittsburgh Steelers  ┆ 26     ┆ 24      │
+└──────────────────────┴────────┴─────────┘
+```
+
+## Away Results
+
+How would we make `awayResults`?
+
+...
+
+```py
+awayResults = games.select(
+    pl.col("away_team").alias("team"),
+    pl.col("away_score").alias("scored"),
+    pl.col("home_score").alias("allowed"),
+)
+```
+
+...
+
+```
+shape: (272, 3)
+┌───────────────────────┬────────┬─────────┐
+│ team                  ┆ scored ┆ allowed │
+│ ---                   ┆ ---    ┆ ---     │
+│ str                   ┆ i64    ┆ i64     │
+╞═══════════════════════╪════════╪═════════╡
+│ Dallas Cowboys        ┆ 20     ┆ 24      │
+│ Kansas City Chiefs    ┆ 21     ┆ 27      │
+│ Arizona Cardinals     ┆ 20     ┆ 13      │
+│ …                     ┆ …      ┆ …       │
+│ Miami Dolphins        ┆ 10     ┆ 38      │
+│ Washington Commanders ┆ 24     ┆ 17      │
+│ Baltimore Ravens      ┆ 24     ┆ 26      │
+└───────────────────────┴────────┴─────────┘
+```
+
+## Combining Results
+
+```py
+combined = pl.concat([homeResults, awayResults])
+
+print(combined)
+```
+
+...
+
+```
+shape: (544, 3)
+┌───────────────────────┬────────┬─────────┐
+│ team                  ┆ scored ┆ allowed │
+│ ---                   ┆ ---    ┆ ---     │
+│ str                   ┆ i64    ┆ i64     │
+╞═══════════════════════╪════════╪═════════╡
+│ Philadelphia Eagles   ┆ 24     ┆ 20      │
+│ Los Angeles Chargers  ┆ 27     ┆ 21      │
+│ New Orleans Saints    ┆ 13     ┆ 20      │
+│ …                     ┆ …      ┆ …       │
+│ Miami Dolphins        ┆ 10     ┆ 38      │
+│ Washington Commanders ┆ 24     ┆ 17      │
+│ Baltimore Ravens      ┆ 24     ┆ 26      │
+└───────────────────────┴────────┴─────────┘
+```
+
+...
+
+One row per team per game: 272 games, 544 rows
+
+## Grouping by Team
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+)
+```
+
+...
+
+```
+shape: (32, 2)
+┌──────────────────────┬──────────┐
+│ team                 ┆ numGames │
+│ ---                  ┆ ---      │
+│ str                  ┆ u32      │
+╞══════════════════════╪══════════╡
+│ Philadelphia Eagles  ┆ 17       │
+│ Los Angeles Chargers ┆ 17       │
+│ New Orleans Saints   ┆ 17       │
+│ …                    ┆ …        │
+│ Carolina Panthers    ┆ 17       │
+│ San Francisco 49ers  ┆ 17       │
+│ New York Giants      ┆ 17       │
+└──────────────────────┴──────────┘
+```
+
+...
+
+All rows with the same `team` get combined into one row
+
+(Row order may be different when you run it)
+
+---
+
+Which rows are wins?
+
+...
+
+```py
+combined.select(
+    pl.col("team"),
+    pl.col("scored"),
+    pl.col("allowed"),
+    (pl.col("scored") > pl.col("allowed")).alias("won"),
+)
+```
+
+...
+
+```
+shape: (544, 4)
+┌───────────────────────┬────────┬─────────┬───────┐
+│ team                  ┆ scored ┆ allowed ┆ won   │
+│ ---                   ┆ ---    ┆ ---     ┆ ---   │
+│ str                   ┆ i64    ┆ i64     ┆ bool  │
+╞═══════════════════════╪════════╪═════════╪═══════╡
+│ Philadelphia Eagles   ┆ 24     ┆ 20      ┆ true  │
+│ Los Angeles Chargers  ┆ 27     ┆ 21      ┆ true  │
+│ New Orleans Saints    ┆ 13     ┆ 20      ┆ false │
+│ …                     ┆ …      ┆ …       ┆ …     │
+│ Miami Dolphins        ┆ 10     ┆ 38      ┆ false │
+│ Washington Commanders ┆ 24     ┆ 17      ┆ true  │
+│ Baltimore Ravens      ┆ 24     ┆ 26      ┆ false │
+└───────────────────────┴────────┴─────────┴───────┘
+```
+
+...
+
+`sum()` of `true` / `false` values counts the `true`s
+
+---
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+)
+```
+
+...
+
+```
+shape: (32, 3)
+┌──────────────────────┬──────────┬──────┐
+│ team                 ┆ numGames ┆ wins │
+│ ---                  ┆ ---      ┆ ---  │
+│ str                  ┆ u32      ┆ u32  │
+╞══════════════════════╪══════════╪══════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   │
+│ Los Angeles Chargers ┆ 17       ┆ 11   │
+│ New Orleans Saints   ┆ 17       ┆ 6    │
+│ …                    ┆ …        ┆ …    │
+│ Carolina Panthers    ┆ 17       ┆ 8    │
+│ San Francisco 49ers  ┆ 17       ┆ 12   │
+│ New York Giants      ┆ 17       ┆ 4    │
+└──────────────────────┴──────────┴──────┘
+```
+
+---
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+    (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
+    (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
+)
+```
+
+...
+
+```
+shape: (32, 5)
+┌──────────────────────┬──────────┬──────┬────────┬──────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  │
+╞══════════════════════╪══════════╪══════╪════════╪══════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    │
+│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    │
+│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    │
+│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    │
+│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    │
+│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    │
+└──────────────────────┴──────────┴──────┴────────┴──────┘
+```
+
+---
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+    (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
+    (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
+    pl.sum("scored"),
+    pl.sum("allowed"),
+)
+```
+
+...
+
+```
+shape: (32, 7)
+┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     │
+╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     │
+│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     │
+│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       │
+│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     │
+│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     │
+│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     │
+└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┘
+```
+
+## Calculated Columns
+
+`with_columns` keeps the existing columns and adds new ones
+
+---
+
+```py
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .alias("winPct"),
+)
+```
+
+...
+
+```
+shape: (32, 8)
+┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬──────────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct   │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---      │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64      │
+╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪══════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647059 │
+│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647059 │
+│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.352941 │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …        │
+│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.470588 │
+│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.705882 │
+│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235294 │
+└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴──────────┘
+```
+
+---
+
+```py
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .round(3)
+    .alias("winPct"),
+)
+```
+
+...
+
+```
+shape: (32, 8)
+┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    │
+╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647  │
+│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647  │
+│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.353  │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      │
+│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.471  │
+│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.706  │
+│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235  │
+└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┘
+```
+
+---
+
+```py
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .round(3)
+    .alias("winPct"),
+    (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
+    (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
+)
+```
+
+...
+
+```
+shape: (32, 10)
+┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┬───────────────┬────────────────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    ┆ ---           ┆ ---            │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    ┆ f64           ┆ f64            │
+╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╪═══════════════╪════════════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647  ┆ 22.3          ┆ 19.1           │
+│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647  ┆ 21.6          ┆ 20.0           │
+│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.353  ┆ 18.0          ┆ 22.5           │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      ┆ …             ┆ …              │
+│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.471  ┆ 18.3          ┆ 22.4           │
+│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.706  ┆ 25.7          ┆ 21.8           │
+│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235  ┆ 22.4          ┆ 25.8           │
+└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┴───────────────┴────────────────┘
+```
+
+## Sorting
+
+```py
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .round(3)
+    .alias("winPct"),
+    (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
+    (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
+).sort("winPct", descending=True)
+```
+
+...
+
+```
+shape: (32, 10)
+┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┬───────────────┬────────────────┐
+│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
+│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    ┆ ---           ┆ ---            │
+│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    ┆ f64           ┆ f64            │
+╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╪═══════════════╪════════════════╡
+│ New England Patriots ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 490    ┆ 320     ┆ 0.824  ┆ 28.8          ┆ 18.8           │
+│ Seattle Seahawks     ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 483    ┆ 292     ┆ 0.824  ┆ 28.4          ┆ 17.2           │
+│ Denver Broncos       ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 401    ┆ 311     ┆ 0.824  ┆ 23.6          ┆ 18.3           │
+│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      ┆ …             ┆ …              │
+│ Tennessee Titans     ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 284    ┆ 478     ┆ 0.176  ┆ 16.7          ┆ 28.1           │
+│ Arizona Cardinals    ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 355    ┆ 488     ┆ 0.176  ┆ 20.9          ┆ 28.7           │
+│ Las Vegas Raiders    ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 241    ┆ 432     ┆ 0.176  ┆ 14.2          ┆ 25.4           │
+└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┴───────────────┴────────────────┘
+```
