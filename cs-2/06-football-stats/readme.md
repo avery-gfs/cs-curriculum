@@ -797,30 +797,59 @@ Dallas Cowboys,20,Philadelphia Eagles,24
 
 ```py
 stats["Philadelphia Eagles"].addStatsHome(game)
+stats["Dallas Cowboys"].addStatsAway(game)
 ```
 
 <<<
 
 ```py
-name:          "Philadelphia Eagles"
-numGames:      0
-wins:          0
-losses:        0
-ties:          0
-pointsScored:  0
-pointsAllowed: 0
+stats: {}
 ```
 
 <<<
 
 ```py
-name:          "Philadelphia Eagles"
-numGames:      1
-wins:          1
-losses:        0
-ties:          0
-pointsScored:  24
-pointsAllowed: 20
+stats: {
+  "Philadelphia Eagles": TeamStats(
+    numGames:      0
+    wins:          0
+    losses:        0
+    ties:          0
+    pointsScored:  0
+    pointsAllowed: 0
+  ),
+  "Dallas Cowboys": TeamStats(
+    numGames:      0
+    wins:          0
+    losses:        0
+    ties:          0
+    pointsScored:  0
+    pointsAllowed: 0
+  ),
+}
+```
+
+<<<
+
+```py
+stats: {
+  "Philadelphia Eagles": TeamStats(
+    numGames:      1
+    wins:          1
+    losses:        0
+    ties:          0
+    pointsScored:  24
+    pointsAllowed: 20
+  ),
+  "Dallas Cowboys": TeamStats(
+    numGames:      1
+    wins:          0
+    losses:        1
+    ties:          0
+    pointsScored:  20
+    pointsAllowed: 24
+  ),
+}
 ```
 
 ---
@@ -830,31 +859,93 @@ Philadelphia Eagles,20,Kansas City Chiefs,17
 ```
 
 ```py
+stats["Kansas City Chiefs"].addStatsHome(game)
 stats["Philadelphia Eagles"].addStatsAway(game)
 ```
 
 <<<
 
 ```py
-name:          "Philadelphia Eagles"
-numGames:      1
-wins:          1
-losses:        0
-ties:          0
-pointsScored:  24
-pointsAllowed: 20
+stats: {
+  "Philadelphia Eagles": TeamStats(
+    numGames:      1
+    wins:          1
+    losses:        0
+    ties:          0
+    pointsScored:  24
+    pointsAllowed: 20
+  ),
+  "Dallas Cowboys": TeamStats(
+    numGames:      2
+    wins:          1
+    losses:        1
+    ties:          0
+    pointsScored:  60
+    pointsAllowed: 61
+  ),
+}
 ```
 
 <<<
 
 ```py
-name:          "Philadelphia Eagles"
-numGames:      2
-wins:          2
-losses:        0
-ties:          0
-pointsScored:  44
-pointsAllowed: 37
+stats: {
+  "Philadelphia Eagles": TeamStats(
+    numGames:      2
+    wins:          2
+    losses:        0
+    ties:          0
+    pointsScored:  44
+    pointsAllowed: 37
+  ),
+  "Dallas Cowboys": TeamStats(
+    numGames:      2
+    wins:          1
+    losses:        1
+    ties:          0
+    pointsScored:  60
+    pointsAllowed: 61
+  ),
+  "Kansas City Chiefs": TeamStats(
+    numGames:      0
+    wins:          0
+    losses:        0
+    ties:          0
+    pointsScored:  0
+    pointsAllowed: 0
+  ),
+}
+```
+
+<<<
+
+```py
+stats: {
+  "Philadelphia Eagles": TeamStats(
+    numGames:      2
+    wins:          2
+    losses:        0
+    ties:          0
+    pointsScored:  44
+    pointsAllowed: 37
+  ),
+  "Dallas Cowboys": TeamStats(
+    numGames:      2
+    wins:          1
+    losses:        1
+    ties:          0
+    pointsScored:  60
+    pointsAllowed: 61
+  ),
+  "Kansas City Chiefs": TeamStats(
+    numGames:      2
+    wins:          0
+    losses:        2
+    ties:          0
+    pointsScored:  38
+    pointsAllowed: 47
+  ),
+}
 ```
 
 ## Formatting a CSV Row
