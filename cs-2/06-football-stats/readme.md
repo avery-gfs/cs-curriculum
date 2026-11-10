@@ -876,12 +876,12 @@ stats: {
     pointsAllowed: 20
   ),
   "Dallas Cowboys": TeamStats(
-    numGames:      2
-    wins:          1
+    numGames:      1
+    wins:          0
     losses:        1
     ties:          0
-    pointsScored:  60
-    pointsAllowed: 61
+    pointsScored:  20
+    pointsAllowed: 24
   ),
 }
 ```
@@ -891,20 +891,20 @@ stats: {
 ```py
 stats: {
   "Philadelphia Eagles": TeamStats(
-    numGames:      2
-    wins:          2
+    numGames:      1
+    wins:          1
     losses:        0
     ties:          0
-    pointsScored:  44
-    pointsAllowed: 37
+    pointsScored:  24
+    pointsAllowed: 20
   ),
   "Dallas Cowboys": TeamStats(
-    numGames:      2
-    wins:          1
+    numGames:      1
+    wins:          0
     losses:        1
     ties:          0
-    pointsScored:  60
-    pointsAllowed: 61
+    pointsScored:  20
+    pointsAllowed: 24
   ),
   "Kansas City Chiefs": TeamStats(
     numGames:      0
@@ -930,12 +930,12 @@ stats: {
     pointsAllowed: 37
   ),
   "Dallas Cowboys": TeamStats(
-    numGames:      2
-    wins:          1
+    numGames:      1
+    wins:          0
     losses:        1
     ties:          0
-    pointsScored:  60
-    pointsAllowed: 61
+    pointsScored:  20
+    pointsAllowed: 24
   ),
   "Kansas City Chiefs": TeamStats(
     numGames:      2
