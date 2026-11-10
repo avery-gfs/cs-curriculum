@@ -786,8 +786,6 @@ for game in games:
     stats[awayTeam].addStatsAway(game)
 ```
 
-...
-
 - Make a `TeamStats` object for any team we haven't seen yet
 - Tell each team's object about the game
 
