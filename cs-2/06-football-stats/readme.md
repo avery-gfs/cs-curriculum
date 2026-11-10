@@ -802,54 +802,46 @@ stats["Dallas Cowboys"].addStatsAway(game)
 
 <<<
 
-```py
-stats: {}
+```
+(no teams yet)
 ```
 
 <<<
 
-```py
-stats: {
-  "Philadelphia Eagles": TeamStats(
-    numGames:      0
-    wins:          0
-    losses:        0
-    ties:          0
-    pointsScored:  0
-    pointsAllowed: 0
-  ),
-  "Dallas Cowboys": TeamStats(
-    numGames:      0
-    wins:          0
-    losses:        0
-    ties:          0
-    pointsScored:  0
-    pointsAllowed: 0
-  ),
-}
+```
+Philadelphia Eagles
+  numGames:      0
+  wins:          0
+  losses:        0
+  ties:          0
+  pointsScored:  0
+  pointsAllowed: 0
+Dallas Cowboys
+  numGames:      0
+  wins:          0
+  losses:        0
+  ties:          0
+  pointsScored:  0
+  pointsAllowed: 0
 ```
 
 <<<
 
-```py
-stats: {
-  "Philadelphia Eagles": TeamStats(
-    numGames:      1
-    wins:          1
-    losses:        0
-    ties:          0
-    pointsScored:  24
-    pointsAllowed: 20
-  ),
-  "Dallas Cowboys": TeamStats(
-    numGames:      1
-    wins:          0
-    losses:        1
-    ties:          0
-    pointsScored:  20
-    pointsAllowed: 24
-  ),
-}
+```
+Philadelphia Eagles
+  numGames:      1
+  wins:          1
+  losses:        0
+  ties:          0
+  pointsScored:  24
+  pointsAllowed: 20
+Dallas Cowboys
+  numGames:      1
+  wins:          0
+  losses:        1
+  ties:          0
+  pointsScored:  20
+  pointsAllowed: 24
 ```
 
 ---
@@ -865,90 +857,91 @@ stats["Philadelphia Eagles"].addStatsAway(game)
 
 <<<
 
-```py
-stats: {
-  "Philadelphia Eagles": TeamStats(
-    numGames:      1
-    wins:          1
-    losses:        0
-    ties:          0
-    pointsScored:  24
-    pointsAllowed: 20
-  ),
-  "Dallas Cowboys": TeamStats(
-    numGames:      1
-    wins:          0
-    losses:        1
-    ties:          0
-    pointsScored:  20
-    pointsAllowed: 24
-  ),
-}
+```
+Philadelphia Eagles
+  numGames:      1
+  wins:          1
+  losses:        0
+  ties:          0
+  pointsScored:  24
+  pointsAllowed: 20
+Dallas Cowboys
+  numGames:      1
+  wins:          0
+  losses:        1
+  ties:          0
+  pointsScored:  20
+  pointsAllowed: 24
 ```
 
 <<<
 
-```py
-stats: {
-  "Philadelphia Eagles": TeamStats(
-    numGames:      1
-    wins:          1
-    losses:        0
-    ties:          0
-    pointsScored:  24
-    pointsAllowed: 20
-  ),
-  "Dallas Cowboys": TeamStats(
-    numGames:      1
-    wins:          0
-    losses:        1
-    ties:          0
-    pointsScored:  20
-    pointsAllowed: 24
-  ),
-  "Kansas City Chiefs": TeamStats(
-    numGames:      0
-    wins:          0
-    losses:        0
-    ties:          0
-    pointsScored:  0
-    pointsAllowed: 0
-  ),
-}
+```
+Philadelphia Eagles
+  numGames:      1
+  wins:          1
+  losses:        0
+  ties:          0
+  pointsScored:  24
+  pointsAllowed: 20
+Dallas Cowboys
+  numGames:      1
+  wins:          0
+  losses:        1
+  ties:          0
+  pointsScored:  20
+  pointsAllowed: 24
+Kansas City Chiefs
+  numGames:      0
+  wins:          0
+  losses:        0
+  ties:          0
+  pointsScored:  0
+  pointsAllowed: 0
 ```
 
 <<<
 
-```py
-stats: {
-  "Philadelphia Eagles": TeamStats(
-    numGames:      2
-    wins:          2
-    losses:        0
-    ties:          0
-    pointsScored:  44
-    pointsAllowed: 37
-  ),
-  "Dallas Cowboys": TeamStats(
-    numGames:      1
-    wins:          0
-    losses:        1
-    ties:          0
-    pointsScored:  20
-    pointsAllowed: 24
-  ),
-  "Kansas City Chiefs": TeamStats(
-    numGames:      1
-    wins:          0
-    losses:        1
-    ties:          0
-    pointsScored:  17
-    pointsAllowed: 20
-  ),
-}
+```
+Philadelphia Eagles
+  numGames:      2
+  wins:          2
+  losses:        0
+  ties:          0
+  pointsScored:  44
+  pointsAllowed: 37
+Dallas Cowboys
+  numGames:      1
+  wins:          0
+  losses:        1
+  ties:          0
+  pointsScored:  20
+  pointsAllowed: 24
+Kansas City Chiefs
+  numGames:      1
+  wins:          0
+  losses:        1
+  ties:          0
+  pointsScored:  17
+  pointsAllowed: 20
 ```
 
 ## Formatting a CSV Row
+
+```
+name:                    Philadelphia Eagles
+number of games:         17
+wins:                    11
+losses:                  6
+ties:                    0
+win percent:             0.647
+points scored:           379
+points allowed:          325
+points scored per game:  22.3
+points allowed per game: 19.1
+```
+
+...
 
 ```py
 team.csvRow()
