@@ -53,7 +53,7 @@ def moveSingle(src, dest):
     #
     # For example, if `towers` is
     #
-    #     [[6, 5, 4], [3, 2, 1], []]
+    #     towers = [[6, 5, 4], [3, 2, 1], []]
     #
     # and we run
     #
@@ -61,7 +61,7 @@ def moveSingle(src, dest):
     #
     # then `towers` will become
     #
-    #     [[6, 5], [3, 2, 1], [4]]
+    #     towers = [[6, 5], [3, 2, 1], [4]]
 
     showTowers()
 
@@ -71,7 +71,7 @@ def solve(src, dest, depth):
     #
     # For example, if `towers` is
     #
-    #     [[6, 5, 4, 3, 2, 1], [], []]
+    #     towers = [[6, 5, 4, 3, 2, 1], [], []]
     #
     # and we run
     #
@@ -79,7 +79,7 @@ def solve(src, dest, depth):
     #
     # then `towers` will become
     #
-    #     [[6, 5, 4], [], [3, 2, 1]]
+    #     towers = [[6, 5, 4], [], [3, 2, 1]]
 
     tmp = 3 - src - dest
 
