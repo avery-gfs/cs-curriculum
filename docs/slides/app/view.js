@@ -88,7 +88,10 @@ async function show(src) {
     highlight: {
       // Runs once reveal has parsed the markdown and gathered the code blocks,
       // but before any of them have been highlighted.
-      beforeHighlight: markPlainCodeBlocks,
+      beforeHighlight(hljs) {
+        markPlainCodeBlocks(hljs);
+        highlightPythonCalls(hljs);
+      },
     },
     plugins: [RevealMarkdown, RevealMath, RevealHighlight, RevealNotes],
   });
@@ -117,6 +120,36 @@ function markPlainCodeBlocks(hljs) {
 
     if (!declared) code.classList.add("language-plaintext");
   }
+}
+
+// highlight.js's python grammar only colours names where they're defined, so a
+// call reads as plain text. Editors tell calls apart by what's being called, and
+// so do these: `Thing(...)` is a constructor, `obj.thing(...)` a method call and
+// `thing(...)` a plain function call. Builtins and keywords (`print(`, `if (`)
+// are left to the grammar's own keyword colouring. This has to run before the
+// first block is highlighted, while the grammar is still uncompiled.
+function highlightPythonCalls(hljs) {
+  const python = hljs.getLanguage("python");
+  if (!python || python.isCompiled) return;
+
+  const { keyword, built_in, literal, type } = python.keywords;
+  const reserved = [keyword, built_in, literal, type]
+    .flat()
+    .map((word) => word.split("|")[0]);
+  const notReserved = `(?!(?:${reserved.join("|")})\\b)`;
+  const calledName = (first) =>
+    new RegExp(`\\b${notReserved}${first}\\w*(?=\\s*\\()`);
+
+  python.contains.unshift(
+    // A capitalised name after a dot (`module.Thing(`) is still a constructor,
+    // so the method pattern stops short of it and the next one takes it.
+    {
+      match: [/\./, calledName("[a-z_]")],
+      scope: { 2: "title.function.method" },
+    },
+    { match: calledName("[A-Z]"), scope: "title.class.invoke" },
+    { match: calledName("[a-z_]"), scope: "title.function.invoke" },
+  );
 }
 
 // A `...` between blocks marks a fragment break: everything after it waits for

@@ -239,3 +239,20 @@ pre code {
     display: none;
   }
 }
+
+/* Python calls, coloured by what's being called (see highlightPythonCalls in
+   view.js). Class names share the constructor colour; the theme's own yellow
+   is too faint on the grey code background. */
+
+.hljs-title.class_,
+.hljs-title.class_.invoke__ {
+  color: #c18401;
+}
+
+.hljs-title.function_.invoke__ {
+  color: #3971ed;
+}
+
+.hljs-title.function_.method__ {
+  color: #0184bc;
+}

@@ -740,8 +740,6 @@ stats["Philadelphia Eagles"].winPercent()   # 0.647...
 
 ## The `TeamStats` Class
 
-Your job is to implement in the `TeamStats` class
-
 ```py
 class TeamStats:
     def __init__(self, name):
@@ -772,7 +770,7 @@ class TeamStats:
         return ""  # Your code goes here
 ```
 
-## The Main Loop (Given)
+## The Main Loop
 
 ```py
 stats = {}
