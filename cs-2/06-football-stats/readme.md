@@ -803,7 +803,6 @@ stats["Dallas Cowboys"].addStatsAway(game)
 <<<
 
 ```
-(no teams yet)
 ```
 
 <<<
@@ -923,7 +922,7 @@ Dallas Cowboys
   ties:          0
   pointsScored:  20
   pointsAllowed: 24
-  
+
 Kansas City Chiefs
   numGames:      1
   wins:          0
