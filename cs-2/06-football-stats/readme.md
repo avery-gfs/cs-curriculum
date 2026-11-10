@@ -816,6 +816,7 @@ Philadelphia Eagles
   ties:          0
   pointsScored:  0
   pointsAllowed: 0
+
 Dallas Cowboys
   numGames:      0
   wins:          0
@@ -835,6 +836,7 @@ Philadelphia Eagles
   ties:          0
   pointsScored:  24
   pointsAllowed: 20
+
 Dallas Cowboys
   numGames:      1
   wins:          0
@@ -865,6 +867,7 @@ Philadelphia Eagles
   ties:          0
   pointsScored:  24
   pointsAllowed: 20
+
 Dallas Cowboys
   numGames:      1
   wins:          0
@@ -884,6 +887,7 @@ Philadelphia Eagles
   ties:          0
   pointsScored:  24
   pointsAllowed: 20
+
 Dallas Cowboys
   numGames:      1
   wins:          0
@@ -891,6 +895,7 @@ Dallas Cowboys
   ties:          0
   pointsScored:  20
   pointsAllowed: 24
+
 Kansas City Chiefs
   numGames:      0
   wins:          0
@@ -910,6 +915,7 @@ Philadelphia Eagles
   ties:          0
   pointsScored:  44
   pointsAllowed: 37
+
 Dallas Cowboys
   numGames:      1
   wins:          0
@@ -917,6 +923,7 @@ Dallas Cowboys
   ties:          0
   pointsScored:  20
   pointsAllowed: 24
+  
 Kansas City Chiefs
   numGames:      1
   wins:          0
