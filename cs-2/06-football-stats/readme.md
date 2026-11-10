@@ -938,12 +938,12 @@ stats: {
     pointsAllowed: 24
   ),
   "Kansas City Chiefs": TeamStats(
-    numGames:      2
+    numGames:      1
     wins:          0
-    losses:        2
+    losses:        1
     ties:          0
-    pointsScored:  38
-    pointsAllowed: 47
+    pointsScored:  17
+    pointsAllowed: 20
   ),
 }
 ```
