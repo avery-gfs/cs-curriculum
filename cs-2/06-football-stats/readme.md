@@ -985,6 +985,8 @@ import polars as pl
 ---
 
 ```py
+import polars as pl
+
 games = pl.read_csv("games.csv")
 
 print(games)
@@ -1066,8 +1068,6 @@ homeResults = games.select(
 )
 ```
 
-...
-
 ```
 shape: (272, 1)
 ┌──────────────────────┐
@@ -1098,8 +1098,6 @@ homeResults = games.select(
 )
 ```
 
-...
-
 ```
 shape: (272, 2)
 ┌──────────────────────┬────────┐
@@ -1126,8 +1124,6 @@ homeResults = games.select(
     pl.col("away_score").alias("allowed"),
 )
 ```
-
-...
 
 ```
 shape: (272, 3)
