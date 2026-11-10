@@ -703,8 +703,6 @@ Los Angeles Chargers,11,6,0,0.647,368,340,17,21.6,20.0
 
 ## Too Many Dictionaries
 
-In the all records problem we had one dictionary **per stat**:
-
 ```py
 wins = {}
 losses = {}
@@ -712,8 +710,6 @@ ties = {}
 ```
 
 ...
-
-Now we'd need:
 
 ```py
 wins = {}
@@ -724,13 +720,7 @@ pointsAllowed = {}
 numGames = {}
 ```
 
-...
-
-Gets messy fast!
-
 ---
-
-Instead: one dictionary, with one **object** per team
 
 ```py
 stats = {
@@ -741,8 +731,6 @@ stats = {
 ```
 
 ...
-
-Each `TeamStats` object holds **all** the stats for one team
 
 ```py
 stats["Philadelphia Eagles"].wins           # 11
@@ -784,31 +772,6 @@ class TeamStats:
         return ""  # Your code goes here
 ```
 
----
-
-Methods you'll write:
-
-...
-
-**Updating** stats (change fields):
-
-- `addStatsHome(game)`
-- `addStatsAway(game)`
-
-...
-
-**Calculating** stats (use fields, return a number):
-
-- `winPercent()`
-- `pointsScoredPerGame()`
-- `pointsAllowedPerGame()`
-
-...
-
-**Formatting** stats (return a string):
-
-- `csvRow()`
-
 ## The Main Loop (Given)
 
 ```py
@@ -828,11 +791,7 @@ for game in games:
 ...
 
 - Make a `TeamStats` object for any team we haven't seen yet
-- Tell **each** team's object about the game
-
-...
-
-Each method only has to think about **one team**
+- Tell each team's object about the game
 
 ## Updating Stats
 
@@ -902,49 +861,6 @@ pointsScored:  44
 pointsAllowed: 37
 ```
 
----
-
-Home vs. away: which score is "ours"?
-
-...
-
-| Method         | Points scored  | Points allowed |
-| -------------- | -------------- | -------------- |
-| `addStatsHome` | `"home_score"` | `"away_score"` |
-| `addStatsAway` | `"away_score"` | `"home_score"` |
-
-...
-
-Same idea for deciding win / loss / tie
-
-## Calculating Stats
-
-Some stats are **stored** (fields), some are **calculated** (methods)
-
-...
-
-```py
-name:          "Philadelphia Eagles"
-numGames:      17
-wins:          11
-losses:        6
-ties:          0
-pointsScored:  379
-pointsAllowed: 325
-```
-
-...
-
-```py
-team.winPercent()            # 11 / 17   -> 0.647...
-team.pointsScoredPerGame()   # 379 / 17  -> 22.29...
-team.pointsAllowedPerGame()  # 325 / 17  -> 19.11...
-```
-
-...
-
-Why calculate these instead of storing them as fields?
-
 ## Formatting a CSV Row
 
 ```py
@@ -962,24 +878,6 @@ Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
 - Same order as the header row
 - Win percent: 3 decimal places (`:.3f`)
 - Per game stats: 1 decimal place (`:.1f`)
-
-## Suggested Approach
-
-1. Write `addStatsHome` and `addStatsAway`
-
-   Run it: do the Eagles have 17 games, 11 wins, 379 points scored?
-
-...
-
-2. Write `winPercent`, `pointsScoredPerGame`, `pointsAllowedPerGame`
-
-   Run it: check the printed output
-
-...
-
-3. Write `csvRow`
-
-   Open `stats.csv`: do the columns line up with the header?
 
 ## Stats Spreadsheet Import
 
