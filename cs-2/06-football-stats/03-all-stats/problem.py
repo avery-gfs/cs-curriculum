@@ -94,7 +94,7 @@ for game in games:
 # Print final stats for each team
 
 for team in stats:
-    print(stats[team])
+    print(stats[team], "\n")
 
 # Generate output CSV file for team stats
 # The CSV table should start with the following header row
