@@ -1334,16 +1334,6 @@ grouped = combined.group_by("team").agg(
 )
 ```
 
-...
-
-```py
-grouped = combined.group_by("team").agg(
-    pl.len().alias("numGames"),
-    pl.col("scored").sum(),
-    pl.col("allowed").sum(),
-)
-```
-
 ---
 
 ```py
