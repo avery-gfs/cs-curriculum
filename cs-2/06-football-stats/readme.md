@@ -1208,46 +1208,16 @@ shape: (544, 3)
 
 One row per team per game: 272 games, 544 rows
 
-## Grouping by Team
-
-```py
-combined.select(
-    pl.col("team"),
-    pl.col("scored"),
-    pl.col("allowed"),
-)
-```
-
-...
-
-```
-shape: (544, 3)
-┌───────────────────────┬────────┬─────────┐
-│ team                  ┆ scored ┆ allowed │
-│ ---                   ┆ ---    ┆ ---     │
-│ str                   ┆ i64    ┆ i64     │
-╞═══════════════════════╪════════╪═════════╡
-│ Philadelphia Eagles   ┆ 24     ┆ 20      │
-│ Los Angeles Chargers  ┆ 27     ┆ 21      │
-│ New Orleans Saints    ┆ 13     ┆ 20      │
-│ …                     ┆ …      ┆ …       │
-│ Miami Dolphins        ┆ 10     ┆ 38      │
-│ Washington Commanders ┆ 24     ┆ 17      │
-│ Baltimore Ravens      ┆ 24     ┆ 26      │
-└───────────────────────┴────────┴─────────┘
-```
-
 ...
 
 Which rows are wins?
 
----
+## Adding Columns
+
+`with_columns` keeps the existing columns and adds new ones.
 
 ```py
-combined.select(
-    pl.col("team"),
-    pl.col("scored"),
-    pl.col("allowed"),
+combined.with_columns(
     (pl.col("scored") > pl.col("allowed")).alias("won"),
 )
 ```
@@ -1269,31 +1239,27 @@ shape: (544, 4)
 └───────────────────────┴────────┴─────────┴───────┘
 ```
 
----
+## Grouping and Aggregation
 
 ```py
-grouped = combined.group_by("team").agg(
-    pl.col("scored").sum(),
-    pl.col("allowed").sum(),
-    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
-)
+grouped = combined.group_by("team").agg()
 ```
 
 ```
-shape: (32, 3)
-┌──────────────────────┬──────────┬──────┐
-│ team                 ┆ numGames ┆ wins │
-│ ---                  ┆ ---      ┆ ---  │
-│ str                  ┆ u32      ┆ u32  │
-╞══════════════════════╪══════════╪══════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   │
-│ Los Angeles Chargers ┆ 17       ┆ 11   │
-│ New Orleans Saints   ┆ 17       ┆ 6    │
-│ …                    ┆ …        ┆ …    │
-│ Carolina Panthers    ┆ 17       ┆ 8    │
-│ San Francisco 49ers  ┆ 17       ┆ 12   │
-│ New York Giants      ┆ 17       ┆ 4    │
-└──────────────────────┴──────────┴──────┘
+shape: (32, 1)
+┌──────────────────────┐
+│ team                 │
+│ ---                  │
+│ str                  │
+╞══════════════════════╡
+│ Philadelphia Eagles  │
+│ Los Angeles Chargers │
+│ New Orleans Saints   │
+│ …                    │
+│ Carolina Panthers    │
+│ San Francisco 49ers  │
+│ New York Giants      │
+└──────────────────────┘
 ```
 
 ...
@@ -1302,27 +1268,73 @@ All rows with the same `team` get combined into one row
 
 (Row order may be different when you run it)
 
-...
+---
 
-`sum()` of `true` / `false` values counts the `true`s
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+)
+```
+
+```
+shape: (32, 2)
+┌──────────────────────┬──────────┐
+│ team                 ┆ numGames │
+│ ---                  ┆ ---      │
+│ str                  ┆ u32      │
+╞══════════════════════╪══════════╡
+│ Philadelphia Eagles  ┆ 17       │
+│ Los Angeles Chargers ┆ 17       │
+│ New Orleans Saints   ┆ 17       │
+│ …                    ┆ …        │
+│ Carolina Panthers    ┆ 17       │
+│ San Francisco 49ers  ┆ 17       │
+│ New York Giants      ┆ 17       │
+└──────────────────────┴──────────┘
+```
 
 ---
 
 ```py
 grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
     pl.col("scored").sum(),
     pl.col("allowed").sum(),
-    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
 )
 ```
 
-...
+```
+shape: (32, 4)
+┌──────────────────────┬──────────┬────────┬─────────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     │
+│ str                  ┆ u32      ┆ i64    ┆ i64     │
+╞══════════════════════╪══════════╪════════╪═════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 379    ┆ 325     │
+│ Los Angeles Chargers ┆ 17       ┆ 368    ┆ 340     │
+│ New Orleans Saints   ┆ 17       ┆ 306    ┆ 383     │
+│ …                    ┆ …        ┆ …      ┆ …       │
+│ Carolina Panthers    ┆ 17       ┆ 311    ┆ 380     │
+│ San Francisco 49ers  ┆ 17       ┆ 437    ┆ 371     │
+│ New York Giants      ┆ 17       ┆ 381    ┆ 439     │
+└──────────────────────┴──────────┴────────┴─────────┘
+```
+
+---
 
 ```py
 grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    pl.col("scored").sum(),
+    pl.col("allowed").sum(),
+)
+```
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
     pl.sum("scored"),
     pl.sum("allowed"),
-    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
 )
 ```
 
@@ -1340,25 +1352,27 @@ grouped = combined.group_by("team").agg(
 ```
 
 ```
-shape: (32, 5)
-┌──────────────────────┬──────────┬──────┬────────┬──────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  │
-╞══════════════════════╪══════════╪══════╪════════╪══════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    │
-│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    │
-│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    │
-│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    │
-│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    │
-│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    │
-└──────────────────────┴──────────┴──────┴────────┴──────┘
+shape: (32, 7)
+┌──────────────────────┬──────────┬────────┬─────────┬──────┬────────┬──────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed ┆ wins ┆ losses ┆ ties │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     ┆ ---  ┆ ---    ┆ ---  │
+│ str                  ┆ u32      ┆ i64    ┆ i64     ┆ u32  ┆ u32    ┆ u32  │
+╞══════════════════════╪══════════╪════════╪═════════╪══════╪════════╪══════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 379    ┆ 325     ┆ 11   ┆ 6      ┆ 0    │
+│ Los Angeles Chargers ┆ 17       ┆ 368    ┆ 340     ┆ 11   ┆ 6      ┆ 0    │
+│ New Orleans Saints   ┆ 17       ┆ 306    ┆ 383     ┆ 6    ┆ 11     ┆ 0    │
+│ …                    ┆ …        ┆ …      ┆ …       ┆ …    ┆ …      ┆ …    │
+│ Carolina Panthers    ┆ 17       ┆ 311    ┆ 380     ┆ 8    ┆ 9      ┆ 0    │
+│ San Francisco 49ers  ┆ 17       ┆ 437    ┆ 371     ┆ 12   ┆ 5      ┆ 0    │
+│ New York Giants      ┆ 17       ┆ 381    ┆ 439     ┆ 4    ┆ 13     ┆ 0    │
+└──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┘
 ```
 
-## Calculated Columns
+...
 
-`with_columns` keeps the existing columns and adds new ones
+`sum()` of `true` / `false` values counts the `true`s
+
+## Calculated Columns
 
 ```py
 finalStats = grouped.with_columns(
@@ -1370,19 +1384,19 @@ finalStats = grouped.with_columns(
 
 ```
 shape: (32, 8)
-┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬──────────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct   │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---      │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64      │
-╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪══════════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647059 │
-│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647059 │
-│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.352941 │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …        │
-│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.470588 │
-│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.705882 │
-│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235294 │
-└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴──────────┘
+┌──────────────────────┬──────────┬────────┬─────────┬──────┬────────┬──────┬──────────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed ┆ wins ┆ losses ┆ ties ┆ winPct   │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     ┆ ---  ┆ ---    ┆ ---  ┆ ---      │
+│ str                  ┆ u32      ┆ i64    ┆ i64     ┆ u32  ┆ u32    ┆ u32  ┆ f64      │
+╞══════════════════════╪══════════╪════════╪═════════╪══════╪════════╪══════╪══════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 379    ┆ 325     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647059 │
+│ Los Angeles Chargers ┆ 17       ┆ 368    ┆ 340     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647059 │
+│ New Orleans Saints   ┆ 17       ┆ 306    ┆ 383     ┆ 6    ┆ 11     ┆ 0    ┆ 0.352941 │
+│ …                    ┆ …        ┆ …      ┆ …       ┆ …    ┆ …      ┆ …    ┆ …        │
+│ Carolina Panthers    ┆ 17       ┆ 311    ┆ 380     ┆ 8    ┆ 9      ┆ 0    ┆ 0.470588 │
+│ San Francisco 49ers  ┆ 17       ┆ 437    ┆ 371     ┆ 12   ┆ 5      ┆ 0    ┆ 0.705882 │
+│ New York Giants      ┆ 17       ┆ 381    ┆ 439     ┆ 4    ┆ 13     ┆ 0    ┆ 0.235294 │
+└──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┴──────────┘
 ```
 
 ---
@@ -1395,19 +1409,19 @@ finalStats = grouped.with_columns(
 
 ```
 shape: (32, 8)
-┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    │
-╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647  │
-│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647  │
-│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.353  │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      │
-│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.471  │
-│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.706  │
-│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235  │
-└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┘
+┌──────────────────────┬──────────┬────────┬─────────┬──────┬────────┬──────┬────────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed ┆ wins ┆ losses ┆ ties ┆ winPct │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     ┆ ---  ┆ ---    ┆ ---  ┆ ---    │
+│ str                  ┆ u32      ┆ i64    ┆ i64     ┆ u32  ┆ u32    ┆ u32  ┆ f64    │
+╞══════════════════════╪══════════╪════════╪═════════╪══════╪════════╪══════╪════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 379    ┆ 325     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647  │
+│ Los Angeles Chargers ┆ 17       ┆ 368    ┆ 340     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647  │
+│ New Orleans Saints   ┆ 17       ┆ 306    ┆ 383     ┆ 6    ┆ 11     ┆ 0    ┆ 0.353  │
+│ …                    ┆ …        ┆ …      ┆ …       ┆ …    ┆ …      ┆ …    ┆ …      │
+│ Carolina Panthers    ┆ 17       ┆ 311    ┆ 380     ┆ 8    ┆ 9      ┆ 0    ┆ 0.471  │
+│ San Francisco 49ers  ┆ 17       ┆ 437    ┆ 371     ┆ 12   ┆ 5      ┆ 0    ┆ 0.706  │
+│ New York Giants      ┆ 17       ┆ 381    ┆ 439     ┆ 4    ┆ 13     ┆ 0    ┆ 0.235  │
+└──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┴────────┘
 ```
 
 ---
@@ -1422,19 +1436,19 @@ finalStats = grouped.with_columns(
 
 ```
 shape: (32, 10)
-┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┬───────────────┬────────────────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    ┆ ---           ┆ ---            │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    ┆ f64           ┆ f64            │
-╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╪═══════════════╪════════════════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     ┆ 0.647  ┆ 22.3          ┆ 19.1           │
-│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     ┆ 0.647  ┆ 21.6          ┆ 20.0           │
-│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     ┆ 0.353  ┆ 18.0          ┆ 22.5           │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      ┆ …             ┆ …              │
-│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     ┆ 0.471  ┆ 18.3          ┆ 22.4           │
-│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     ┆ 0.706  ┆ 25.7          ┆ 21.8           │
-│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     ┆ 0.235  ┆ 22.4          ┆ 25.8           │
-└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┴───────────────┴────────────────┘
+┌──────────────────────┬──────────┬────────┬─────────┬──────┬────────┬──────┬────────┬───────────────┬────────────────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed ┆ wins ┆ losses ┆ ties ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---           ┆ ---            │
+│ str                  ┆ u32      ┆ i64    ┆ i64     ┆ u32  ┆ u32    ┆ u32  ┆ f64    ┆ f64           ┆ f64            │
+╞══════════════════════╪══════════╪════════╪═════════╪══════╪════════╪══════╪════════╪═══════════════╪════════════════╡
+│ Philadelphia Eagles  ┆ 17       ┆ 379    ┆ 325     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647  ┆ 22.3          ┆ 19.1           │
+│ Los Angeles Chargers ┆ 17       ┆ 368    ┆ 340     ┆ 11   ┆ 6      ┆ 0    ┆ 0.647  ┆ 21.6          ┆ 20.0           │
+│ New Orleans Saints   ┆ 17       ┆ 306    ┆ 383     ┆ 6    ┆ 11     ┆ 0    ┆ 0.353  ┆ 18.0          ┆ 22.5           │
+│ …                    ┆ …        ┆ …      ┆ …       ┆ …    ┆ …      ┆ …    ┆ …      ┆ …             ┆ …              │
+│ Carolina Panthers    ┆ 17       ┆ 311    ┆ 380     ┆ 8    ┆ 9      ┆ 0    ┆ 0.471  ┆ 18.3          ┆ 22.4           │
+│ San Francisco 49ers  ┆ 17       ┆ 437    ┆ 371     ┆ 12   ┆ 5      ┆ 0    ┆ 0.706  ┆ 25.7          ┆ 21.8           │
+│ New York Giants      ┆ 17       ┆ 381    ┆ 439     ┆ 4    ┆ 13     ┆ 0    ┆ 0.235  ┆ 22.4          ┆ 25.8           │
+└──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┴────────┴───────────────┴────────────────┘
 ```
 
 ## Sorting
@@ -1449,17 +1463,17 @@ finalStats = grouped.with_columns(
 
 ```
 shape: (32, 10)
-┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┬───────────────┬────────────────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     ┆ ---    ┆ ---           ┆ ---            │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     ┆ f64    ┆ f64           ┆ f64            │
-╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╪════════╪═══════════════╪════════════════╡
-│ New England Patriots ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 490    ┆ 320     ┆ 0.824  ┆ 28.8          ┆ 18.8           │
-│ Seattle Seahawks     ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 483    ┆ 292     ┆ 0.824  ┆ 28.4          ┆ 17.2           │
-│ Denver Broncos       ┆ 17       ┆ 14   ┆ 3      ┆ 0    ┆ 401    ┆ 311     ┆ 0.824  ┆ 23.6          ┆ 18.3           │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       ┆ …      ┆ …             ┆ …              │
-│ Tennessee Titans     ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 284    ┆ 478     ┆ 0.176  ┆ 16.7          ┆ 28.1           │
-│ Arizona Cardinals    ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 355    ┆ 488     ┆ 0.176  ┆ 20.9          ┆ 28.7           │
-│ Las Vegas Raiders    ┆ 17       ┆ 3    ┆ 14     ┆ 0    ┆ 241    ┆ 432     ┆ 0.176  ┆ 14.2          ┆ 25.4           │
-└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┴────────┴───────────────┴────────────────┘
+┌──────────────────────┬──────────┬────────┬─────────┬──────┬────────┬──────┬────────┬───────────────┬────────────────┐
+│ team                 ┆ numGames ┆ scored ┆ allowed ┆ wins ┆ losses ┆ ties ┆ winPct ┆ scoredPerGame ┆ allowedPerGame │
+│ ---                  ┆ ---      ┆ ---    ┆ ---     ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---           ┆ ---            │
+│ str                  ┆ u32      ┆ i64    ┆ i64     ┆ u32  ┆ u32    ┆ u32  ┆ f64    ┆ f64           ┆ f64            │
+╞══════════════════════╪══════════╪════════╪═════════╪══════╪════════╪══════╪════════╪═══════════════╪════════════════╡
+│ New England Patriots ┆ 17       ┆ 490    ┆ 320     ┆ 14   ┆ 3      ┆ 0    ┆ 0.824  ┆ 28.8          ┆ 18.8           │
+│ Seattle Seahawks     ┆ 17       ┆ 483    ┆ 292     ┆ 14   ┆ 3      ┆ 0    ┆ 0.824  ┆ 28.4          ┆ 17.2           │
+│ Denver Broncos       ┆ 17       ┆ 401    ┆ 311     ┆ 14   ┆ 3      ┆ 0    ┆ 0.824  ┆ 23.6          ┆ 18.3           │
+│ …                    ┆ …        ┆ …      ┆ …       ┆ …    ┆ …      ┆ …    ┆ …      ┆ …             ┆ …              │
+│ Tennessee Titans     ┆ 17       ┆ 284    ┆ 478     ┆ 3    ┆ 14     ┆ 0    ┆ 0.176  ┆ 16.7          ┆ 28.1           │
+│ Arizona Cardinals    ┆ 17       ┆ 355    ┆ 488     ┆ 3    ┆ 14     ┆ 0    ┆ 0.176  ┆ 20.9          ┆ 28.7           │
+│ Las Vegas Raiders    ┆ 17       ┆ 241    ┆ 432     ┆ 3    ┆ 14     ┆ 0    ┆ 0.176  ┆ 14.2          ┆ 25.4           │
+└──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┴────────┴───────────────┴────────────────┘
 ```
