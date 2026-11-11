@@ -1023,6 +1023,8 @@ Only the first and last few rows are shown
 pl.Config(tbl_rows=-1, tbl_cols=-1)
 ```
 
+...
+
 (The slides will still only show a few rows)
 
 ## Home Results
@@ -1271,8 +1273,8 @@ shape: (544, 4)
 
 ```py
 grouped = combined.group_by("team").agg(
-    pl.sum("scored"),
-    pl.sum("allowed"),
+    pl.col("scored").sum(),
+    pl.col("allowed").sum(),
     (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
 )
 ```
@@ -1303,6 +1305,26 @@ All rows with the same `team` get combined into one row
 ...
 
 `sum()` of `true` / `false` values counts the `true`s
+
+---
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.col("scored").sum(),
+    pl.col("allowed").sum(),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
+)
+```
+
+...
+
+```py
+grouped = combined.group_by("team").agg(
+    pl.sum("scored"),
+    pl.sum("allowed"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
+)
+```
 
 ---
 
