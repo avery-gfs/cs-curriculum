@@ -1209,39 +1209,6 @@ One row per team per game: 272 games, 544 rows
 ## Grouping by Team
 
 ```py
-grouped = combined.group_by("team").agg(
-    pl.len().alias("numGames"),
-)
-```
-
-...
-
-```
-shape: (32, 2)
-┌──────────────────────┬──────────┐
-│ team                 ┆ numGames │
-│ ---                  ┆ ---      │
-│ str                  ┆ u32      │
-╞══════════════════════╪══════════╡
-│ Philadelphia Eagles  ┆ 17       │
-│ Los Angeles Chargers ┆ 17       │
-│ New Orleans Saints   ┆ 17       │
-│ …                    ┆ …        │
-│ Carolina Panthers    ┆ 17       │
-│ San Francisco 49ers  ┆ 17       │
-│ New York Giants      ┆ 17       │
-└──────────────────────┴──────────┘
-```
-
-...
-
-All rows with the same `team` get combined into one row
-
-(Row order may be different when you run it)
-
----
-
-```py
 combined.select(
     pl.col("team"),
     pl.col("scored"),
@@ -1283,15 +1250,23 @@ combined.select(
 )
 ```
 
-?``` shape: (544, 4) ┌───────────────────────┬────────┬─────────┬───────┐ │ team
-┆ scored ┆ allowed ┆ won │ │ --- ┆ --- ┆ --- ┆ --- │ │ str ┆ i64 ┆ i64 ┆ bool │
-╞═══════════════════════╪════════╪═════════╪═══════╡ │ Philadelphia Eagles ┆ 24
-┆ 20 ┆ true │ │ Los Angeles Chargers ┆ 27 ┆ 21 ┆ true │ │ New Orleans Saints ┆
-13 ┆ 20 ┆ false │ │ … ┆ … ┆ … ┆ … │ │ Miami Dolphins ┆ 10 ┆ 38 ┆ false │ │
-Washington Commanders ┆ 24 ┆ 17 ┆ true │ │ Baltimore Ravens ┆ 24 ┆ 26 ┆ false │
+```
+shape: (544, 4)
+┌───────────────────────┬────────┬─────────┬───────┐
+│ team                  ┆ scored ┆ allowed ┆ won   │
+│ ---                   ┆ ---    ┆ ---     ┆ ---   │
+│ str                   ┆ i64    ┆ i64     ┆ bool  │
+╞═══════════════════════╪════════╪═════════╪═══════╡
+│ Philadelphia Eagles   ┆ 24     ┆ 20      ┆ true  │
+│ Los Angeles Chargers  ┆ 27     ┆ 21      ┆ true  │
+│ New Orleans Saints    ┆ 13     ┆ 20      ┆ false │
+│ …                     ┆ …      ┆ …       ┆ …     │
+│ Miami Dolphins        ┆ 10     ┆ 38      ┆ false │
+│ Washington Commanders ┆ 24     ┆ 17      ┆ true  │
+│ Baltimore Ravens      ┆ 24     ┆ 26      ┆ false │
 └───────────────────────┴────────┴─────────┴───────┘
+```
 
-````
 ---
 
 ```py
@@ -1300,7 +1275,7 @@ grouped = combined.group_by("team").agg(
     pl.sum("allowed"),
     (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
 )
-````
+```
 
 ...
 
@@ -1320,6 +1295,12 @@ shape: (32, 3)
 │ New York Giants      ┆ 17       ┆ 4    │
 └──────────────────────┴──────────┴──────┘
 ```
+
+...
+
+All rows with the same `team` get combined into one row
+
+(Row order may be different when you run it)
 
 ...
 
