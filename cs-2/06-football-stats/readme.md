@@ -1283,35 +1283,24 @@ combined.select(
 )
 ```
 
-```
-shape: (544, 4)
-┌───────────────────────┬────────┬─────────┬───────┐
-│ team                  ┆ scored ┆ allowed ┆ won   │
-│ ---                   ┆ ---    ┆ ---     ┆ ---   │
-│ str                   ┆ i64    ┆ i64     ┆ bool  │
-╞═══════════════════════╪════════╪═════════╪═══════╡
-│ Philadelphia Eagles   ┆ 24     ┆ 20      ┆ true  │
-│ Los Angeles Chargers  ┆ 27     ┆ 21      ┆ true  │
-│ New Orleans Saints    ┆ 13     ┆ 20      ┆ false │
-│ …                     ┆ …      ┆ …       ┆ …     │
-│ Miami Dolphins        ┆ 10     ┆ 38      ┆ false │
-│ Washington Commanders ┆ 24     ┆ 17      ┆ true  │
-│ Baltimore Ravens      ┆ 24     ┆ 26      ┆ false │
+?``` shape: (544, 4) ┌───────────────────────┬────────┬─────────┬───────┐ │ team
+┆ scored ┆ allowed ┆ won │ │ --- ┆ --- ┆ --- ┆ --- │ │ str ┆ i64 ┆ i64 ┆ bool │
+╞═══════════════════════╪════════╪═════════╪═══════╡ │ Philadelphia Eagles ┆ 24
+┆ 20 ┆ true │ │ Los Angeles Chargers ┆ 27 ┆ 21 ┆ true │ │ New Orleans Saints ┆
+13 ┆ 20 ┆ false │ │ … ┆ … ┆ … ┆ … │ │ Miami Dolphins ┆ 10 ┆ 38 ┆ false │ │
+Washington Commanders ┆ 24 ┆ 17 ┆ true │ │ Baltimore Ravens ┆ 24 ┆ 26 ┆ false │
 └───────────────────────┴────────┴─────────┴───────┘
-```
 
-...
-
-`sum()` of `true` / `false` values counts the `true`s
-
+````
 ---
 
 ```py
 grouped = combined.group_by("team").agg(
-    pl.len().alias("numGames"),
-    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+    pl.sum("scored"),
+    pl.sum("allowed"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("won"),
 )
-```
+````
 
 ...
 
@@ -1332,11 +1321,17 @@ shape: (32, 3)
 └──────────────────────┴──────────┴──────┘
 ```
 
+...
+
+`sum()` of `true` / `false` values counts the `true`s
+
 ---
 
 ```py
 grouped = combined.group_by("team").agg(
     pl.len().alias("numGames"),
+    pl.sum("scored"),
+    pl.sum("allowed"),
     (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
     (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
     (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
@@ -1360,38 +1355,6 @@ shape: (32, 5)
 │ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    │
 │ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    │
 └──────────────────────┴──────────┴──────┴────────┴──────┘
-```
-
----
-
-```py
-grouped = combined.group_by("team").agg(
-    pl.len().alias("numGames"),
-    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
-    (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
-    (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
-    pl.sum("scored"),
-    pl.sum("allowed"),
-)
-```
-
-...
-
-```
-shape: (32, 7)
-┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┐
-│ team                 ┆ numGames ┆ wins ┆ losses ┆ ties ┆ scored ┆ allowed │
-│ ---                  ┆ ---      ┆ ---  ┆ ---    ┆ ---  ┆ ---    ┆ ---     │
-│ str                  ┆ u32      ┆ u32  ┆ u32    ┆ u32  ┆ i64    ┆ i64     │
-╞══════════════════════╪══════════╪══════╪════════╪══════╪════════╪═════════╡
-│ Philadelphia Eagles  ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 379    ┆ 325     │
-│ Los Angeles Chargers ┆ 17       ┆ 11   ┆ 6      ┆ 0    ┆ 368    ┆ 340     │
-│ New Orleans Saints   ┆ 17       ┆ 6    ┆ 11     ┆ 0    ┆ 306    ┆ 383     │
-│ …                    ┆ …        ┆ …    ┆ …      ┆ …    ┆ …      ┆ …       │
-│ Carolina Panthers    ┆ 17       ┆ 8    ┆ 9      ┆ 0    ┆ 311    ┆ 380     │
-│ San Francisco 49ers  ┆ 17       ┆ 12   ┆ 5      ┆ 0    ┆ 437    ┆ 371     │
-│ New York Giants      ┆ 17       ┆ 4    ┆ 13     ┆ 0    ┆ 381    ┆ 439     │
-└──────────────────────┴──────────┴──────┴────────┴──────┴────────┴─────────┘
 ```
 
 ## Calculated Columns
