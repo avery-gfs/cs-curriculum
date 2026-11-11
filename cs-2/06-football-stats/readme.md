@@ -1338,8 +1338,6 @@ shape: (32, 5)
 
 `with_columns` keeps the existing columns and adds new ones
 
----
-
 ```py
 finalStats = grouped.with_columns(
     ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
@@ -1376,8 +1374,6 @@ finalStats = grouped.with_columns(
 )
 ```
 
-...
-
 ```
 shape: (32, 8)
 ┌──────────────────────┬──────────┬──────┬────────┬──────┬────────┬─────────┬────────┐
@@ -1406,8 +1402,6 @@ finalStats = grouped.with_columns(
     (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
 )
 ```
-
-...
 
 ```
 shape: (32, 10)
