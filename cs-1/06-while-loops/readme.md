@@ -258,30 +258,6 @@ high = int(input("Enter upper bound: "))
 # Your code goes here
 ```
 
-## Problem: Running Maximum
-
-```py
-# Keep track of the largest integer entered so far. Assume that the largest
-# number is 0 to start.
-#
-# Example:
-#
-# Enter a number: 9
-# Maximum: 9
-# Enter a number: 90
-# Maximum: 90
-# Enter a number: 7
-# Maximum: 90
-# Enter a number: 100
-# Maximum: 100
-# ...
-
-maximum = 0
-
-while True:
-    pass  # Your code goes here
-```
-
 ## Problem: Running Average
 
 ```py
@@ -368,37 +344,6 @@ bottles = 99
 
 while bottles > 0:
     pass  # Your code goes here
-```
-
-## Problem: Prime Test
-
-```py
-# Determine whether a given number is prime. Assume the number is at least 2.
-#
-# A number is prime if it has no factors other than 1 and itself.
-#
-# Example:
-#
-# Enter a number: 17
-# Prime
-#
-# Example:
-#
-# Enter a number: 51
-# Not prime
-
-n = int(input("Enter a number: "))
-
-isPrime = True
-factor = 2
-
-while factor < n:
-    pass  # Your code goes here
-    
-if isPrime:
-    print("Prime")
-else:
-    print("Not prime")
 ```
 
 ## Problem: Prime Factors
