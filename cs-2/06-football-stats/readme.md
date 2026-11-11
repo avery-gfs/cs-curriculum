@@ -1241,9 +1241,38 @@ All rows with the same `team` get combined into one row
 
 ---
 
-Which rows are wins?
+```py
+combined.select(
+    pl.col("team"),
+    pl.col("scored"),
+    pl.col("allowed"),
+)
+```
 
 ...
+
+```
+shape: (544, 3)
+┌───────────────────────┬────────┬─────────┐
+│ team                  ┆ scored ┆ allowed │
+│ ---                   ┆ ---    ┆ ---     │
+│ str                   ┆ i64    ┆ i64     │
+╞═══════════════════════╪════════╪═════════╡
+│ Philadelphia Eagles   ┆ 24     ┆ 20      │
+│ Los Angeles Chargers  ┆ 27     ┆ 21      │
+│ New Orleans Saints    ┆ 13     ┆ 20      │
+│ …                     ┆ …      ┆ …       │
+│ Miami Dolphins        ┆ 10     ┆ 38      │
+│ Washington Commanders ┆ 24     ┆ 17      │
+│ Baltimore Ravens      ┆ 24     ┆ 26      │
+└───────────────────────┴────────┴─────────┘
+```
+
+...
+
+Which rows are wins?
+
+---
 
 ```py
 combined.select(
