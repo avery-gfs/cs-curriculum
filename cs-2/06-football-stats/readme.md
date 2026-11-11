@@ -1222,6 +1222,8 @@ combined.with_columns(
 )
 ```
 
+...
+
 ```
 shape: (544, 4)
 ┌───────────────────────┬────────┬─────────┬───────┐
@@ -1244,6 +1246,8 @@ shape: (544, 4)
 ```py
 grouped = combined.group_by("team").agg()
 ```
+
+...
 
 ```
 shape: (32, 1)
@@ -1325,16 +1329,18 @@ shape: (32, 4)
 ```py
 grouped = combined.group_by("team").agg(
     pl.len().alias("numGames"),
-    pl.col("scored").sum(),
-    pl.col("allowed").sum(),
+    pl.sum("scored"),
+    pl.sum("allowed"),
 )
 ```
+
+...
 
 ```py
 grouped = combined.group_by("team").agg(
     pl.len().alias("numGames"),
-    pl.sum("scored"),
-    pl.sum("allowed"),
+    pl.col("scored").sum(),
+    pl.col("allowed").sum(),
 )
 ```
 
