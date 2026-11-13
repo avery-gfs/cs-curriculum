@@ -694,10 +694,10 @@ points allowed per game: 19.1
 Also write the stats to a new CSV file, `stats.csv`:
 
 ```
-name,wins,losses,ties,win_percent,points_scored,points_allowed,num_games,points_scored_per_game,points_allowed_per_game
-Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
-Dallas Cowboys,7,9,1,0.412,471,511,17,27.7,30.1
-Los Angeles Chargers,11,6,0,0.647,368,340,17,21.6,20.0
+name,num_games,wins,losses,ties,win_percent,points_scored,points_allowed,points_scored_per_game,points_allowed_per_game
+Philadelphia Eagles,17,11,6,0,0.647,379,325,22.3,19.1
+Dallas Cowboys,17,7,9,1,0.412,471,511,27.7,30.1
+Los Angeles Chargers,17,11,6,0,0.647,368,340,21.6,20.0
 ...
 ```
 
