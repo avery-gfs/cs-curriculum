@@ -1,0 +1,2608 @@
+id,movie_id,person_id,role_name
+1,1,2062,"Andy Dufresne"
+2,1,1520,"Ellis Boyd 'Red' Redding"
+3,1,213,"Warden Norton"
+4,1,2197,Heywood
+5,1,361,"Captain Hadley"
+6,1,737,Tommy
+7,1,1393,"Bogs Diamond"
+8,1,944,"Brooks Hatlen"
+9,1,986,"1946 D.A."
+10,1,1248,Skeet
+11,2,1397,"Don Vito Corleone"
+12,2,35,Michael
+13,2,923,Sonny
+14,2,479,"Kay Adams"
+15,2,1767,Clemenza
+16,2,1791,"Tom Hagen"
+17,2,1983,"Capt. McCluskey"
+18,2,1062,"Jack Woltz"
+19,2,1754,Barzini
+20,2,33,Sollozzo
+21,3,337,"Bruce Wayne"
+22,3,818,Joker
+23,3,2,"Harvey Dent"
+24,3,1467,Alfred
+25,3,1344,Rachel
+26,3,699,Gordon
+27,3,1520,"Lucius Fox"
+28,3,1518,Ramirez
+29,3,1819,Wuertz
+30,3,359,Scarecrow
+31,4,35,Michael
+32,4,1789,"Vito Corleone"
+33,4,1791,"Tom Hagen"
+34,4,479,Kay
+35,4,1045,"Fredo Corleone"
+36,4,2018,"Connie Corleone"
+37,4,1267,"Hyman Roth"
+38,4,1485,"Frankie Pentangeli"
+39,4,687,"Senator Pat Geary"
+40,4,1753,"Al Neri"
+41,5,559,Frodo
+42,5,2139,Aragorn
+43,5,868,Gandalf
+44,5,1601,Legolas
+45,5,1576,"Everard Proudfoot"
+46,5,68,"Elanor Gamgee"
+47,5,1898,Sam
+48,5,436,"Gondorian Soldier 3"
+49,5,1038,Madril
+50,5,1899,Boromir
+51,6,831,"Juror 8"
+52,6,1263,"Juror 3"
+53,6,1401,"Juror 1"
+54,6,1049,"Juror 2"
+55,6,524,"Juror 4"
+56,6,900,"Juror 5"
+57,6,535,"Juror 6"
+58,6,906,"Juror 7"
+59,6,1109,"Juror 9"
+60,6,526,"Juror 10"
+61,7,1288,"Oskar Schindler"
+62,7,1719,"Amon Goeth"
+63,7,176,"Itzhak Stern"
+64,7,280,"Emilie Schindler"
+65,7,1096,"Poldek Pfefferberg"
+66,7,572,"Helen Hirsch"
+67,7,1353,"Victoria Klonowska"
+68,7,1941,"Wilek Chilowicz"
+69,7,1390,"Marcel Goldberg"
+70,7,265,Ingrid
+71,8,559,Frodo
+72,8,868,Gandalf
+73,8,1601,Legolas
+74,8,1899,Boromir
+75,8,38,"The Ring"
+76,8,1576,"Everard Proudfoot"
+77,8,1898,Sam
+78,8,1862,Sauron
+79,8,1862,Goblin
+80,8,1862,Uruk-hai
+81,8,203,Pippin
+82,8,96,Gollum
+83,9,1079,"Vincent Vega"
+84,9,2121,"Mia Wallace"
+85,9,1877,"Jules Winnfield"
+86,9,251,"Butch Coolidge"
+87,9,2063,Pumpkin
+88,9,80,"Honey Bunny"
+89,9,1255,Waitress
+90,9,1685,Marvin
+91,9,667,Brett
+92,9,258,Roger
+93,10,559,Frodo
+94,10,868,Gandalf
+95,10,2139,Aragorn
+96,10,1601,Legolas
+97,10,248,Aldor
+98,10,1898,Sam
+99,10,1038,Madril
+100,10,1862,"Man Flesh Uruk"
+101,10,291,Galadriel
+102,10,203,Pippin
+103,11,369,Biondo
+104,11,369,Blondie
+105,11,555,Tuco
+106,11,1270,Sentenza
+107,11,1270,"Angel Eyes"
+108,11,49,"Alcoholic Union Captain"
+109,11,1323,"Father Pablo Ramirez"
+110,11,1714,Maria
+111,11,581,Storekeeper
+112,11,368,"Mexican Peon"
+113,11,1039,Sheriff
+114,11,1306,Baker
+115,12,2071,"Forrest Gump"
+116,12,1807,"Jenny Curran"
+117,12,701,"Lieutenant Dan Taylor"
+118,12,1864,"Mrs. Gump"
+119,12,1738,"Nurse at Park Bench"
+120,12,1470,"Young Forrest"
+121,12,796,Doctor
+122,12,718,Barber
+123,12,216,Crony
+124,12,1070,Crony
+125,13,1282,Cobb
+126,13,1103,Arthur
+127,13,569,Ariadne
+128,13,1182,Saito
+129,13,2072,Eames
+130,13,489,Yusuf
+131,13,359,"Robert Fischer, Jr."
+132,13,2069,Browning
+133,13,1383,Mal
+134,13,1657,"Maurice Fischer"
+135,14,230,"Tyler Durden"
+136,14,541,Narrator
+137,14,1453,"Robert Paulsen"
+138,14,2241,"Richard Chesler (Regional Manager)"
+139,14,1770,"Intern at Hospital"
+140,14,435,"Thomas at Remaining Men Together"
+141,14,723,"Group Leader - Remaining Men Together"
+142,14,606,"Weeping Woman - Onward and Upward"
+143,14,342,"Leader - Partners in Positivity"
+144,14,827,"Marla Singer"
+145,15,1389,"Luke Skywalker"
+146,15,801,"Han Solo"
+147,15,282,"Princess Leia"
+148,15,205,"Lando Calrissian"
+149,15,114,C-3PO
+150,15,453,"Darth Vader"
+151,15,1673,Chewbacca
+152,15,1187,R2-D2
+153,15,661,Yoda
+154,15,52,"Ben (Obi-Wan) Kenobi"
+155,16,1169,Neo
+156,16,1256,Morpheus
+157,16,284,Trinity
+158,16,861,"Agent Smith"
+159,16,755,Oracle
+160,16,1029,Cypher
+161,16,1366,Tank
+162,16,1125,Apoc
+163,16,1430,Mouse
+164,16,173,Switch
+165,17,1436,Cooper
+166,17,104,Brand
+167,17,1004,Murph
+168,17,1339,"Murph (10 Yrs.)"
+169,17,565,"Murph (older)"
+170,17,1060,Donald
+171,17,2064,"Tom (15 Yrs.)"
+172,17,452,"School Principal"
+173,17,378,"Ms. Hanley"
+174,17,643,Boots
+175,18,1789,"James Conway"
+176,18,1729,"Henry Hill"
+177,18,1030,"Tommy DeVito"
+178,18,1310,"Karen Hill"
+179,18,1642,"Paul Cicero"
+180,18,662,"Frankie Carbone"
+181,18,2092,"Sonny Bunz"
+182,18,1497,Frenchy
+183,18,665,"Billy Batts"
+184,18,357,"Morris Kessler"
+185,19,904,"R.P. McMurphy"
+186,19,1314,"Nurse Ratched"
+187,19,1464,Ellis
+188,19,1661,"Col. Matterson"
+189,19,462,"Dr. Spivey"
+190,19,78,Miller
+191,19,1893,Turkle
+192,19,1526,Warren
+193,19,421,Martini
+194,19,2188,Sefelt
+195,20,1520,Somerset
+196,20,230,Mills
+197,20,1197,"John Doe"
+198,20,90,"Dead Man at 1st Crime Scene"
+199,20,417,"Detective Taylor at First Murder"
+200,20,780,Tracy
+201,20,1044,"Officer Davis"
+202,20,214,"Gluttony Victim"
+203,20,1664,"Dr. O'Neill"
+204,20,1739,"Dr. Santiago"
+205,21,941,"George Bailey"
+206,21,506,"Mary Hatch"
+207,21,1302,"Mr. Potter"
+208,21,2054,"Uncle Billy"
+209,21,833,Clarence
+210,21,192,"Mrs. Bailey"
+211,21,654,Ernie
+212,21,2165,Bert
+213,21,756,Violet
+214,21,781,"Mr. Gower"
+215,22,1024,"Clarice Starling"
+216,22,119,"Dr. Hannibal Lecter"
+217,22,1896,"Jack Crawford"
+218,22,2032,"Jame Gumb"
+219,22,117,"Dr. Frederick Chilton"
+220,22,247,"Catherine Martin"
+221,22,478,"Senator Ruth Martin"
+222,22,1158,"Ardelia Mapp"
+223,22,308,"Lt. Boyle"
+224,22,2102,Lamar
+225,23,2071,"Captain Miller"
+226,23,1429,"Private Ryan"
+227,23,2080,"Sergeant Horvath"
+228,23,537,"Private Reiben"
+229,23,166,"Private Jackson"
+230,23,10,"Private Mellish"
+231,23,2144,"Private Caparzo"
+232,23,744,T
+233,23,744,"4 Medic Wade"
+234,23,997,"Corporal Upham"
+235,23,2030,"Captain Hamill"
+236,24,2100,Kikuchiyo
+237,24,2014,"Kambei Shimada"
+238,24,1172,Shino
+239,24,2226,Wife
+240,24,1146,"Farmer Manzo"
+241,24,396,Shichiroji
+242,24,881,Katsushiro
+243,24,1505,Heihachi
+244,24,1910,Kyuzo
+245,24,2223,"Farmer Mosuke"
+246,25,2071,"Paul Edgecomb"
+247,25,1469,"John Coffey"
+248,25,450,"Brutus 'Brutal' Howell"
+249,25,225,"Jan Edgecomb"
+250,25,927,"Warden Hal Moores"
+251,25,1478,"Eduard Delacroix"
+252,25,763,"Arlen Bitterbuck"
+253,25,513,"Percy Wetmore"
+254,25,1872,"'Wild Bill' Wharton"
+255,25,166,"Dean Stanton"
+256,26,62,"Buscapé"
+257,26,1261,"Zé Pequeno"
+258,26,1425,"Sandro Cenoura"
+259,26,1683,"Bené"
+260,26,518,Dadinho
+261,26,1094,Cabeleira
+262,26,1921,"Mané Galinha"
+263,26,982,Alicate
+264,26,70,"Angélica"
+265,26,573,Barbantinho
+266,27,1803,Guido
+267,27,1563,Dora
+268,27,743,"Giosué"
+269,27,750,Zio
+270,27,1916,Ferruccio
+271,27,1386,"Madre di Dora"
+272,27,853,"Dottor Lessing"
+273,27,1290,Guicciardini
+274,27,747,"Direttrice Didattica"
+275,27,82,Rodolfo
+276,28,137,"The Terminator"
+277,28,1300,"Sarah Connor"
+278,28,538,"John Connor"
+279,28,1796,T-1000
+280,28,525,"Dr. Silberman"
+281,28,1028,"Miles Dyson"
+282,28,1855,"Tarissa Dyson"
+283,28,290,"Enrique Salceda"
+284,28,420,Tim
+285,28,990,"Janelle Voight"
+286,29,1477,"Marty McFly"
+287,29,348,"Dr. Emmett Brown"
+288,29,1260,"Lorraine Baines"
+289,29,388,"George McFly"
+290,29,2083,"Biff Tannen"
+291,29,367,"Jennifer Parker"
+292,29,1361,"Dave McFly"
+293,29,2171,"Linda McFly"
+294,29,715,"Sam Baines"
+295,29,639,"Stella Baines"
+296,30,1389,"Luke Skywalker"
+297,30,801,"Han Solo"
+298,30,282,"Princess Leia Organa"
+299,30,52,"Ben Obi-Wan Kenobi"
+300,30,1665,"Grand Moff Tarkin"
+301,30,114,C-3PO
+302,30,1187,R2-D2
+303,30,1673,Chewbacca
+304,30,453,"Lord Darth Vader"
+305,30,1684,"Uncle Owen"
+306,31,1510,Haku
+307,31,1837,Chihiro
+308,31,1372,Yubaba
+309,31,1372,Zeniba
+310,31,2013,Father
+311,31,2211,Mother
+312,31,2025,Aogaeru
+313,31,1852,"Bô"
+314,31,2227,Rin
+315,31,2232,Bandai-gaeru
+316,31,1226,"Kawa no Kami"
+317,32,1841,Maximus
+318,32,1023,Commodus
+319,32,381,Lucilla
+320,32,1591,Proximo
+321,32,1760,"Marcus Aurelius"
+322,32,471,Gracchus
+323,32,493,Juba
+324,32,454,Falco
+325,32,1074,Gaius
+326,32,2084,Quintus
+327,33,18,"Wladyslaw Szpilman"
+328,33,2052,"Captain Wilm Hosenfeld"
+329,33,655,Father
+330,33,574,Dorota
+331,33,1486,Jurek
+332,33,529,Henryk
+333,33,1441,Mother
+334,33,1005,Halina
+335,33,1124,Regina
+336,33,2164,"SS Slapping Father"
+337,35,1959,"Ki Taek"
+338,35,1268,Dong-ik
+339,35,327,"Yeon Kyo"
+340,35,329,"Ki Woo"
+341,35,1616,Gi-jeong
+342,35,1264,"Moon Gwang"
+343,35,953,"Chung Sook"
+344,35,1614,"Geun Se"
+345,35,1138,"Da Hye"
+346,35,1137,"Da Song"
+347,36,2111,Seita
+348,36,151,Setsuko
+349,36,25,Aunt
+350,36,2220,Mother
+351,36,1241,"Obayashi Chairman"
+352,36,1422,"Woman who takes care of Setsuko"
+353,36,1167,Cousin
+354,36,2224,Gosaku
+355,36,1417,"Aunt's house guest"
+356,36,1222,Patrolman
+357,37,2027,"Tsugumo Hanshirô"
+358,37,28,"Chijiiwa Motome"
+359,37,1932,"Tsugumo Miho"
+360,37,2042,"Omodaka Hikokurô"
+361,37,1420,"Inaba Tango"
+362,37,870,"Yazaki Hayato"
+363,37,1171,"Fukushima Masakatsu"
+364,37,2222,"Chijiiwa Jinnai"
+365,37,846,"Ii Clan Retainer"
+366,37,2116,"Ii Clan Retainer"
+367,38,1435,Simba
+368,38,998,Scar
+369,38,929,Mufasa
+370,38,2178,Shenzi
+371,38,1829,Zazu
+372,38,1564,"Young Nala"
+373,38,1009,Ed
+374,38,1793,Rafiki
+375,38,1514,Nala
+376,38,1546,Timon
+377,39,121,"Norman Bates"
+378,39,951,"Marion Crane"
+379,39,2129,"Lila Crane"
+380,39,1051,"Sam Loomis"
+381,39,1401,"Det. Milton Arbogast"
+382,39,1063,"Sheriff Al Chambers"
+383,39,1950,"Dr. Fred Richman"
+384,39,648,"Tom Cassidy"
+385,39,1621,Caroline
+386,39,2127,"George Lowery"
+387,40,1282,Billy
+388,40,1429,Colin
+389,40,904,Costello
+390,40,1395,Dignam
+391,40,1408,Queenan
+392,40,1733,"Mr. French"
+393,40,2128,Madolyn
+394,40,112,Brown
+395,40,51,Ellerby
+396,40,1191,"Cousin Sean"
+397,41,1500,Andrew
+398,41,888,Fletcher
+399,41,1456,Nicole
+400,41,1639,"Jim Neimann"
+401,41,149,Ryan
+402,41,1543,"Carl Tanner"
+403,41,334,"Uncle Frank"
+404,41,402,"Mr. Kramer"
+405,41,1994,"Aunt Emma"
+406,41,1444,"Dorm Neighbor"
+407,42,337,"Alfred Borden"
+408,42,858,"Robert Angier"
+409,42,1892,"Olivia Wenscombe"
+410,42,1467,Cutter
+411,42,1699,"Julia McCullough"
+412,42,1737,Sarah
+413,42,1875,Jess
+414,42,437,Tesla
+415,42,96,Alley
+416,42,409,Judge
+417,43,541,Derek
+418,43,538,Danny
+419,43,193,Doris
+420,43,993,Davina
+421,43,603,Seth
+422,43,619,Stacey
+423,43,150,Sweeney
+424,43,570,Murray
+425,43,1965,Cameron
+426,43,2196,Dennis
+427,44,1924,"Miles Morales"
+428,44,782,"Gwen Stacy"
+429,44,240,"Jeff Morales"
+430,44,1327,"Rio Morales"
+431,44,919,"Peter B. Parker"
+432,44,1603,"Miguel O'Hara"
+433,44,967,Spot
+434,44,884,"Jessica Drew"
+435,44,412,"Hobie Brown"
+436,44,1151,"Pavitr Prabhakar"
+437,45,1693,Alfredo
+438,45,580,Spaccafico
+439,45,127,"Maria Di Vita - Younger"
+440,45,879,Anna
+441,45,1279,Usher
+442,45,1364,"Salvatore 'Totò' Di Vita - Teenager"
+443,45,1705,"Maria Di Vita - Older"
+444,45,21,"Elena Mendola"
+445,45,1283,"Father Adelfio"
+446,45,1866,"Salvatore 'Totò' Di Vita - Child"
+447,46,978,Leon
+448,46,699,Stansfield
+449,46,1540,Mathilda
+450,46,418,Tony
+451,46,1659,Malky
+452,46,2184,"1st Stansfield Man"
+453,46,500,"2nd Stansfield Man"
+454,46,1175,"3rd Stansfield Man"
+455,46,1721,"4th Stansfield Man"
+456,46,1462,"Mathilda's Father"
+457,47,862,"Rick Blaine"
+458,47,876,"Ilsa Lund"
+459,47,1635,"Victor Laszlo"
+460,47,365,"Captain Louis Renault"
+461,47,382,"Major Heinrich Strasser"
+462,47,2004,"Signor Ferrari"
+463,47,1670,Ugarte
+464,47,1856,Carl
+465,47,1340,Yvonne
+466,47,508,Sam
+467,48,671,Philippe
+468,48,1599,Driss
+469,48,106,Yvonne
+470,48,145,Magalie
+471,48,1118,"La DRH société de courses"
+472,48,372,Marcelle
+473,48,43,Elisa
+474,48,392,Adama
+475,48,1863,Fatou
+476,48,7,Mina
+477,49,1197,Verbal
+478,49,689,Keaton
+479,49,317,"Dave Kujan"
+480,49,1974,McManus
+481,49,181,Fenster
+482,49,1196,Hockney
+483,49,1657,Kobayashi
+484,49,2003,"Edie Finneran"
+485,49,736,"Jack Baer"
+486,49,404,"Jeff Rabin"
+487,50,946,Django
+488,50,346,"Dr. King Schultz"
+489,50,1282,"Calvin J. Candie"
+490,50,1190,"Broomhilda von Shaft"
+491,50,1877,Stephen
+492,50,2163,"Billy Crash"
+493,50,469,"Leonide Moguy"
+494,50,938,"Ace Speck"
+495,50,938,"Butch Pooch"
+496,50,456,"Mr. Stonesipher"
+497,50,407,Cora
+498,51,1948,Ripley
+499,51,2081,Dallas
+500,51,1057,Kane
+501,51,2131,Lambert
+502,51,805,Brett
+503,51,866,Ash
+504,51,2209,Parker
+505,51,220,Alien
+506,51,825,Mother
+507,51,530,Alien
+508,52,941,"L.B. Jefferies"
+509,52,761,"Lisa Fremont"
+510,52,2170,"Tom Doyle"
+511,52,2045,Stella
+512,52,1735,"Lars Thorwald"
+513,52,1122,"Miss Lonelyhearts"
+514,52,1828,Songwriter
+515,52,730,"Miss Torso"
+516,52,1884,"Woman on Fire Escape"
+517,52,651,"Man on Fire Escape"
+518,53,300,"A Factory Worker"
+519,53,1649,"A Gamin"
+520,53,829,"Cafe Proprietor"
+521,53,2065,"Big Bill"
+522,53,318,Mechanic
+523,53,788,Burglar
+524,53,1966,"Gamin's Father"
+525,53,32,"President of the Electro Steel Corp."
+526,53,1749,"Prison Cellmate"
+527,53,295,Minister
+528,54,831,Frank
+529,54,299,Harmonica
+530,54,366,"Jill McBain"
+531,54,966,"Manuel 'Cheyenne' Gutiérrez"
+532,54,691,Morton
+533,54,1610,Sam
+534,54,2206,Stony
+535,54,896,Snaky
+536,54,1170,Sheriff
+537,54,668,"Brett McBain"
+538,55,175,"WALL·E"
+539,55,175,M-O
+540,55,561,EVE
+541,55,984,Captain
+542,55,675,"Shelby Forthright - BNL CEO"
+543,55,488,"Self - AUTO"
+544,55,1071,John
+545,55,1161,Mary
+546,55,1948,"Ship's Computer"
+547,55,1157,Mom
+548,55,1157,"Toasting Couple"
+549,55,1207,"Hoverchair Mother"
+550,56,300,"A Tramp"
+551,56,2151,"A Blind Girl"
+552,56,628,"The Blind Girl's Grandmother"
+553,56,806,"An Eccentric Millionaire"
+554,56,32,"The Millionaire's Butler"
+555,56,788,"A Prizefighter"
+556,56,1081,Newsboy
+557,56,892,"Boxing Match Spectator"
+558,56,2011,Doctor
+559,56,2134,"Superstitious Boxer"
+560,57,1408,"Captain Willard"
+561,57,1397,"Colonel Kurtz"
+562,57,1791,"Lt. Colonel Kilgore"
+563,57,677,Chef
+564,57,1867,Lance
+565,57,1256,Clean
+566,57,47,Chief
+567,57,801,Colonel
+568,57,470,"Photo Journalist"
+569,57,687,General
+570,58,778,Leonard
+571,58,284,Natalie
+572,58,1029,Teddy
+573,58,1387,Burt
+574,58,1840,Waiter
+575,58,1099,"Leonard's Wife"
+576,58,1982,Sammy
+577,58,799,"Mrs. Jankis"
+578,58,2053,Doctor
+579,58,268,Dodd
+580,59,1790,"Tony Stark"
+581,59,1790,"Iron Man"
+582,59,332,Thor
+583,59,1394,"Bruce Banner"
+584,59,1394,Hulk
+585,59,331,"Steve Rogers"
+586,59,331,"Captain America"
+587,59,1892,"Natasha Romanoff"
+588,59,1892,"Black Widow"
+589,59,499,"James Rhodes"
+590,59,499,"War Machine"
+591,59,178,"Doctor Strange"
+592,59,2074,"Peter Parker"
+593,59,2074,Spider-Man
+594,59,298,"T'Challa"
+595,59,298,"Black Panther"
+596,59,2248,Gamora
+597,60,2064,"Paul Atreides"
+598,60,2247,Chani
+599,60,1736,Jessica
+600,60,969,Stilgar
+601,60,1111,"Gurney Halleck"
+602,60,147,Feyd-Rautha
+603,60,629,"Princess Irulan"
+604,60,431,"Beast Rabban"
+605,60,355,Emperor
+606,60,1329,"Lady Margot Fenring"
+607,61,801,Indy
+608,61,1153,Marion
+609,61,1632,Belloq
+610,61,1072,Sallah
+611,61,1822,Toht
+612,61,466,Brody
+613,61,67,Satipo
+614,61,2203,Dietrich
+615,61,118,Gobler
+616,61,2132,Barranca
+617,61,2132,"Monkey Man"
+618,62,1924,"Miles Morales"
+619,62,919,"Peter B. Parker"
+620,62,782,"Gwen Stacy"
+621,62,1345,"Uncle Aaron"
+622,62,240,"Jefferson Davis"
+623,62,1296,"Aunt May"
+624,62,1327,"Rio Morales"
+625,62,2249,"Mary Jane"
+626,62,1068,Spider-Ham
+627,62,1212,"Peni Parker"
+628,63,1429,Odysseus
+629,63,2074,Telemachus
+630,63,104,Penelope
+631,63,1797,Antinous
+632,63,2105,Bard
+633,63,384,Polybus
+634,63,955,Leodes
+635,63,1565,Peisander
+636,63,569,Sinon
+637,63,1931,"First Trojan"
+638,64,2119,"Hauptmann Gerd Wiesler"
+639,64,1410,"Christa-Maria Sieland"
+640,64,1907,"Georg Dreyman"
+641,64,2120,"Oberstleutnant Anton Grubitz"
+642,64,2055,"Minister Bruno Hempf"
+643,64,792,"Paul Hauser"
+644,64,2158,"Albert Jerska"
+645,64,1438,"Karl Wallner"
+646,64,315,Udo
+647,64,835,"Gregor Hessenstein"
+648,65,2193,"Joe Gillis"
+649,65,757,"Norma Desmond"
+650,65,586,"Max Von Mayerling"
+651,65,1536,"Betty Schaefer"
+652,65,672,Sheldrake
+653,65,1307,Morino
+654,65,907,"Artie Green"
+655,65,670,Undertaker
+656,65,1249,"1st Finance Man"
+657,65,301,"2nd Finance Man"
+658,66,2115,"Leonard Vole"
+659,66,1396,Christine
+660,66,307,"Sir Wilfrid"
+661,66,571,"Miss Plimsoll"
+662,66,1080,Brogan-Moore
+663,66,830,Mayhew
+664,66,869,Carter
+665,66,2099,"Mr. Myers"
+666,66,1580,"Mrs. French"
+667,66,2122,Janet
+668,67,1216,"Col. Dax"
+669,67,1720,"Cpl. Philippe Paris"
+670,67,15,"Gen. George Broulard"
+671,67,722,"Gen. Paul Mireau"
+672,67,2169,"Lt. Roget"
+673,67,1750,"Maj. Saint-Auban"
+674,67,1035,"Pvt. Pierre Arnaud"
+675,67,340,"German Singer"
+676,67,1002,"Proprietor of Cafe"
+677,67,1663,"Narrator of Opening Sequence"
+678,67,1663,"Chief Judge of Court-Martial"
+679,68,230,"Lt. Aldo Raine"
+680,68,480,"Bridget von Hammersmark"
+681,68,554,"Sgt. Donny Donowitz"
+682,68,1529,Shosanna
+683,68,346,"Col. Hans Landa"
+684,68,1474,"Lt. Archie Hicox"
+685,68,408,"Fredrick Zoller"
+686,68,2058,"Sgt. Hugo Stiglitz"
+687,68,704,"Cpl. Wilhelm Wicki"
+688,68,910,Marcel
+689,69,904,"Jack Torrance"
+690,69,1929,"Wendy Torrance"
+691,69,422,Danny
+692,69,1893,Hallorann
+693,69,165,Ullman
+694,69,1692,Grady
+695,69,1035,Lloyd
+696,69,105,Doctor
+697,69,2090,Durkin
+698,69,1287,"Young Woman in Bath"
+699,70,300,"Hynkel - Dictator of Tomania"
+700,70,300,"A Jewish Barber"
+701,70,1649,Hannah
+702,70,905,"Napaloni - Dictator of Bacteria"
+703,70,1741,Schultz
+704,70,830,Garbitsch
+705,70,206,Herring
+706,70,760,"Madame Napaloni"
+707,70,285,"Bacterian Ambassador"
+708,70,1442,"Mr. Jaeckel"
+709,70,577,"Mrs. Jaeckel"
+710,71,1948,Ripley
+711,71,1465,"Corporal Hicks"
+712,71,283,Newt
+713,71,1639,Burke
+714,71,1247,Bishop
+715,71,201,"Private Hudson"
+716,71,2194,"Lieutenant Gorman"
+717,71,990,"Private Vasquez"
+718,71,34,"Sergeant Apone"
+719,71,1393,"Private Drake"
+720,72,2100,"Kingo Gondô"
+721,72,2229,"Aoki - the Chauffeur"
+722,72,2027,"Chief Detective Tokura"
+723,72,1239,"Reiko Gondô"
+724,72,2026,"Kawanishi - Gondô's Secretary"
+725,72,881,"Detective Arai"
+726,72,1184,"Chief Detective 'Bos'n' Taguchi"
+727,72,2016,"Detective Nakao"
+728,72,2014,"Chief of Investigation Section"
+729,72,1136,"Kamiya - National Shoes Publicity Director"
+730,73,2142,"Manoj Sharma"
+731,73,795,"Ramveer Sharma"
+732,73,705,"Pushpa Sharma"
+733,73,2109,"Young Rajni"
+734,73,1230,"Kamlesh Sharma"
+735,73,1888,Dadi
+736,73,2140,"Agriculture office clerk"
+737,73,473,"Agriculture Dept. Officer"
+738,73,1996,"Asst Police Ins. Ajbel Singh"
+739,73,491,"Village School Teacher"
+740,74,1790,"Tony Stark"
+741,74,1790,"Iron Man"
+742,74,331,"Steve Rogers"
+743,74,331,"Captain America"
+744,74,1394,"Bruce Banner"
+745,74,1394,Hulk
+746,74,332,Thor
+747,74,1892,"Natasha Romanoff"
+748,74,1892,"Black Widow"
+749,74,1000,"Clint Barton"
+750,74,1000,Hawkeye
+751,74,499,"James Rhodes"
+752,74,499,"War Machine"
+753,74,1640,"Scott Lang"
+754,74,1640,Ant-Man
+755,74,178,"Doctor Strange"
+756,74,298,"T'Challa"
+757,74,298,"Black Panther"
+758,75,1806,Sean
+759,75,1429,Will
+760,75,174,Chuckie
+761,75,1972,Lambeau
+762,75,1066,Tom
+763,75,1712,Krystyn
+764,75,377,Cathy
+765,75,288,Morgan
+766,75,375,Billy
+767,75,1433,"Barbershop Quartet #1"
+768,76,116,Miguel
+769,76,692,"Héctor"
+770,76,183,"Ernesto de la Cruz"
+771,76,42,"Mamá Imelda"
+772,76,1746,Abuelita
+773,76,916,"Papá"
+774,76,63,"Papá Julio"
+775,76,836,"Tío Oscar"
+776,76,836,"Tío Felipe"
+777,76,690,Clerk
+778,76,1308,"Plaza Mariachi"
+779,76,1308,Gustavo
+780,77,2071,Woody
+781,77,2059,"Buzz Lightyear"
+782,77,501,"Mr. Potato Head"
+783,77,1012,"Slinky Dog"
+784,77,2161,Rex
+785,77,1071,Hamm
+786,77,110,"Bo Peep"
+787,77,1067,Andy
+788,77,588,Sid
+789,77,1258,"Mrs. Davis"
+790,78,337,"Bruce Wayne"
+791,78,2072,Bane
+792,78,104,Selina
+793,78,699,"Commissioner Gordon"
+794,78,1103,Blake
+795,78,1383,Miranda
+796,78,1520,Fox
+797,78,1467,Alfred
+798,78,1437,Foley
+799,78,77,"Dr. Pavel"
+800,79,615,"Antonio Salieri"
+801,79,2075,"Wolfgang Amadeus Mozart"
+802,79,562,"Constanze Mozart"
+803,79,1830,"Leopold Mozart"
+804,79,1949,"Emanuel Schikaneder"
+805,79,343,"Katerina Cavalieri"
+806,79,987,"Emperor Joseph II"
+807,79,306,"Count Orsini-Rosenberg"
+808,79,1186,"Michael Schlumberg (2002 Director's Cut)"
+809,79,1187,"Parody Commendatore"
+810,80,1852,"Taki Tachibana"
+811,80,1516,"Mitsuha Miyamizu"
+812,80,1853,"Katsuhiko Teshigawara"
+813,80,131,"Sayaka Natori"
+814,80,1572,"Tsukasa Fujii"
+815,80,1144,"Shinta Takagi"
+816,80,1149,"Yotsuha Miyamizu"
+817,80,1419,"Toshiki Miyamizu"
+818,80,1890,"Futaha Miyamizu"
+819,80,1166,"Taki's Father"
+820,81,1,"Ranchhoddas Shamaldas Chanchad (Rancho)"
+821,81,1,"Phunsukh Wangdu"
+822,81,1341,"Farhan Qureshi"
+823,81,1515,Mona
+824,81,1925,"Raju Rastogi"
+825,81,1152,"Pia Sahastrabuddhe"
+826,81,222,"Viru Sahastrabudhhe"
+827,81,1600,"Chatur Ramalingam"
+828,81,890,"Ranchoddas Chanchad"
+829,81,1611,"Farhan's Father"
+830,81,1596,"Suhas Tandon"
+831,82,1140,"Capt.-Lt. Henrich Lehmann-Willenbrock - Der Alte"
+832,82,834,"Lt. Werner - Correspondent"
+833,82,1224,"Chief Engineer Fritz Grade - Der Leitende-Der LI"
+834,82,856,"1st Lieutenant - Number One-1WO"
+835,82,1407,"2nd Lieutenant - 2WO"
+836,82,185,"Kriechbaum - Chief Quartermaster-Navigator"
+837,82,597,Johann
+838,82,1404,Ullman
+839,82,824,Hinrich
+840,82,2123,"Chief Bosun"
+841,83,1455,"William Wallace"
+842,83,1961,"Princess Isabelle"
+843,83,1625,"Longshanks - King Edward I"
+844,83,98,"Robert the Bruce"
+845,83,939,"Young William"
+846,83,1902,"Malcolm Wallace"
+847,83,1880,"John Wallace"
+848,83,926,Campbell
+849,83,1903,MacClannough
+850,83,41,"Elder Stewart"
+851,84,2233,Ashitaka
+852,84,2228,San
+853,84,2238,Eboshi-gozen
+854,84,1150,"Jiko-bô"
+855,84,1416,Kouroku
+856,84,2110,Gonza
+857,84,1997,Toki
+858,84,2041,Yama-inu
+859,84,1349,Tatari-gami
+860,84,30,Usi-kai
+861,85,328,"Dae-su Oh"
+862,85,2215,"Lee Woo-jin"
+863,85,1148,Mi-do
+864,85,1205,"Mr. Han"
+865,85,1007,"No Joo-hwan"
+866,85,1584,"Park Cheol-woong"
+867,85,1266,"Yoo Hyung-ja"
+868,85,2217,"Lee Soo-ah"
+869,85,1585,"Young Dae-su"
+870,85,2216,"Young Woo-Jin"
+871,86,1677,"Group Capt. Lionel Mandrake"
+872,86,1677,"President Merkin Muffley"
+873,86,1677,"Dr. Strangelove"
+874,86,712,"Gen. 'Buck' Turgidson"
+875,86,1983,"Brig. Gen. Jack D. Ripper"
+876,86,1170,"Col. 'Bat' Guano"
+877,86,1954,"Maj. 'King' Kong"
+878,86,1662,"Russian Ambassador Alexi de Sadesky"
+879,86,929,"Lt. Lothar Zogg"
+880,86,2104,"Miss Scott"
+881,86,894,"Mr. Staines"
+882,86,650,"Lt. H.R. Dietrich"
+883,87,1197,"Lester Burnham"
+884,87,109,"Carolyn Burnham"
+885,87,2057,"Jane Burnham"
+886,87,2176,"Ricky Fitts"
+887,87,1458,"Angela Hayes"
+888,87,1667,"Buddy Kane"
+889,87,76,"Barbara Fitts"
+890,87,330,"Colonel Fitts"
+891,87,1894,"Jim Olmeyer"
+892,87,1871,"Jim Berkley"
+893,88,2242,Zain
+894,88,2218,Rahil
+895,88,221,Yonas
+896,88,1163,Souad
+897,88,617,Selim
+898,88,296,"Sahar, the Sister"
+899,88,37,Aspro
+900,88,557,"The Judge"
+901,88,1513,Salah
+902,88,1511,"Street Kid"
+903,89,708,"Don Lockwood"
+904,89,503,"Cosmo Brown"
+905,89,464,"Kathy Selden"
+906,89,975,"Lina Lamont"
+907,89,1501,"R.F. Simpson"
+908,89,391,Dancer
+909,89,516,"Roscoe Dexter"
+910,89,1776,"Zelda Zanders"
+911,89,511,"Chorus Girl"
+912,89,459,"Teresa - a Lady-in-Waiting"
+913,90,2088,Lobo
+914,90,1547,"Falco Grice"
+915,90,2221,"Reiner Braun"
+916,90,1380,"Armin Arlert"
+917,90,2225,"Mikasa Ackerman"
+918,90,2236,"Eren Yeager"
+919,90,842,"Levi Ackermann"
+920,90,2015,"Zeke Jaeger"
+921,90,1936,"Historia Reiss"
+922,90,1355,"Pieck Finger"
+923,91,1789,Noodles
+924,91,945,Max
+925,91,563,Deborah
+926,91,2106,"Jimmy O'Donnell"
+927,91,2112,Carol
+928,91,260,Joe
+929,91,1030,Frankie
+930,91,418,"Police Chief Aiello"
+931,91,2189,Cockeye
+932,91,932,Patsy
+933,92,1023,"Arthur Fleck"
+934,92,1789,"Murray Franklin"
+935,92,2246,"Sophie Dumond"
+936,92,637,"Penny Fleck"
+937,92,233,"Thomas Wayne"
+938,92,1928,"Detective Burke"
+939,92,197,"Detective Garrity"
+940,92,754,Randall
+941,92,1272,Gary
+942,92,1115,"Hoyt Vaughn"
+943,93,2071,Woody
+944,93,2059,"Buzz Lightyear"
+945,93,1017,Jessie
+946,93,1548,Lotso
+947,93,501,"Mr. Potato Head"
+948,93,1479,Ken
+949,93,2161,Rex
+950,93,1071,Hamm
+951,93,599,"Mrs. Potato Head"
+952,93,1067,Andy
+953,94,1389,"Luke Skywalker"
+954,94,801,"Han Solo"
+955,94,282,"Princess Leia"
+956,94,205,"Lando Calrissian"
+957,94,114,C-3PO
+958,94,1673,Chewbacca
+959,94,1909,"Anakin Skywalker"
+960,94,867,"The Emperor"
+961,94,661,Yoda
+962,94,929,"Darth Vader"
+963,95,56,"Flyora Gayshun"
+964,95,1588,Glasha
+965,95,1305,Kosach
+966,95,2157,Rubezh
+967,95,1141,"Obersturmführer"
+968,95,2143,"Sturmbannführer"
+969,95,1165,"Village Headman"
+970,95,612,Gezhel
+971,95,55,"Chief of Staff of the Partisan Detachment"
+972,95,686,"Medical NCO"
+973,96,565,"Sara Goldfarb"
+974,96,954,"Harry Goldfarb"
+975,96,992,"Marion Silver"
+976,96,1398,"Tyrone C. Love"
+977,96,350,"Tappy Tibbons"
+978,96,1315,Ada
+979,96,1363,Rae
+980,96,952,"Mrs. Pearlman"
+981,96,2002,"Mrs. Scarlini"
+982,96,1021,"Mrs. Ovadia"
+983,97,1317,"Nawal Marwan"
+984,97,1530,"Jeanne Marwan"
+985,97,1446,"Simon Marwan"
+986,97,1525,"Barbier de la Milice"
+987,97,1525,"Officer Milice Chrétienne"
+988,97,863,"Nihad (5 Ans)"
+989,97,1854,"Notaire Jean Lebel"
+990,97,496,"Professeur Niv Cohen"
+991,97,685,"Médecin a L'urgence"
+992,97,786,Wahab
+993,97,22,"Bassem Marwan"
+994,98,2014,"Kanji Watanabe"
+995,98,1573,"Mitsuo Watanabe, Kanji's son"
+996,98,1934,Kimura
+997,98,811,Sakai
+998,98,1505,Noguchi
+999,98,1498,"Toyo Odagiri, employee"
+1000,98,219,Ohara
+1001,98,1506,"Subordinate Clerk Saito"
+1002,98,1146,"Sub-Section Chief Ono"
+1003,98,1348,"Kiichi Watanabe, Kanji's Brother"
+1004,99,1342,Lucas
+1005,99,2049,Theo
+1006,99,111,Klara
+1007,99,1251,Marcus
+1008,99,2001,Grethe
+1009,99,107,Agnes
+1010,99,1250,Bruun
+1011,99,61,Nadja
+1012,99,1906,Torsten
+1013,99,1971,"Jagtbroder - Lars T"
+1014,100,1008,"Joel Barish"
+1015,100,1159,"Clementine Kruczynski"
+1016,100,2082,"Dr. Mierzwiak"
+1017,100,733,"Train Conductor"
+1018,100,559,Patrick
+1019,100,2050,Frank
+1020,100,1394,Stan
+1021,100,948,Carrie
+1022,100,442,Rob
+1023,100,1218,Mary
+1024,101,902,"C.C. Baxter"
+1025,101,1938,"Fran Kubelik"
+1026,101,674,"Jeff D. Sheldrake"
+1027,101,1732,"Joe Dobisch"
+1028,101,901,"Dr. Dreyfuss"
+1029,101,447,"Al Kirkeby"
+1030,101,851,"Mrs. Margie MacDougall"
+1031,101,1018,Sylvia
+1032,101,1538,"Mrs. Mildred Dreyfuss"
+1033,101,1083,"Karl Matuschka"
+1034,102,1675,Lawrence
+1035,102,52,"Prince Faisal"
+1036,102,123,"Auda Abu Tayi"
+1037,102,898,"General Edmund Allenby"
+1038,102,1598,"Sherif Ali"
+1039,102,1116,"Turkish Bey"
+1040,102,122,"Colonel Brighton"
+1041,102,365,"Mr. Dryden"
+1042,102,138,"Jackson Bentley"
+1043,102,505,"General Archibald Murray"
+1044,103,35,"Vincent Hanna"
+1045,103,1789,"Neil McCauley"
+1046,103,2125,"Chris Shiherlis"
+1047,103,1088,Nate
+1048,103,2080,"Michael Cheritto"
+1049,103,483,Justine
+1050,103,85,Eady
+1051,103,143,"Charlene Shiherlis"
+1052,103,1527,Drucker
+1053,103,2177,Casals
+1054,104,35,"Tony Montana"
+1055,104,1490,Elvira
+1056,104,1988,"Manny Ray"
+1057,104,1412,Gina
+1058,104,1794,"Frank Lopez"
+1059,104,1507,"Mama Montana"
+1060,104,615,Omar
+1061,104,1641,"Alejandro Sosa"
+1062,104,800,Bernstein
+1063,104,2252,"Chi Chi"
+1064,105,813,"Mr. White"
+1065,105,813,Larry
+1066,105,2063,"Mr. Orange"
+1067,105,2063,Freddy
+1068,105,1481,"Mr. Blonde"
+1069,105,1481,Vic
+1070,105,335,"Nice Guy Eddie"
+1071,105,1984,"Mr. Pink"
+1072,105,1259,"Joe Cabot"
+1073,105,1722,Holdaway
+1074,105,1215,"Marvin Nash"
+1075,105,536,"Mr. Blue"
+1076,105,1707,"Mr. Brown"
+1077,106,533,"Carl Fredricksen"
+1078,106,1098,Russell
+1079,106,1071,"Construction Foreman Tom"
+1080,106,354,"Charles Muntz"
+1081,106,218,Dug
+1082,106,218,Alpha
+1083,106,465,Beta
+1084,106,1001,Gamma
+1085,106,445,"Newsreel Announcer"
+1086,106,558,"Young Ellie"
+1087,106,999,"Young Carl"
+1088,107,1173,"Dr. Dave Bowman"
+1089,107,697,"Dr. Frank Poole"
+1090,107,2200,"Dr. Heywood R. Floyd"
+1091,107,416,Moon-Watcher
+1092,107,1281,"Dr. Andrei Smyslov"
+1093,107,1368,Elena
+1094,107,1786,"Dr. Ralph Halvorsen"
+1095,107,1904,"Dr. Bill Michaels"
+1096,107,517,"HAL 9000"
+1097,107,666,"Mission Controller"
+1098,108,674,"Walter Neff"
+1099,108,161,"Phyllis Dietrichson"
+1100,108,539,"Barton Keyes"
+1101,108,262,"Nino Zachetti"
+1102,108,1700,"Mr. Jackson"
+1103,108,976,"Lola Dietrichson"
+1104,108,2079,"Mr. Dietrichson"
+1105,108,1758,"Mr. Norton"
+1106,108,635,"Sam Gorlopis"
+1107,108,1069,"Joe Pete"
+1108,109,427,"Ishaan Nandkishore Awasthi"
+1109,109,1,"Ram Shankar Nikumbh"
+1110,109,2066,"Maya Awasthi"
+1111,109,2150,"Nandkishore Awasthi"
+1112,109,2021,"Rajan Damodran"
+1113,109,1858,"Yohan Nandkishore Awasthi"
+1114,109,745,"Jabeen Khan"
+1115,109,1244,"Art Mela's Chief Guest"
+1116,109,1726,"Mr. Holkar"
+1117,109,1703,"Principal - St. Anthony's School"
+1118,110,286,"Roger Thornhill"
+1119,110,607,"Eve Kendall"
+1120,110,935,"Phillip Vandamm"
+1121,110,1006,"Clara Thornhill"
+1122,110,1278,"The Professor"
+1123,110,1110,"Mrs. Townsend"
+1124,110,1690,"Lester Townsend"
+1125,110,1403,Leonard
+1126,110,11,Valerian
+1127,110,542,"Victor Larrabee"
+1128,111,1437,"Pvt. Joker"
+1129,111,1710,"Gny. Sgt. Hartman"
+1130,111,2146,"Pvt. Pyle"
+1131,111,8,"Animal Mother"
+1132,111,509,Eightball
+1133,111,1199,Rafterman
+1134,111,135,"Pvt. Cowboy"
+1135,111,528,"Lt. Touchdown"
+1136,111,1078,"Lt. Lockhart"
+1137,111,1202,"Crazy Earl"
+1138,112,1651,Nader
+1139,112,1273,Simin
+1140,112,1886,Razieh
+1141,112,1923,Hojjat
+1142,112,1887,Termeh
+1143,112,156,"Interrogator (Bazpors)"
+1144,112,69,"Nader's Father (Pedar- Nader)"
+1145,112,1211,Somayeh
+1146,112,1937,"Simin's Mother (Madar-e Simin)"
+1147,112,1459,"Miss Ghahrayi"
+1148,113,1785,"John Davidson"
+1149,113,1449,"Dottie Achenbach"
+1150,113,1957,"Palace Official"
+1151,113,1472,Butler
+1152,113,439,"Chris Achenbach"
+1153,113,341,"Queen Elizabeth II"
+1154,113,1895,"Young John Davidson"
+1155,113,1881,Kenny
+1156,113,1990,"David Davidson"
+1157,113,602,"William (10)"
+1158,114,251,"John McClane"
+1159,114,40,"Hans Gruber"
+1160,114,224,"Holly Gennaro McClane"
+1161,114,1742,"Sgt. Al Powell"
+1162,114,1633,"Dwayne T. Robinson"
+1163,114,460,Argyle
+1164,114,2186,Thornburg
+1165,114,807,Ellis
+1166,114,940,Takagi
+1167,114,58,Karl
+1168,115,1670,"Hans Beckert"
+1169,115,568,"Frau Beckmann"
+1170,115,874,"Elsie Beckmann"
+1171,115,1605,"Inspector Karl Lohmann"
+1172,115,2047,"Inspector Groeber"
+1173,115,775,"Schränker"
+1174,115,680,Franz
+1175,115,683,"The Cheater"
+1176,115,1637,"Pickpocket with Six Watches"
+1177,115,2046,"Bauernfänger"
+1178,116,146,"Amélie Poulain"
+1179,116,1427,"Nino Quincampoix"
+1180,116,1835,"Raphaël Poulain"
+1181,116,1309,"Amandine Poulain"
+1182,116,1914,"Raymond Dufayel"
+1183,116,920,Lucien
+1184,116,372,Gina
+1185,116,360,"Madame Suzanne - la patronne du café"
+1186,116,880,Georgette
+1187,116,498,Joseph
+1188,117,764,"Atticus Finch"
+1189,117,1065,"Dill Harris"
+1190,117,660,"Sheriff Heck Tate"
+1191,117,1825,"Maudie Atkinson"
+1192,117,1845,"Mrs. Dubose"
+1193,117,245,"Tom Robinson"
+1194,117,598,Calpurnia
+1195,117,1631,"Judge Taylor"
+1196,117,379,"Mayella Violet Ewell"
+1197,117,921,"Bob Ewell"
+1198,118,801,"Indiana Jones"
+1199,118,1901,"Professor Henry Jones"
+1200,118,73,Elsa
+1201,118,466,"Marcus Brody"
+1202,118,1072,Sallah
+1203,118,1126,"Walter Donovan"
+1204,118,1778,"Young Indy"
+1205,118,1466,Vogel
+1206,118,1198,Kazim
+1207,118,1792,"Grail Knight"
+1208,119,941,"John 'Scottie' Ferguson"
+1209,119,1208,"Madeleine Elster"
+1210,119,1208,"Judy Barton"
+1211,119,159,"Marjorie 'Midge' Wood"
+1212,119,2073,"Gavin Elster"
+1213,119,832,Coroner
+1214,119,1734,"Scottie's Doctor"
+1215,119,566,"Manager of McKittrick Hotel"
+1216,119,1227,"Pop Leibel"
+1217,119,1265,"Car Owner Mistaken for Madeleine"
+1218,119,434,Priest
+1219,120,1602,Kane
+1220,120,1102,"Jedediah Leland"
+1221,120,1102,"Screening Room Reporter"
+1222,120,512,"Susan Alexander Kane"
+1223,120,20,"Mary Kane"
+1224,120,1844,"Emily Monroe Norton Kane"
+1225,120,1728,"James W. Gettys"
+1226,120,593,"Herbert Carter"
+1227,120,593,"Screening Room Reporter"
+1228,120,611,"Mr. Bernstein"
+1229,120,2185,"Jerry Thompson"
+1230,120,1643,Raymond
+1231,121,1638,"Henry Gondorff"
+1232,121,1798,"Johnny Hooker"
+1233,121,1800,"Doyle Lonnegan"
+1234,121,302,"Lt. Wm. Snyder"
+1235,121,1732,"J.J. Singleton"
+1236,121,546,Billie
+1237,121,797,"Kid Twist"
+1238,121,1055,"Eddie Niles"
+1239,121,406,"F.B.I. Agent Polk"
+1240,121,899,"Erie Kid"
+1241,122,1351,Alex
+1242,122,1624,"Mr Alexander"
+1243,122,1463,"Chief Guard"
+1244,122,2167,Dim
+1245,122,1047,"Stage Actor"
+1246,122,19,"Mrs. Alexander"
+1247,122,269,"Dr. Brodsky"
+1248,122,1630,Tramp
+1249,122,370,Lodger
+1250,122,1476,"Prison Governor"
+1251,123,243,Maria
+1252,123,243,Maschinenmensch
+1253,123,243,"The Machine Man"
+1254,123,65,"Johann (Joh) Fredersen"
+1255,123,776,"Freder Fredersen - Joh Fredersens Sohn"
+1256,123,1833,"Erfinder C.A. Rotwang"
+1257,123,1833,"The Inventor"
+1258,123,684,"Der Schmale"
+1259,123,684,"The Thin Man"
+1260,123,2047,Josaphat
+1261,123,2047,Joseph
+1262,123,595,"11811 - Georgy"
+1263,123,823,"Grot -Wärter der Herzmaschine"
+1264,123,823,"Guardian of the Heart Machine"
+1265,123,681,"Schöpferischer Mensch"
+1266,123,681,"Creative Human"
+1267,123,766,Arbeiterin
+1268,123,766,"Working Woman"
+1269,124,1008,"Truman Burbank"
+1270,124,527,Christof
+1271,124,1254,"Meryl Burbank"
+1272,124,1254,"Hannah Gill"
+1273,124,1570,Marlon
+1274,124,1570,"Louis Coltrane"
+1275,124,1542,"Lauren Garland"
+1276,124,1542,Sylvia
+1277,124,849,"Truman's Mother"
+1278,124,235,"Truman's Father"
+1279,124,212,"Young Truman"
+1280,124,1669,"Lawrence - Truman's World"
+1281,124,821,"Vivien - Truman's World"
+1282,125,1282,"Jordan Belfort"
+1283,125,1090,"Donnie Azoff"
+1284,125,1371,"Naomi Lapaglia"
+1285,125,1436,"Mark Hanna"
+1286,125,1236,"Agent Patrick Denham"
+1287,125,1783,"Max Belfort"
+1288,125,1085,Brad
+1289,125,1086,"Manny Riskin"
+1290,125,974,"Jean Jacques Saurel"
+1291,125,1020,"Aunt Emma"
+1292,126,463,"Lance Corporal Blake"
+1293,126,721,"Lance Corporal Schofield"
+1294,126,414,"Sergeant Sanders"
+1295,126,376,"General Erinmore"
+1296,126,1698,"Lieutenant Gordon"
+1297,126,94,"Sergeant Miller"
+1298,126,1645,"NCO Baker"
+1299,126,1100,"Private Stokes"
+1300,126,208,"NCO Harvey"
+1301,126,688,"Private Buchanan"
+1302,127,968,Turkish
+1303,127,230,"Mickey O'Neil"
+1304,127,1977,Tommy
+1305,127,2148,"Bullet-Tooth Tony"
+1306,127,12,Tyrone
+1307,127,2187,Neil
+1308,127,95,Errol
+1309,127,614,Mullet
+1310,127,959,Gary
+1311,127,1492,Liam
+1312,128,1282,"Teddy Daniels"
+1313,128,576,"Rachel 1"
+1314,128,1394,"Chuck Aule"
+1315,128,176,"Dr. Cawley"
+1316,128,1445,"Dr. Naehring"
+1317,128,1491,Dolores
+1318,128,1620,"Rachel 2"
+1319,128,909,"George Noyce"
+1320,128,2032,Warden
+1321,128,1043,"Deputy Warden McPherson"
+1322,129,252,"Adolf Hitler"
+1323,129,60,"Traudl Junge"
+1324,129,2118,"Joseph Goebbels"
+1325,129,1128,"Eva Braun"
+1326,129,385,"Magda Goebbels"
+1327,129,822,"Albert Speer"
+1328,129,338,"Prof. Ernst-Günther Schenck"
+1329,129,1439,"Prof. Werner Haase"
+1330,129,2052,"Hermann Fegelein"
+1331,129,1483,"General Weidling"
+1332,130,1197,"Jack Vincennes"
+1333,130,1841,"Bud White"
+1334,130,778,"Ed Exley"
+1335,130,1204,"Lynn Bracken"
+1336,130,927,"Dudley Smith"
+1337,130,421,"Sid Hudgens"
+1338,130,457,"Pierce Patchett"
+1339,130,1821,"D.A. Ellis Loew"
+1340,130,1432,"'Badge of Honor' Star Brett Chase"
+1341,130,1634,"Mickey Cohen"
+1342,131,2139,"Tony Lip"
+1343,131,1345,"Dr. Donald Shirley"
+1344,131,1299,Dolores
+1345,131,1908,"Johnny Venere"
+1346,131,490,Oleg
+1347,131,1496,George
+1348,131,1606,"Record Exec"
+1349,131,1025,"Gio Loscudo"
+1350,131,1411,"Copa Coat Check Girl"
+1351,131,2159,"Bobby Rydell"
+1352,132,1,"Mahavir Singh Phogat"
+1353,132,1861,"Daya Kaur"
+1354,132,620,"Geeta Phogat"
+1355,132,1882,"Babita Kumari"
+1356,132,132,Omkar
+1357,132,2243,"Young Geeta"
+1358,132,1995,"Young Babita"
+1359,132,1777,"Young Omkar"
+1360,132,746,"Coach Pramod Kadam"
+1361,132,1725,Referee
+1362,133,1245,Antonio
+1363,133,582,Bruno
+1364,133,1289,Maria
+1365,133,550,"The Charitable Lady"
+1366,133,741,Baiocco
+1367,133,748,"The Beggar"
+1368,133,2153,"The Thief"
+1369,133,1489,"Secretary of the Charity Organization"
+1370,133,621,"Amateur Actor"
+1371,133,275,"A Beggar"
+1372,134,544,"Entomologist Niki Jumpei"
+1373,134,1238,Woman
+1374,134,1242,"Village elder"
+1375,134,840,"Entomologist's wife (in flashbacks)"
+1376,134,1913,
+1377,134,742,
+1378,134,1221,
+1379,134,837,
+1380,134,845,
+1381,134,2020,
+1382,135,1963,"Chief Judge Dan Haywood"
+1383,135,259,"Dr. Ernst Janning"
+1384,135,1769,"Col. Tad Lawson"
+1385,135,1396,"Mrs. Bertholt"
+1386,135,1447,"Hans Rolfe"
+1387,135,1123,"Irene Hoffman"
+1388,135,1519,"Rudolph Petersen"
+1389,135,2199,"Capt. Harrison Byers"
+1390,135,2174,"Emil Hahn"
+1391,135,1185,"Judge Kenneth Norris"
+1392,136,1870,Grant
+1393,136,1253,Ellie
+1394,136,985,Malcolm
+1395,136,1751,Hammond
+1396,136,215,Muldoon
+1397,136,1402,Gennaro
+1398,136,155,Wu
+1399,136,1106,Tim
+1400,136,134,Lex
+1401,136,1877,Arnold
+1402,137,337,"Bruce Wayne"
+1403,137,337,Batman
+1404,137,1467,Alfred
+1405,137,1182,"Ra's Al Ghul"
+1406,137,1288,Ducard
+1407,137,1162,"Rachel Dawes"
+1408,137,699,"Jim Gordon"
+1409,137,359,"Dr. Jonathan Crane"
+1410,137,2082,"Carmine Falcone"
+1411,137,1843,Earle
+1412,137,1301,"Thomas Wayne"
+1413,138,359,"J. Robert Oppenheimer"
+1414,138,575,"Kitty Oppenheimer"
+1415,138,1429,"Leslie Groves"
+1416,138,1790,"Lewis Strauss"
+1417,138,48,"Senate Aide"
+1418,138,1897,Counsel
+1419,138,960,"Roger Robb"
+1420,138,1232,"Thomas Morgan"
+1421,138,2095,"Gordon Gray"
+1422,138,1054,"Ward Evans"
+1423,139,369,Monco
+1424,139,1270,"Col. Douglas Mortimer"
+1425,139,735,"El Indio"
+1426,139,1360,Mary
+1427,139,1323,"Groggy - Member of Indio's Gang"
+1428,139,1223,"Juan Wild - The Hunchback"
+1429,139,1325,"Manuel - Member of Indio's Gang"
+1430,139,182,"Luke 'Hughie'"
+1431,139,1609,"Sancho Perez - Member of Indio's Gang"
+1432,139,50,Cuchillio
+1433,140,1297,"Alexander Hamilton"
+1434,140,1694,"Eliza Hamilton"
+1435,140,1284,"Aaron Burr"
+1436,140,1745,"Angelica Schuyler"
+1437,140,432,"Marquis de Lafayette"
+1438,140,432,"Thomas Jefferson"
+1439,140,1093,"King George"
+1440,140,333,"George Washington"
+1441,140,956,"Peggy Schuyler"
+1442,140,956,"Maria Reynolds"
+1443,140,1586,"Hercules Mulligan"
+1444,140,1586,"James Madison"
+1445,140,124,"John Laurens"
+1446,140,124,"Philip Hamilton"
+1447,141,410,"Daniel Plainview"
+1448,141,1629,"Paul Sunday"
+1449,141,1629,"Eli Sunday"
+1450,141,358,Fletcher
+1451,141,1409,"Silver Assay Worker"
+1452,141,1434,"Silver Assay Worker"
+1453,141,912,"Silver Assay Worker"
+1454,141,1108,"Silver Assay Worker"
+1455,141,163,"H.B. Ailman"
+1456,141,802,"Baby HW"
+1457,141,1993,"Baby HW"
+1458,142,1379,"Sugar Kane Kowalczyk"
+1459,142,2091,Joe
+1460,142,2091,Josephine
+1461,142,2091,"Shell Oil Junior"
+1462,142,902,Jerry
+1463,142,902,Daphne
+1464,142,725,"Spats Colombo"
+1465,142,1618,"Detective Mulligan"
+1466,142,1026,"Osgood Fielding III"
+1467,142,1550,"Little Bonaparte"
+1468,142,1018,"Sweet Sue"
+1469,142,207,"Sig Poliakoff"
+1470,142,717,"Toothpick Charlie"
+1471,143,1789,"Travis Bickle"
+1472,143,1024,Iris
+1473,143,390,Betsy
+1474,143,45,Tom
+1475,143,476,"Concession Girl"
+1476,143,647,"Angry Black Man"
+1477,143,2135,Melio
+1478,143,740,"Policeman at Rally"
+1479,143,695,"Iris' Friend"
+1480,143,1660,Wizard
+1481,144,119,Anthony
+1482,144,1593,Anne
+1483,144,1388,"The Man"
+1484,144,1595,"The Woman"
+1485,144,871,Laura
+1486,144,1836,Paul
+1487,144,152,"Dr Sarai"
+1488,144,1818,Boy
+1489,144,14,Passerby
+1490,144,239,"Hospital Visitor"
+1491,145,251,"Malcolm Crowe"
+1492,145,784,"Cole Sear"
+1493,145,2089,"Lynn Sear"
+1494,145,1595,"Anna Crowe"
+1495,145,2108,"Tommy Tammisimo"
+1496,145,507,"Vincent Gray"
+1497,145,1658,Darren
+1498,145,989,Bobby
+1499,145,250,"Stanley Cunningham"
+1500,145,753,Sean
+1501,146,300,"A Tramp"
+1502,146,531,"The Woman"
+1503,146,908,"The Child"
+1504,146,271,"The Man"
+1505,146,44,"Car Thief"
+1506,146,44,"Man in Shelter"
+1507,146,191,Bride
+1508,146,1554,"Slum Nurse"
+1509,146,829,"Professor Guido"
+1510,146,829,"Night Shelter Keeper"
+1511,146,534,"Orphan Asylum Driver"
+1512,146,154,"His Assistant"
+1513,147,190,"Margo Channing"
+1514,147,103,"Eve Harrington"
+1515,147,728,"Addison DeWitt"
+1516,147,297,"Karen Richards"
+1517,147,698,"Bill Simpson"
+1518,147,860,"Lloyd Richards"
+1519,147,765,"Max Fabian"
+1520,147,158,Phoebe
+1521,147,1379,"Miss Casswell"
+1522,147,2045,Birdie
+1523,148,2027,"Lord Hidetora Ichimonji"
+1524,148,31,"Tarō Takatora Ichimonji"
+1525,148,1014,"Jirō Masatora Ichimonji"
+1526,148,397,"Saburō Naotora Ichimonji"
+1527,148,1493,"Lady Kaede"
+1528,148,2219,"Lady Sue"
+1529,148,846,"Shūri Kurogane"
+1530,148,1706,"Kyōami"
+1531,148,1424,"Tango Hirayama"
+1532,148,1168,"Kageyu Ikoma"
+1533,149,1789,"Sam 'Ace' Rothstein"
+1534,149,1926,"Ginger McKenna"
+1535,149,1030,"Nicky Santoro"
+1536,149,945,"Lester Diamond"
+1537,149,501,"Billy Sherbert"
+1538,149,39,"Andy Stone"
+1539,149,1196,"Phillip Green"
+1540,149,1243,"Pat Webb"
+1541,149,485,Senator
+1542,149,665,"Frank Marino"
+1543,150,1233,MacReady
+1544,150,2180,Blair
+1545,150,1176,Childs
+1546,150,1765,Clark
+1547,150,2010,Nauls
+1548,150,441,Palmer
+1549,150,1756,"Dr. Copper"
+1550,150,304,Norris
+1551,150,1671,Bennings
+1552,150,502,Garry
+1553,151,2086,"Ed Tom Bell"
+1554,151,969,"Anton Chigurh"
+1555,151,1111,"Llewelyn Moss"
+1556,151,2205,"Carson Wells"
+1557,151,1177,"Carla Jean Moss"
+1558,151,694,Wendell
+1559,151,2040,"Loretta Bell"
+1560,151,162,Ellis
+1561,151,1981,"Man Who Hires Wells"
+1562,151,1809,"El Paso Sheriff"
+1563,152,858,"Keller Dover"
+1564,152,918,"Detective Loki"
+1565,152,2149,"Nancy Birch"
+1566,152,1457,"Holly Jones"
+1567,152,1373,"Grace Dover"
+1568,152,2036,"Franklin Birch"
+1569,152,1629,"Alex Jones"
+1570,152,523,"Ralph Dover"
+1571,152,2250,"Eliza Birch"
+1572,152,589,"Anna Dover"
+1573,153,2070,"Capt. Pete 'Maverick' Mitchell"
+1574,153,992,"Penny Benjamin"
+1575,153,1500,"Lt. Bradley 'Rooster' Bradshaw"
+1576,153,2125,"Adm. Tom 'Iceman' Kazansky"
+1577,153,169,"CWO4 Bernie 'Hondo' Coleman"
+1578,153,1087,"Adm. Beau 'Cyclone' Simpson"
+1579,153,309,"Adm. Solomon 'Warlock' Bates"
+1580,153,1517,"Lt. Natasha 'Phoenix' Trace"
+1581,153,1286,"Lt. Robert 'Bob' Floyd"
+1582,153,972,"Lt. Reuben 'Payback' Fitch"
+1583,154,2121,"The Bride"
+1584,154,440,Bill
+1585,154,428,"Elle Driver"
+1586,154,1481,Budd
+1587,154,1321,"O-Ren Ishii"
+1588,154,2155,"Vernita Green"
+1589,154,1132,"Sofie Fatale"
+1590,154,321,"Gogo Yubari"
+1591,154,1933,"Hattori Hanzo"
+1592,154,320,"Johnny Mo"
+1593,155,887,Ofelia
+1594,155,133,Carmen
+1595,155,1915,Vidal
+1596,155,1376,Mercedes
+1597,155,514,Fauno
+1598,155,514,"Pale Man"
+1599,155,2251,"Doctor Ferreiro"
+1600,155,1358,"Garcés"
+1601,155,393,Serrano
+1602,155,1814,Pedro
+1603,155,886,"El Tarta"
+1604,156,369,"Bill Munny"
+1605,156,707,"Little Bill Daggett"
+1606,156,1520,"Ned Logan"
+1607,156,1760,"English Bob"
+1608,156,917,"The 'Schofield Kid'"
+1609,156,1889,"W.W. Beauchamp"
+1610,156,638,"Strawberry Alice"
+1611,156,101,"Delilah Fitzgerald"
+1612,156,451,"Quick Mike"
+1613,156,1780,"Davey Bunting"
+1614,157,1841,"John Nash"
+1615,157,527,Parcher
+1616,157,992,"Alicia Nash"
+1617,157,354,"Dr. Rosen"
+1618,157,1628,Charles
+1619,157,10,Sol
+1620,157,1114,Hansen
+1621,157,125,Bender
+1622,157,962,Ainsley
+1623,157,1120,Helinger
+1624,158,322,Sophie
+1625,158,2017,Howl
+1626,158,2025,Calcifer
+1627,158,26,"Witch of the Waste"
+1628,158,1852,Markl
+1629,158,1509,Page
+1630,158,2232,"Turnip Head"
+1631,158,2232,"Soldier B"
+1632,158,27,King
+1633,158,395,Heen
+1634,158,395,Mayor
+1635,158,808,Suliman
+1636,159,862,Dobbs
+1637,159,2162,Howard
+1638,159,2060,Curtin
+1639,159,249,Cody
+1640,159,168,"Pat McCormick"
+1641,159,64,"Gold Hat"
+1642,159,139,Presidente
+1643,159,1359,"El Jefe"
+1644,159,1117,Pablo
+1645,159,1369,Pancho
+1646,160,45,Marlin
+1647,160,567,Dory
+1648,160,59,Nemo
+1649,160,2183,Gill
+1650,160,229,Bloat
+1651,160,76,Peach
+1652,160,148,Gurgle
+1653,160,1981,Bubbles
+1654,160,2133,Deb
+1655,160,2133,Flo
+1656,160,1032,Jacques
+1657,161,967,Jesper
+1658,161,888,Klaus
+1659,161,1724,Alva
+1660,161,2182,"Mr. Ellingboe"
+1661,161,1549,"Márgu"
+1662,161,1918,Pumpkin
+1663,161,1918,Olaf
+1664,161,1579,Mogens
+1665,161,1017,"Mrs. Krum"
+1666,161,608,"Ellingboe Boy"
+1667,161,1953,"Ellingboe Girl 2"
+1668,162,1847,"Ryland Grace"
+1669,162,1878,"Eva Stratt"
+1670,162,937,Rocky
+1671,162,1303,Carl
+1672,162,1499,"Olesya Ilyukhina"
+1673,162,1181,Yao
+1674,162,1704,Mary
+1675,162,1461,"Dr. Browne"
+1676,162,108,Olivia
+1677,162,1450,Rekha
+1678,163,2240,"Tanjiro Kamado"
+1679,163,2240,"Tanjiro Kamado"
+1680,163,1860,
+1681,163,2214,Noguchi
+1682,163,1846,"Hanako Kamado"
+1683,163,1846,"Hanako Kamado"
+1684,163,1846,"Kuina Ubuyashiki"
+1685,163,1846,"Kuina Ubuyashiki"
+1686,163,1084,"Giyu Tomioka"
+1687,163,1084,"Giyu Tomioka"
+1688,163,1214,"Mitsuri Kanroji"
+1689,163,767,Muichiro
+1690,163,767,Muichiro
+1691,163,345,"Kiriya Ubuyashiki"
+1692,163,345,"Kiriya Ubuyashiki"
+1693,163,1575,"Kasugai Crow"
+1694,163,246,"Sakonji Urokodaki"
+1695,163,246,"Sakonji Urokodaki"
+1696,164,2100,"Sanjuro Kuwabatake"
+1697,164,2100,"The Samurai"
+1698,164,545,"Gonji - Tavern Keeper"
+1699,164,2027,"Unosuke - Gunfighter"
+1700,164,2234,Nui
+1701,164,885,Orin
+1702,164,396,"Inokichi - Ushitora's Rotund Brother"
+1703,164,1911,"Seibê - Brothel Operator"
+1704,164,2014,"Tokuemon - Sake Brewer"
+1705,164,843,Yoichiro
+1706,164,2235,"Kohei's Son"
+1707,165,119,"Dr. Frederick Treves"
+1708,165,1057,"John Merrick"
+1709,165,102,"Mrs. Kendal"
+1710,165,1052,"Carr Gomm"
+1711,165,2173,Mothershead
+1712,165,676,Bytes
+1713,165,1473,"Night Porter"
+1714,165,789,"Mrs. Treves"
+1715,165,826,"Princess Alex"
+1716,165,1076,Fox
+1717,166,1986,"Hilts 'The Cooler King'"
+1718,166,931,"Hendley 'The Scrounger'"
+1719,166,1751,"Bartlett 'Big X'"
+1720,166,299,"Danny 'Tunnel King'"
+1721,166,928,"Ramsey 'The SBO'"
+1722,166,504,"Blythe 'The Forger'"
+1723,166,925,"Sedgwick 'Manufacturer'"
+1724,166,790,"Von Luger 'The Kommandant'"
+1725,166,449,"Ashley-Pitt 'Dispersal'"
+1726,166,758,"MacDonald 'Intelligence'"
+1727,167,762,"King Arthur"
+1728,167,762,"Voice of God"
+1729,167,762,"Middle Head"
+1730,167,1046,"Second Swallow-Savvy Guard"
+1731,167,1046,"The Black Knight"
+1732,167,1046,"Peasant 3"
+1733,167,584,"Dead Collector"
+1734,167,584,"Peasant 1"
+1735,167,584,"Sir Robin the Not-Quite-So-Brave-as-Sir Launcelot"
+1736,167,2038,Patsy
+1737,167,2038,"Green Knight"
+1738,167,2038,"Knight of Camelot"
+1739,167,2039,"Dennis's Mother"
+1740,167,2039,"Sir Bedevere"
+1741,167,2039,"Knight of Camelot"
+1742,167,1484,"First Swallow-Savvy Guard"
+1743,167,1484,Dennis
+1744,167,1484,"Peasant 2"
+1745,167,380,"The Witch"
+1746,167,278,Zoot
+1747,167,278,Dingo
+1748,167,1551,"First Monk"
+1749,167,1551,"Singing Minstrel"
+1750,167,1551,"Page Crushed by the Rabbit"
+1751,167,170,"Old Crone"
+1752,168,1731,"Tony Wendice"
+1753,168,761,"Margot Wendice"
+1754,168,1788,"Mark Halliday"
+1755,168,1080,"Chief Inspector Hubbard"
+1756,168,115,"Charles Swann"
+1757,168,1277,"The Storyteller"
+1758,168,1622,"Detective Pearson"
+1759,168,719,"Detective Williams"
+1760,168,711,"First Detective"
+1761,168,1805,"Police Sergeant O'Brien"
+1762,169,1748,"Benjamín Espósito"
+1763,169,1955,"Irene Menéndez Hastings"
+1764,169,1608,"Ricardo Morales"
+1765,169,274,"Liliana Coloto"
+1766,169,970,"Isidoro Gómez"
+1767,169,264,"Chica Piropo"
+1768,169,1834,"Ordóñez"
+1769,169,53,"Pinche Mariano"
+1770,169,1381,"Juez Fortuna Lacalle"
+1771,169,768,"Pablo Sandoval"
+1772,170,363,"Rhett Butler"
+1773,170,2156,Scarlett
+1774,170,2054,"Gerald O'Hara"
+1775,170,160,"Ellen, his wife"
+1776,170,610,Suellen
+1777,170,100,Carreen
+1778,170,726,"Brent Tarleton"
+1779,170,673,"Stuart Tarleton"
+1780,170,814,Mammy
+1781,170,1604,Pork
+1782,171,961,Tom
+1783,171,474,Soap
+1784,171,1561,Eddy
+1785,171,968,Bacon
+1786,171,1991,Winston
+1787,171,1559,J
+1788,171,1560,Charles
+1789,171,303,Willie
+1790,171,2148,"Big Chris"
+1791,171,1276,"Barry The Baptist"
+1792,172,1282,"Frank Abagnale Jr."
+1793,172,2071,"Carl Hanratty"
+1794,172,355,"Frank Abagnale"
+1795,172,1408,"Roger Strong"
+1796,172,1544,"Paula Abagnale"
+1797,172,84,"Brenda Strong"
+1798,172,922,"Jack Barnes"
+1799,172,238,"Earl Amdursky"
+1800,172,657,"Tom Fox"
+1801,172,1985,"Paul Morgan"
+1802,173,904,"J.J. Gittes"
+1803,173,622,"Evelyn Mulwray"
+1804,173,1058,"Noah Cross"
+1805,173,1655,Escobar
+1806,173,1056,Yelburton
+1807,173,425,"Hollis Mulwray"
+1808,173,481,"Ida Sessions"
+1809,173,1831,Mulvihill
+1810,173,1817,"Man with Knife"
+1811,173,1752,Loach
+1812,174,861,V
+1813,174,1540,Evey
+1814,174,1838,Dominic
+1815,174,1980,Finch
+1816,174,1976,Deitrich
+1817,174,1057,"Adam Sutler"
+1818,174,2061,Creedy
+1819,174,1812,"Lewis Prothero"
+1820,174,177,Dascomb
+1821,174,1952,"Delia Surridge"
+1822,175,1806,"John Keating"
+1823,175,1799,"Neil Perry"
+1824,175,601,"Todd Anderson"
+1825,175,1112,"Knox Overstreet"
+1826,175,693,"Charlie Dalton"
+1827,175,522,"Richard Cameron"
+1828,175,75,"Steven Meeks"
+1829,175,942,"Gerard Pitts"
+1830,175,1581,"Mr. Nolan"
+1831,175,1235,"Mr. Perry"
+1832,176,86,Joy
+1833,176,198,Fear
+1834,176,1285,Anger
+1835,176,1504,Disgust
+1836,176,1695,Sadness
+1837,176,1762,"Bing Bong"
+1838,176,1143,Riley
+1839,176,482,Mom
+1840,176,1237,Dad
+1841,176,1648,"Forgetter Paula"
+1842,177,1322,"Nicola Carati"
+1843,177,57,"Matteo Carati"
+1844,177,957,"Giorgia Esposti"
+1845,177,17,"Adriana Carati"
+1846,177,1960,"Giulia Monfalco"
+1847,177,616,"Carlo Tommasi"
+1848,177,1451,"Mirella Utano"
+1849,177,2126,"Francesca Carati"
+1850,177,88,"Angelo Carati"
+1851,177,1291,"Giovanna Carati"
+1852,178,613,Renton
+1853,178,614,Spud
+1854,178,1097,"Sick Boy"
+1855,178,1195,Tommy
+1856,178,1787,Begbie
+1857,178,1177,Diane
+1858,178,1674,Swanney
+1859,178,926,"David Renton"
+1860,178,547,"Cathy Renton"
+1861,178,2000,Allison
+1862,179,415,"Harry Potter"
+1863,179,579,"Hermione Granger"
+1864,179,1839,"Ron Weasley"
+1865,179,1475,"Professor Albus Dumbledore"
+1866,179,1719,"Lord Voldemort"
+1867,179,40,"Professor Severus Snape"
+1868,179,609,"Luna Lovegood"
+1869,179,494,"Bill Weasley"
+1870,179,374,"Fleur Delacour"
+1871,179,2168,Griphook
+1872,179,2168,"Professor Filius Flitwick"
+1873,180,640,Mildred
+1874,180,2205,Willoughby
+1875,180,1872,Dixon
+1876,180,267,"Red Welby"
+1877,180,1189,Pamela
+1878,180,54,Latino
+1879,180,364,Abercrombie
+1880,180,424,Jerome
+1881,180,4,Anne
+1882,180,1779,Polly
+1883,181,2193,Shears
+1884,181,52,"Colonel Nicholson"
+1885,181,898,"Major Warden"
+1886,181,1919,"Colonel Saito"
+1887,181,928,"Major Clipton"
+1888,181,709,"Lieutenant Joyce"
+1889,181,93,"Colonel Green"
+1890,181,1681,"Captain Reeves"
+1891,181,1040,"Major Hughes"
+1892,181,1654,Grogan
+1893,182,2100,"Tajômaru"
+1894,182,1335,"Masako Kanazawa"
+1895,182,1423,"Takehiro Kanazawa"
+1896,182,2014,Woodcutter
+1897,182,1505,Priest
+1898,182,1200,Commoner
+1899,182,1578,Medium
+1900,182,396,Policeman
+1901,183,1848,"Barry Lyndon"
+1902,183,1385,"Lady Honoria Lyndon"
+1903,183,1624,"The Chevalier du Balibari"
+1904,183,794,"Capt. Potzdorf"
+1905,183,1989,"Lord Ludd"
+1906,183,703,"Nora Brady"
+1907,183,1377,"Barry's Mother"
+1908,183,477,"Lischen - German Girl"
+1909,183,1524,"Rev. Samuel Runt"
+1910,183,658,"Sir Charles Lyndon"
+1911,184,314,"Judah Ben-Hur"
+1912,184,898,"Quintus Arrius"
+1913,184,1975,Messala
+1914,184,815,Esther
+1915,184,857,"Sheik Ilderim"
+1916,184,1400,Miriam
+1917,184,294,Tirzah
+1918,184,1868,Simonides
+1919,184,627,Balthasar
+1920,184,627,Narrator
+1921,184,663,"Pontius Pilate"
+1922,185,1328,Roz
+1923,185,1328,Rummage
+1924,185,1652,Fink
+1925,185,1219,Brightbill
+1926,185,200,Longneck
+1927,185,1973,Vontra
+1928,185,1428,Paddler
+1929,185,2147,Thunderbolt
+1930,185,1389,Thorn
+1931,185,292,Pinktail
+1932,185,226,"Baby Brightbill"
+1933,186,2072,"Tommy Conlon"
+1934,186,1562,"Paddy Conlon"
+1935,186,1037,"Brendan Conlon"
+1936,186,994,"Tess Conlon"
+1937,186,656,"Frank Campana"
+1938,186,1194,"Principal Zito"
+1939,186,1448,"Colt Boyd"
+1940,186,254,"Bryan Callen"
+1941,186,1873,"Sam Sheridan"
+1942,186,624,Fenroy
+1943,187,89,"Desmond Doss"
+1944,187,1874,"Captain Glover"
+1945,187,1326,"Smitty Ryker"
+1946,187,2034,"Dorothy Schutte"
+1947,187,1766,Teach
+1948,187,914,"James Pinnick"
+1949,187,1502,"Lucky Ford"
+1950,187,423,"Young Desmond"
+1951,187,1816,"Young 'Hal' Doss"
+1952,187,933,Hiker
+1953,188,229,Gusteau
+1954,188,1312,Linguini
+1955,188,1627,Remy
+1956,188,866,Skinner
+1957,188,236,Django
+1958,188,1678,Emile
+1959,188,1675,"Anton Ego"
+1960,188,950,Colette
+1961,188,2181,Horst
+1962,188,1133,Lalo
+1963,188,1133,Francois
+1964,189,2072,"Max Rockatansky"
+1965,189,313,"Imperator Furiosa"
+1966,189,1558,Nux
+1967,189,2249,"Toast the Knowing"
+1968,189,859,"Immortan Joe"
+1969,189,1113,Slit
+1970,189,1545,"Rictus Erectus"
+1971,189,1826,"The Splendid Angharad"
+1972,189,1774,Capable
+1973,189,3,"The Dag"
+1974,190,839,"Maggie Fitzgerald"
+1975,190,369,"Frankie Dunn"
+1976,190,1520,"Eddie Scrap-Iron Dupris"
+1977,190,971,"Danger Barch"
+1978,190,1494,"Big Willie Little"
+1979,190,1319,"Billie 'The Blue Bear'"
+1980,190,256,"Father Horvak"
+1981,190,120,"Shawrelle Berry"
+1982,190,1370,"Earline Fitzgerald"
+1983,190,1773,"Mardell Fitzgerald"
+1984,191,2191,"Jerry Lundegaard"
+1985,191,640,"Marge Gunderson"
+1986,191,1984,"Carl Showalter"
+1987,191,1679,"Gaear Grimsrud"
+1988,191,1229,"Jean Lundegaard"
+1989,191,812,"Wade Gustafson"
+1990,191,2093,"Scotty Lundegaard"
+1991,191,696,"Irate Customer"
+1992,191,1865,"Irate Customer's Wife"
+1993,191,1234,"Car Salesman"
+1994,192,1747,"Ali's Father (Pedar-e Ali)"
+1995,192,83,Ali
+1996,192,157,Zahra
+1997,192,1534,Roya
+1998,192,623,"Ali's Mother (Madar-e Ali)"
+1999,192,1145,"Assistant (Nazem)"
+2000,192,172,"Trainer (Moalem-e Varzesh)"
+2001,192,854,Photographer
+2002,192,1922,Runner
+2003,192,1164,"Grand Father"
+2004,193,847,Totoro
+2005,193,1577,Satsuki
+2006,193,324,Mei
+2007,193,1930,"Tatsuo Kusakabe"
+2008,193,1997,"Yasuko Kusakabe"
+2009,193,2022,Granny
+2010,193,841,"Kanta's Mother"
+2011,193,1336,"School Teacher"
+2012,193,1743,"Originator Grandma"
+2013,193,1421,"Kanta's Father"
+2014,194,369,"Walt Kowalski"
+2015,194,171,Thao
+2016,194,347,"Father Janovich"
+2017,194,23,Sue
+2018,194,237,"Mitch Kowalski"
+2019,194,731,"Karen Kowalski"
+2020,194,519,"Ashley Kowalski"
+2021,194,238,"Steve Kowalski"
+2022,194,1043,"Barber Martin"
+2023,194,2192,"Tim Kennedy"
+2024,195,1789,"Jake La Motta"
+2025,195,293,"Vickie La Motta"
+2026,195,1030,Joey
+2027,195,665,Salvy
+2028,195,1556,"Tommy Como"
+2029,195,2048,Lenore
+2030,195,1382,Mario
+2031,195,646,Patsy
+2032,195,1101,Guido
+2033,195,664,Toppy
+2034,196,326,"Solomon Northup"
+2035,196,1480,Robert
+2036,196,1474,"Edwin Epps"
+2037,196,230,Bass
+2038,196,521,"Uncle Abram"
+2039,196,486,Overseer
+2040,196,253,"Judge Turner"
+2041,196,142,Anna
+2042,196,1178,"Anne Northup"
+2043,196,1709,"Margaret Northup"
+2044,197,971,Hiccup
+2045,197,732,Stoick
+2046,197,352,Fishlegs
+2047,197,386,Gobber
+2048,197,81,Astrid
+2049,197,1090,Snotlout
+2050,197,2009,Tuffnut
+2051,197,1228,Ruffnut
+2052,197,1804,Ack
+2053,197,1688,Starkard
+2054,198,1959,"Detective Park Doo-man"
+2055,198,1210,"Detective Seo Tae-yoon"
+2056,198,1209,"Detective Cho Yong-koo"
+2057,198,1958,"Sergeant Shin Dong-chul"
+2058,198,263,"Sergeant Koo Hee-bong"
+2059,198,1225,"Officer Kwon Kwi-ok"
+2060,198,1850,"Jo Byeong-soon"
+2061,198,1615,"Baek Gwang-ho"
+2062,198,1613,"Park Hyeon-gyu"
+2063,198,996,"Kwok Seol-yung"
+2064,199,1719,"M. Gustave"
+2065,199,615,"Mr. Moustafa"
+2066,199,1426,"Serge X."
+2067,199,18,Dmitri
+2068,199,2183,Jopling
+2069,199,985,"Deputy Kovacs"
+2070,199,813,Ludwig
+2071,199,1121,"Young Writer"
+2072,199,199,"M. Ivan"
+2073,199,541,Henckels
+2074,200,601,Jesse
+2075,200,1131,"Céline"
+2076,200,87,"Wife on Train"
+2077,200,791,"Husband on Train"
+2078,200,1155,"Guy on Bridge"
+2079,200,2043,"Guy on Bridge"
+2080,200,591,"Palm Reader"
+2081,200,495,"Street Poet"
+2082,200,817,Bartender
+2083,200,793,"Guitarist in Club"
+2084,201,204,Mike
+2085,201,1053,Sullivan
+2086,201,1413,Boo
+2087,201,1984,Randall
+2088,201,925,Waternoose
+2089,201,995,Celia
+2090,201,218,Roz
+2091,201,1071,Yeti
+2092,201,661,Fungus
+2093,201,411,Needleman
+2094,201,411,Smitty
+2095,202,801,Deckard
+2096,202,1843,Batty
+2097,202,1905,Rachael
+2098,202,540,Gaff
+2099,202,1330,Bryant
+2100,202,428,Pris
+2101,202,2198,Sebastian
+2102,202,244,Leon
+2103,202,1035,Tyrell
+2104,202,1019,Zhora
+2105,203,174,"Nick Dunne"
+2106,203,1824,"Amy Dunne"
+2107,203,1553,"Desi Collings"
+2108,203,2114,"Tanner Bolt"
+2109,203,281,"Margo Dunne"
+2110,203,1206,"Detective Rhonda Boney"
+2111,203,1623,"Officer James Gilpin"
+2112,203,441,"Rand Elliott"
+2113,203,1304,"Marybeth Elliott"
+2114,203,1508,"Ellen Abbott"
+2115,204,1429,"Carroll Shelby"
+2116,204,337,"Ken Miles"
+2117,204,1085,"Lee Iacocca"
+2118,204,266,"Mollie Miles"
+2119,204,1114,"Leo Beebe"
+2120,204,1571,"Peter Miles"
+2121,204,2103,"Henry Ford II"
+2122,204,1744,"Enzo Ferrari"
+2123,204,1730,"Phil Remington"
+2124,204,889,"Roy Lunn"
+2125,205,1832,Brody
+2126,205,1800,Quint
+2127,205,1755,Hooper
+2128,205,1311,"Ellen Brody"
+2129,205,1523,Vaughn
+2130,205,270,Meadows
+2131,205,988,Hendricks
+2132,205,1999,Chrissie
+2133,205,1092,Cassidy
+2134,205,2031,"Estuary Victim"
+2135,206,410,"Gerry Conlon"
+2136,206,1657,"Giuseppe Conlon"
+2137,206,113,Danny
+2138,206,578,"Gareth Peirce"
+2139,206,669,Tommo
+2140,206,72,"Girl in Pub"
+2141,206,1687,"Guildford Soldier"
+2142,206,1583,"IRA Man 1"
+2143,206,1646,Soldier
+2144,206,1127,Soldier
+2145,207,1203,Denji
+2146,207,1935,Pochita
+2147,207,2087,Makima
+2148,207,1942,"Aki Hayakawa"
+2149,207,1547,"Beam (Shark Fiend)"
+2150,207,1333,"Angel Devil"
+2151,207,1154,"Kobeni Higashiyama"
+2152,207,2230,"Violence Fiend"
+2153,207,618,Power
+2154,207,1183,Kishibe
+2155,208,2074,"Peter Parker"
+2156,208,2074,Spider-Man
+2157,208,2247,MJ
+2158,208,178,"Doctor Strange"
+2159,208,911,"Ned Leeds"
+2160,208,1086,"Happy Hogan"
+2161,208,946,"Max Dillon"
+2162,208,946,Electro
+2163,208,2183,"Norman Osborn"
+2164,208,2183,"Green Goblin"
+2165,208,67,"Dr. Otto Octavius"
+2166,208,67,"Doc Ock"
+2167,208,179,Wong
+2168,208,2098,"Flash Thompson"
+2169,209,429,"Salgado (segment: Pasternak)"
+2170,209,1415,"Isabel (segment: Pasternak)"
+2171,209,1531,"Profesora Leguizamón (segment: Pasternak)"
+2172,209,487,"Ignacio Fontana (segment: Pasternak)"
+2173,209,1362,"Gerente Casa Tía (segment: Pasternak)"
+2174,209,1320,"Azafata (segment: Pasternak)"
+2175,209,1414,"Empleada Aerolínea (segment: Pasternak)"
+2176,209,276,"Víctor Jensen (episodio 'Pasternak')"
+2177,209,1607,"Hombre #1 (segment: Pasternak)"
+2178,209,852,"Hombre #2 (segment: Pasternak)"
+2179,210,1510,"Shôya Ishida"
+2180,210,1883,"Shoko Nishimiya"
+2181,210,131,"Yuzuru Nishimiya"
+2182,210,1188,"Tomohiro Nagatsuka"
+2183,210,2237,"Naoka Ueno"
+2184,210,2225,"Miyoko Sahara"
+2185,210,1454,"Miki Kawai"
+2186,210,2101,"Satoshi Mashiba"
+2187,210,1452,"Young Shoya Ishida"
+2188,210,1859,"Young Kazuki Shimada"
+2189,211,300,"The Lone Prospector"
+2190,211,1337,"Big Jim McKay"
+2191,211,2077,"Black Larsen"
+2192,211,829,"Hank Curtis"
+2193,211,1352,"Jack Cameron"
+2194,211,729,Georgia
+2195,211,891,"Man in Dance Hall"
+2196,211,645,"Eskimo Child"
+2197,211,1280,"Eskimo Child"
+2198,211,1294,"Woman in Dance Hall"
+2199,212,2089,"Mary Daisy Dinkle"
+2200,212,1691,"Max Jerry Horovitz"
+2201,212,583,"Damien Popodopolous"
+2202,212,164,Narrator
+2203,212,349,"911 Operator"
+2204,212,349,"Ambulance Voice"
+2205,212,349,"Derisive Observer"
+2206,212,1590,"Alleyway Bully One"
+2207,212,398,"Alleyway Bully Two"
+2208,212,398,"Bird Injury Girl"
+2209,212,398,"Bus Stop Girl"
+2210,212,413,"Alleyway Bully Three"
+2211,212,787,"Animals (Miscellaneous)"
+2212,212,787,"Mad Jury Member"
+2213,212,787,"Opera Singer Two"
+2214,212,403,"BMX Bandit"
+2215,213,261,Projectionist
+2216,213,261,"Sherlock, Jr."
+2217,213,1160,"The Girl"
+2218,213,1027,"The Girl's Father"
+2219,213,1027,"Man on Film Screen"
+2220,213,596,"The Hired Man"
+2221,213,596,"The Butler"
+2222,213,2166,"The Local Sheik"
+2223,213,2166,"The Villain"
+2224,213,949,"The Mother"
+2225,213,714,Conspirator
+2226,213,510,"Girl Who Loses Dollar Outside Cinema"
+2227,213,344,"Candy Store Girl"
+2228,213,189,"Little Girl"
+2229,214,1789,Michael
+2230,214,355,Nick
+2231,214,1045,Stan
+2232,214,1073,Steven
+2233,214,1460,Linda
+2234,214,716,John
+2235,214,356,Axel
+2236,214,1939,"Steven's Mother"
+2237,214,1842,Angela
+2238,214,1697,Julien
+2239,215,2231,"Mario Livi"
+2240,215,310,"M. Jo"
+2241,215,1682,Bimba
+2242,215,632,Luigi
+2243,215,2160,Linda
+2244,215,2201,"Bill O'Brien"
+2245,215,430,"Pepito Hernandez"
+2246,215,1015,"Hans Smerloff"
+2247,215,129,"Camp Chief"
+2248,215,1324,Bernardo
+2249,216,858,Logan
+2250,216,858,X-24
+2251,216,1626,Charles
+2252,216,394,Laura
+2253,216,227,Pierce
+2254,216,1979,Caliban
+2255,216,564,Gabriela
+2256,216,1757,"Dr. Rice"
+2257,216,590,"Will Munson"
+2258,216,560,"Kathryn Munson"
+2259,216,1708,"Nate Munson"
+2260,217,1082,"Jack Sparrow"
+2261,217,710,Barbossa
+2262,217,1601,"Will Turner"
+2263,217,1174,"Elizabeth Swann"
+2264,217,895,Norrington
+2265,217,1095,"Governor Weatherby Swann"
+2266,217,1262,Pintel
+2267,217,1338,Ragetti
+2268,217,399,"Lt. Gillette"
+2269,217,738,Murtogg
+2270,218,2005,Rocky
+2271,218,2018,Adrian
+2272,218,260,Paulie
+2273,218,273,Apollo
+2274,218,257,Mickey
+2275,218,2044,Jergens
+2276,218,1034,Gazzo
+2277,218,1013,Mike
+2278,218,196,"Fight Announcer"
+2279,218,36,"Cut Man"
+2280,219,261,"Johnnie Gray"
+2281,219,1384,"Annabelle Lee"
+2282,219,752,"Captain Anderson"
+2283,219,1010,"General Thatcher"
+2284,219,678,"A Southern General"
+2285,219,649,"Her Brother"
+2286,219,305,"Her Father"
+2287,219,1027,"Union General"
+2288,219,1495,"Union General"
+2289,219,2078,"Union General"
+2290,220,941,"Jefferson Smith"
+2291,220,973,Saunders
+2292,220,365,"Senator Joseph Harrison Paine"
+2293,220,532,"Jim Taylor"
+2294,220,777,"Governor Hubert 'Happy' Hopper"
+2295,220,2054,"Diz Moore"
+2296,220,604,"Chick McGann"
+2297,220,192,"Ma Smith"
+2298,220,781,"Senator Agnew - Majority Leader"
+2299,220,803,"President of the Senate"
+2300,221,325,"Shukichi Hirayama"
+2301,221,323,"Tomi Hirayama"
+2302,221,2006,"Koichi Hirayama"
+2303,221,1920,"Noriko Hirayama"
+2304,221,809,"Shige Kaneko"
+2305,221,1231,"Fumiko Hirayama - his wife"
+2306,221,1239,"Kyôko Hirayama"
+2307,221,545,"Sanpei Numata"
+2308,221,1574,"Kurazo Kaneko"
+2309,221,1940,"Keizo Hirayama"
+2310,222,2145,Vinz
+2311,222,855,Hubert
+2312,222,1891,"Saïd"
+2313,222,5,Abdel
+2314,222,1956,Santo
+2315,222,1107,"Homme standard"
+2316,222,864,Sarah
+2317,222,1851,"Grand-mère Vinz"
+2318,222,1587,"Tante Vinz"
+2319,222,1257,Cuisto
+2320,223,2141,Maharaja
+2321,223,130,Selvam
+2322,223,1354,Asifa
+2323,223,1541,"Inspector Varadharajan"
+2324,223,6,Kokhila
+2325,223,492,"Maharaja Wife"
+2326,223,1951,Nallasivam
+2327,223,140,"Sub-Inspector Perumal"
+2328,223,1522,Kuzhanthai
+2329,223,1857,Jothi
+2330,224,1130,Maria
+2331,224,354,"Captain Georg von Trapp"
+2332,224,548,"The Baroness"
+2333,224,1761,"Max Detweiler"
+2334,224,1653,"Mother Abbess"
+2335,224,316,"Liesl von Trapp"
+2336,224,819,"Louisa von Trapp"
+2337,224,1557,"Friedrich von Trapp"
+2338,224,520,"Kurt von Trapp"
+2339,224,97,"Brigitta von Trapp"
+2340,225,1394,"Mike Rezendes"
+2341,225,1479,"Walter 'Robby' Robinson"
+2342,225,1713,"Sacha Pfeiffer"
+2343,225,1292,"Marty Baron"
+2344,225,1075,"Ben Bradlee Jr."
+2345,225,241,"Matt Carroll"
+2346,225,1970,"Mitchell Garabedian"
+2347,225,551,Barbara
+2348,225,706,"Steve Kurkjian"
+2349,225,515,"Peter Canellos"
+2350,226,1998,Chandru
+2351,226,1293,Sengeni
+2352,226,1357,Rajakannu
+2353,226,1717,Maithra
+2354,226,1701,"IG Perumalsami"
+2355,226,1723,"Ram Mohan"
+2356,226,773,"P.P. Cellapandian"
+2357,226,1332,Sangaran
+2358,226,2124,"DGP Radhakrishnan"
+2359,226,1945,
+2360,227,137,Terminator
+2361,227,1300,"Sarah Connor"
+2362,227,1465,"Kyle Reese"
+2363,227,1647,Traxler
+2364,227,1247,Vukovich
+2365,227,1771,Matt
+2366,227,188,Ginger
+2367,227,525,Silberman
+2368,227,484,"Pawn Shop Clerk"
+2369,227,1927,Nancy
+2370,228,2137,"Dr. Eberhard Isak Borg"
+2371,228,194,Sara
+2372,228,194,Hitchhiker
+2373,228,877,"Marianne Borg"
+2374,228,770,"Dr. Evald Borg"
+2375,228,1134,Agda
+2376,228,633,Anders
+2377,228,211,Viktor
+2378,228,1535,"Mrs. Borg - Isak's Mother"
+2379,228,771,"Berit Alman"
+2380,228,734,"Karin Borg - Isak's wife"
+2381,229,1397,"Terry Malloy"
+2382,229,1156,"Father Barry"
+2383,229,1263,"Johnny Friendly"
+2384,229,1808,"Charley Malloy"
+2385,229,1617,"Kayo Dugan"
+2386,229,1271,Glover
+2387,229,943,"Big Mac"
+2388,229,2094,Truck
+2389,229,2019,Tillio
+2390,229,1048,"'Pop' Doyle"
+2391,230,1528,"Milly Stephenson"
+2392,230,405,"Fred Derry"
+2393,230,679,"Al Stephenson"
+2394,230,2035,"Peggy Stephenson"
+2395,230,2152,"Marie Derry"
+2396,230,294,"Wilma Cameron"
+2397,230,848,"Butch Engle"
+2398,230,798,"Homer Parrish"
+2399,230,751,"Hortense Derry"
+2400,230,1815,"Pat Derry"
+2401,231,1602,"Harry Lime"
+2402,231,1102,"Holly Martins"
+2403,231,71,"Anna Schmidt"
+2404,231,2107,"Maj. Calloway"
+2405,231,1636,Karl
+2406,231,592,"Baron Kurtz"
+2407,231,585,"Dr. Winkel"
+2408,231,1947,Popescu
+2409,231,820,"Anna's Landlady"
+2410,231,184,"Sgt. Paine"
+2411,232,983,"The Dude"
+2412,232,1053,"Walter Sobchak"
+2413,232,1129,"Maude Lebowski"
+2414,232,1984,Donny
+2415,232,444,"The Big Lebowski"
+2416,232,1691,Brandt
+2417,232,2023,"Bunny Lebowski"
+2418,232,1689,"Treehorn Thug #1"
+2419,232,1392,"Treehorn Thug #2"
+2420,232,1679,"Nihilist #1"
+2421,233,387,"Bob Parr"
+2422,233,387,"Mr. Incredible"
+2423,233,1877,"Lucius Best"
+2424,233,1877,Frozone
+2425,233,850,"Helen Parr"
+2426,233,850,Elastigirl
+2427,233,963,"Buddy Pine"
+2428,233,963,Syndrome
+2429,233,497,"Bomb Voyage"
+2430,233,2033,"Newsreel Narrator"
+2431,233,979,"Mrs. Hogenson"
+2432,233,552,"Jack-Jack Parr"
+2433,233,1343,"Jack-Jack Parr"
+2434,233,2161,"Gilbert Huph"
+2435,234,1759,"Parker Wilson"
+2436,234,1016,"Cate Wilson"
+2437,234,287,Ken
+2438,234,1885,Andy
+2439,234,958,Carl
+2440,234,587,Jasjeet
+2441,234,433,"Mary Anne"
+2442,234,1784,Michael
+2443,234,1192,"Ronnie (11 Years)"
+2444,234,1781,"Teddy Barnes"
+2445,235,601,Jesse
+2446,235,1131,Celine
+2447,235,2130,"Bookstore Manager"
+2448,235,1316,"Journalist #1"
+2449,235,1811,"Journalist #2"
+2450,235,1375,Waitress
+2451,235,475,Philippe
+2452,235,467,"Boat Attendant"
+2453,235,46,"Man at Grill"
+2454,235,1378,"Woman in Courtyard"
+2455,236,565,"Chris MacNeil"
+2456,236,1445,"Father Merrin"
+2457,236,1298,Regan
+2458,236,1263,"Lt. Kinderman"
+2459,236,1220,Sharon
+2460,236,903,"Burke Dennings"
+2461,236,964,"Father Karras"
+2462,236,2195,"Father Dyer"
+2463,236,167,"Dr. Klein"
+2464,236,1672,"Dr. Barringer - Clinic Director"
+2465,237,553,"Hogarth Hughes"
+2466,237,804,"Dean McCoppin"
+2467,237,991,"Annie Hughes"
+2468,237,2144,"The Iron Giant"
+2469,237,930,"Foreman Marv Loach"
+2470,237,930,"Floyd Turbeaux"
+2471,237,371,"Mrs. Tensedge"
+2472,237,350,"Kent Mansley"
+2473,237,1061,"General Rogard"
+2474,237,1330,"Earl Stutz"
+2475,237,893,"Additional Voices"
+2476,238,242,Ma
+2477,238,913,Jack
+2478,238,1900,"Old Nick"
+2479,238,2172,"Talk Show Hostess"
+2480,238,1879,Veteran
+2481,238,1431,Doug
+2482,238,79,"Officer Parker"
+2483,238,1031,"Officer Grabowski"
+2484,238,1016,Nancy
+2485,238,2245,"Attending Doctor"
+2486,239,499,"Paul Rusesabagina"
+2487,239,1962,"Tatiana Rusesabagina"
+2488,239,1023,"Jack Daglish"
+2489,239,2207,Policeman
+2490,239,472,Dube
+2491,239,783,"George Rutaganda"
+2492,239,2097,Gregoire
+2493,239,1827,Receptionist
+2494,239,1552,"Jean Jacques"
+2495,239,1334,"Head Chef"
+2496,240,312,Chris
+2497,240,2069,"Sgt. Barnes"
+2498,240,2183,"Sgt. Elias"
+2499,240,1176,King
+2500,240,634,"Big Harold"
+2501,240,641,Rhah
+2502,240,1193,Bunny
+2503,240,1041,"Sgt. O'Neill"
+2504,240,1740,Junior
+2505,240,1391,"Lt. Wolfe"
+2506,241,1445,"Antonius Block"
+2507,241,770,"Squire Jöns"
+2508,241,180,Death
+2509,241,1566,Jof
+2510,241,1566,Joseph
+2511,241,194,Mia
+2512,241,194,"Mary - Jof's Wife"
+2513,241,872,"Lisa - Blacksmith's Wife"
+2514,241,1440,Witch
+2515,241,873,"Karin - Block's Wife"
+2516,241,772,Girl
+2517,241,187,Raval
+2518,242,408,"Niki Lauda"
+2519,242,332,"James Hunt"
+2520,242,1594,"Suzy Miller"
+2521,242,60,"Marlene Lauda"
+2522,242,1696,"Clay Regazzoni"
+2523,242,438,"Louis Stanley"
+2524,242,1539,"Nurse Gemma"
+2525,242,1978,"Alastair Caldwell"
+2526,242,339,"Lord Hesketh"
+2527,242,74,"Stirling Moss"
+2528,243,2179,"Gordie Lachance"
+2529,243,1778,"Chris Chambers"
+2530,243,383,"Teddy Duchamp"
+2531,243,1003,"Vern Tessio"
+2532,243,1201,"Ace Merrill"
+2533,243,289,"Billy Tessio"
+2534,243,700,"Charlie Hogan"
+2535,243,231,"Eyeball Chambers"
+2536,243,965,"Vince Desjardins"
+2537,243,1399,"Mr. Lachance"
+2538,244,232,"Ali La Pointe"
+2539,244,977,"Col. Mathieu"
+2540,244,2208,Djafar
+2541,244,1876,Fathia
+2542,244,2117,Captain
+2543,244,636,Halima
+2544,244,1512,"Petit Omar"
+2545,244,1944,"Larbi Ben M'hidi"
+2546,244,644,Mahmoud
+2547,244,2085,Captain
+2548,245,1123,Dorothy
+2549,245,659,"Professor Marvel"
+2550,245,1727,Hunk
+2551,245,186,Zeke
+2552,245,897,Hickory
+2553,245,202,Glinda
+2554,245,1367,"Miss Gulch"
+2555,245,311,"Uncle Henry"
+2556,245,1619,Nikko
+2557,245,362,"Auntie Em"
+2558,246,2254,"Hüseyin"
+2559,246,626,Sadik
+2560,246,865,Nuran
+2561,246,543,Deniz
+2562,246,2257,"Gülbeyaz"
+2563,246,2212,Salim
+2564,246,210,Hanife
+2565,246,1346,Ibrahim
+2566,246,1555,Sakine
+2567,246,195,Fatma
+2568,247,1374,"Jeanne d'Arc"
+2569,247,605,"Évêque Pierre Cauchon (Bishop Pierre Cauchon)"
+2570,247,92,"Jean d'Estivet"
+2571,247,1443,"Nicolas Loyseleur"
+2572,247,128,"Jean Massieu"
+2573,247,1488,"Jean Lemaître"
+2574,247,980,"Guillaume Evrard"
+2575,247,1313,"Jean Beaupère"
+2576,247,136,"Juge (Judge)"
+2577,247,915,"Juge (Judge)"
+2578,248,1532,"Mahmut Hoca"
+2579,248,2024,"Damat Ferit"
+2580,248,1179,"İnek Şaban"
+2581,248,13,"Hafize Ana"
+2582,248,785,"Güdük Necmi"
+2583,248,1912,"Semra Hoca"
+2584,248,2256,"Badi Ekrem"
+2585,248,2029,"Öğrenci"
+2586,248,2113,"Bacaksız"
+2587,248,1274,"Damat Ferit'in Annesi"
+2588,249,24,"Vijay Salgaonkar"
+2589,249,1943,"Nandini Salgaonkar"
+2590,249,2012,"IGP Meera Deshmukh"
+2591,249,1716,"Mahesh Deshmukh"
+2592,249,883,"Anju Salgaonkar"
+2593,249,1521,"Anu Salgaonkar"
+2594,249,1775,"Sameer Deshmukh"
+2595,249,1702,"Sr. Insp. Shrikant Prabhu"
+2596,249,1147,"SI Laxmikant Gaitonde"
+2597,249,2213,"Inspector Vinayak Sawant"
+2598,250,153,Akash
+2599,250,2012,"Simi Sinha"
+2600,250,1715,Sophie
+2601,250,99,"Pramod Sinha"
+2602,250,1356,"DSP Manohar Jawanda"
+2603,250,2244,"Dr. Swami"
+2604,250,144,"Rasika Jawanda"
+2605,250,319,Saroja
+2606,250,1650,Murli
+2607,250,1142,Bandu
