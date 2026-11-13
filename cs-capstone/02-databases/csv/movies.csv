@@ -1,0 +1,251 @@
+id,title,year,runtime,imdb_rank
+1,"The Shawshank Redemption",1994,142,1
+2,"The Godfather",1972,175,2
+3,"The Dark Knight",2008,152,3
+4,"The Godfather Part II",1974,202,4
+5,"The Lord of the Rings: The Return of the King",2003,201,5
+6,"12 Angry Men",1957,96,6
+7,"Schindler's List",1993,196,7
+8,"The Lord of the Rings: The Fellowship of the Ring",2001,178,8
+9,"Pulp Fiction",1994,154,9
+10,"The Lord of the Rings: The Two Towers",2002,179,10
+11,"The Good, the Bad and the Ugly",1966,178,11
+12,"Forrest Gump",1994,142,12
+13,Inception,2010,148,13
+14,"Fight Club",1999,139,14
+15,"Star Wars: Episode V - The Empire Strikes Back",1980,124,15
+16,"The Matrix",1999,136,16
+17,Interstellar,2014,169,17
+18,GoodFellas,1990,145,18
+19,"One Flew Over the Cuckoo's Nest",1975,133,19
+20,Seven,1995,127,20
+21,"It's a Wonderful Life",1946,130,21
+22,"The Silence of the Lambs",1991,118,22
+23,"Saving Private Ryan",1998,169,23
+24,"Seven Samurai",1954,207,24
+25,"The Green Mile",1999,189,25
+26,"City of God",2002,130,26
+27,"Life Is Beautiful",1997,116,27
+28,"Terminator 2: Judgment Day",1991,137,28
+29,"Back to the Future",1985,116,29
+30,"Star Wars: Episode IV - A New Hope",1977,121,30
+31,"Spirited Away",2001,124,31
+32,Gladiator,2000,155,32
+33,"The Pianist",2002,150,33
+34,"Kill Bill: The Whole Bloody Affair",2004,253,34
+35,Parasite,2019,132,35
+36,"Grave of the Fireflies",1988,88,36
+37,Harakiri,1962,133,37
+38,"The Lion King",1994,88,38
+39,Psycho,1960,109,39
+40,"The Departed",2006,151,40
+41,Whiplash,2014,106,41
+42,"The Prestige",2006,130,42
+43,"American History X",1998,119,43
+44,"Spider-Man: Across the Spider-Verse",2023,140,44
+45,"Cinema Paradiso",1988,174,45
+46,"Léon: The Professional",1994,110,46
+47,Casablanca,1942,102,47
+48,"The Intouchables",2011,112,48
+49,"The Usual Suspects",1995,106,49
+50,"Django Unchained",2012,165,50
+51,Alien,1979,117,51
+52,"Rear Window",1954,112,52
+53,"Modern Times",1936,87,53
+54,"Once Upon a Time in the West",1968,145,54
+55,"WALL·E",2008,98,55
+56,"City Lights",1931,87,56
+57,"Apocalypse Now",1979,147,57
+58,Memento,2000,113,58
+59,"Avengers: Infinity War",2018,149,59
+60,"Dune: Part Two",2024,166,60
+61,"Raiders of the Lost Ark",1981,115,61
+62,"Spider-Man: Into the Spider-Verse",2018,117,62
+63,"The Odyssey",2026,172,63
+64,"The Lives of Others",2006,137,64
+65,"Sunset Boulevard",1950,110,65
+66,"Witness for the Prosecution",1957,116,66
+67,"Paths of Glory",1957,88,67
+68,"Inglourious Basterds",2009,153,68
+69,"The Shining",1980,146,69
+70,"The Great Dictator",1940,125,70
+71,Aliens,1986,137,71
+72,"High and Low",1963,143,72
+73,"12th Fail",2023,147,73
+74,"Avengers: Endgame",2019,181,74
+75,"Good Will Hunting",1997,126,75
+76,Coco,2017,105,76
+77,"Toy Story",1995,81,77
+78,"The Dark Knight Rises",2012,164,78
+79,Amadeus,1984,160,79
+80,"Your Name.",2016,106,80
+81,"3 Idiots",2009,170,81
+82,"Das Boot",1981,149,82
+83,Braveheart,1995,178,83
+84,"Princess Mononoke",1997,133,84
+85,Oldboy,2003,120,85
+86,"Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",1964,95,86
+87,"American Beauty",1999,122,87
+88,Capernaum,2018,126,88
+89,"Singin' in the Rain",1952,103,89
+90,"Attack on Titan: The Last Attack",2024,145,90
+91,"Once Upon a Time in America",1984,229,91
+92,Joker,2019,122,92
+93,"Toy Story 3",2010,103,93
+94,"Star Wars: Episode VI - Return of the Jedi",1983,131,94
+95,"Come and See",1985,142,95
+96,"Requiem for a Dream",2000,102,96
+97,Incendies,2010,131,97
+98,Ikiru,1952,143,98
+99,"The Hunt",2012,115,99
+100,"Eternal Sunshine of the Spotless Mind",2004,108,100
+101,"The Apartment",1960,125,101
+102,"Lawrence of Arabia",1962,227,102
+103,Heat,1995,170,103
+104,Scarface,1983,170,104
+105,"Reservoir Dogs",1992,99,105
+106,Up,2009,96,106
+107,"2001: A Space Odyssey",1968,149,107
+108,"Double Indemnity",1944,107,108
+109,"Like Stars on Earth",2007,162,109
+110,"North by Northwest",1959,136,110
+111,"Full Metal Jacket",1987,116,111
+112,"A Separation",2011,123,112
+113,"I Swear",2025,120,113
+114,"Die Hard",1988,132,114
+115,M,1931,99,115
+116,"Amélie",2001,122,116
+117,"To Kill a Mockingbird",1962,129,117
+118,"Indiana Jones and the Last Crusade",1989,127,118
+119,Vertigo,1958,128,119
+120,"Citizen Kane",1941,119,120
+121,"The Sting",1973,129,121
+122,"A Clockwork Orange",1971,136,122
+123,Metropolis,1927,150,123
+124,"The Truman Show",1998,103,124
+125,"The Wolf of Wall Street",2013,180,125
+126,1917,2019,119,126
+127,Snatch,2000,102,127
+128,"Shutter Island",2010,138,128
+129,Downfall,2004,156,129
+130,"L.A. Confidential",1997,138,130
+131,"Green Book",2018,130,131
+132,Dangal,2016,161,132
+133,"Bicycle Thieves",1948,89,133
+134,"Woman in the Dunes",1964,147,134
+135,"Judgment at Nuremberg",1961,179,135
+136,"Jurassic Park",1993,127,136
+137,"Batman Begins",2005,140,137
+138,Oppenheimer,2023,180,138
+139,"For a Few Dollars More",1965,132,139
+140,Hamilton,2020,160,140
+141,"There Will Be Blood",2007,158,141
+142,"Some Like It Hot",1959,121,142
+143,"Taxi Driver",1976,114,143
+144,"The Father",2020,97,144
+145,"The Sixth Sense",1999,107,145
+146,"The Kid",1921,68,146
+147,"All About Eve",1950,138,147
+148,Ran,1985,160,148
+149,Casino,1995,178,149
+150,"The Thing",1982,109,150
+151,"No Country for Old Men",2007,122,151
+152,Prisoners,2013,153,152
+153,"Top Gun: Maverick",2022,130,153
+154,"Kill Bill: Vol. 1",2003,111,154
+155,"Pan's Labyrinth",2006,118,155
+156,Unforgiven,1992,130,156
+157,"A Beautiful Mind",2001,135,157
+158,"Howl's Moving Castle",2004,119,158
+159,"The Treasure of the Sierra Madre",1948,126,159
+160,"Finding Nemo",2003,100,160
+161,Klaus,2019,96,161
+162,"Project Hail Mary",2026,156,162
+163,"Demon Slayer: Kimetsu No Yaiba Infinity Castle",2025,155,163
+164,Yojimbo,1961,110,164
+165,"The Elephant Man",1980,124,165
+166,"The Great Escape",1963,172,166
+167,"Monty Python and the Holy Grail",1975,91,167
+168,"Dial M for Murder",1954,105,168
+169,"The Secret in Their Eyes",2009,129,169
+170,"Gone with the Wind",1939,238,170
+171,"Lock, Stock and Two Smoking Barrels",1998,107,171
+172,"Catch Me If You Can",2002,141,172
+173,Chinatown,1974,130,173
+174,"V for Vendetta",2005,132,174
+175,"Dead Poets Society",1989,128,175
+176,"Inside Out",2015,95,176
+177,"The Best of Youth",2003,374,177
+178,Trainspotting,1996,93,178
+179,"Harry Potter and the Deathly Hallows: Part 2",2011,130,179
+180,"Three Billboards Outside Ebbing, Missouri",2017,115,180
+181,"The Bridge on the River Kwai",1957,161,181
+182,Rashomon,1950,88,182
+183,"Barry Lyndon",1975,185,183
+184,Ben-Hur,1959,212,184
+185,"The Wild Robot",2024,102,185
+186,Warrior,2011,140,186
+187,"Hacksaw Ridge",2016,139,187
+188,Ratatouille,2007,111,188
+189,"Mad Max: Fury Road",2015,120,189
+190,"Million Dollar Baby",2004,132,190
+191,Fargo,1996,98,191
+192,"Children of Heaven",1997,89,192
+193,"My Neighbor Totoro",1988,86,193
+194,"Gran Torino",2008,116,194
+195,"Raging Bull",1980,129,195
+196,"12 Years a Slave",2013,134,196
+197,"How to Train Your Dragon",2010,98,197
+198,"Memories of Murder",2003,131,198
+199,"The Grand Budapest Hotel",2014,99,199
+200,"Before Sunrise",1995,101,200
+201,"Monsters, Inc.",2001,92,201
+202,"Blade Runner",1982,117,202
+203,"Gone Girl",2014,149,203
+204,"Ford v Ferrari",2019,152,204
+205,Jaws,1975,124,205
+206,"In the Name of the Father",1993,133,206
+207,"Chainsaw Man - The Movie: Reze Arc",2025,100,207
+208,"Spider-Man: No Way Home",2021,148,208
+209,"Wild Tales",2014,122,209
+210,"A Silent Voice: The Movie",2016,130,210
+211,"The Gold Rush",1925,95,211
+212,"Mary and Max",2009,92,212
+213,"Sherlock Jr.",1924,45,213
+214,"The Deer Hunter",1978,183,214
+215,"The Wages of Fear",1953,156,215
+216,Logan,2017,137,216
+217,"Pirates of the Caribbean: The Curse of the Black Pearl",2003,143,217
+218,Rocky,1976,120,218
+219,"The General",1926,78,219
+220,"Mr. Smith Goes to Washington",1939,129,220
+221,"Tokyo Story",1953,137,221
+222,"La haine",1995,98,222
+223,Maharaja,2024,141,223
+224,"The Sound of Music",1965,174,224
+225,Spotlight,2015,129,225
+226,"Jai Bhim",2021,164,226
+227,"The Terminator",1984,107,227
+228,"Wild Strawberries",1957,92,228
+229,"On the Waterfront",1954,108,229
+230,"The Best Years of Our Lives",1946,170,230
+231,"The Third Man",1949,104,231
+232,"The Big Lebowski",1998,117,232
+233,"The Incredibles",2004,115,233
+234,"Hachi: A Dog's Tale",2009,93,234
+235,"Before Sunset",2004,80,235
+236,"The Exorcist",1973,122,236
+237,"The Iron Giant",1999,86,237
+238,Room,2015,118,238
+239,"Hotel Rwanda",2004,121,239
+240,Platoon,1986,120,240
+241,"The Seventh Seal",1957,96,241
+242,Rush,2013,123,242
+243,"Stand by Me",1986,89,243
+244,"The Battle of Algiers",1966,121,244
+245,"The Wizard of Oz",1939,102,245
+246,"My Father and My Son",2005,112,246
+247,"The Passion of Joan of Arc",1928,114,247
+248,"The Chaos Class Failed the Class",1975,95,248
+249,Drishyam,2015,163,249
+250,Andhadhun,2018,139,250
