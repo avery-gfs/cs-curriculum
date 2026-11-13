@@ -701,6 +701,10 @@ Los Angeles Chargers,11,6,0,0.647,368,340,17,21.6,20.0
 ...
 ```
 
+...
+
+<img src="/assets/stats-spreadsheet.png" >
+
 ## Too Many Dictionaries
 
 ```py
@@ -961,10 +965,6 @@ Philadelphia Eagles,11,6,0,0.647,379,325,17,22.3,19.1
 
 - Win percent: 3 decimal places (`:.3f`)
 - Per game stats: 1 decimal place (`:.1f`)
-
-## Stats Spreadsheet Import
-
-<img src="/assets/stats-spreadsheet.png" >
 
 ## Dataframes
 
