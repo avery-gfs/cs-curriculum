@@ -6,6 +6,7 @@
     "fmt": "./fmt",
     "serve": "node docs/slides/scripts/serve.js",
     "test": "node docs/slides/scripts/test-github.js",
+    "renumber": "node scripts/renumber.js",
     "vendor": "./docs/slides/scripts/vendor-reveal.sh"
   },
   "devDependencies": {

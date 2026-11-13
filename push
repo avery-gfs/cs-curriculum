@@ -14,7 +14,7 @@ trash *
 cp -r ../solutions/* .
 trash **/_*
 rm -r node_modules
-trash **/solved* package.json package-lock.json push fmt docs 
+trash **/solved* package.json package-lock.json push fmt docs scripts 
 git add --all .
 git commit -m "update problems"
 git push
