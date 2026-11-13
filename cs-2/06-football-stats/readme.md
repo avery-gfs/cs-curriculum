@@ -703,7 +703,7 @@ Los Angeles Chargers,11,6,0,0.647,368,340,17,21.6,20.0
 
 ...
 
-<img src="/assets/stats-spreadsheet.png" height="500px" >
+<img src="/assets/stats-spreadsheet.png" height="700px" >
 
 ## Too Many Dictionaries
 
