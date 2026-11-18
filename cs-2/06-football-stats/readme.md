@@ -795,8 +795,8 @@ for game in games:
 
 ## Updating Stats
 
-```
-Dallas Cowboys,20,Philadelphia Eagles,24
+```py
+{ "away_team": "Dallas Cowboys", "away_score": "20", "home_team": "Philadelphia Eagles", "home_score": "24" }
 ```
 
 ```py
@@ -851,8 +851,8 @@ Dallas Cowboys
 
 ---
 
-```
-Philadelphia Eagles,20,Kansas City Chiefs,17
+```py
+{ "away_team": "Philadelphia Eagles", "away_score": "20", "home_team": "Kansas City Chiefs", "home_score": "17" }
 ```
 
 ```py
