@@ -796,7 +796,7 @@ for game in games:
 ## Updating Stats
 
 ```py
-{ "away_team": "Dallas Cowboys", "away_score": "20", "home_team": "Philadelphia Eagles", "home_score": "24" }
+{ "away_team": "Dallas Cowboys", "away_score": 20, "home_team": "Philadelphia Eagles", "home_score": 24 }
 ```
 
 ```py
@@ -852,7 +852,7 @@ Dallas Cowboys
 ---
 
 ```py
-{ "away_team": "Philadelphia Eagles", "away_score": "20", "home_team": "Kansas City Chiefs", "home_score": "17" }
+{ "away_team": "Philadelphia Eagles", "away_score": 20, "home_team": "Kansas City Chiefs", "home_score": 17 }
 ```
 
 ```py
