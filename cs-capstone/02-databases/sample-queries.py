@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("movies.db", autocommit=True)
+conn = sqlite3.connect("movies.sqlite", autocommit=True)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")
 
@@ -35,18 +35,6 @@ SELECT count(*) as num_movies from movie
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nNumber of Movies by Year 21st Century:\n")
-
-query = """
-SELECT year, count(*) as num_movies from movie
-where year >= 2000
-group by year
-order by year
-"""
-
-for row in conn.execute(query):
-    print(dict(row))
-
 print("\nTop Movie Years:\n")
 
 query = """
@@ -71,9 +59,7 @@ SELECT
     count(*) as num_movies,
     round(avg(runtime), 1) as avg_runtime,
     round(avg(imdb_rank), 1) as avg_rank,
-    movie.title as top_movie,
-    movie.year as top_movie_year,
-    min(imdb_rank) as top_movie_rank
+    movie.title as top_movie
 from movie
 group by decade
 order by decade
@@ -85,11 +71,11 @@ for row in conn.execute(query):
 print("\nFrequent Stars:\n")
 
 query = """
-SELECT name, count(*) as num_roles from role
+SELECT person.name, count(distinct role.movie_id) as num_movies from role
 join person on person.id = role.person_id
-group by person_id
-order by num_roles desc
-limit 20
+group by role.person_id
+order by num_movies desc
+limit 20;
 """
 
 for row in conn.execute(query):
@@ -146,21 +132,21 @@ limit 10
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nRepeat Directors:\n")
+print("\nFrequent Directors:\n")
 
 query = """
 SELECT person.name, count(*) AS films
 from director
 join person on person.id = director.person_id
 group by person.id
-having films >= 2
+having films >= 3
 order by films desc
 """
 
 for row in conn.execute(query):
     print(dict(row))
 
-print("\nDivas:\n")
+print("\nDirectors who Acted:\n")
 
 query = """
 SELECT person.name, movie.title, GROUP_CONCAT(role_name, ", ") as roles
@@ -179,14 +165,17 @@ for row in conn.execute(query):
 print("\nDirector-Actor Pairs:\n")
 
 query = """
-SELECT d.name AS director, a.name AS actor, count(*) AS num_movies
+SELECT
+  d.name AS director,
+  a.name AS actor,
+  count(distinct role.movie_id) AS num_movies
 from director
 join role on role.movie_id = director.movie_id
 join person d on d.id = director.person_id
 join person a on a.id = role.person_id
 where d.id != a.id
 group by director.person_id, role.person_id
-having num_movies >= 4
+having num_movies >= 3
 order by num_movies desc
 """
 
