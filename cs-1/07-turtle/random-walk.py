@@ -10,7 +10,14 @@ while steps < 300:
     heading = random.randint(0, 360)
     turtle.setheading(heading)
 
-    color = random.choice(["purple", "green", "red", "yellow", "blue", "orange"])
+    color = random.choice([
+        "purple",
+        "green",
+        "red",
+        "blue",
+        "orange",
+    ])
+
     turtle.pencolor(color)
 
     turtle.forward(15)
