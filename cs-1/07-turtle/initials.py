@@ -16,6 +16,7 @@ turtle.setheading(0)
 turtle.forward(35)
 
 turtle.teleport(10, 0)
+
 turtle.setheading(90)
 turtle.forward(100)
 turtle.right(160)
