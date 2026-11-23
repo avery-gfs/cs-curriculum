@@ -71,7 +71,7 @@ turtle.done()
 
 <img src="/assets/turtle-square.png" height="400px" />
 
-## Demo: Rainbow Hexagon
+## Demo: Square Loop
 
 ```py
 import turtle
@@ -79,28 +79,13 @@ import turtle
 turtle.shape("turtle")
 
 turtle.pencolor("purple")
-turtle.forward(100)
-turtle.left(60)
 
-turtle.pencolor("green")
-turtle.forward(100)
-turtle.left(60)
+sides = 0
 
-turtle.pencolor("red")
-turtle.forward(100)
-turtle.left(60)
-
-turtle.pencolor("yellow")
-turtle.forward(100)
-turtle.left(60)
-
-turtle.pencolor("blue")
-turtle.forward(100)
-turtle.left(60)
-
-turtle.pencolor("orange")
-turtle.forward(100)
-turtle.left(60)
+while sides < 4:
+    turtle.forward(100)
+    turtle.left(90)
+    sides += 1
 
 turtle.hideturtle()
 turtle.done()
@@ -110,7 +95,33 @@ turtle.done()
 
 ...
 
-<img src="/assets/turtle-rainbow-hex.png" height="400px" />
+<img src="/assets/turtle-square-loop.png" height="400px" />
+
+## Demo: Hexagon
+
+```py
+import turtle
+
+turtle.shape("turtle")
+
+turtle.pencolor("purple")
+
+sides = 0
+
+while sides < 6:
+    turtle.forward(100)
+    turtle.left(60)
+    sides += 1
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-hex.png" height="400px" />
 
 ## Demo: Staircase
 
@@ -348,6 +359,38 @@ turtle.done()
 
 <img src="/assets/turtle-initials.png" height="400px" />
 
+## Demo: Face Arcs
+
+```py
+import turtle
+
+turtle.shape("turtle")
+
+turtle.teleport(-50, 0)
+turtle.right(90)
+turtle.circle(50, 180)
+
+turtle.teleport(-40, 40)
+turtle.circle(-10, 180)
+
+turtle.teleport(40, 40)
+turtle.setheading(90)
+turtle.circle(10, 180)
+
+turtle.teleport(0, 100)
+turtle.setheading(0)
+turtle.circle(-100)
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-face-arcs.png" height="400px" />
+
 ## Demo: Random Walk
 
 ```py
@@ -360,8 +403,12 @@ turtle.speed(0)
 steps = 0
 
 while steps < 300:
-    heading = random.choice([0, 90, 180, 270])
+    heading = random.randint(0, 360)
     turtle.setheading(heading)
+
+    color = random.choice(["purple", "green", "red", "yellow", "blue", "orange"])
+    turtle.pencolor(color)
+
     turtle.forward(15)
     steps += 1
 
@@ -375,7 +422,7 @@ turtle.done()
 
 <img src="/assets/turtle-random-walk.png" height="400px" />
 
-## Demo: Circles
+## Demo: Circle Gradient
 
 ```py
 import turtle
@@ -392,8 +439,7 @@ while shapes < 36:
     turtle.circle(40)
     turtle.right(10)
 
-    r = (r + 0.03) % 1
-
+    r += 1 / 36
     shapes += 1
 
 turtle.hideturtle()
@@ -404,7 +450,7 @@ turtle.done()
 
 ...
 
-<img src="/assets/turtle-circles.png" height="400px" />
+<img src="/assets/turtle-circle-gradient.png" height="400px" />
 
 ## Project: Bird
 
