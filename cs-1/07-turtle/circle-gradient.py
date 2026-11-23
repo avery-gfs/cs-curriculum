@@ -12,8 +12,7 @@ while shapes < 36:
     turtle.circle(40)
     turtle.right(10)
 
-    r += 0.028
-
+    r += 1 / 36
     shapes += 1
 
 turtle.hideturtle()
