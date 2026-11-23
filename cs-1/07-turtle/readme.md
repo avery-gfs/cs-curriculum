@@ -6,6 +6,8 @@
 
 ///
 
+...
+
 <img src="/assets/bird-drawing.gif" height="400px" />
 
 ## Starter Code
