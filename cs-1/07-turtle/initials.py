@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 turtle.pencolor("blue")
 turtle.pensize(4)
 
@@ -24,4 +26,5 @@ turtle.forward(110)
 turtle.setheading(90)
 turtle.forward(100)
 
+turtle.hideturtle()
 turtle.done()

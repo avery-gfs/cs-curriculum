@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 r = 0
 turtle.speed(40)
 turtle.pensize(2)
@@ -14,4 +16,5 @@ while shapes < 36:
 
     shapes += 1
 
+turtle.hideturtle()
 turtle.done()

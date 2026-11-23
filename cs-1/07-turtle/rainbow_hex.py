@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 turtle.pencolor("purple")
 turtle.forward(100)
 turtle.left(60)
@@ -24,4 +26,5 @@ turtle.pencolor("orange")
 turtle.forward(100)
 turtle.left(60)
 
+turtle.hideturtle()
 turtle.done()

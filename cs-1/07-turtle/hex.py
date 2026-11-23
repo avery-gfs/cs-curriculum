@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 turtle.pencolor("purple")
 sides = 0
 
@@ -8,4 +10,5 @@ while sides < 6:
     turtle.left(60)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()

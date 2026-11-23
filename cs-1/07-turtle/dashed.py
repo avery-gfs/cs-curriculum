@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 turtle.teleport(-200, 0)
 steps = 0
 
@@ -12,4 +14,5 @@ while steps < 20:
     turtle.forward(20)
     steps += 1
 
+turtle.hideturtle()
 turtle.done()
