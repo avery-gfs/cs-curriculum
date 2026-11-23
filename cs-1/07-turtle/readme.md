@@ -436,3 +436,5 @@ turtle.done()
 <img src="/assets/Pearl_pied.jpg" height="800px" />
 
 ///
+
+<img src="/assets/bird-drawing.gif" height="400px" />
