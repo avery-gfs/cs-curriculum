@@ -12,27 +12,28 @@ turtle.done()
 
 ## Functions
 
-| Function                   | Meaning                                                          | Example                      |
-| -------------------------- | ---------------------------------------------------------------- | ---------------------------- |
-| `turtle.forward(n)`        | Move forward `n` pixels                                          | `turtle.forward(100)`        |
-| `turtle.backward(n)`       | Move backward `n` pixels                                         | `turtle.backward(50)`        |
-| `turtle.right(angle)`      | Turn right by `angle` degrees                                    | `turtle.right(90)`           |
-| `turtle.left(angle)`       | Turn left by `angle` degrees                                     | `turtle.left(45)`            |
-| `turtle.circle(radius)`    | Draw a circle                                                    | `turtle.circle(50)`          |
-| `turtle.setheading(angle)` | Face a direction (`0` east, `90` north, `180` west, `270` south) | `turtle.setheading(90)`      |
-| `turtle.home()`            | Move to the center `(0, 0)`, facing east                         | `turtle.home()`              |
-| `turtle.teleport(x, y)`    | Jump to `(x, y)` without drawing                                 | `turtle.teleport(-100, 50)`  |
-| `turtle.penup()`           | Stop drawing when moving                                         | `turtle.penup()`             |
-| `turtle.pendown()`         | Start drawing when moving                                        | `turtle.pendown()`           |
-| `turtle.pensize(width)`    | Set line thickness                                               | `turtle.pensize(5)`          |
-| `turtle.pencolor(color)`   | Set line color                                                   | `turtle.pencolor("red")`     |
-| `turtle.fillcolor(color)`  | Set fill color                                                   | `turtle.fillcolor("yellow")` |
-| `turtle.begin_fill()`      | Start a shape to fill                                            | `turtle.begin_fill()`        |
-| `turtle.end_fill()`        | Fill the shape drawn since `begin_fill()`                        | `turtle.end_fill()`          |
-| `turtle.speed(n)`          | Set speed (`1` slowest, `10` fast, `0` instant)                  | `turtle.speed(0)`            |
-| `turtle.bgcolor(color)`    | Set background color                                             | `turtle.bgcolor("black")`    |
-| `turtle.reset()`           | Clear the drawing and send the turtle home                       | `turtle.reset()`             |
-| `turtle.done()`            | Keep the window open (last line)                                 | `turtle.done()`              |
+| Function                       | Meaning                                                          | Example                      |
+| ------------------------------ | ---------------------------------------------------------------- | ---------------------------- |
+| `turtle.forward(n)`            | Move forward `n` pixels                                          | `turtle.forward(100)`        |
+| `turtle.backward(n)`           | Move backward `n` pixels                                         | `turtle.backward(50)`        |
+| `turtle.right(angle)`          | Turn right by `angle` degrees                                    | `turtle.right(90)`           |
+| `turtle.left(angle)`           | Turn left by `angle` degrees                                     | `turtle.left(45)`            |
+| `turtle.circle(radius)`        | Draw a circle                                                    | `turtle.circle(50)`          |
+| `turtle.circle(radius, angle)` | Draw an arc covering `angle` degrees of a circle                 | `turtle.circle(50, 180)`     |
+| `turtle.setheading(angle)`     | Face a direction (`0` east, `90` north, `180` west, `270` south) | `turtle.setheading(90)`      |
+| `turtle.home()`                | Move to the center `(0, 0)`, facing east                         | `turtle.home()`              |
+| `turtle.teleport(x, y)`        | Jump to `(x, y)` without drawing                                 | `turtle.teleport(-100, 50)`  |
+| `turtle.penup()`               | Stop drawing when moving                                         | `turtle.penup()`             |
+| `turtle.pendown()`             | Start drawing when moving                                        | `turtle.pendown()`           |
+| `turtle.pensize(width)`        | Set line thickness                                               | `turtle.pensize(5)`          |
+| `turtle.pencolor(color)`       | Set line color                                                   | `turtle.pencolor("red")`     |
+| `turtle.fillcolor(color)`      | Set fill color                                                   | `turtle.fillcolor("yellow")` |
+| `turtle.begin_fill()`          | Start a shape to fill                                            | `turtle.begin_fill()`        |
+| `turtle.end_fill()`            | Fill the shape drawn since `begin_fill()`                        | `turtle.end_fill()`          |
+| `turtle.speed(n)`              | Set speed (`1` slowest, `10` fast, `0` instant)                  | `turtle.speed(0)`            |
+| `turtle.bgcolor(color)`        | Set background color                                             | `turtle.bgcolor("black")`    |
+| `turtle.reset()`               | Clear the drawing and send the turtle home                       | `turtle.reset()`             |
+| `turtle.done()`                | Keep the window open (last line)                                 | `turtle.done()`              |
 
 ## Demo: Square
 
@@ -82,10 +83,9 @@ turtle.forward(50)
 turtle.setheading(0)
 turtle.forward(35)
 
-turtle.penup()
-turtle.goto(10, 0)
+turtle.teleport(10, 0)
+
 turtle.setheading(90)
-turtle.pendown()
 turtle.forward(100)
 turtle.right(160)
 turtle.forward(110)
@@ -160,33 +160,6 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-hex.png" height="400px" />
-
-## Demo: Two Color Hexagon
-
-```py
-import turtle
-
-turtle.pensize(4)
-sides = 0
-
-while sides < 6:
-    if sides % 2 == 0:
-        turtle.pencolor("red")
-    else:
-        turtle.pencolor("blue")
-
-    turtle.forward(100)
-    turtle.left(60)
-    sides += 1
-
-turtle.done()
-```
-
-///
-
-...
-
-<img src="/assets/turtle-two-color-hex.png" height="400px" />
 
 ## Demo: Star
 
