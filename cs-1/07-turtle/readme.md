@@ -95,6 +95,8 @@ turtle.forward(100)
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-initials.png" height="400px" />
@@ -131,6 +133,8 @@ turtle.left(60)
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-rainbow-hex.png" height="400px" />
@@ -150,6 +154,8 @@ while sides < 6:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -176,6 +182,8 @@ while sides < 6:
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-two-color-hex.png" height="400px" />
@@ -194,6 +202,8 @@ while sides < 5:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -219,6 +229,8 @@ turtle.end_fill()
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-filled-square.png" height="400px" />
@@ -240,6 +252,8 @@ while steps < 6:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -265,6 +279,8 @@ while steps < 20:
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-dashed.png" width="700px" />
@@ -286,6 +302,8 @@ while sides < 12:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -315,6 +333,8 @@ turtle.end_fill()
 turtle.done()
 ```
 
+///
+
 ...
 
 <img src="/assets/turtle-filled-overlap.png" height="400px" />
@@ -335,6 +355,8 @@ while sides < 24:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -357,6 +379,8 @@ while steps < 300:
 
 turtle.done()
 ```
+
+///
 
 ...
 
@@ -383,6 +407,8 @@ while shapes < 36:
 
 turtle.done()
 ```
+
+///
 
 ...
 
