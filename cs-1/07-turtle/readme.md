@@ -60,6 +60,43 @@ turtle.done()
 
 <img src="/assets/turtle-square.png" height="400px" />
 
+## Demo: Initials
+
+```py
+import turtle
+
+turtle.pencolor("blue")
+turtle.pensize(4)
+
+turtle.teleport(-100, 0)
+turtle.left(70)
+turtle.forward(100)
+turtle.right(140)
+turtle.forward(100)
+turtle.setheading(0)
+turtle.teleport(-100, 0)
+turtle.left(70)
+turtle.forward(50)
+turtle.setheading(0)
+turtle.forward(35)
+
+turtle.penup()
+turtle.goto(10, 0)
+turtle.setheading(90)
+turtle.pendown()
+turtle.forward(100)
+turtle.right(160)
+turtle.forward(110)
+turtle.setheading(90)
+turtle.forward(100)
+
+turtle.done()
+```
+
+...
+
+<img src="/assets/turtle-initials.png" height="400px" />
+
 ## Demo: Rainbow Hexagon
 
 ```py
@@ -96,43 +133,6 @@ turtle.done()
 
 <img src="/assets/turtle-rainbow-hex.png" height="400px" />
 
-## Demo: Initials
-
-```py
-import turtle
-
-turtle.pencolor("blue")
-turtle.pensize(4)
-
-turtle.teleport(-100, 0)
-turtle.left(70)
-turtle.forward(100)
-turtle.right(140)
-turtle.forward(100)
-turtle.setheading(0)
-turtle.teleport(-100, 0)
-turtle.left(70)
-turtle.forward(50)
-turtle.setheading(0)
-turtle.forward(35)
-
-turtle.penup()
-turtle.goto(10, 0)
-turtle.setheading(90)
-turtle.pendown()
-turtle.forward(100)
-turtle.right(160)
-turtle.forward(110)
-turtle.setheading(90)
-turtle.forward(110)
-
-turtle.done()
-```
-
-...
-
-<img src="/assets/turtle-initials.png" height="400px" />
-
 ## Demo: Hexagon
 
 ```py
@@ -152,6 +152,31 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-hex.png" height="400px" />
+
+## Demo: Two Color Hexagon
+
+```py
+import turtle
+
+turtle.pensize(4)
+sides = 0
+
+while sides < 6:
+    if sides % 2 == 0:
+        turtle.pencolor("red")
+    else:
+        turtle.pencolor("blue")
+
+    turtle.forward(100)
+    turtle.left(60)
+    sides += 1
+
+turtle.done()
+```
+
+...
+
+<img src="/assets/turtle-two-color-hex.png" height="400px" />
 
 ## Demo: Star
 
@@ -241,31 +266,6 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-dashed.png" width="700px" />
-
-## Demo: Two Color Hexagon
-
-```py
-import turtle
-
-turtle.pensize(4)
-sides = 0
-
-while sides < 6:
-    if sides % 2 == 0:
-        turtle.pencolor("red")
-    else:
-        turtle.pencolor("blue")
-
-    turtle.forward(100)
-    turtle.left(60)
-    sides += 1
-
-turtle.done()
-```
-
-...
-
-<img src="/assets/turtle-two-color-hex.png" height="400px" />
 
 ## Demo: Sparkle
 

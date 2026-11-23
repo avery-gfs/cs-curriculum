@@ -91,6 +91,26 @@ That is two slides, each showing `games = [...]` at the top: the first steps
 through `games[0]` and then its answer, and the second swaps them for
 `games[0]["away_team"]`.
 
+`///` on a line of its own splits a slide into **two columns**: everything
+before it on the left, everything after it on the right, with the `##` heading
+spanning both. Only one `///` per slide counts — any later one is drawn as plain
+text. Since every `---` and `<<<` makes a slide of its own, each can be split on
+its own, and a `///` above the first `<<<` is repeated along with the rest of
+the setup. A `...` in the left column holds back the rest of it and the whole
+right column; one in the right column, just what follows it there. Like `...`,
+it needs a blank line on either side, or markdown folds it into the paragraph
+next to it.
+
+```
+## Side by side
+
+![before](before.png)
+
+///
+
+![after](after.png)
+```
+
 A `---` needs a blank line above it. Without one, markdown reads it as
 underlining the line before, and so does this — the same as `Heading\n---`. Both
 markers, and `<<<`, are ignored inside fenced code blocks.

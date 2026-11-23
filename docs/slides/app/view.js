@@ -96,6 +96,7 @@ async function show(src) {
     plugins: [RevealMarkdown, RevealMath, RevealHighlight, RevealNotes],
   });
 
+  addColumns();
   addFragments();
   if (title) addRunningHeader(title);
 
@@ -156,10 +157,17 @@ function highlightPythonCalls(hljs) {
 // the next press. Reveal groups fragments that share an index, so each run of
 // content between markers appears as one step, and the markers themselves go
 // away. (`---` is not handled here — it became a slide of its own upstream.)
+// Columns don't interrupt the count: a `...` in the left column holds back the
+// rest of it and the whole right column, in reading order.
 function addFragments() {
   for (const slide of slidesEl.querySelectorAll("section[data-markdown]")) {
     let index = 0;
-    for (const node of [...slide.children]) {
+    const blocks = [...slide.children].flatMap((node) =>
+      node.classList.contains("columns")
+        ? [...node.children].flatMap((column) => [...column.children])
+        : [node]
+    );
+    for (const node of blocks) {
       if (isFragmentBreak(node)) {
         node.remove();
         index += 1;
@@ -169,6 +177,43 @@ function addFragments() {
       }
     }
   }
+}
+
+// A `///` between blocks lays the slide out in two columns: what comes before it
+// on the left, what comes after on the right. The `##` heading leading the slide
+// stays above both, and speaker notes stay where reveal looks for them. Only the
+// first `///` on a slide splits it; any later one is left drawn as it is, so a
+// stray one shows up rather than silently vanishing.
+function addColumns() {
+  for (const slide of slidesEl.querySelectorAll("section[data-markdown]")) {
+    const nodes = [...slide.children].filter(
+      (node) => !(node.tagName === "ASIDE" && node.classList.contains("notes")),
+    );
+    const split = nodes.findIndex(isColumnBreak);
+    if (split === -1) continue;
+
+    const start = nodes[0]?.tagName === "H2" ? 1 : 0;
+    const left = document.createElement("div");
+    const right = document.createElement("div");
+    left.className = right.className = "column";
+    left.append(...nodes.slice(start, split));
+    right.append(...nodes.slice(split + 1));
+    nodes[split].remove();
+
+    const columns = document.createElement("div");
+    columns.className = "columns";
+    columns.append(left, right);
+    if (start) nodes[0].after(columns);
+    else slide.prepend(columns);
+  }
+}
+
+function isColumnBreak(node) {
+  return (
+    node.tagName === "P" &&
+    !node.firstElementChild &&
+    node.textContent.trim() === "///"
+  );
 }
 
 // A paragraph that is nothing but `...` (or `…`, if something smartened it).

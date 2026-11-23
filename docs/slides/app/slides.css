@@ -168,6 +168,21 @@ pre code {
   overflow: visible;
 }
 
+/* A slide split by `///` (see addColumns in view.js). `minmax(0, 1fr)` rather
+   than `1fr` so a wide code block or image can't push its column past half:
+   code scrolls inside its own box instead, and images shrink to fit. */
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2em;
+  align-items: start;
+}
+
+.columns > .column > :first-child {
+  margin-top: 0;
+}
+
 /* The document's `# title`, repeated at the top of every slide. */
 
 .deck-header {
