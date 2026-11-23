@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 turtle.fillcolor("blue")
 turtle.begin_fill()
@@ -16,4 +18,5 @@ turtle.begin_fill()
 turtle.circle(60)
 turtle.end_fill()
 
+turtle.hideturtle()
 turtle.done()

@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 
 while sides < 5:
@@ -7,4 +9,5 @@ while sides < 5:
     turtle.right(144)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()

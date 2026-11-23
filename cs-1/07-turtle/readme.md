@@ -5,6 +5,8 @@
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 # Your code goes here
 
 turtle.done()
@@ -14,6 +16,7 @@ turtle.done()
 
 | Function                       | Meaning                                                          | Example                      |
 | ------------------------------ | ---------------------------------------------------------------- | ---------------------------- |
+| `turtle.shape(name)`           | Change how the turtle looks (`"turtle"`, `"arrow"`, `"circle"`)  | `turtle.shape("turtle")`     |
 | `turtle.forward(n)`            | Move forward `n` pixels                                          | `turtle.forward(100)`        |
 | `turtle.backward(n)`           | Move backward `n` pixels                                         | `turtle.backward(50)`        |
 | `turtle.right(angle)`          | Turn right by `angle` degrees                                    | `turtle.right(90)`           |
@@ -32,6 +35,7 @@ turtle.done()
 | `turtle.end_fill()`            | Fill the shape drawn since `begin_fill()`                        | `turtle.end_fill()`          |
 | `turtle.speed(n)`              | Set speed (`1` slowest, `10` fast, `0` instant)                  | `turtle.speed(0)`            |
 | `turtle.bgcolor(color)`        | Set background color                                             | `turtle.bgcolor("black")`    |
+| `turtle.hideturtle()`          | Hide the turtle (handy right before `turtle.done()`)             | `turtle.hideturtle()`        |
 | `turtle.reset()`               | Clear the drawing and send the turtle home                       | `turtle.reset()`             |
 | `turtle.done()`                | Keep the window open (last line)                                 | `turtle.done()`              |
 
@@ -39,6 +43,8 @@ turtle.done()
 
 ```py
 import turtle
+
+turtle.shape("turtle")
 
 turtle.pencolor("purple")
 
@@ -54,6 +60,7 @@ turtle.left(90)
 turtle.forward(100)
 turtle.left(90)
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -67,6 +74,8 @@ turtle.done()
 
 ```py
 import turtle
+
+turtle.shape("turtle")
 
 turtle.pencolor("blue")
 turtle.pensize(4)
@@ -92,6 +101,7 @@ turtle.forward(110)
 turtle.setheading(90)
 turtle.forward(100)
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -105,6 +115,8 @@ turtle.done()
 
 ```py
 import turtle
+
+turtle.shape("turtle")
 
 turtle.pencolor("purple")
 turtle.forward(100)
@@ -130,6 +142,7 @@ turtle.pencolor("orange")
 turtle.forward(100)
 turtle.left(60)
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -144,6 +157,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 turtle.pencolor("purple")
 sides = 0
 
@@ -152,6 +167,7 @@ while sides < 6:
     turtle.left(60)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -166,6 +182,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 
 while sides < 5:
@@ -173,6 +191,7 @@ while sides < 5:
     turtle.right(144)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -187,6 +206,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 turtle.fillcolor("orange")
 turtle.begin_fill()
 
@@ -199,6 +220,7 @@ while sides < 4:
 
 turtle.end_fill()
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -213,6 +235,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 turtle.teleport(-150, -150)
 steps = 0
 
@@ -223,6 +247,7 @@ while steps < 6:
     turtle.forward(50)
     steps += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -237,6 +262,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 turtle.teleport(-200, 0)
 steps = 0
 
@@ -249,6 +276,7 @@ while steps < 20:
     turtle.forward(20)
     steps += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -263,6 +291,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 turtle.backward(40)
 
@@ -273,6 +303,7 @@ while sides < 12:
     turtle.right(140)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -286,6 +317,8 @@ turtle.done()
 
 ```py
 import turtle
+
+turtle.shape("turtle")
 
 sides = 0
 turtle.fillcolor("blue")
@@ -303,6 +336,7 @@ turtle.begin_fill()
 turtle.circle(60)
 turtle.end_fill()
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -317,6 +351,8 @@ turtle.done()
 ```py
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 turtle.speed(40)
 turtle.backward(100)
@@ -326,6 +362,7 @@ while sides < 24:
     turtle.right(165)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -341,6 +378,8 @@ turtle.done()
 import turtle
 import random
 
+turtle.shape("turtle")
+
 turtle.speed(0)
 steps = 0
 
@@ -350,6 +389,7 @@ while steps < 300:
     turtle.forward(15)
     steps += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 
@@ -363,6 +403,8 @@ turtle.done()
 
 ```py
 import turtle
+
+turtle.shape("turtle")
 
 r = 0
 turtle.speed(40)
@@ -378,6 +420,7 @@ while shapes < 36:
 
     shapes += 1
 
+turtle.hideturtle()
 turtle.done()
 ```
 

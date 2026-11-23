@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 turtle.fillcolor("orange")
 turtle.begin_fill()
 
@@ -12,4 +14,5 @@ while sides < 4:
 
 turtle.end_fill()
 
+turtle.hideturtle()
 turtle.done()

@@ -1,5 +1,7 @@
 import turtle
 
+turtle.shape("turtle")
+
 sides = 0
 turtle.backward(40)
 
@@ -10,4 +12,5 @@ while sides < 12:
     turtle.right(140)
     sides += 1
 
+turtle.hideturtle()
 turtle.done()
