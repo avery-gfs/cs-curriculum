@@ -419,9 +419,10 @@ import turtle
 
 turtle.shape("turtle")
 
-r = 0
 turtle.speed(40)
 turtle.pensize(2)
+
+r = 0
 shapes = 0
 
 while shapes < 36:
