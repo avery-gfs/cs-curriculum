@@ -38,6 +38,7 @@ turtle.forward(30)
 turtle.goto(10, 90)
 turtle.end_fill()
 
+turtle.pencolor("gold")
 turtle.teleport(-10, 110)
 turtle.setheading(135)
 turtle.forward(40)
