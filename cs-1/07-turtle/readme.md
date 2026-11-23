@@ -71,47 +71,6 @@ turtle.done()
 
 <img src="/assets/turtle-square.png" height="400px" />
 
-## Demo: Initials
-
-```py
-import turtle
-
-turtle.shape("turtle")
-
-turtle.pencolor("blue")
-turtle.pensize(4)
-
-turtle.teleport(-100, 0)
-turtle.left(70)
-turtle.forward(100)
-turtle.right(140)
-turtle.forward(100)
-turtle.setheading(0)
-turtle.teleport(-100, 0)
-turtle.left(70)
-turtle.forward(50)
-turtle.setheading(0)
-turtle.forward(35)
-
-turtle.teleport(10, 0)
-
-turtle.setheading(90)
-turtle.forward(100)
-turtle.right(160)
-turtle.forward(110)
-turtle.setheading(90)
-turtle.forward(100)
-
-turtle.hideturtle()
-turtle.done()
-```
-
-///
-
-...
-
-<img src="/assets/turtle-initials.png" height="400px" />
-
 ## Demo: Rainbow Hexagon
 
 ```py
@@ -152,84 +111,6 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-rainbow-hex.png" height="400px" />
-
-## Demo: Hexagon
-
-```py
-import turtle
-
-turtle.shape("turtle")
-
-turtle.pencolor("purple")
-sides = 0
-
-while sides < 6:
-    turtle.forward(100)
-    turtle.left(60)
-    sides += 1
-
-turtle.hideturtle()
-turtle.done()
-```
-
-///
-
-...
-
-<img src="/assets/turtle-hex.png" height="400px" />
-
-## Demo: Star
-
-```py
-import turtle
-
-turtle.shape("turtle")
-
-sides = 0
-
-while sides < 5:
-    turtle.forward(100)
-    turtle.right(144)
-    sides += 1
-
-turtle.hideturtle()
-turtle.done()
-```
-
-///
-
-...
-
-<img src="/assets/turtle-star.png" height="400px" />
-
-## Demo: Filled Square
-
-```py
-import turtle
-
-turtle.shape("turtle")
-
-turtle.fillcolor("orange")
-turtle.begin_fill()
-
-sides = 0
-
-while sides < 4:
-    turtle.forward(100)
-    turtle.left(90)
-    sides += 1
-
-turtle.end_fill()
-
-turtle.hideturtle()
-turtle.done()
-```
-
-///
-
-...
-
-<img src="/assets/turtle-filled-square.png" height="400px" />
 
 ## Demo: Staircase
 
@@ -287,6 +168,56 @@ turtle.done()
 
 <img src="/assets/turtle-dashed.png" width="700px" />
 
+## Demo: Star
+
+```py
+import turtle
+
+turtle.shape("turtle")
+
+sides = 0
+
+while sides < 5:
+    turtle.forward(100)
+    turtle.right(144)
+    sides += 1
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-star.png" height="400px" />
+
+## Demo: Big Star
+
+```py
+import turtle
+
+turtle.shape("turtle")
+
+sides = 0
+turtle.speed(40)
+turtle.backward(100)
+
+while sides < 24:
+    turtle.forward(200)
+    turtle.right(165)
+    sides += 1
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-big-star.png" height="400px" />
+
 ## Demo: Sparkle
 
 ```py
@@ -313,6 +244,35 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-sparkle.png" height="400px" />
+
+## Demo: Filled Square
+
+```py
+import turtle
+
+turtle.shape("turtle")
+
+turtle.fillcolor("orange")
+turtle.begin_fill()
+
+sides = 0
+
+while sides < 4:
+    turtle.forward(100)
+    turtle.left(90)
+    sides += 1
+
+turtle.end_fill()
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-filled-square.png" height="400px" />
 
 ## Demo: Filled Overlap
 
@@ -347,21 +307,36 @@ turtle.done()
 
 <img src="/assets/turtle-filled-overlap.png" height="400px" />
 
-## Demo: Big Star
+## Demo: Initials
 
 ```py
 import turtle
 
 turtle.shape("turtle")
 
-sides = 0
-turtle.speed(40)
-turtle.backward(100)
+turtle.pencolor("blue")
+turtle.pensize(4)
 
-while sides < 24:
-    turtle.forward(200)
-    turtle.right(165)
-    sides += 1
+turtle.teleport(-100, 0)
+turtle.left(70)
+turtle.forward(100)
+turtle.right(140)
+turtle.forward(100)
+turtle.setheading(0)
+turtle.teleport(-100, 0)
+turtle.left(70)
+turtle.forward(50)
+turtle.setheading(0)
+turtle.forward(35)
+
+turtle.teleport(10, 0)
+
+turtle.setheading(90)
+turtle.forward(100)
+turtle.right(160)
+turtle.forward(110)
+turtle.setheading(90)
+turtle.forward(100)
 
 turtle.hideturtle()
 turtle.done()
@@ -371,7 +346,7 @@ turtle.done()
 
 ...
 
-<img src="/assets/turtle-big-star.png" height="400px" />
+<img src="/assets/turtle-initials.png" height="400px" />
 
 ## Demo: Random Walk
 
