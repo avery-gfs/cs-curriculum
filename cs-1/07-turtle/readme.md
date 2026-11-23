@@ -5,7 +5,7 @@
 ```py
 import turtle
 
-# ...
+# Your code goes here
 
 turtle.done()
 ```
