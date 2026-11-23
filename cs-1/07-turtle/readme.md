@@ -26,6 +26,7 @@ turtle.done()
 | `turtle.setheading(angle)`     | Face a direction (`0` east, `90` north, `180` west, `270` south) | `turtle.setheading(90)`      |
 | `turtle.home()`                | Move to the center `(0, 0)`, facing east                         | `turtle.home()`              |
 | `turtle.teleport(x, y)`        | Jump to `(x, y)` without drawing                                 | `turtle.teleport(-100, 50)`  |
+| `turtle.goto(x, y)`            | Move to `(x, y)`, drawing a line on the way                      | `turtle.goto(10, 90)`        |
 | `turtle.penup()`               | Stop drawing when moving                                         | `turtle.penup()`             |
 | `turtle.pendown()`             | Start drawing when moving                                        | `turtle.pendown()`           |
 | `turtle.pensize(width)`        | Set line thickness                                               | `turtle.pensize(5)`          |
@@ -429,3 +430,67 @@ turtle.done()
 ...
 
 <img src="/assets/turtle-circles.png" height="400px" />
+
+## Demo: Bird
+
+```py
+import turtle
+
+turtle.shape("turtle")
+turtle.pensize(3)
+
+sides = 0
+turtle.fillcolor("yellow")
+turtle.begin_fill()
+
+while sides < 4:
+    turtle.left(90)
+    turtle.forward(100)
+    sides += 1
+
+turtle.end_fill()
+
+turtle.teleport(-20, 80)
+turtle.fillcolor("black")
+turtle.begin_fill()
+turtle.setheading(135)
+turtle.circle(8)
+turtle.end_fill()
+
+turtle.teleport(-50, 50)
+turtle.fillcolor("orange")
+turtle.begin_fill()
+turtle.setheading(135)
+turtle.circle(20)
+turtle.end_fill()
+
+turtle.teleport(10, 90)
+turtle.fillcolor("pink")
+turtle.begin_fill()
+turtle.setheading(-90)
+turtle.forward(50)
+turtle.left(135)
+turtle.forward(30)
+turtle.goto(10, 90)
+turtle.end_fill()
+
+turtle.teleport(-10, 110)
+turtle.setheading(135)
+turtle.forward(40)
+turtle.backward(40)
+turtle.left(22.5)
+turtle.forward(40)
+turtle.backward(40)
+turtle.left(22.5)
+turtle.forward(40)
+turtle.backward(40)
+
+turtle.hideturtle()
+turtle.done()
+```
+
+///
+
+...
+
+<img src="/assets/turtle-bird.png" height="400px" />
