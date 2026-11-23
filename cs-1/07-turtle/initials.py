@@ -23,6 +23,6 @@ turtle.forward(100)
 turtle.right(160)
 turtle.forward(110)
 turtle.setheading(90)
-turtle.forward(110)
+turtle.forward(100)
 
 turtle.done()
