@@ -1473,3 +1473,46 @@ shape: (32, 10)
 │ Las Vegas Raiders    ┆ 17       ┆ 241    ┆ 432     ┆ 3    ┆ 14     ┆ 0    ┆ 0.176  ┆ 14.2          ┆ 25.4           │
 └──────────────────────┴──────────┴────────┴─────────┴──────┴────────┴──────┴────────┴───────────────┴────────────────┘
 ```
+
+## Final Code
+
+```py
+import polars as pl
+
+pl.Config(tbl_rows=-1, tbl_cols=-1)
+
+games = pl.read_csv("games.csv")
+
+homeResults = games.select(
+    pl.col("home_team").alias("team"),
+    pl.col("home_score").alias("scored"),
+    pl.col("away_score").alias("allowed"),
+)
+
+awayResults = games.select(
+    pl.col("away_team").alias("team"),
+    pl.col("away_score").alias("scored"),
+    pl.col("home_score").alias("allowed"),
+)
+
+combined = pl.concat([homeResults, awayResults])
+
+grouped = combined.group_by("team").agg(
+    pl.len().alias("numGames"),
+    (pl.col("scored") > pl.col("allowed")).sum().alias("wins"),
+    (pl.col("scored") < pl.col("allowed")).sum().alias("losses"),
+    (pl.col("scored") == pl.col("allowed")).sum().alias("ties"),
+    pl.sum("scored"),
+    pl.sum("allowed"),
+)
+
+finalStats = grouped.with_columns(
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
+    .round(3)
+    .alias("winPct"),
+    (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
+    (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
+).sort("winPct", descending=True)
+
+print(finalStats)
+```
