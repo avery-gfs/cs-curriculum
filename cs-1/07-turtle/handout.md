@@ -5,143 +5,136 @@
 ```py
 import turtle
 
-turtle.shape("turtle")  # Set cursor shape to turtle
+turtle.shape("turtle")
 
 # Your code goes here
 
 turtle.done()
 ```
 
+`turtle.shape("turtle")` sets the cursor to a turtle icon. `turtle.done()` keeps
+the image open once the drawing is finished.
+
 ## Functions
 
 ### `turtle.forward(n)`
 
-`turtle.forward(100)`
+Example: `turtle.forward(100)`
 
-Move forward `n` pixels
+Move forward `n` pixels.
 
 ### `turtle.backward(n)`
 
-`turtle.backward(50)`
+Example: `turtle.backward(50)`
 
-Move backward `n` pixels
+Move backward `n` pixels.
 
 ### `turtle.right(angle)`
 
-`turtle.right(90)`
+Example: `turtle.right(90)`
 
-Turn right by `angle` degrees
+Turn right by `angle` degrees.
 
 ### `turtle.left(angle)`
 
-`turtle.left(45)`
+Example: `turtle.left(45)`
 
-Turn left by `angle` degrees
+Turn left by `angle` degrees.
 
 ### `turtle.circle(radius)`
 
-`turtle.circle(50)`
+Example: `turtle.circle(50)`
 
-Draw a circle
+Draw a circle to the left of the turtle. Use positive `radius` to draw
+counter-clockwise, negative `radius` to draw clockwise.
 
 ### `turtle.circle(radius, angle)`
 
-`turtle.circle(50, 180)`
+Example: `turtle.circle(50, 180)`
 
-Draw an arc covering `angle` degrees of a circle
+Draw an arc covering `angle` degrees of a circle. Use positive `radius` to draw
+counter-clockwise, negative `radius` to draw clockwise.
 
 ### `turtle.setheading(angle)`
 
-`turtle.setheading(90)`
+Example: `turtle.setheading(90)`
 
-Face a direction (`0` east, `90` north, `180` west, `270` south)
-
-### `turtle.home()`
-
-`turtle.home()`
-
-Move to the center `(0, 0)`, facing east
+Face a direction (`0` east, `90` north, `180` west, `270` south).
 
 ### `turtle.teleport(x, y)`
 
-`turtle.teleport(-100, 50)`
+Example: `turtle.teleport(-100, 50)`
 
-Jump to `(x, y)` without drawing
+Jump to `(x, y)` without drawing.
 
 ### `turtle.goto(x, y)`
 
-`turtle.goto(10, 90)`
+Example: `turtle.goto(10, 90)`
 
-Move to `(x, y)`, drawing a line on the way
+Move to `(x, y)`, drawing a line on the way.
 
 ### `turtle.penup()`
 
-`turtle.penup()`
+Example: `turtle.penup()`
 
-Stop drawing when moving
+Stop drawing when moving.
 
 ### `turtle.pendown()`
 
-`turtle.pendown()`
+Example: `turtle.pendown()`
 
-Start drawing when moving
+Start drawing when moving.
 
 ### `turtle.pensize(width)`
 
-`turtle.pensize(5)`
+Example: `turtle.pensize(5)`
 
-Set line thickness
+Set line thickness.
 
 ### `turtle.pencolor(color)`
 
-`turtle.pencolor("red")`
+Example: `turtle.pencolor("red")`
 
-Set line color
+Set line color.
 
 ### `turtle.fillcolor(color)`
 
-`turtle.fillcolor("yellow")`
+Example: `turtle.fillcolor("yellow")`
 
-Set fill color
+Set fill color.
 
 ### `turtle.begin_fill()`
 
-`turtle.begin_fill()`
+Example: `turtle.begin_fill()`
 
-Start a shape to fill
+Start a shape to fill.
 
 ### `turtle.end_fill()`
 
-`turtle.end_fill()`
+Example: `turtle.end_fill()`
 
-Fill the shape drawn since `begin_fill()`
+Fill the shape drawn since `begin_fill()`.
 
 ### `turtle.speed(n)`
 
-`turtle.speed(0)`
+Example: `turtle.speed(0)`
 
-Set speed (`1` slowest, `10` fast, `0` instant)
+Set speed (`1` slowest, `10` fast, `0` instant).
 
 ### `turtle.bgcolor(color)`
 
-`turtle.bgcolor("black")`
+Example: `turtle.bgcolor("black")`
 
-Set background color
+Set background color.
 
 ### `turtle.hideturtle()`
 
-`turtle.hideturtle()`
+Example: `turtle.hideturtle()`
 
-Hide the turtle (handy right before `turtle.done()`)
+Hide the turtle (handy right before `turtle.done()`).
 
 ### `turtle.reset()`
 
-`turtle.reset()`
+Example: `turtle.reset()`
 
-Clear the drawing and send the turtle home
-
-### `turtle.done()`
-
-`turtle.done()`
-
-Keep the window open (last line)
+Clear the drawing and send the turtle home.
