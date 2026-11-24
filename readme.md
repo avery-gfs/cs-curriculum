@@ -8,7 +8,7 @@
 - [CS Capstone: Software Engineering Lab](cs-capstone)
 
 **Slides**:
-https://avery-gfs.github.io/readme-slides/?src=avery-gfs/cs-curriculum
+https://avery-gfs.github.io/markdown-slides/?src=avery-gfs/cs-curriculum
 
 ## Why Learn to Write Software?
 
