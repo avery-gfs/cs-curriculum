@@ -1479,8 +1479,6 @@ shape: (32, 10)
 ```py
 import polars as pl
 
-pl.Config(tbl_rows=-1, tbl_cols=-1)
-
 games = pl.read_csv("games.csv")
 
 homeResults = games.select(
