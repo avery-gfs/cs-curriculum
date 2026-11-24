@@ -22,8 +22,8 @@ turtle.shape("turtle")  # Set cursor shape to turtle
 turtle.done()
 ```
 
-`turtle.shape("turtle")` sets the cursor to a turtle icon. `turtle.done()` keeps
-the image open once the drawing is finished.
+- `turtle.shape("turtle")` sets the cursor to a turtle icon.
+- `turtle.done()` keeps the image open once the drawing is finished.
 
 ## Demo: Square
 
