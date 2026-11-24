@@ -1507,9 +1507,7 @@ grouped = combined.group_by("team").agg(
 )
 
 finalStats = grouped.with_columns(
-    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames"))
-    .round(3)
-    .alias("winPct"),
+    ((pl.col("wins") + 0.5 * pl.col("ties")) / pl.col("numGames")).round(3).alias("winPct"),
     (pl.col("scored") / pl.col("numGames")).round(1).alias("scoredPerGame"),
     (pl.col("allowed") / pl.col("numGames")).round(1).alias("allowedPerGame"),
 ).sort("winPct", descending=True)
