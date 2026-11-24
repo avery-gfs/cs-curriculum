@@ -57,17 +57,46 @@ function render(paths) {
     return;
   }
 
-  outlineEl.replaceChildren(
-    el(
-      "ul",
-      { class: "decks" },
-      units.map(({ dir, loc }) =>
-        el(
-          "li",
-          {},
-          el("a", { class: "unit", href: deckHref(loc) }, dir || loc.path),
-        )
-      ),
+  outlineEl.replaceChildren(renderTree(buildTree(units)));
+}
+
+// Folds the flat, sorted deck list into a directory tree. A folder with a
+// readme links to its deck; one without is just a label for what's inside.
+// Repo-root files hang off the root under their own names.
+function buildTree(units) {
+  const root = { children: new Map() };
+  for (const { dir, loc } of units) {
+    if (!dir) {
+      root.children.set(loc.path, {
+        label: loc.path,
+        href: deckHref(loc),
+        children: new Map(),
+      });
+      continue;
+    }
+    let node = root;
+    for (const part of dir.split("/")) {
+      if (!node.children.has(part)) {
+        node.children.set(part, { label: `${part}/`, children: new Map() });
+      }
+      node = node.children.get(part);
+    }
+    node.href = deckHref(loc);
+  }
+  return root;
+}
+
+function renderTree(node) {
+  return el(
+    "ul",
+    { class: "decks" },
+    [...node.children.values()].map((child) =>
+      el("li", {}, [
+        child.href
+          ? el("a", { class: "unit", href: child.href }, child.label)
+          : el("span", { class: "folder" }, child.label),
+        child.children.size ? renderTree(child) : null,
+      ])
     ),
   );
 }

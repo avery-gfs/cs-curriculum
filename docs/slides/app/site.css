@@ -49,6 +49,14 @@ a:focus-visible {
   list-style: none;
 }
 
+.decks .decks {
+  padding-left: 2ch;
+}
+
+.folder {
+  color: var(--muted);
+}
+
 .status {
   color: var(--muted);
 }
