@@ -178,6 +178,8 @@ $$l = 0.299 \cdot r + 0.587 \cdot g + 0.114 \cdot b$$
 <img width="400" src="ascii-dark.png" />
 <img width="400" src="ascii-light.png" />
 
+> SALVADOR DALÍ, Philippe Halsman, 1942
+
 ```py
 symbols = "   ``'-~:+<ceOEB"
 ```
