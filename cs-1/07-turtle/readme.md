@@ -15,7 +15,7 @@
 ```py
 import turtle
 
-turtle.shape("turtle")
+turtle.shape("turtle")  # Set cursor shape to turtle
 
 # Your code goes here
 
