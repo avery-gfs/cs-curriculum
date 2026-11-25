@@ -24,17 +24,9 @@ class TeamStats:
         self.pointsAllowed = 0
         self.numGames = 0
 
-    def addStatsHome(self, game):
+    def addStats(self, scored, allowed):
         # Update team stats (numGames, wins, losses, ties, pointsScored,
-        # and pointsAllowed) based on game info, knowing that this team
-        # was the home team
-
-        pass  # Your code goes here
-
-    def addStatsAway(self, game):
-        # Update team stats (numGames, wins, losses, ties, pointsScored,
-        # and pointsAllowed) based on game info, knowing that this team
-        # was the away team
+        # and pointsAllowed) based on game info
 
         pass  # Your code goes here
 
@@ -88,8 +80,8 @@ for game in games:
     stats.setdefault(homeTeam, TeamStats(homeTeam))
     stats.setdefault(awayTeam, TeamStats(awayTeam))
 
-    stats[homeTeam].addStatsHome(game)
-    stats[awayTeam].addStatsAway(game)
+    stats[homeTeam].addStats(game["home_score"], game["away_score"])
+    stats[awayTeam].addStats(game["away_score"], game["home_score"])
 
 # Print final stats for each team
 

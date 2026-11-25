@@ -24,39 +24,21 @@ class TeamStats:
         self.pointsAllowed = 0
         self.numGames = 0
 
-    def addStatsHome(self, game):
+    def addStats(self, scored, allowed):
         # Update team stats (numGames, wins, losses, ties, pointsScored,
-        # and pointsAllowed) based on game info, knowing that this team
-        # was the home team
+        # and pointsAllowed) based on game info
 
         self.numGames += 1
 
-        if game["home_score"] > game["away_score"]:
+        if scored > allowed:
             self.wins += 1
-        elif game["home_score"] < game["away_score"]:
+        elif scored < allowed:
             self.losses += 1
         else:
             self.ties += 1
 
-        self.pointsScored += game["home_score"]
-        self.pointsAllowed += game["away_score"]
-
-    def addStatsAway(self, game):
-        # Update team stats (numGames, wins, losses, ties, pointsScored,
-        # and pointsAllowed) based on game info, knowing that this team
-        # was the away team
-
-        self.numGames += 1
-
-        if game["away_score"] > game["home_score"]:
-            self.wins += 1
-        elif game["away_score"] < game["home_score"]:
-            self.losses += 1
-        else:
-            self.ties += 1
-
-        self.pointsScored += game["away_score"]
-        self.pointsAllowed += game["home_score"]
+        self.pointsScored += scored
+        self.pointsAllowed += allowed
 
     def winPercent(self):
         # Calculate the win percentage
@@ -108,8 +90,8 @@ for game in games:
     stats.setdefault(homeTeam, TeamStats(homeTeam))
     stats.setdefault(awayTeam, TeamStats(awayTeam))
 
-    stats[homeTeam].addStatsHome(game)
-    stats[awayTeam].addStatsAway(game)
+    stats[homeTeam].addStats(game["home_score"], game["away_score"])
+    stats[awayTeam].addStats(game["away_score"], game["home_score"])
 
 # Print final stats for each team
 

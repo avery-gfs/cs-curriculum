@@ -755,10 +755,7 @@ class TeamStats:
         self.pointsAllowed = 0
         self.numGames = 0
 
-    def addStatsHome(self, game):
-        pass  # Your code goes here
-
-    def addStatsAway(self, game):
+    def addStats(self, scored, allowed):
         pass  # Your code goes here
 
     def winPercent(self):
@@ -786,8 +783,8 @@ for game in games:
     stats.setdefault(homeTeam, TeamStats(homeTeam))
     stats.setdefault(awayTeam, TeamStats(awayTeam))
 
-    stats[homeTeam].addStatsHome(game)
-    stats[awayTeam].addStatsAway(game)
+    stats[homeTeam].addStats(game["home_score"], game["away_score"])
+    stats[awayTeam].addStats(game["away_score"], game["home_score"])
 ```
 
 - Make a `TeamStats` object for any team we haven't seen yet
@@ -800,8 +797,8 @@ for game in games:
 ```
 
 ```py
-stats["Philadelphia Eagles"].addStatsHome(game)
-stats["Dallas Cowboys"].addStatsAway(game)
+stats["Philadelphia Eagles"].addStats(24, 20)
+stats["Dallas Cowboys"].addStats(20, 24)
 ```
 
 <<<
@@ -856,8 +853,8 @@ Dallas Cowboys
 ```
 
 ```py
-stats["Kansas City Chiefs"].addStatsHome(game)
-stats["Philadelphia Eagles"].addStatsAway(game)
+stats["Kansas City Chiefs"].addStats(17, 20)
+stats["Philadelphia Eagles"].addStats(20, 17)
 ```
 
 <<<
